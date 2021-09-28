@@ -1,0 +1,146 @@
+[
+  {
+    "id": 0,
+    "department": "IT-SUPPORT",
+    "name": "Alexander Victor Foli",
+    "flex": {
+      "secondsTotal": 6912000,
+      "hoursPartial": 2,
+      "minutesPartial": 16,
+      "isNegative": true
+    },
+    "vacation": {
+      "planned": 0,
+      "left": 0,
+      "used": 0
+    }
+  },
+  {
+    "id": 0,
+    "department": "IT-SUPPORT",
+    "name": "Ane E. Margr. Mikaelsen",
+    "flex": {
+      "secondsTotal": 0,
+      "hoursPartial": 0,
+      "minutesPartial": 0,
+      "isNegative": false
+    },
+    "vacation": {
+      "planned": 4,
+      "left": 3,
+      "used": 0
+    }
+  },
+  {
+    "id": 0,
+    "department": "IT-SUPPORT",
+    "name": "Aske Pedersen Rosendahl",
+    "flex": {
+      "secondsTotal": 19008000,
+      "hoursPartial": 2,
+      "minutesPartial": 44,
+      "isNegative": true
+    },
+    "vacation": {
+      "planned": 4,
+      "left": 5,
+      "used": 16
+    }
+  },
+  {
+    "id": 0,
+    "department": "DATATEKNIKER PROGRAMMERING",
+    "name": "+Christoffer Møller Petersen",
+    "flex": {
+      "secondsTotal": 0,
+      "hoursPartial": 5,
+      "minutesPartial": 0,
+      "isNegative": false
+    },
+    "vacation": {
+      "planned": 4,
+      "left": -5,
+      "used": 31
+    }
+  },
+  {
+    "id": 0,
+    "department": "DATATEKNIKER PROGRAMMERING",
+    "name": "+Michael Lechscheidt Christensen",
+    "flex": {
+      "secondsTotal": 235872000,
+      "hoursPartial": 21,
+      "minutesPartial": 52,
+      "isNegative": true
+    },
+    "vacation": {
+      "planned": 4,
+      "left": -2,
+      "used": 28
+    }
+  },
+  {
+    "id": 0,
+    "department": "DATATEKNIKER PROGRAMMERING",
+    "name": "Alexander Bang",
+    "flex": {
+      "secondsTotal": 5184000,
+      "hoursPartial": 3,
+      "minutesPartial": 8,
+      "isNegative": true
+    },
+    "vacation": {
+      "planned": 4,
+      "left": 0,
+      "used": 26
+    }
+  },
+  {
+    "id": 0,
+    "department": "DATATEKNIKER INFRASTRUKTUR",
+    "name": "+Jeppe Bach Motzkus",
+    "flex": {
+      "secondsTotal": 106272000,
+      "hoursPartial": 12,
+      "minutesPartial": 41,
+      "isNegative": false
+    },
+    "vacation": {
+      "planned": 0,
+      "left": 9,
+      "used": 0
+    }
+  },
+  {
+    "id": 0,
+    "department": "DATATEKNIKER INFRASTRUKTUR",
+    "name": "+Viktor Primdal Toft",
+    "flex": {
+      "secondsTotal": 1728000,
+      "hoursPartial": 4,
+      "minutesPartial": 2,
+      "isNegative": false
+    },
+    "vacation": {
+      "planned": 4,
+      "left": 0,
+      "used": 26
+    }
+  },
+  {
+    "id": 0,
+    "department": "DATATEKNIKER INFRASTRUKTUR",
+    "name": "Alexander Dohrmann Rasmussen",
+    "flex": {
+      "secondsTotal": 4752000,
+      "hoursPartial": 1,
+      "minutesPartial": 22,
+      "isNegative": true
+    },
+    "vacation": {
+      "planned": 4,
+      "left": 0,
+      "used": 26
+    }
+  }
+]
