@@ -5,8 +5,9 @@
   "main": "dist/main.js",
   "scripts": {
     "test": "jest",
+    "coverage": "jest --coverage",
     "start": "node dist/main.js",
-    "dev": "nodemon dist/main.js --ignore public/ --ignore db.json",
+    "dev": "nodemon dist/main.js --ignore public/ --ignore dist/ --ignore db.json",
     "build": "tsc",
     "watch": "tsc -w"
   },
