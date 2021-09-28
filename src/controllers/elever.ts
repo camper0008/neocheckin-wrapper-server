@@ -10,3 +10,5 @@ export const addElev = async (database: Database, elev: Elev) => {
   else
     throw new Error('Elev with same id already exists')
 }
+
+

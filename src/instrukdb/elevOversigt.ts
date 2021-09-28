@@ -1,43 +1,24 @@
 import axios from "axios";
 import https from "https";
 import { Elev, FlexTime } from "../models/Elev";
+import { flexTimeFromString } from "../utils/flexTime";
+import { clearSpaceBefore, clearAttributes, getForms, getRows } from "../utils/htmlScrapers";
 
-const clearWhiteSpace = (str: string) => str.replace(/^\s+/gm, '');
-const clearAttributes = (str: string) => str.replace(/<(\w+)[\s][^>]+>/g, '<$1>');
-const getForms = (str: string)        => str.match(/<form>.*?<\/form>/gs);
-const getFormName = (row: string)     => row.match(/(?:<b>(?<name>.*?)<\/b>)/s)?.groups ?? {};
-const getRows = (form: string)        => form.match(/<tr>.*?<\/tr>/gs)
-const getCells = (row: string)        => row.match(new RegExp(
-  '<td>.*?<a>(?<name>.*)</a>.*</td>.*?' +
-  '<td>.*?<font>(?<flex>\\-?\\d+:\\d+)</font>.*</td>.*?' +
-  '<td>.*?Brugt:(?<vacUsed>\\-?\\d+).*?Planlagt:(?<vacPlanned>\\-?\\d+).*?Tilgode:.*?<font>.*?(?<vacLeft>\\-?\\d+).*?</font>.*?</td>'
-, 's')
-)?.groups ?? {};
-
-const flexTimeFromString = (flex: string): FlexTime => {
-  let [hoursString, minutesString] = [flex.split(':')[0], flex.split(':')[1]];
-  
-  let isNegative = false;
-  if (hoursString.slice(0, 1) === '-') {
-    isNegative = true;
-    hoursString = hoursString.slice(1);
-  }
-
-  const [hoursPartial, minutesPartial] = [parseInt(hoursString), parseInt(minutesString)]
-  const secondsTotal = hoursPartial * minutesPartial * 60**3;
-  
-  return {
-    secondsTotal,
-    hoursPartial,
-    minutesPartial,
-    isNegative,
-  };
+export const getFormName = (row: string)     => row.match(/(?:<b>(?<name>.*?)<\/b>)/s)?.groups ?? {};
+export const getCells = (row: string) => {
+  return row.match(
+    new RegExp(
+      '<td>.*?<a>(?<name>.*)</a>.*</td>.*?'
+      + '<td>.*?<font>(?<flex>\\-?\\d+:\\d+)</font>.*</td>.*?'
+      + '<td>.*?Brugt:(?<vacUsed>\\-?\\d+).*?Planlagt:(?<vacPlanned>\\-?\\d+).*?Tilgode:.*?<font>.*?(?<vacLeft>\\-?\\d+).*?</font>.*?</td>'
+    , 's')
+  )?.groups ?? {};
 }
 
-export const scrapeElevOversigtHtml = (html: string) => {
+export const scrapeElevOversigt = (html: string) => {
   const students: Elev[] = [];
 
-  html = clearWhiteSpace(html);
+  html = clearSpaceBefore(html);
   html = clearAttributes(html);
 
   const forms = getForms(html) ?? [];
@@ -73,7 +54,7 @@ export const scrapeElevOversigtHtml = (html: string) => {
   return students;
 }
 
-const getElevOversigtHtml = async () => {
+export const getElevOversigtHtml = async () => {
   try {
     const result = (await axios.get('https://instrukdb/elev_oversigt.html', {
       httpsAgent: new https.Agent({ rejectUnauthorized: false })
@@ -90,13 +71,3 @@ const getElevOversigtHtml = async () => {
     console.error(err.toString());
   }
 }
-
-const elevOversigt = async () => {
-  const html = await getElevOversigtHtml();
-  if (html) {
-    const students = scrapeElevOversigtHtml(html);
-    console.log(students);
-  }
-}
-
-elevOversigt();
