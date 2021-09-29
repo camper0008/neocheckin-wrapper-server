@@ -51,8 +51,6 @@ const main = async () => {
   httpsServer.listen(httpsPort, () => console.log(`Express HTTPS at https://localhost:${httpsPort}/`));
 
   const database = new TempJsonDb('db.json');
-  await addElev(database, {id: 0, name: 'Bruh Moment'});
-  await addElev(database, {id: 0, name: 'Bruh Moment'});
 }
 
 config();
