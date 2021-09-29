@@ -3,8 +3,8 @@ import { Elev } from "../models/Elev";
 import { clearAttributes, clearSpaceBefore, getForms, getRows } from "../utils/htmlScrapers";
 import { getCells, getFormName, scrapeElevOversigt } from "./elevOversigt";
 
-const loadHtmlSample = async () => (await readFile('./samples/test.html')).toString();
-const loadSampleData = async () => JSON.parse((await readFile('./samples/test.json')).toString()) as Elev[];
+const loadHtmlSample = async () => (await readFile('./samples/elev_oversigt_test.html')).toString();
+const loadSampleData = async () => JSON.parse((await readFile('./samples/elev_oversigt_test.json')).toString()) as Elev[];
 
 describe('getRows', () => {
 
@@ -75,6 +75,11 @@ describe('scrapeElevOversigt', () => {
     const html = await loadHtmlSample();
     const data = await loadSampleData();
     expect(scrapeElevOversigt(html)).toEqual(data);
+  });
+
+  it('should have the html specified id', async () => {
+    const html = await loadHtmlSample();
+    expect(scrapeElevOversigt(html)[0].id).not.toEqual(0);
   });
 
 });

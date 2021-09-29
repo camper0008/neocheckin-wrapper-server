@@ -82,12 +82,12 @@ describe('getForms', () => {
 describe('getRows', () => {
 
   it('should have length of 14', async () => {
-    const html = (await readFile('./samples/test.html')).toString();
+    const html = (await readFile('./samples/elev_oversigt_test.html')).toString();
     expect(getRows(html)!.length).toBe(14);
   });
 
   it('should return content of a row', async () => {
-    const html = (await readFile('./samples/test.html')).toString();
+    const html = (await readFile('./samples/elev_oversigt_test.html')).toString();
     expect(getRows(html)![0].trim().replace(/\s+/g, '')).toBe(/*html*/ `
       <tr>
         <td style="border:1px  solid white;border-color:#4f8da8;margin:0;text-align:center;"><b>IT-SUPPORT</b><br>
