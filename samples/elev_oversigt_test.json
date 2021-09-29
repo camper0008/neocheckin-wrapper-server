@@ -1,6 +1,6 @@
 [
   {
-    "id": 0,
+    "id": 1095,
     "department": "IT-SUPPORT",
     "name": "Alexander Victor Foli",
     "flex": {
@@ -16,7 +16,7 @@
     }
   },
   {
-    "id": 0,
+    "id": 1090,
     "department": "IT-SUPPORT",
     "name": "Ane E. Margr. Mikaelsen",
     "flex": {
@@ -32,7 +32,7 @@
     }
   },
   {
-    "id": 0,
+    "id": 1042,
     "department": "IT-SUPPORT",
     "name": "Aske Pedersen Rosendahl",
     "flex": {
@@ -48,7 +48,7 @@
     }
   },
   {
-    "id": 0,
+    "id": 512,
     "department": "DATATEKNIKER PROGRAMMERING",
     "name": "+Christoffer Møller Petersen",
     "flex": {
@@ -64,7 +64,7 @@
     }
   },
   {
-    "id": 0,
+    "id": 480,
     "department": "DATATEKNIKER PROGRAMMERING",
     "name": "+Michael Lechscheidt Christensen",
     "flex": {
@@ -80,7 +80,7 @@
     }
   },
   {
-    "id": 0,
+    "id": 985,
     "department": "DATATEKNIKER PROGRAMMERING",
     "name": "Alexander Bang",
     "flex": {
@@ -96,7 +96,7 @@
     }
   },
   {
-    "id": 0,
+    "id": 1054,
     "department": "DATATEKNIKER INFRASTRUKTUR",
     "name": "+Jeppe Bach Motzkus",
     "flex": {
@@ -112,7 +112,7 @@
     }
   },
   {
-    "id": 0,
+    "id": 999,
     "department": "DATATEKNIKER INFRASTRUKTUR",
     "name": "+Viktor Primdal Toft",
     "flex": {
@@ -128,7 +128,7 @@
     }
   },
   {
-    "id": 0,
+    "id": 444,
     "department": "DATATEKNIKER INFRASTRUKTUR",
     "name": "Alexander Dohrmann Rasmussen",
     "flex": {
