@@ -1,9 +1,16 @@
 import axios from "axios";
-import { readFile, writeFile } from "fs/promises";
 import https from "https";
-import { Elev, FlexTime } from "../models/Elev";
+import { Elev, FlexTime, Vacation } from "../models/Elev";
 import { flexTimeFromString } from "../utils/flexTime";
 import { clearSpaceBefore, clearAttributes, getForms, getRows } from "../utils/htmlScrapers";
+
+export interface ElevOversigtElevInfo {
+  id: number,
+  name: string,
+  department: string,
+  flex: FlexTime,
+  vacation: Vacation,
+}
 
 export const getFormName = (row: string)     => row.match(/(?:<b>(?<name>.*?)<\/b>)/s)?.groups ?? {};
 
@@ -30,7 +37,7 @@ export const getElevId = (nonModHtml: string, name: string) => {
   return id;
 }
 
-const getRowDetails = (rows: RegExpMatchArray, students: Elev[], html: string) => {
+const getRowDetails = (rows: RegExpMatchArray, students: ElevOversigtElevInfo[], html: string) => {
   let department: string | null = null;
     for (let j = 0; j < rows.length; ++j) {
       if (j === 0) {
@@ -58,7 +65,7 @@ const getRowDetails = (rows: RegExpMatchArray, students: Elev[], html: string) =
 }
 
 export const scrapeElevOversigt = (html: string) => {
-  const students: Elev[] = [];
+  const students: ElevOversigtElevInfo[] = [];
 
   let htmlMod = clearSpaceBefore(html);
   htmlMod = clearAttributes(htmlMod);
