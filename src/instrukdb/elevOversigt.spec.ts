@@ -1,4 +1,4 @@
-import { readFile, writeFile } from "fs/promises";
+import { readFile } from "fs/promises";
 import { Elev } from "../models/Elev";
 import { clearAttributes, clearSpaceBefore, getForms, getRows } from "../utils/htmlScrapers";
 import { getCells, getFormName, scrapeElevOversigt } from "./elevOversigt";
@@ -6,7 +6,13 @@ import { getCells, getFormName, scrapeElevOversigt } from "./elevOversigt";
 const loadHtmlSample = async () => (await readFile('./samples/elev_oversigt_test.html')).toString();
 const loadSampleData = async () => JSON.parse((await readFile('./samples/elev_oversigt_test.json')).toString()) as Elev[];
 
-describe('getRows', () => {
+const getRowHtml = async () => {
+  let html = await loadHtmlSample();
+  html = clearAttributes(clearSpaceBefore(html));
+  return getRows(getForms(html)![0])![1];
+}
+
+describe('elevOversigt', () => {
 
   it('should have length of 14', async () => {
     const html = await loadHtmlSample();
@@ -25,10 +31,6 @@ describe('getRows', () => {
     `.trim().replace(/\s+/g, ''));
   });
 
-});
-
-describe('getFormName', () => {
-
   it('should return null', () => {
     expect(getFormName('')).toEqual({});
   });
@@ -37,16 +39,6 @@ describe('getFormName', () => {
     const html = await loadHtmlSample();
     expect(getFormName(html)['name']).toBe('IT-SUPPORT');
   });
-
-});
-
-const getRowHtml = async () => {
-  let html = await loadHtmlSample();
-  html = clearAttributes(clearSpaceBefore(html));
-  return getRows(getForms(html)![0])![1];
-}
-
-describe('getCells', () => {
 
   it(`should return 'Alexander Victor Foli'`, async () => {
     const html = await getRowHtml();
@@ -62,10 +54,6 @@ describe('getCells', () => {
     const html = await getRowHtml();
     expect(getCells(html)['vacUsed']).toBe('0');
   });
-
-});
-
-describe('scrapeElevOversigt', () => {
 
   it('should return empty array', () => {
     expect(scrapeElevOversigt('')).toEqual([]);
