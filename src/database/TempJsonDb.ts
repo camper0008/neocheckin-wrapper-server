@@ -78,4 +78,19 @@ export class TempJsonDb extends Database {
     }
   }
 
+  public getElev = async (id: number) => {
+    try {
+      await this.read();
+      const Elever = this.getCollection<Elev>('elever');
+      for (let i in Elever)
+        if (Elever[i].id === id)
+          return {status: OperationStatus.Ok, data: Elever[i]};
+      return {status: OperationStatus.Empty};
+    } catch (catched) {
+      if (!(catched instanceof Error))
+        return {status: OperationStatus.ServerError, catched};
+      return {status: OperationStatus.ServerError, error: (catched as Error), catched};
+    }
+  }
+
 }
