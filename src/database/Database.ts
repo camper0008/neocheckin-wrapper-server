@@ -2,6 +2,7 @@ import { Elev } from "../models/Elev";
 
 export enum OperationStatus {
   Ok,
+  Empty,
   BadRequest,
   DbError,
   ServerError
@@ -18,5 +19,6 @@ export abstract class Database {
 
   public abstract isElevIdValid: (elev: Elev) => Promise<SingleOperationResult<boolean>>;
   public abstract addElev: (elev: Elev) => Promise<SingleOperationResult<Elev>>;
+  public abstract getElev: (id: number) => Promise<SingleOperationResult<Elev>>;
 
 }
