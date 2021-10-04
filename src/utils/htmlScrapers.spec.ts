@@ -1,7 +1,6 @@
-import { readFile } from 'fs/promises';
 import { clearAttributes, clearSpaceBefore, getForms, getRows } from './htmlScrapers';
 
-describe('clearWhiteSpace', () => {
+describe('htmlScrapers', () => {
 
   it('should clear whitespace at the start of an non-strict html string', () => {
     const html = '    <div></div>';
@@ -12,10 +11,6 @@ describe('clearWhiteSpace', () => {
     const html = '';
     expect(clearSpaceBefore(html)).toBe('');
   })
-
-});
-
-describe('clearAttributes', () => {
 
   it('should return an attributeless htmlstring', () => {
     const html = '<div color="red"></div>';
@@ -36,11 +31,6 @@ describe('clearAttributes', () => {
     const html = '<br class="a" >';
     expect(clearAttributes(html)).toBe('<br>');
   });
-
-});
-
-
-describe('getForms', () => {
 
   it('should not be null', () => {
     const html = '<form></form>';
@@ -77,23 +67,38 @@ describe('getForms', () => {
     expect(getForms(html)![0]).toBe('<form><h1>Hello, World!</h1></form>');
   });
 
-});
-
-describe('getRows', () => {
-
   it('should have length of 14', async () => {
-    const html = (await readFile('./samples/elev_oversigt_test.html')).toString();
-    expect(getRows(html)!.length).toBe(14);
+    const html = /*html*/ `
+      <table>
+        <tr>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+        </tr>
+      </table>
+    `;
+    expect(getRows(html)!.length).toBe(2);
   });
 
   it('should return content of a row', async () => {
-    const html = (await readFile('./samples/elev_oversigt_test.html')).toString();
+    const html = /*html*/ `
+      <table>
+        <tr>
+          <td>
+            <h1>Hello world</h1>
+          </td>
+        </tr>
+        <tr>
+          <td></td>
+        </tr>
+      </table>
+    `;
     expect(getRows(html)![0].trim().replace(/\s+/g, '')).toBe(/*html*/ `
       <tr>
-        <td style="border:1px  solid white;border-color:#4f8da8;margin:0;text-align:center;"><b>IT-SUPPORT</b><br>
-          &nbsp</td>
-        <td style="border:1px solid white;border-color:#4f8da8;margin:0;text-align:center"><b>FLEX</b><br> &nbsp</td>
-        <td style="border:1px solid white;border-color:#4f8da8;margin:0;text-align:center"><b>FERIE</b><br> &nbsp</td>
+        <td>
+          <h1>Hello world</h1>
+        </td>
       </tr>
     `.trim().replace(/\s+/g, ''));
   });
