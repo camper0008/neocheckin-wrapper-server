@@ -11,15 +11,14 @@
     "build": "tsc",
     "watch": "tsc -w"
   },
-  "repository": "https://github.com/SimonFJ20/neoinstrukdb.git",
-  "author": "SimonFJ20 <simonfromjakobsen@gmail.com>",
+  "repository": "https://gitlab.pcvdata.dk/super-team-euxtra/neocheckin/wrapper-server.git",
+  "author": "Simon From Jakobsen <sfja.skp@edu.mercantec.dk>",
   "license": "none",
   "private": true,
   "devDependencies": {
     "@types/babel__core": "^7.1.16",
     "@types/babel__template": "^7.4.1",
     "@types/cors": "^2.8.12",
-    "@types/dotenv": "^8.2.0",
     "@types/express": "^4.17.13",
     "@types/jest": "^27.0.2",
     "@types/node": "^16.10.1",
