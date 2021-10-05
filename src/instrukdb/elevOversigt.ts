@@ -1,8 +1,9 @@
 import axios from "axios";
-import https from "https";
+import { Agent as HttpsAgent } from "https";
 import { Elev, FlexTime, Vacation } from "../models/Elev";
-import { flexTimeFromString } from "../utils/flexTime";
+import { flexTimeFromString } from "../utils/timeUtils";
 import { clearSpaceBefore, clearAttributes, getForms, getRows } from "../utils/htmlScrapers";
+import { readFile, writeFile } from "fs/promises";
 
 export interface ElevOversigtElevInfo {
   id: number,
@@ -12,7 +13,7 @@ export interface ElevOversigtElevInfo {
   vacation: Vacation,
 }
 
-export const getFormName = (row: string)     => row.match(/(?:<b>(?<name>.*?)<\/b>)/s)?.groups ?? {};
+export const getFormName = (row: string) => row.match(/(?:<b>(?<name>.*?)<\/b>)/s)?.groups ?? {};
 
 export const getCells = (row: string) => {
   return row.match(
@@ -82,7 +83,7 @@ export const scrapeElevOversigt = (html: string) => {
 export const getElevOversigtHtml = async () => {
   try {
     const result = (await axios.get('https://instrukdb/elev_oversigt.html', {
-      httpsAgent: new https.Agent({ rejectUnauthorized: false })
+      httpsAgent: new HttpsAgent({ rejectUnauthorized: false })
     }));
 
     const data = result.data;
@@ -96,3 +97,9 @@ export const getElevOversigtHtml = async () => {
     console.error(err.toString());
   }
 }
+
+export const makeElevOversigtSampleData = async () => {
+  const html = await readFile('./samples/elev_oversigt_test.html');
+  await writeFile('./samples/elev_oversigt_test.json', JSON.stringify(scrapeElevOversigt(html.toString())));
+}
+
