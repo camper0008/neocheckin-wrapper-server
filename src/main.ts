@@ -5,8 +5,8 @@ import { readFile } from 'fs/promises';
 import { createServer as createHttpServer } from 'http';
 import { createServer as createHttpsServer } from 'https';
 import { join } from 'path';
-import { addElev } from './controllers/elever';
-import { TempJsonDb } from './database/TempJsonDb';
+import { makeElevOversigtSampleData } from './instrukdb/elevOversigt';
+import { getTeamsHtml, TeamsPages } from './instrukdb/teams';
 
 
 const getSSL = async () => {
@@ -35,6 +35,15 @@ const getHttpsPort = (fallback: number = 443) => {
   }
 }
 
+const makeTestSamples = () => {
+  makeElevOversigtSampleData();
+
+  getTeamsHtml(TeamsPages.ItSupport);
+  getTeamsHtml(TeamsPages.Programmør);
+  getTeamsHtml(TeamsPages.Infrastruktur);
+  getTeamsHtml(TeamsPages.Stab);
+}
+
 const main = async () => {
   const app = express();
   const httpServer = createHttpServer(app);
@@ -50,7 +59,7 @@ const main = async () => {
   httpServer.listen(httpPort, () => console.log(`Express HTTP at http://localhost:${httpPort}/`));
   httpsServer.listen(httpsPort, () => console.log(`Express HTTPS at https://localhost:${httpsPort}/`));
 
-  const database = new TempJsonDb('db.json');
+  // makeTestSamples();
 }
 
 config();
