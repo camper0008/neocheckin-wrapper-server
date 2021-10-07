@@ -13,6 +13,24 @@ export interface ElevOversigtEmployeeScrape {
   vacation: Vacation,
 }
 
+export const getElevOversigtHtml = async () => {
+  try {
+    const result = (await axios.get('https://instrukdb/elev_oversigt.html', {
+      httpsAgent: new HttpsAgent({ rejectUnauthorized: false })
+    }));
+
+    const data = result.data;
+  
+    if (typeof data !== 'string')
+      throw new Error('could not fetch elev_oversigt.html')
+  
+    return data as string;
+
+  } catch(err: any) {
+    throw new Error('Could not fetch elev_oversigt html');
+  }
+}
+
 export const getFormName = (row: string) => row.match(/(?:<b>(?<name>.*?)<\/b>)/s)?.groups ?? {};
 
 export const getCells = (row: string) => {
@@ -27,8 +45,10 @@ export const getCells = (row: string) => {
 
 export const getElevId = (nonModHtml: string, name: string) => {
   const result = nonModHtml.match(new RegExp(`<a.*?href="elev_visning\\.php\\?elevid=(?<id>\\d+)">${'\\' + name}.*?</a>`, 's'));
-  if (result === null || typeof result.groups === undefined)
+  if (result === null || typeof result.groups === undefined) {
+    console.log(result)
     throw new Error(`Could not scrape id of Elev: '${name}', #0`);
+  }
   const idString = result.groups!['id'];
   if (typeof idString !== 'string' || idString.length === 0)
     throw new Error(`Could not scrape id of Elev: '${name}', #1`);
@@ -80,26 +100,7 @@ export const scrapeElevOversigt = (html: string) => {
   return students;
 }
 
-export const getElevOversigtHtml = async () => {
-  try {
-    const result = (await axios.get('https://instrukdb/elev_oversigt.html', {
-      httpsAgent: new HttpsAgent({ rejectUnauthorized: false })
-    }));
-
-    const data = result.data;
-  
-    if (typeof data !== 'string')
-      throw new Error('could not fetch elev_oversigt.html')
-  
-    return data as string;
-
-  } catch(err: any) {
-    console.error(err.toString());
-  }
-}
-
 export const makeElevOversigtSampleData = async () => {
   const html = await readFile('./samples/elev_oversigt_test.html');
   await writeFile('./samples/elev_oversigt_test.json', JSON.stringify(scrapeElevOversigt(html.toString())));
 }
-

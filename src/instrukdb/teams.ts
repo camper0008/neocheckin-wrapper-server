@@ -11,7 +11,7 @@ export interface TeamsTeamScrape {
   instructerMail: string;
 }
 
-export interface TeamsEmployeeScrape {
+export interface TeamsTeamEmployeeScrape {
   id: string;
   bgColor: string;
   nameShort: string;
@@ -24,6 +24,12 @@ export interface TeamsEmployeeScrape {
   locationShort: string;
 }
 
+export interface TeamsEmployeeScrape {
+  department: string;
+  team: TeamsTeamScrape;
+  employee: TeamsTeamEmployeeScrape;
+}
+
 export enum TeamsPages {
   ItSupport = '',
   Programmør = 'pro',
@@ -31,25 +37,45 @@ export enum TeamsPages {
   Stab = 'stab'
 }
 
-export const getTeamsHtml = async (page: TeamsPages) => {
+export interface TeamsPagesHtml {
+  itSupport: string;
+  programmør: string;
+  infrastruktur: string;
+  stab: string;
+}
+
+export const fetchTeamsPageHtml = async (page: TeamsPages) => {
   const res = await axios.get(
     `https://instrukdb/teams.php?${page === TeamsPages.ItSupport ? '' : `showteam=${page}`}`,
     {httpsAgent: new HttpsAgent({ rejectUnauthorized: false })}
   );
   const html = res.data as string;
-  await writeFile(`samples/teams_${page === TeamsPages.ItSupport ? 'itsup' : page}_test.html`, html);
+  // await writeFile(`samples/teams_${page === TeamsPages.ItSupport ? 'itsup' : page}_test.html`, html);
   return html;
+}
+
+export const fetchTeamsHtml = async () => {
+  const [
+    itSupport,
+    programmør,
+    infrastruktur,
+    stab
+  ] = await Promise.all([
+    fetchTeamsPageHtml(TeamsPages.ItSupport),
+    fetchTeamsPageHtml(TeamsPages.Programmør),
+    fetchTeamsPageHtml(TeamsPages.Infrastruktur),
+    fetchTeamsPageHtml(TeamsPages.Stab)
+  ])
+
+  return {itSupport, programmør, infrastruktur, stab} as TeamsPagesHtml;
 }
 
 export const getTeamTableHtml = (html: string): string[] => {
   const matchesIterator = html.matchAll(/(<table><tr>\s*<td colspan="1">.*?<td><\/tr><\/table>)/gs);
   const matches = iteratorToArray(matchesIterator);
-
   const teams: string[] = [];
   for (let i in matches)
     teams.push(matches[i][1]);
-
-
   return teams;
 }
 
@@ -68,18 +94,24 @@ export const getTeamInfoFromTable = (html: string): TeamsTeamScrape => {
   };
 }
 
-export const getEmployeesFromTable = (html: string): TeamsEmployeeScrape[] => {
+export const getEmployeesFromTable = (html: string): TeamsTeamEmployeeScrape[] => {
   const matchesIterator = html.matchAll(new RegExp(
-    '<tr><td.*?><img src="elevbilled\\.php\\?id=(?<imageId>\\d+)".*?><\\/td><td.*?bgcolor="\\s*?(?<bgColor>[^\\s]*?)">\\s*?<table.*?>\\s*?<tr>'
-    + '\\s*?<td.*?>\\s*?<div.*?>\\s*?\t*(?<nameShort>.+?)\\s*?<span.*?>\\s*?\t*(?<nameLong>.+?)\\s*?<\\/span>\\s*?<font '
-    + 'color=(?<flexColor>(?:#90EE90)|(?:red)).*?onclick="parent\\.large_info_page\\(\'elev_ferie2\\.php\\?elevid=(?<ferie2Id>\\d+)\'\\)".*?>'
-    + '(?<flexTime>\\-?\\d+:\\d+)<\\/font>\\s*?<\\/div>\\s*?<\\/td>\\s*?<\\/tr>\\s*?<tr>\\s*?<td.*?>\\s*?\t*(?<projectName>.*?)\\s*?<\\/td>\\s*?'
-    + '<\\/tr>\\s*?<tr>\\s*?<td>\\s*?\t*(?<workTime>.*?)\\s*?<\\/td>\\s*?<\\/tr>\\s*?<tr>\\s*?<td.*?>\\s*?<div.*?>\\s*?\t*(?<locationShort>.*?)\\s*?'
-    + '<span.*?>\\s*?\t*(?<locationLong>.*?)\\s*?<\\/span>\\s*?<\\/div>\\s*?<\\/td>\\s*?<\\/tr>\\s*?<\\/table>\\s*?<td><\\/tr>',
+    '<tr><td.*?><img src="elevbilled\\.php\\?id=(?<imageId>\\d+)".*?><\\/td><td.*?bgcolor="'
+    + '\\s*?(?<bgColor>[^\\s]*?)">\\s*?<table.*?>\\s*?<tr>'
+    + '\\s*?<td.*?>\\s*?<div.*?>\\s*?\t*(?<nameShort>.+?)\\s*?<span.*?>'
+    + '\\s*?\t*(?<nameLong>.+?)\\s*?<\\/span>\\s*?<font '
+    + 'color=(?<flexColor>(?:#90EE90)|(?:red)).*?onclick="parent\\.large_info_page'
+    + '\\(\'elev_ferie2\\.php\\?elevid=(?<ferie2Id>\\d+)\'\\)".*?>'
+    + '(?<flexTime>\\-?\\d+:\\d+)<\\/font>\\s*?<\\/div>\\s*?<\\/td>\\s*?<\\/tr>'
+    + '\\s*?<tr>\\s*?<td.*?>\\s*?\t*(?<projectName>.*?)\\s*?<\\/td>\\s*?'
+    + '<\\/tr>\\s*?<tr>\\s*?<td>\\s*?\t*(?<workTime>.*?)\\s*?<\\/td>\\s*?<\\/tr>\\s*?'
+    + '<tr>\\s*?<td.*?>\\s*?<div.*?>\\s*?\t*(?<locationShort>.*?)\\s*?'
+    + '<span.*?>\\s*?\t*(?<locationLong>.*?)\\s*?<\\/span>\\s*?<\\/div>\\s*?<\\/td>'
+    + '\\s*?<\\/tr>\\s*?<\\/table>\\s*?<td><\\/tr>',
     'gm'
   ));
   const matches: RegExpMatchArray[] = iteratorToArray(matchesIterator);
-  const employees: TeamsEmployeeScrape[] = [];
+  const employees: TeamsTeamEmployeeScrape[] = [];
   for (let i in matches) {
     employees.push({
       id: matches[i].groups!['imageId'],
@@ -98,11 +130,33 @@ export const getEmployeesFromTable = (html: string): TeamsEmployeeScrape[] => {
   return employees;
 }
 
-export const scrapeTeams = () => {}
+export const getTeamsPageDepartment = (page: TeamsPages) => {
+  switch (page) {
+    case TeamsPages.ItSupport: return 'Itsupporter';
+    case TeamsPages.Programmør: return 'Programmør';
+    case TeamsPages.Infrastruktur: return 'Infrastruktur';
+    case TeamsPages.Stab: return 'Stab';
+  }
+}
 
-export const testScrapeTeams = async () => {
-  const html = await getTeamsHtml(TeamsPages.Programmør);
-  const teams = getTeamTableHtml(html);
-  console.log(getTeamInfoFromTable(teams[4]));
-  console.log(getEmployeesFromTable(teams[4]));
+export const scrapeTeamsTeam = (html: string, page: TeamsPages): TeamsEmployeeScrape[] => {
+  const employees: TeamsEmployeeScrape[] = [];
+  const teamTablesHtml = getTeamTableHtml(html);
+  const department = getTeamsPageDepartment(page);
+  for (let i in teamTablesHtml) {
+    const team = getTeamInfoFromTable(teamTablesHtml[i]);
+    const teamEmployees = getEmployeesFromTable(teamTablesHtml[i]);
+    for (let i in teamEmployees)
+      employees.push({department, team, employee: teamEmployees[i]});
+  }
+  return employees;
+}
+
+export const scrapeTeams = (pagesHtml: TeamsPagesHtml): TeamsEmployeeScrape[] => {
+  return [
+    ...scrapeTeamsTeam(pagesHtml.itSupport, TeamsPages.ItSupport),
+    ...scrapeTeamsTeam(pagesHtml.programmør, TeamsPages.Programmør),
+    ...scrapeTeamsTeam(pagesHtml.infrastruktur, TeamsPages.Infrastruktur),
+    ...scrapeTeamsTeam(pagesHtml.stab, TeamsPages.Stab),
+  ];
 }

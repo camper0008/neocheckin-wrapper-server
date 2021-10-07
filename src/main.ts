@@ -5,8 +5,9 @@ import { readFile } from 'fs/promises';
 import { createServer as createHttpServer } from 'http';
 import { createServer as createHttpsServer } from 'https';
 import { join } from 'path';
+import { updateCache } from './cache/cache';
 import { makeElevOversigtSampleData } from './instrukdb/elevOversigt';
-import { getTeamsHtml, TeamsPages } from './instrukdb/teams';
+import { fetchTeamsHtml } from './instrukdb/teams';
 
 
 const getSSL = async () => {
@@ -38,10 +39,7 @@ const getHttpsPort = (fallback: number = 443) => {
 const makeTestSamples = () => {
   makeElevOversigtSampleData();
 
-  getTeamsHtml(TeamsPages.ItSupport);
-  getTeamsHtml(TeamsPages.Programmør);
-  getTeamsHtml(TeamsPages.Infrastruktur);
-  getTeamsHtml(TeamsPages.Stab);
+  fetchTeamsHtml();
 }
 
 const main = async () => {
@@ -60,6 +58,7 @@ const main = async () => {
   httpsServer.listen(httpsPort, () => console.log(`Express HTTPS at https://localhost:${httpsPort}/`));
 
   // makeTestSamples();
+  updateCache();
 }
 
 config();
