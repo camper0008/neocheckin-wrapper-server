@@ -1,4 +1,4 @@
-import { FlexTime } from "../models/Elev";
+import { FlexTime } from "../models/Employee";
 
 export const flexTimeFromString = (flex: string): FlexTime => {
   let [hoursString, minutesString] = [flex.split(':')[0], flex.split(':')[1]];
@@ -10,7 +10,7 @@ export const flexTimeFromString = (flex: string): FlexTime => {
   }
 
   const [hoursPartial, minutesPartial] = [parseInt(hoursString), parseInt(minutesString)]
-  const secondsTotal = hoursPartial * minutesPartial * 60**3;
+  const secondsTotal = (hoursPartial * 60 + minutesPartial) * 60;
   
   return {
     secondsTotal,

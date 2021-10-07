@@ -10,5 +10,11 @@
         "**/.DS_Store": true,
         "**/Thumbs.db": true,
         "node_modules/": true,
+    },
+    "[html]": {
+        "editor.minimap.enabled": true,
+    },
+    "[json]": {
+        "editor.minimap.enabled": true,
     }
 }

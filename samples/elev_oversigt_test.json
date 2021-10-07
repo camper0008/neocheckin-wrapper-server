@@ -4,7 +4,7 @@
     "department": "IT-SUPPORT",
     "name": "Alexander Victor Foli",
     "flex": {
-      "secondsTotal": 6912000,
+      "secondsTotal": 8160,
       "hoursPartial": 2,
       "minutesPartial": 16,
       "isNegative": true
@@ -36,7 +36,7 @@
     "department": "IT-SUPPORT",
     "name": "Aske Pedersen Rosendahl",
     "flex": {
-      "secondsTotal": 19008000,
+      "secondsTotal": 9840,
       "hoursPartial": 2,
       "minutesPartial": 44,
       "isNegative": true
@@ -52,7 +52,7 @@
     "department": "DATATEKNIKER PROGRAMMERING",
     "name": "+Christoffer Møller Petersen",
     "flex": {
-      "secondsTotal": 0,
+      "secondsTotal": 18000,
       "hoursPartial": 5,
       "minutesPartial": 0,
       "isNegative": false
@@ -68,7 +68,7 @@
     "department": "DATATEKNIKER PROGRAMMERING",
     "name": "+Michael Lechscheidt Christensen",
     "flex": {
-      "secondsTotal": 235872000,
+      "secondsTotal": 78720,
       "hoursPartial": 21,
       "minutesPartial": 52,
       "isNegative": true
@@ -84,7 +84,7 @@
     "department": "DATATEKNIKER PROGRAMMERING",
     "name": "Alexander Bang",
     "flex": {
-      "secondsTotal": 5184000,
+      "secondsTotal": 11280,
       "hoursPartial": 3,
       "minutesPartial": 8,
       "isNegative": true
@@ -100,7 +100,7 @@
     "department": "DATATEKNIKER INFRASTRUKTUR",
     "name": "+Jeppe Bach Motzkus",
     "flex": {
-      "secondsTotal": 106272000,
+      "secondsTotal": 45660,
       "hoursPartial": 12,
       "minutesPartial": 41,
       "isNegative": false
@@ -116,7 +116,7 @@
     "department": "DATATEKNIKER INFRASTRUKTUR",
     "name": "+Viktor Primdal Toft",
     "flex": {
-      "secondsTotal": 1728000,
+      "secondsTotal": 14520,
       "hoursPartial": 4,
       "minutesPartial": 2,
       "isNegative": false
@@ -132,7 +132,7 @@
     "department": "DATATEKNIKER INFRASTRUKTUR",
     "name": "Alexander Dohrmann Rasmussen",
     "flex": {
-      "secondsTotal": 4752000,
+      "secondsTotal": 4920,
       "hoursPartial": 1,
       "minutesPartial": 22,
       "isNegative": true

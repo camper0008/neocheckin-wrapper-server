@@ -1,11 +1,19 @@
 import axios from "axios";
-import { readFile, writeFile } from "fs/promises";
-import https from "https";
-import { Elev, FlexTime } from "../models/Elev";
-import { flexTimeFromString } from "../utils/flexTime";
+import { Agent as HttpsAgent } from "https";
+import { Employee, FlexTime, Vacation } from "../models/Employee";
+import { flexTimeFromString } from "../utils/timeUtils";
 import { clearSpaceBefore, clearAttributes, getForms, getRows } from "../utils/htmlScrapers";
+import { readFile, writeFile } from "fs/promises";
 
-export const getFormName = (row: string)     => row.match(/(?:<b>(?<name>.*?)<\/b>)/s)?.groups ?? {};
+export interface ElevOversigtEmployeeScrape {
+  id: number,
+  name: string,
+  department: string,
+  flex: FlexTime,
+  vacation: Vacation,
+}
+
+export const getFormName = (row: string) => row.match(/(?:<b>(?<name>.*?)<\/b>)/s)?.groups ?? {};
 
 export const getCells = (row: string) => {
   return row.match(
@@ -30,7 +38,7 @@ export const getElevId = (nonModHtml: string, name: string) => {
   return id;
 }
 
-const getRowDetails = (rows: RegExpMatchArray, students: Elev[], html: string) => {
+const getRowDetails = (rows: RegExpMatchArray, students: ElevOversigtEmployeeScrape[], html: string) => {
   let department: string | null = null;
     for (let j = 0; j < rows.length; ++j) {
       if (j === 0) {
@@ -58,7 +66,7 @@ const getRowDetails = (rows: RegExpMatchArray, students: Elev[], html: string) =
 }
 
 export const scrapeElevOversigt = (html: string) => {
-  const students: Elev[] = [];
+  const students: ElevOversigtEmployeeScrape[] = [];
 
   let htmlMod = clearSpaceBefore(html);
   htmlMod = clearAttributes(htmlMod);
@@ -75,7 +83,7 @@ export const scrapeElevOversigt = (html: string) => {
 export const getElevOversigtHtml = async () => {
   try {
     const result = (await axios.get('https://instrukdb/elev_oversigt.html', {
-      httpsAgent: new https.Agent({ rejectUnauthorized: false })
+      httpsAgent: new HttpsAgent({ rejectUnauthorized: false })
     }));
 
     const data = result.data;
@@ -89,3 +97,9 @@ export const getElevOversigtHtml = async () => {
     console.error(err.toString());
   }
 }
+
+export const makeElevOversigtSampleData = async () => {
+  const html = await readFile('./samples/elev_oversigt_test.html');
+  await writeFile('./samples/elev_oversigt_test.json', JSON.stringify(scrapeElevOversigt(html.toString())));
+}
+

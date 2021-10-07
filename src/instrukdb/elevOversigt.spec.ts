@@ -1,10 +1,10 @@
 import { readFile } from "fs/promises";
-import { Elev } from "../models/Elev";
+import { Employee } from "../models/Employee";
 import { clearAttributes, clearSpaceBefore, getForms, getRows } from "../utils/htmlScrapers";
 import { getCells, getFormName, scrapeElevOversigt } from "./elevOversigt";
 
 const loadHtmlSample = async () => (await readFile('./samples/elev_oversigt_test.html')).toString();
-const loadSampleData = async () => JSON.parse((await readFile('./samples/elev_oversigt_test.json')).toString()) as Elev[];
+const loadSampleData = async () => JSON.parse((await readFile('./samples/elev_oversigt_test.json')).toString()) as Employee[];
 
 const getRowHtml = async () => {
   let html = await loadHtmlSample();

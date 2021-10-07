@@ -1,4 +1,4 @@
-import { Elev } from "../models/Elev";
+import { Employee } from "../models/Employee";
 
 export enum OperationStatus {
   Ok,
@@ -17,8 +17,8 @@ export interface SingleOperationResult <Data>{
 
 export abstract class Database {
 
-  public abstract isElevIdValid: (elev: Elev) => Promise<SingleOperationResult<boolean>>;
-  public abstract addElev: (elev: Elev) => Promise<SingleOperationResult<Elev>>;
-  public abstract getElev: (id: number) => Promise<SingleOperationResult<Elev>>;
+  public abstract isElevIdValid: (elev: Employee) => Promise<SingleOperationResult<boolean>>;
+  public abstract addElev: (elev: Employee) => Promise<SingleOperationResult<Employee>>;
+  public abstract getElev: (id: number) => Promise<SingleOperationResult<Employee>>;
 
 }
