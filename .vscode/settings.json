@@ -12,7 +12,9 @@
         "node_modules/": true,
     },
     "[html]": {
-        // "editor.suggest.insertMode": "replace",
+        "editor.minimap.enabled": true,
+    },
+    "[json]": {
         "editor.minimap.enabled": true,
     }
 }
