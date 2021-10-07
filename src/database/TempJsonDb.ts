@@ -1,10 +1,14 @@
 import { readFile, writeFile } from "fs/promises";
-import { Elev } from "../models/Elev";
+import { Employee } from "../models/Employee";
 import { Database, OperationStatus, SingleOperationResult } from "./Database";
 
 const OBJECT_ID_CHARS = 'abcdefghijklmnopqrtstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890';
 const generateObjectId = (length: number = 64, chars = OBJECT_ID_CHARS) =>
   ' '.repeat(length).split('').map(_ => chars.charAt(Math.random() * chars.length)).join('');
+
+enum DbCollections {
+  EMPLOYEES = 'employees'
+}
 
 export class TempJsonDb extends Database {
   
@@ -47,10 +51,10 @@ export class TempJsonDb extends Database {
     this.data = [];
   }
 
-  public isElevIdValid = async (elev: Elev): Promise<SingleOperationResult<boolean>> => {
+  public isElevIdValid = async (elev: Employee): Promise<SingleOperationResult<boolean>> => {
     try {
       await this.read();
-      const Elever = this.getCollection<Elev>('elever');
+      const Elever = this.getCollection<Employee>(DbCollections.EMPLOYEES);
       for(let i in Elever)
         if (Elever[i].id === elev.id)
           return {status: OperationStatus.Ok, data: false};
@@ -62,10 +66,10 @@ export class TempJsonDb extends Database {
     }
   }
 
-  public addElev = async (elev: Elev): Promise<SingleOperationResult<{_id: string} & Elev>> => {
+  public addElev = async (elev: Employee): Promise<SingleOperationResult<{_id: string} & Employee>> => {
     try {
       await this.read();
-      const Elever = this.getCollection<Elev>('elever');
+      const Elever = this.getCollection<Employee>(DbCollections.EMPLOYEES);
       const _id = generateObjectId();
       const toInsert = {_id, ...elev};
       Elever.push(toInsert);
@@ -81,7 +85,7 @@ export class TempJsonDb extends Database {
   public getElev = async (id: number) => {
     try {
       await this.read();
-      const Elever = this.getCollection<Elev>('elever');
+      const Elever = this.getCollection<Employee>(DbCollections.EMPLOYEES);
       for (let i in Elever)
         if (Elever[i].id === id)
           return {status: OperationStatus.Ok, data: Elever[i]};

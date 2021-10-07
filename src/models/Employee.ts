@@ -18,7 +18,7 @@ export interface Vacation {
   left: number,
 }
 
-export interface Elev {
+export interface Employee {
   id: number,
   name: string,
   department: string,

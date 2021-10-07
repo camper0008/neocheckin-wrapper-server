@@ -1,8 +1,8 @@
 import { Database, OperationStatus } from "../database/Database";
 import { getElevId } from "../instrukdb/elevOversigt";
-import { Elev } from "../models/Elev";
+import { Employee } from "../models/Employee";
 
-export const addElev = async (database: Database, elev: Elev) => {
+export const addElev = async (database: Database, elev: Employee) => {
   const idValidRes = await database.isElevIdValid(elev);
   if (idValidRes.status !== OperationStatus.Ok)
     throw idValidRes.error || idValidRes.catched;
@@ -21,4 +21,8 @@ export const getElev = async (database: Database, elevId: number) => {
       throw new Error('Elev not found');
     else
       throw getElevRes.error || getElevRes.catched;
+}
+
+export const updateElev = async (database: Database, elevId: number, data: Employee) => {
+
 }

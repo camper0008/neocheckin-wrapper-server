@@ -1,4 +1,4 @@
-import { FlexTime } from "../models/Elev";
+import { FlexTime } from "../models/Employee";
 
 export const flexTimeFromString = (flex: string): FlexTime => {
   let [hoursString, minutesString] = [flex.split(':')[0], flex.split(':')[1]];

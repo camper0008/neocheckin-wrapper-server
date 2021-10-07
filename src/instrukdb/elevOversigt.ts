@@ -1,11 +1,11 @@
 import axios from "axios";
 import { Agent as HttpsAgent } from "https";
-import { Elev, FlexTime, Vacation } from "../models/Elev";
+import { Employee, FlexTime, Vacation } from "../models/Employee";
 import { flexTimeFromString } from "../utils/timeUtils";
 import { clearSpaceBefore, clearAttributes, getForms, getRows } from "../utils/htmlScrapers";
 import { readFile, writeFile } from "fs/promises";
 
-export interface ElevOversigtElevInfo {
+export interface ElevOversigtEmployeeScrape {
   id: number,
   name: string,
   department: string,
@@ -38,7 +38,7 @@ export const getElevId = (nonModHtml: string, name: string) => {
   return id;
 }
 
-const getRowDetails = (rows: RegExpMatchArray, students: ElevOversigtElevInfo[], html: string) => {
+const getRowDetails = (rows: RegExpMatchArray, students: ElevOversigtEmployeeScrape[], html: string) => {
   let department: string | null = null;
     for (let j = 0; j < rows.length; ++j) {
       if (j === 0) {
@@ -66,7 +66,7 @@ const getRowDetails = (rows: RegExpMatchArray, students: ElevOversigtElevInfo[],
 }
 
 export const scrapeElevOversigt = (html: string) => {
-  const students: ElevOversigtElevInfo[] = [];
+  const students: ElevOversigtEmployeeScrape[] = [];
 
   let htmlMod = clearSpaceBefore(html);
   htmlMod = clearAttributes(htmlMod);
