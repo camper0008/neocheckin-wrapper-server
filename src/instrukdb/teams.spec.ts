@@ -1,5 +1,5 @@
 import { readFile } from 'fs/promises';
-import { getTeamInfoFromTable, getTeamsHtml, getTeamTableHtml, scrapeTeams } from './teams'
+import { getTeamInfoFromTable, getTeamsHtml, getTeamTableHtml, scrapeTeams, getEmployeesFromTable } from './teams'
 
 const readSampleTeamsProHtml = async () => {
   const html = (await readFile('./samples/teams_pro_test.html')).toString();
@@ -20,6 +20,11 @@ describe('teams', () => {
   it('should return "Team 21"', async () => {
     const teamTable = getTeamTableHtml(await readSampleTeamsProHtml())[0];
     expect(getTeamInfoFromTable(teamTable).name).toBe('Team 21');
+  });
+
+  it('should return "Kevin"', async () => {
+    const teamTable = getTeamTableHtml(await readSampleTeamsProHtml())[0];
+    expect(getEmployeesFromTable(teamTable)[0].nameShort).toBe('Kevin');
   });
 
 });
