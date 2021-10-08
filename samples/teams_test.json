@@ -1,0 +1,4258 @@
+[
+  {
+    "department": "Itsupporter",
+    "team": {
+      "id": 1,
+      "name": "I.S.",
+      "location": "lok: 304",
+      "instructor": "bjra",
+      "instructorMail": "bjra@mercantec.dk"
+    },
+    "employee": {
+      "id": 1003,
+      "bgColor": "#008000",
+      "nameShort": "Christian",
+      "nameLong": "Christian Nordam Larsen",
+      "flexColor": "#90EE90",
+      "flex": {
+        "secondsTotal": 9420,
+        "hoursPartial": 2,
+        "minutesPartial": 37,
+        "isNegative": false,
+        "srcString": "02:37"
+      },
+      "projectName": "",
+      "workTimeString": "Ikke logget ind",
+      "locationLong": "it2h2004aug",
+      "locationShort": "it2h2004au."
+    }
+  },
+  {
+    "department": "Itsupporter",
+    "team": {
+      "id": 1,
+      "name": "I.S.",
+      "location": "lok: 304",
+      "instructor": "bjra",
+      "instructorMail": "bjra@mercantec.dk"
+    },
+    "employee": {
+      "id": 748,
+      "bgColor": "#FF0000",
+      "nameShort": "Rasmus",
+      "nameLong": "Rasmus Pedersen",
+      "flexColor": "#90EE90",
+      "flex": {
+        "secondsTotal": 21660,
+        "hoursPartial": 6,
+        "minutesPartial": 1,
+        "isNegative": false,
+        "srcString": "06:01"
+      },
+      "projectName": "",
+      "workTimeString": "Ikke logget ind",
+      "locationLong": "syg",
+      "locationShort": "syg"
+    }
+  },
+  {
+    "department": "Itsupporter",
+    "team": {
+      "id": 1,
+      "name": "I.S.",
+      "location": "lok: 304",
+      "instructor": "bjra",
+      "instructorMail": "bjra@mercantec.dk"
+    },
+    "employee": {
+      "id": 686,
+      "bgColor": "#0080FF",
+      "nameShort": "Kasper",
+      "nameLong": "Kasper Skriver Vorre",
+      "flexColor": "#90EE90",
+      "flex": {
+        "secondsTotal": 4680,
+        "hoursPartial": 1,
+        "minutesPartial": 18,
+        "isNegative": false,
+        "srcString": "01:18"
+      },
+      "projectName": "",
+      "workTimeString": "07:53-",
+      "locationLong": "Skole praktik",
+      "locationShort": "Skole prak."
+    }
+  },
+  {
+    "department": "Itsupporter",
+    "team": {
+      "id": 1,
+      "name": "I.S.",
+      "location": "lok: 304",
+      "instructor": "bjra",
+      "instructorMail": "bjra@mercantec.dk"
+    },
+    "employee": {
+      "id": 704,
+      "bgColor": "#008000",
+      "nameShort": "Victor",
+      "nameLong": "Victor Møller Pedersen",
+      "flexColor": "red",
+      "flex": {
+        "secondsTotal": 137460,
+        "hoursPartial": 38,
+        "minutesPartial": 11,
+        "isNegative": false,
+        "srcString": "38:11"
+      },
+      "projectName": "",
+      "workTimeString": "Ikke logget ind",
+      "locationLong": "it3h2001sep",
+      "locationShort": "it3h2001se."
+    }
+  },
+  {
+    "department": "Itsupporter",
+    "team": {
+      "id": 1,
+      "name": "I.S.",
+      "location": "lok: 304",
+      "instructor": "bjra",
+      "instructorMail": "bjra@mercantec.dk"
+    },
+    "employee": {
+      "id": 1058,
+      "bgColor": "#0080FF",
+      "nameShort": "Mohamad",
+      "nameLong": "Mohamad Abdulaziz",
+      "flexColor": "#90EE90",
+      "flex": {
+        "secondsTotal": 9300,
+        "hoursPartial": 2,
+        "minutesPartial": 35,
+        "isNegative": false,
+        "srcString": "02:35"
+      },
+      "projectName": "",
+      "workTimeString": "08:04-",
+      "locationLong": "Skole praktik",
+      "locationShort": "Skole prak."
+    }
+  },
+  {
+    "department": "Itsupporter",
+    "team": {
+      "id": 1,
+      "name": "I.S.",
+      "location": "lok: 304",
+      "instructor": "bjra",
+      "instructorMail": "bjra@mercantec.dk"
+    },
+    "employee": {
+      "id": 1057,
+      "bgColor": "#DF7401",
+      "nameShort": "Maksim",
+      "nameLong": "Maksim Shvets",
+      "flexColor": "#90EE90",
+      "flex": {
+        "secondsTotal": 31140,
+        "hoursPartial": 8,
+        "minutesPartial": 39,
+        "isNegative": false,
+        "srcString": "08:39"
+      },
+      "projectName": "",
+      "workTimeString": "Ikke logget ind",
+      "locationLong": "afspadsering",
+      "locationShort": "afspadseri."
+    }
+  },
+  {
+    "department": "Itsupporter",
+    "team": {
+      "id": 1,
+      "name": "I.S.",
+      "location": "lok: 304",
+      "instructor": "bjra",
+      "instructorMail": "bjra@mercantec.dk"
+    },
+    "employee": {
+      "id": 1056,
+      "bgColor": "#0080FF",
+      "nameShort": "Jacky",
+      "nameLong": "Jacky Hoang",
+      "flexColor": "red",
+      "flex": {
+        "secondsTotal": 26940,
+        "hoursPartial": 7,
+        "minutesPartial": 29,
+        "isNegative": false,
+        "srcString": "07:29"
+      },
+      "projectName": "",
+      "workTimeString": "08:12-",
+      "locationLong": "Skole praktik",
+      "locationShort": "Skole prak."
+    }
+  },
+  {
+    "department": "Itsupporter",
+    "team": {
+      "id": 1,
+      "name": "I.S.",
+      "location": "lok: 304",
+      "instructor": "bjra",
+      "instructorMail": "bjra@mercantec.dk"
+    },
+    "employee": {
+      "id": 1031,
+      "bgColor": "#008000",
+      "nameShort": "Rubin",
+      "nameLong": "Rubin Feldt Sørensen",
+      "flexColor": "red",
+      "flex": {
+        "secondsTotal": 23460,
+        "hoursPartial": 6,
+        "minutesPartial": 31,
+        "isNegative": false,
+        "srcString": "06:31"
+      },
+      "projectName": "",
+      "workTimeString": "Ikke logget ind",
+      "locationLong": "it3h2001sep",
+      "locationShort": "it3h2001se."
+    }
+  },
+  {
+    "department": "Itsupporter",
+    "team": {
+      "id": 1,
+      "name": "I.S.",
+      "location": "lok: 304",
+      "instructor": "bjra",
+      "instructorMail": "bjra@mercantec.dk"
+    },
+    "employee": {
+      "id": 753,
+      "bgColor": "#DF7401",
+      "nameShort": "Tommy",
+      "nameLong": "Tommy Martin Diedrichsen Nissen",
+      "flexColor": "#90EE90",
+      "flex": {
+        "secondsTotal": 258420,
+        "hoursPartial": 71,
+        "minutesPartial": 47,
+        "isNegative": false,
+        "srcString": "71:47"
+      },
+      "projectName": "",
+      "workTimeString": "Ikke logget ind",
+      "locationLong": "afspadsering",
+      "locationShort": "afspadseri."
+    }
+  },
+  {
+    "department": "Itsupporter",
+    "team": {
+      "id": 1,
+      "name": "I.S.",
+      "location": "lok: 304",
+      "instructor": "bjra",
+      "instructorMail": "bjra@mercantec.dk"
+    },
+    "employee": {
+      "id": 1044,
+      "bgColor": "#0080FF",
+      "nameShort": "Rodi",
+      "nameLong": "Rodi Abdulhannan",
+      "flexColor": "#90EE90",
+      "flex": {
+        "secondsTotal": 3960,
+        "hoursPartial": 1,
+        "minutesPartial": 6,
+        "isNegative": false,
+        "srcString": "01:06"
+      },
+      "projectName": "",
+      "workTimeString": "08:23-",
+      "locationLong": "Skole praktik",
+      "locationShort": "Skole prak."
+    }
+  },
+  {
+    "department": "Itsupporter",
+    "team": {
+      "id": 1,
+      "name": "I.S.",
+      "location": "lok: 304",
+      "instructor": "bjra",
+      "instructorMail": "bjra@mercantec.dk"
+    },
+    "employee": {
+      "id": 1053,
+      "bgColor": "#008000",
+      "nameShort": "Muti",
+      "nameLong": "Muti Radwan Al hariri",
+      "flexColor": "red",
+      "flex": {
+        "secondsTotal": 65100,
+        "hoursPartial": 18,
+        "minutesPartial": 5,
+        "isNegative": false,
+        "srcString": "18:05"
+      },
+      "projectName": "",
+      "workTimeString": "Ikke logget ind",
+      "locationLong": "it1h2103aug",
+      "locationShort": "it1h2103au."
+    }
+  },
+  {
+    "department": "Itsupporter",
+    "team": {
+      "id": 1,
+      "name": "I.S.",
+      "location": "lok: 304",
+      "instructor": "bjra",
+      "instructorMail": "bjra@mercantec.dk"
+    },
+    "employee": {
+      "id": 1026,
+      "bgColor": "#008000",
+      "nameShort": "Jacob",
+      "nameLong": "Jacob Zakarias Karecki",
+      "flexColor": "red",
+      "flex": {
+        "secondsTotal": 1140,
+        "hoursPartial": 0,
+        "minutesPartial": 19,
+        "isNegative": false,
+        "srcString": "00:19"
+      },
+      "projectName": "",
+      "workTimeString": "Ikke logget ind",
+      "locationLong": "dt2h2002infr",
+      "locationShort": "dt2h2002in."
+    }
+  },
+  {
+    "department": "Itsupporter",
+    "team": {
+      "id": 1,
+      "name": "I.S.",
+      "location": "lok: 304",
+      "instructor": "bjra",
+      "instructorMail": "bjra@mercantec.dk"
+    },
+    "employee": {
+      "id": 1028,
+      "bgColor": "#0080FF",
+      "nameShort": "Marcus",
+      "nameLong": "Marcus Dalsgaard Laursen",
+      "flexColor": "red",
+      "flex": {
+        "secondsTotal": 28260,
+        "hoursPartial": 7,
+        "minutesPartial": 51,
+        "isNegative": false,
+        "srcString": "07:51"
+      },
+      "projectName": "",
+      "workTimeString": "07:56-",
+      "locationLong": "Skole praktik",
+      "locationShort": "Skole prak."
+    }
+  },
+  {
+    "department": "Itsupporter",
+    "team": {
+      "id": 1,
+      "name": "I.S.",
+      "location": "lok: 304",
+      "instructor": "bjra",
+      "instructorMail": "bjra@mercantec.dk"
+    },
+    "employee": {
+      "id": 1029,
+      "bgColor": "#0080FF",
+      "nameShort": "Mikkel",
+      "nameLong": "Mikkel Rahbek",
+      "flexColor": "#90EE90",
+      "flex": {
+        "secondsTotal": 9720,
+        "hoursPartial": 2,
+        "minutesPartial": 42,
+        "isNegative": false,
+        "srcString": "02:42"
+      },
+      "projectName": "",
+      "workTimeString": "07:58-",
+      "locationLong": "Skole praktik",
+      "locationShort": "Skole prak."
+    }
+  },
+  {
+    "department": "Itsupporter",
+    "team": {
+      "id": 1,
+      "name": "I.S.",
+      "location": "lok: 304",
+      "instructor": "bjra",
+      "instructorMail": "bjra@mercantec.dk"
+    },
+    "employee": {
+      "id": 1030,
+      "bgColor": "#0080FF",
+      "nameShort": "Noah",
+      "nameLong": "Noah Steen Sangill",
+      "flexColor": "#90EE90",
+      "flex": {
+        "secondsTotal": 12900,
+        "hoursPartial": 3,
+        "minutesPartial": 35,
+        "isNegative": false,
+        "srcString": "03:35"
+      },
+      "projectName": "",
+      "workTimeString": "08:04-",
+      "locationLong": "Skole praktik",
+      "locationShort": "Skole prak."
+    }
+  },
+  {
+    "department": "Itsupporter",
+    "team": {
+      "id": 1,
+      "name": "I.S.",
+      "location": "lok: 304",
+      "instructor": "bjra",
+      "instructorMail": "bjra@mercantec.dk"
+    },
+    "employee": {
+      "id": 1022,
+      "bgColor": "#008000",
+      "nameShort": "Nanna",
+      "nameLong": "Nanna Holm Pedersen",
+      "flexColor": "#90EE90",
+      "flex": {
+        "secondsTotal": 23760,
+        "hoursPartial": 6,
+        "minutesPartial": 36,
+        "isNegative": false,
+        "srcString": "06:36"
+      },
+      "projectName": "",
+      "workTimeString": "Ikke logget ind",
+      "locationLong": "it2h2004aug",
+      "locationShort": "it2h2004au."
+    }
+  },
+  {
+    "department": "Itsupporter",
+    "team": {
+      "id": 1,
+      "name": "I.S.",
+      "location": "lok: 304",
+      "instructor": "bjra",
+      "instructorMail": "bjra@mercantec.dk"
+    },
+    "employee": {
+      "id": 1018,
+      "bgColor": "#008000",
+      "nameShort": "Lasse",
+      "nameLong": "Lasse Thorkild Bjerre Sandvig Larsen",
+      "flexColor": "#90EE90",
+      "flex": {
+        "secondsTotal": 13620,
+        "hoursPartial": 3,
+        "minutesPartial": 47,
+        "isNegative": false,
+        "srcString": "03:47"
+      },
+      "projectName": "",
+      "workTimeString": "Ikke logget ind",
+      "locationLong": "it2h2004aug",
+      "locationShort": "it2h2004au."
+    }
+  },
+  {
+    "department": "Itsupporter",
+    "team": {
+      "id": 1,
+      "name": "I.S.",
+      "location": "lok: 304",
+      "instructor": "bjra",
+      "instructorMail": "bjra@mercantec.dk"
+    },
+    "employee": {
+      "id": 1004,
+      "bgColor": "#008000",
+      "nameShort": "Emil",
+      "nameLong": "Emil Blaaberg Sørensen",
+      "flexColor": "#90EE90",
+      "flex": {
+        "secondsTotal": 2220,
+        "hoursPartial": 0,
+        "minutesPartial": 37,
+        "isNegative": false,
+        "srcString": "00:37"
+      },
+      "projectName": "",
+      "workTimeString": "Ikke logget ind",
+      "locationLong": "dt2h2002infr",
+      "locationShort": "dt2h2002in."
+    }
+  },
+  {
+    "department": "Itsupporter",
+    "team": {
+      "id": 3,
+      "name": "D.H.",
+      "location": "lok: 307",
+      "instructor": "janj",
+      "instructorMail": "janj@mercantec.dk"
+    },
+    "employee": {
+      "id": 1021,
+      "bgColor": "#008000",
+      "nameShort": "Mhd",
+      "nameLong": "Mhd Mouatasem Alshaar",
+      "flexColor": "#90EE90",
+      "flex": {
+        "secondsTotal": 69000,
+        "hoursPartial": 19,
+        "minutesPartial": 10,
+        "isNegative": false,
+        "srcString": "19:10"
+      },
+      "projectName": "netværk (2)",
+      "workTimeString": "Ikke logget ind",
+      "locationLong": "it2h2004aug",
+      "locationShort": "it2h2004au."
+    }
+  },
+  {
+    "department": "Itsupporter",
+    "team": {
+      "id": 3,
+      "name": "D.H.",
+      "location": "lok: 307",
+      "instructor": "janj",
+      "instructorMail": "janj@mercantec.dk"
+    },
+    "employee": {
+      "id": 744,
+      "bgColor": "#008000",
+      "nameShort": "Joe",
+      "nameLong": "Joe Ulloriaq Hoffmann",
+      "flexColor": "red",
+      "flex": {
+        "secondsTotal": 21840,
+        "hoursPartial": 6,
+        "minutesPartial": 4,
+        "isNegative": false,
+        "srcString": "06:04"
+      },
+      "projectName": "",
+      "workTimeString": "Ikke logget ind",
+      "locationLong": "it2h2004aug",
+      "locationShort": "it2h2004au."
+    }
+  },
+  {
+    "department": "Itsupporter",
+    "team": {
+      "id": 3,
+      "name": "D.H.",
+      "location": "lok: 307",
+      "instructor": "janj",
+      "instructorMail": "janj@mercantec.dk"
+    },
+    "employee": {
+      "id": 1094,
+      "bgColor": "#008000",
+      "nameShort": "Daniel",
+      "nameLong": "Daniel Kammann Tellquist Jensen",
+      "flexColor": "red",
+      "flex": {
+        "secondsTotal": 28740,
+        "hoursPartial": 7,
+        "minutesPartial": 59,
+        "isNegative": false,
+        "srcString": "07:59"
+      },
+      "projectName": "",
+      "workTimeString": "Ikke logget ind",
+      "locationLong": "it3h2001sep",
+      "locationShort": "it3h2001se."
+    }
+  },
+  {
+    "department": "Itsupporter",
+    "team": {
+      "id": 3,
+      "name": "D.H.",
+      "location": "lok: 307",
+      "instructor": "janj",
+      "instructorMail": "janj@mercantec.dk"
+    },
+    "employee": {
+      "id": 1088,
+      "bgColor": "#008000",
+      "nameShort": "Patrick",
+      "nameLong": "Patrick Bruhn Garst",
+      "flexColor": "#90EE90",
+      "flex": {
+        "secondsTotal": 0,
+        "hoursPartial": 0,
+        "minutesPartial": 0,
+        "isNegative": false,
+        "srcString": "00:00"
+      },
+      "projectName": "",
+      "workTimeString": "Mangler kort: 0",
+      "locationLong": "it1h2103aug",
+      "locationShort": "it1h2103au."
+    }
+  },
+  {
+    "department": "Itsupporter",
+    "team": {
+      "id": 3,
+      "name": "D.H.",
+      "location": "lok: 307",
+      "instructor": "janj",
+      "instructorMail": "janj@mercantec.dk"
+    },
+    "employee": {
+      "id": 1087,
+      "bgColor": "#0080FF",
+      "nameShort": "Kryspin",
+      "nameLong": "Kryspin Stanislaw Nowak",
+      "flexColor": "#90EE90",
+      "flex": {
+        "secondsTotal": 16140,
+        "hoursPartial": 4,
+        "minutesPartial": 29,
+        "isNegative": false,
+        "srcString": "04:29"
+      },
+      "projectName": "",
+      "workTimeString": "08:47-",
+      "locationLong": "Skole praktik",
+      "locationShort": "Skole prak."
+    }
+  },
+  {
+    "department": "Itsupporter",
+    "team": {
+      "id": 3,
+      "name": "D.H.",
+      "location": "lok: 307",
+      "instructor": "janj",
+      "instructorMail": "janj@mercantec.dk"
+    },
+    "employee": {
+      "id": 1086,
+      "bgColor": "#008000",
+      "nameShort": "Ronni",
+      "nameLong": "Ronni Røjkjær Sørensen",
+      "flexColor": "#90EE90",
+      "flex": {
+        "secondsTotal": 0,
+        "hoursPartial": 0,
+        "minutesPartial": 0,
+        "isNegative": false,
+        "srcString": "00:00"
+      },
+      "projectName": "",
+      "workTimeString": "Mangler kort: 0",
+      "locationLong": "dt1h2103inf",
+      "locationShort": "dt1h2103in."
+    }
+  },
+  {
+    "department": "Itsupporter",
+    "team": {
+      "id": 3,
+      "name": "D.H.",
+      "location": "lok: 307",
+      "instructor": "janj",
+      "instructorMail": "janj@mercantec.dk"
+    },
+    "employee": {
+      "id": 1085,
+      "bgColor": "#008000",
+      "nameShort": "Mikkel",
+      "nameLong": "Mikkel E. Gjedde-Simonsen",
+      "flexColor": "#90EE90",
+      "flex": {
+        "secondsTotal": 0,
+        "hoursPartial": 0,
+        "minutesPartial": 0,
+        "isNegative": false,
+        "srcString": "00:00"
+      },
+      "projectName": "",
+      "workTimeString": "Mangler kort: 0",
+      "locationLong": "dt1h2103inf",
+      "locationShort": "dt1h2103in."
+    }
+  },
+  {
+    "department": "Itsupporter",
+    "team": {
+      "id": 3,
+      "name": "D.H.",
+      "location": "lok: 307",
+      "instructor": "janj",
+      "instructorMail": "janj@mercantec.dk"
+    },
+    "employee": {
+      "id": 677,
+      "bgColor": "#008000",
+      "nameShort": "Dejwar",
+      "nameLong": "Dejwar Barakat",
+      "flexColor": "#90EE90",
+      "flex": {
+        "secondsTotal": 34740,
+        "hoursPartial": 9,
+        "minutesPartial": 39,
+        "isNegative": false,
+        "srcString": "09:39"
+      },
+      "projectName": "",
+      "workTimeString": "Ikke logget ind",
+      "locationLong": "dt2h2002infr",
+      "locationShort": "dt2h2002in."
+    }
+  },
+  {
+    "department": "Itsupporter",
+    "team": {
+      "id": 3,
+      "name": "D.H.",
+      "location": "lok: 307",
+      "instructor": "janj",
+      "instructorMail": "janj@mercantec.dk"
+    },
+    "employee": {
+      "id": 1023,
+      "bgColor": "#0080FF",
+      "nameShort": "Søren",
+      "nameLong": "Søren Emil Lang Kjær Sørensen",
+      "flexColor": "#90EE90",
+      "flex": {
+        "secondsTotal": 93420,
+        "hoursPartial": 25,
+        "minutesPartial": 57,
+        "isNegative": false,
+        "srcString": "25:57"
+      },
+      "projectName": "",
+      "workTimeString": "08:03-",
+      "locationLong": "Skole praktik",
+      "locationShort": "Skole prak."
+    }
+  },
+  {
+    "department": "Itsupporter",
+    "team": {
+      "id": 3,
+      "name": "D.H.",
+      "location": "lok: 307",
+      "instructor": "janj",
+      "instructorMail": "janj@mercantec.dk"
+    },
+    "employee": {
+      "id": 1019,
+      "bgColor": "#008000",
+      "nameShort": "Majd",
+      "nameLong": "Majd Mansour Hadid",
+      "flexColor": "#90EE90",
+      "flex": {
+        "secondsTotal": 67800,
+        "hoursPartial": 18,
+        "minutesPartial": 50,
+        "isNegative": false,
+        "srcString": "18:50"
+      },
+      "projectName": "linux",
+      "workTimeString": "Ikke logget ind",
+      "locationLong": "it2h2004aug",
+      "locationShort": "it2h2004au."
+    }
+  },
+  {
+    "department": "Itsupporter",
+    "team": {
+      "id": 3,
+      "name": "D.H.",
+      "location": "lok: 307",
+      "instructor": "janj",
+      "instructorMail": "janj@mercantec.dk"
+    },
+    "employee": {
+      "id": 1038,
+      "bgColor": "#008000",
+      "nameShort": "Michael",
+      "nameLong": "Michael Arlington Poulsen",
+      "flexColor": "#90EE90",
+      "flex": {
+        "secondsTotal": 29940,
+        "hoursPartial": 8,
+        "minutesPartial": 19,
+        "isNegative": false,
+        "srcString": "08:19"
+      },
+      "projectName": "",
+      "workTimeString": "Ikke logget ind",
+      "locationLong": "it1h2103aug",
+      "locationShort": "it1h2103au."
+    }
+  },
+  {
+    "department": "Itsupporter",
+    "team": {
+      "id": 3,
+      "name": "D.H.",
+      "location": "lok: 307",
+      "instructor": "janj",
+      "instructorMail": "janj@mercantec.dk"
+    },
+    "employee": {
+      "id": 1049,
+      "bgColor": "#008000",
+      "nameShort": "Rasha",
+      "nameLong": "Rasha Mohammad Mohammad",
+      "flexColor": "#90EE90",
+      "flex": {
+        "secondsTotal": 4440,
+        "hoursPartial": 1,
+        "minutesPartial": 14,
+        "isNegative": false,
+        "srcString": "01:14"
+      },
+      "projectName": "",
+      "workTimeString": "Ikke logget ind",
+      "locationLong": "it1h2103aug",
+      "locationShort": "it1h2103au."
+    }
+  },
+  {
+    "department": "Itsupporter",
+    "team": {
+      "id": 3,
+      "name": "D.H.",
+      "location": "lok: 307",
+      "instructor": "janj",
+      "instructorMail": "janj@mercantec.dk"
+    },
+    "employee": {
+      "id": 1081,
+      "bgColor": "#0080FF",
+      "nameShort": "Sofus",
+      "nameLong": "Sofus Sigaard Poulsen",
+      "flexColor": "#90EE90",
+      "flex": {
+        "secondsTotal": 116400,
+        "hoursPartial": 32,
+        "minutesPartial": 20,
+        "isNegative": false,
+        "srcString": "32:20"
+      },
+      "projectName": "Raspberry pi",
+      "workTimeString": "08:01-",
+      "locationLong": "Skole praktik",
+      "locationShort": "Skole prak."
+    }
+  },
+  {
+    "department": "Itsupporter",
+    "team": {
+      "id": 3,
+      "name": "D.H.",
+      "location": "lok: 307",
+      "instructor": "janj",
+      "instructorMail": "janj@mercantec.dk"
+    },
+    "employee": {
+      "id": 1082,
+      "bgColor": "#0080FF",
+      "nameShort": "Kornelius",
+      "nameLong": "Kornelius Salling",
+      "flexColor": "#90EE90",
+      "flex": {
+        "secondsTotal": 6000,
+        "hoursPartial": 1,
+        "minutesPartial": 40,
+        "isNegative": false,
+        "srcString": "01:40"
+      },
+      "projectName": "Raspberry pi",
+      "workTimeString": "07:46-",
+      "locationLong": "Skole praktik",
+      "locationShort": "Skole prak."
+    }
+  },
+  {
+    "department": "Itsupporter",
+    "team": {
+      "id": 3,
+      "name": "D.H.",
+      "location": "lok: 307",
+      "instructor": "janj",
+      "instructorMail": "janj@mercantec.dk"
+    },
+    "employee": {
+      "id": 1083,
+      "bgColor": "#0080FF",
+      "nameShort": "Morten",
+      "nameLong": "Morten Toft Hansen",
+      "flexColor": "#90EE90",
+      "flex": {
+        "secondsTotal": 107820,
+        "hoursPartial": 29,
+        "minutesPartial": 57,
+        "isNegative": false,
+        "srcString": "29:57"
+      },
+      "projectName": "Intro Rasberry P",
+      "workTimeString": "07:52-",
+      "locationLong": "Skole praktik",
+      "locationShort": "Skole prak."
+    }
+  },
+  {
+    "department": "Itsupporter",
+    "team": {
+      "id": 3,
+      "name": "D.H.",
+      "location": "lok: 307",
+      "instructor": "janj",
+      "instructorMail": "janj@mercantec.dk"
+    },
+    "employee": {
+      "id": 1013,
+      "bgColor": "#0080FF",
+      "nameShort": "Daniel",
+      "nameLong": "Daniel Boddum",
+      "flexColor": "#90EE90",
+      "flex": {
+        "secondsTotal": 35100,
+        "hoursPartial": 9,
+        "minutesPartial": 45,
+        "isNegative": false,
+        "srcString": "09:45"
+      },
+      "projectName": "",
+      "workTimeString": "08:00-",
+      "locationLong": "Skole praktik",
+      "locationShort": "Skole prak."
+    }
+  },
+  {
+    "department": "Itsupporter",
+    "team": {
+      "id": 3,
+      "name": "D.H.",
+      "location": "lok: 307",
+      "instructor": "janj",
+      "instructorMail": "janj@mercantec.dk"
+    },
+    "employee": {
+      "id": 1010,
+      "bgColor": "#008000",
+      "nameShort": "Victor",
+      "nameLong": "Victor Sølager Thomsen",
+      "flexColor": "#90EE90",
+      "flex": {
+        "secondsTotal": 25440,
+        "hoursPartial": 7,
+        "minutesPartial": 4,
+        "isNegative": false,
+        "srcString": "07:04"
+      },
+      "projectName": "",
+      "workTimeString": "Ikke logget ind",
+      "locationLong": "dt2h2002infr",
+      "locationShort": "dt2h2002in."
+    }
+  },
+  {
+    "department": "Itsupporter",
+    "team": {
+      "id": 3,
+      "name": "D.H.",
+      "location": "lok: 307",
+      "instructor": "janj",
+      "instructorMail": "janj@mercantec.dk"
+    },
+    "employee": {
+      "id": 1009,
+      "bgColor": "#008000",
+      "nameShort": "Sander",
+      "nameLong": "Sander Beyer Fuglevig Wisthus",
+      "flexColor": "#90EE90",
+      "flex": {
+        "secondsTotal": 49560,
+        "hoursPartial": 13,
+        "minutesPartial": 46,
+        "isNegative": false,
+        "srcString": "13:46"
+      },
+      "projectName": "",
+      "workTimeString": "Ikke logget ind",
+      "locationLong": "dt2h2002infr",
+      "locationShort": "dt2h2002in."
+    }
+  },
+  {
+    "department": "Itsupporter",
+    "team": {
+      "id": 3,
+      "name": "D.H.",
+      "location": "lok: 307",
+      "instructor": "janj",
+      "instructorMail": "janj@mercantec.dk"
+    },
+    "employee": {
+      "id": 1006,
+      "bgColor": "#008000",
+      "nameShort": "Kennet",
+      "nameLong": "Kennet Lindegaard Pedersen",
+      "flexColor": "#90EE90",
+      "flex": {
+        "secondsTotal": 20160,
+        "hoursPartial": 5,
+        "minutesPartial": 36,
+        "isNegative": false,
+        "srcString": "05:36"
+      },
+      "projectName": "Virtual Maskiner",
+      "workTimeString": "Ikke logget ind",
+      "locationLong": "dtEUX2h19XNinf",
+      "locationShort": "dtEUX2h19X."
+    }
+  },
+  {
+    "department": "Itsupporter",
+    "team": {
+      "id": 7,
+      "name": "E.V.",
+      "location": "lok: 301",
+      "instructor": "meha",
+      "instructorMail": "meha@mercantec.dk"
+    },
+    "employee": {
+      "id": 741,
+      "bgColor": "#0080FF",
+      "nameShort": "Emil",
+      "nameLong": "Emil Rønlev",
+      "flexColor": "#90EE90",
+      "flex": {
+        "secondsTotal": 19320,
+        "hoursPartial": 5,
+        "minutesPartial": 22,
+        "isNegative": false,
+        "srcString": "05:22"
+      },
+      "projectName": "",
+      "workTimeString": "08:59-",
+      "locationLong": "Skole praktik",
+      "locationShort": "Skole prak."
+    }
+  },
+  {
+    "department": "Itsupporter",
+    "team": {
+      "id": 7,
+      "name": "E.V.",
+      "location": "lok: 301",
+      "instructor": "meha",
+      "instructorMail": "meha@mercantec.dk"
+    },
+    "employee": {
+      "id": 721,
+      "bgColor": "#DF7401",
+      "nameShort": "Mikkel",
+      "nameLong": "Mikkel Friis Kjær",
+      "flexColor": "#90EE90",
+      "flex": {
+        "secondsTotal": 23580,
+        "hoursPartial": 6,
+        "minutesPartial": 33,
+        "isNegative": false,
+        "srcString": "06:33"
+      },
+      "projectName": "pterodactyl (6)",
+      "workTimeString": "Ikke logget ind",
+      "locationLong": "afspadsering",
+      "locationShort": "afspadseri."
+    }
+  },
+  {
+    "department": "Itsupporter",
+    "team": {
+      "id": 7,
+      "name": "E.V.",
+      "location": "lok: 301",
+      "instructor": "meha",
+      "instructorMail": "meha@mercantec.dk"
+    },
+    "employee": {
+      "id": 732,
+      "bgColor": "#0080FF",
+      "nameShort": "Anders",
+      "nameLong": "Anders Rohde Tinggaard",
+      "flexColor": "#90EE90",
+      "flex": {
+        "secondsTotal": 179760,
+        "hoursPartial": 49,
+        "minutesPartial": 56,
+        "isNegative": false,
+        "srcString": "49:56"
+      },
+      "projectName": "",
+      "workTimeString": "07:04-",
+      "locationLong": "Skole praktik",
+      "locationShort": "Skole prak."
+    }
+  },
+  {
+    "department": "Itsupporter",
+    "team": {
+      "id": 7,
+      "name": "E.V.",
+      "location": "lok: 301",
+      "instructor": "meha",
+      "instructorMail": "meha@mercantec.dk"
+    },
+    "employee": {
+      "id": 689,
+      "bgColor": "#DF7401",
+      "nameShort": "Mads",
+      "nameLong": "Mads Sørensen",
+      "flexColor": "#90EE90",
+      "flex": {
+        "secondsTotal": 19800,
+        "hoursPartial": 5,
+        "minutesPartial": 30,
+        "isNegative": false,
+        "srcString": "05:30"
+      },
+      "projectName": "Test drift miljø",
+      "workTimeString": "Ikke logget ind",
+      "locationLong": "afspadsering",
+      "locationShort": "afspadseri."
+    }
+  },
+  {
+    "department": "Itsupporter",
+    "team": {
+      "id": 7,
+      "name": "E.V.",
+      "location": "lok: 301",
+      "instructor": "meha",
+      "instructorMail": "meha@mercantec.dk"
+    },
+    "employee": {
+      "id": 997,
+      "bgColor": "#008000",
+      "nameShort": "Nikolay",
+      "nameLong": "Nikolay Boyanov Ivanov",
+      "flexColor": "#90EE90",
+      "flex": {
+        "secondsTotal": 6360,
+        "hoursPartial": 1,
+        "minutesPartial": 46,
+        "isNegative": false,
+        "srcString": "01:46"
+      },
+      "projectName": "Projekt 3D print",
+      "workTimeString": "Ikke logget ind",
+      "locationLong": "dtEUX2h19XNinf",
+      "locationShort": "dtEUX2h19X."
+    }
+  },
+  {
+    "department": "Itsupporter",
+    "team": {
+      "id": 7,
+      "name": "E.V.",
+      "location": "lok: 301",
+      "instructor": "meha",
+      "instructorMail": "meha@mercantec.dk"
+    },
+    "employee": {
+      "id": 998,
+      "bgColor": "#008000",
+      "nameShort": "Viktor",
+      "nameLong": "Viktor Holmgaard  Jensen",
+      "flexColor": "#90EE90",
+      "flex": {
+        "secondsTotal": 22140,
+        "hoursPartial": 6,
+        "minutesPartial": 9,
+        "isNegative": false,
+        "srcString": "06:09"
+      },
+      "projectName": "Projekt 3D print",
+      "workTimeString": "Ikke logget ind",
+      "locationLong": "dtEUX2h19XNinf",
+      "locationShort": "dtEUX2h19X."
+    }
+  },
+  {
+    "department": "Itsupporter",
+    "team": {
+      "id": 7,
+      "name": "E.V.",
+      "location": "lok: 301",
+      "instructor": "meha",
+      "instructorMail": "meha@mercantec.dk"
+    },
+    "employee": {
+      "id": 1001,
+      "bgColor": "#DF7401",
+      "nameShort": "Oliver",
+      "nameLong": "Oliver Risskov Holm  Petersen",
+      "flexColor": "#90EE90",
+      "flex": {
+        "secondsTotal": 236580,
+        "hoursPartial": 65,
+        "minutesPartial": 43,
+        "isNegative": false,
+        "srcString": "65:43"
+      },
+      "projectName": "Projekt 3D print",
+      "workTimeString": "Ikke logget ind",
+      "locationLong": "afspadsering",
+      "locationShort": "afspadseri."
+    }
+  },
+  {
+    "department": "Itsupporter",
+    "team": {
+      "id": 7,
+      "name": "E.V.",
+      "location": "lok: 301",
+      "instructor": "meha",
+      "instructorMail": "meha@mercantec.dk"
+    },
+    "employee": {
+      "id": 1002,
+      "bgColor": "#008000",
+      "nameShort": "Ralf",
+      "nameLong": "Ralf Arkalo Bredahl Blumensaadt",
+      "flexColor": "red",
+      "flex": {
+        "secondsTotal": 1320,
+        "hoursPartial": 0,
+        "minutesPartial": 22,
+        "isNegative": false,
+        "srcString": "00:22"
+      },
+      "projectName": "",
+      "workTimeString": "Ikke logget ind",
+      "locationLong": "dt2h2002infr",
+      "locationShort": "dt2h2002in."
+    }
+  },
+  {
+    "department": "Itsupporter",
+    "team": {
+      "id": 7,
+      "name": "E.V.",
+      "location": "lok: 301",
+      "instructor": "meha",
+      "instructorMail": "meha@mercantec.dk"
+    },
+    "employee": {
+      "id": 703,
+      "bgColor": "#008000",
+      "nameShort": "Victor",
+      "nameLong": "Victor Kruse Frausing",
+      "flexColor": "#90EE90",
+      "flex": {
+        "secondsTotal": 5820,
+        "hoursPartial": 1,
+        "minutesPartial": 37,
+        "isNegative": false,
+        "srcString": "01:37"
+      },
+      "projectName": "",
+      "workTimeString": "Ikke logget ind",
+      "locationLong": "it3h2001sep",
+      "locationShort": "it3h2001se."
+    }
+  },
+  {
+    "department": "Itsupporter",
+    "team": {
+      "id": 7,
+      "name": "E.V.",
+      "location": "lok: 301",
+      "instructor": "meha",
+      "instructorMail": "meha@mercantec.dk"
+    },
+    "employee": {
+      "id": 1045,
+      "bgColor": "#008000",
+      "nameShort": "Nouri",
+      "nameLong": "Nouri Mohamad",
+      "flexColor": "#90EE90",
+      "flex": {
+        "secondsTotal": 7440,
+        "hoursPartial": 2,
+        "minutesPartial": 4,
+        "isNegative": false,
+        "srcString": "02:04"
+      },
+      "projectName": "Projekt 3D p (2)",
+      "workTimeString": "Ikke logget ind",
+      "locationLong": "it1h2103aug",
+      "locationShort": "it1h2103au."
+    }
+  },
+  {
+    "department": "Itsupporter",
+    "team": {
+      "id": 7,
+      "name": "E.V.",
+      "location": "lok: 301",
+      "instructor": "meha",
+      "instructorMail": "meha@mercantec.dk"
+    },
+    "employee": {
+      "id": 1046,
+      "bgColor": "#FF0000",
+      "nameShort": "Hanaa",
+      "nameLong": "Hanaa Alhaj Ali",
+      "flexColor": "#90EE90",
+      "flex": {
+        "secondsTotal": 3840,
+        "hoursPartial": 1,
+        "minutesPartial": 4,
+        "isNegative": false,
+        "srcString": "01:04"
+      },
+      "projectName": "",
+      "workTimeString": "Ikke logget ind",
+      "locationLong": "syg",
+      "locationShort": "syg"
+    }
+  },
+  {
+    "department": "Itsupporter",
+    "team": {
+      "id": 7,
+      "name": "E.V.",
+      "location": "lok: 301",
+      "instructor": "meha",
+      "instructorMail": "meha@mercantec.dk"
+    },
+    "employee": {
+      "id": 1047,
+      "bgColor": "#FF0000",
+      "nameShort": "Wael",
+      "nameLong": "Wael Abo Rashdan",
+      "flexColor": "#90EE90",
+      "flex": {
+        "secondsTotal": 2940,
+        "hoursPartial": 0,
+        "minutesPartial": 49,
+        "isNegative": false,
+        "srcString": "00:49"
+      },
+      "projectName": "",
+      "workTimeString": "Ikke logget ind",
+      "locationLong": "syg",
+      "locationShort": "syg"
+    }
+  },
+  {
+    "department": "Itsupporter",
+    "team": {
+      "id": 7,
+      "name": "E.V.",
+      "location": "lok: 301",
+      "instructor": "meha",
+      "instructorMail": "meha@mercantec.dk"
+    },
+    "employee": {
+      "id": 1048,
+      "bgColor": "#008000",
+      "nameShort": "Nisrin",
+      "nameLong": "Nisrin Amin",
+      "flexColor": "#90EE90",
+      "flex": {
+        "secondsTotal": 10320,
+        "hoursPartial": 2,
+        "minutesPartial": 52,
+        "isNegative": false,
+        "srcString": "02:52"
+      },
+      "projectName": "Projekt 3D print",
+      "workTimeString": "Ikke logget ind",
+      "locationLong": "it1h2103aug",
+      "locationShort": "it1h2103au."
+    }
+  },
+  {
+    "department": "Itsupporter",
+    "team": {
+      "id": 7,
+      "name": "E.V.",
+      "location": "lok: 301",
+      "instructor": "meha",
+      "instructorMail": "meha@mercantec.dk"
+    },
+    "employee": {
+      "id": 1084,
+      "bgColor": "#0080FF",
+      "nameShort": "Jeppe",
+      "nameLong": "Jeppe Kleis Andreassen",
+      "flexColor": "#90EE90",
+      "flex": {
+        "secondsTotal": 22680,
+        "hoursPartial": 6,
+        "minutesPartial": 18,
+        "isNegative": false,
+        "srcString": "06:18"
+      },
+      "projectName": "",
+      "workTimeString": "07:51-",
+      "locationLong": "Skole praktik",
+      "locationShort": "Skole prak."
+    }
+  },
+  {
+    "department": "Itsupporter",
+    "team": {
+      "id": 7,
+      "name": "E.V.",
+      "location": "lok: 301",
+      "instructor": "meha",
+      "instructorMail": "meha@mercantec.dk"
+    },
+    "employee": {
+      "id": 1090,
+      "bgColor": "#008000",
+      "nameShort": "Ane",
+      "nameLong": "Ane E. Margr. Mikaelsen",
+      "flexColor": "#90EE90",
+      "flex": {
+        "secondsTotal": 0,
+        "hoursPartial": 0,
+        "minutesPartial": 0,
+        "isNegative": false,
+        "srcString": "00:00"
+      },
+      "projectName": "",
+      "workTimeString": "Ikke logget ind",
+      "locationLong": "it1h2103aug",
+      "locationShort": "it1h2103au."
+    }
+  },
+  {
+    "department": "Itsupporter",
+    "team": {
+      "id": 7,
+      "name": "E.V.",
+      "location": "lok: 301",
+      "instructor": "meha",
+      "instructorMail": "meha@mercantec.dk"
+    },
+    "employee": {
+      "id": 1091,
+      "bgColor": "#008000",
+      "nameShort": "Marc",
+      "nameLong": "Marc Do. Gjedde-Simonsen",
+      "flexColor": "#90EE90",
+      "flex": {
+        "secondsTotal": 0,
+        "hoursPartial": 0,
+        "minutesPartial": 0,
+        "isNegative": false,
+        "srcString": "00:00"
+      },
+      "projectName": "",
+      "workTimeString": "Ikke logget ind",
+      "locationLong": "dt1h2103inf",
+      "locationShort": "dt1h2103in."
+    }
+  },
+  {
+    "department": "Itsupporter",
+    "team": {
+      "id": 10,
+      "name": "Team 10",
+      "location": "Skive",
+      "instructor": "olhe",
+      "instructorMail": "olhe@mercantec.dk"
+    },
+    "employee": {
+      "id": 747,
+      "bgColor": "#0080FF",
+      "nameShort": "Niels",
+      "nameLong": "Niels Stilling Jakobsen",
+      "flexColor": "#90EE90",
+      "flex": {
+        "secondsTotal": 69660,
+        "hoursPartial": 19,
+        "minutesPartial": 21,
+        "isNegative": false,
+        "srcString": "19:21"
+      },
+      "projectName": "POTUS",
+      "workTimeString": "07:59-",
+      "locationLong": "Skole praktik",
+      "locationShort": "Skole prak."
+    }
+  },
+  {
+    "department": "Itsupporter",
+    "team": {
+      "id": 10,
+      "name": "Team 10",
+      "location": "Skive",
+      "instructor": "olhe",
+      "instructorMail": "olhe@mercantec.dk"
+    },
+    "employee": {
+      "id": 1020,
+      "bgColor": "#DF7401",
+      "nameShort": "Maks",
+      "nameLong": "Maks Larsen Fuglsang",
+      "flexColor": "red",
+      "flex": {
+        "secondsTotal": 6600,
+        "hoursPartial": 1,
+        "minutesPartial": 50,
+        "isNegative": false,
+        "srcString": "01:50"
+      },
+      "projectName": "Nye Servere  (2)",
+      "workTimeString": "Ikke logget ind",
+      "locationLong": "afspadsering",
+      "locationShort": "afspadseri."
+    }
+  },
+  {
+    "department": "Itsupporter",
+    "team": {
+      "id": 10,
+      "name": "Team 10",
+      "location": "Skive",
+      "instructor": "olhe",
+      "instructorMail": "olhe@mercantec.dk"
+    },
+    "employee": {
+      "id": 1052,
+      "bgColor": "#008000",
+      "nameShort": "David",
+      "nameLong": "David Minik Pedersen",
+      "flexColor": "red",
+      "flex": {
+        "secondsTotal": 360,
+        "hoursPartial": 0,
+        "minutesPartial": 6,
+        "isNegative": false,
+        "srcString": "00:06"
+      },
+      "projectName": "",
+      "workTimeString": "Ikke logget ind",
+      "locationLong": "it1h2103aug",
+      "locationShort": "it1h2103au."
+    }
+  },
+  {
+    "department": "Itsupporter",
+    "team": {
+      "id": 10,
+      "name": "Team 10",
+      "location": "Skive",
+      "instructor": "olhe",
+      "instructorMail": "olhe@mercantec.dk"
+    },
+    "employee": {
+      "id": 738,
+      "bgColor": "#008000",
+      "nameShort": "Dennis",
+      "nameLong": "Dennis Würtz Jeppsson",
+      "flexColor": "#90EE90",
+      "flex": {
+        "secondsTotal": 102420,
+        "hoursPartial": 28,
+        "minutesPartial": 27,
+        "isNegative": false,
+        "srcString": "28:27"
+      },
+      "projectName": "",
+      "workTimeString": "Ikke logget ind",
+      "locationLong": "tkvf2040des",
+      "locationShort": "tkvf2040de."
+    }
+  },
+  {
+    "department": "Itsupporter",
+    "team": {
+      "id": 10,
+      "name": "Team 10",
+      "location": "Skive",
+      "instructor": "olhe",
+      "instructorMail": "olhe@mercantec.dk"
+    },
+    "employee": {
+      "id": 739,
+      "bgColor": "#DF7401",
+      "nameShort": "Morten",
+      "nameLong": "Morten Bak Jensen",
+      "flexColor": "#90EE90",
+      "flex": {
+        "secondsTotal": 18780,
+        "hoursPartial": 5,
+        "minutesPartial": 13,
+        "isNegative": false,
+        "srcString": "05:13"
+      },
+      "projectName": "",
+      "workTimeString": "Ikke logget ind",
+      "locationLong": "afspadsering",
+      "locationShort": "afspadseri."
+    }
+  },
+  {
+    "department": "Itsupporter",
+    "team": {
+      "id": 10,
+      "name": "Team 10",
+      "location": "Skive",
+      "instructor": "olhe",
+      "instructorMail": "olhe@mercantec.dk"
+    },
+    "employee": {
+      "id": 1040,
+      "bgColor": "#DF7401",
+      "nameShort": "Torben",
+      "nameLong": "Torben Thorvald Jensen",
+      "flexColor": "red",
+      "flex": {
+        "secondsTotal": 107280,
+        "hoursPartial": 29,
+        "minutesPartial": 48,
+        "isNegative": false,
+        "srcString": "29:48"
+      },
+      "projectName": "",
+      "workTimeString": "Ikke logget ind",
+      "locationLong": "ferie",
+      "locationShort": "ferie"
+    }
+  },
+  {
+    "department": "Itsupporter",
+    "team": {
+      "id": 10,
+      "name": "Team 10",
+      "location": "Skive",
+      "instructor": "olhe",
+      "instructorMail": "olhe@mercantec.dk"
+    },
+    "employee": {
+      "id": 1042,
+      "bgColor": "#008000",
+      "nameShort": "Aske",
+      "nameLong": "Aske Pedersen Rosendahl",
+      "flexColor": "red",
+      "flex": {
+        "secondsTotal": 9840,
+        "hoursPartial": 2,
+        "minutesPartial": 44,
+        "isNegative": false,
+        "srcString": "02:44"
+      },
+      "projectName": "",
+      "workTimeString": "Ikke logget ind",
+      "locationLong": "it1h2103aug",
+      "locationShort": "it1h2103au."
+    }
+  },
+  {
+    "department": "Itsupporter",
+    "team": {
+      "id": 10,
+      "name": "Team 10",
+      "location": "Skive",
+      "instructor": "olhe",
+      "instructorMail": "olhe@mercantec.dk"
+    },
+    "employee": {
+      "id": 1050,
+      "bgColor": "#008000",
+      "nameShort": "Nikolaj",
+      "nameLong": "Nikolaj Toft Prehn Larsen",
+      "flexColor": "#90EE90",
+      "flex": {
+        "secondsTotal": 30600,
+        "hoursPartial": 8,
+        "minutesPartial": 30,
+        "isNegative": false,
+        "srcString": "08:30"
+      },
+      "projectName": "FEMU projekt",
+      "workTimeString": "Ikke logget ind",
+      "locationLong": "it1h2103aug",
+      "locationShort": "it1h2103au."
+    }
+  },
+  {
+    "department": "Itsupporter",
+    "team": {
+      "id": 10,
+      "name": "Team 10",
+      "location": "Skive",
+      "instructor": "olhe",
+      "instructorMail": "olhe@mercantec.dk"
+    },
+    "employee": {
+      "id": 1095,
+      "bgColor": "#0080FF",
+      "nameShort": "Alexander",
+      "nameLong": "Alexander Victor Foli",
+      "flexColor": "#90EE90",
+      "flex": {
+        "secondsTotal": 5880,
+        "hoursPartial": 1,
+        "minutesPartial": 38,
+        "isNegative": false,
+        "srcString": "01:38"
+      },
+      "projectName": "",
+      "workTimeString": "08:37-",
+      "locationLong": "Skole praktik",
+      "locationShort": "Skole prak."
+    }
+  },
+  {
+    "department": "Programmør",
+    "team": {
+      "id": 21,
+      "name": "Team 21",
+      "location": "lok: 311",
+      "instructor": "olso",
+      "instructorMail": "olso@mercantec.dk"
+    },
+    "employee": {
+      "id": 1051,
+      "bgColor": "#0080FF",
+      "nameShort": "Kevin",
+      "nameLong": "Kevin Møller Madsen",
+      "flexColor": "red",
+      "flex": {
+        "secondsTotal": 9300,
+        "hoursPartial": 2,
+        "minutesPartial": 35,
+        "isNegative": false,
+        "srcString": "02:35"
+      },
+      "projectName": "",
+      "workTimeString": "08:00-",
+      "locationLong": "Skole praktik",
+      "locationShort": "Skole prak."
+    }
+  },
+  {
+    "department": "Programmør",
+    "team": {
+      "id": 21,
+      "name": "Team 21",
+      "location": "lok: 311",
+      "instructor": "olso",
+      "instructorMail": "olso@mercantec.dk"
+    },
+    "employee": {
+      "id": 684,
+      "bgColor": "#0080FF",
+      "nameShort": "Kasper",
+      "nameLong": "Kasper Eliassen Grønne",
+      "flexColor": "#90EE90",
+      "flex": {
+        "secondsTotal": 48420,
+        "hoursPartial": 13,
+        "minutesPartial": 27,
+        "isNegative": false,
+        "srcString": "13:27"
+      },
+      "projectName": "art-n-time (2)",
+      "workTimeString": "07:56-",
+      "locationLong": "Skole praktik",
+      "locationShort": "Skole prak."
+    }
+  },
+  {
+    "department": "Programmør",
+    "team": {
+      "id": 21,
+      "name": "Team 21",
+      "location": "lok: 311",
+      "instructor": "olso",
+      "instructorMail": "olso@mercantec.dk"
+    },
+    "employee": {
+      "id": 696,
+      "bgColor": "#005c99",
+      "nameShort": "Rene",
+      "nameLong": "Rene Juul Hansen",
+      "flexColor": "#90EE90",
+      "flex": {
+        "secondsTotal": 7740,
+        "hoursPartial": 2,
+        "minutesPartial": 9,
+        "isNegative": false,
+        "srcString": "02:09"
+      },
+      "projectName": "Booking/infoskær",
+      "workTimeString": "Ikke logget ind",
+      "locationLong": "Hjemmearbejde",
+      "locationShort": "Hjemmearbe."
+    }
+  },
+  {
+    "department": "Programmør",
+    "team": {
+      "id": 21,
+      "name": "Team 21",
+      "location": "lok: 311",
+      "instructor": "olso",
+      "instructorMail": "olso@mercantec.dk"
+    },
+    "employee": {
+      "id": 991,
+      "bgColor": "#008000",
+      "nameShort": "Mathias",
+      "nameLong": "Mathias Skov Lade",
+      "flexColor": "#90EE90",
+      "flex": {
+        "secondsTotal": 58740,
+        "hoursPartial": 16,
+        "minutesPartial": 19,
+        "isNegative": false,
+        "srcString": "16:19"
+      },
+      "projectName": "ConnyDB",
+      "workTimeString": "Ikke logget ind",
+      "locationLong": "dt2h2002pro",
+      "locationShort": "dt2h2002pr."
+    }
+  },
+  {
+    "department": "Programmør",
+    "team": {
+      "id": 21,
+      "name": "Team 21",
+      "location": "lok: 311",
+      "instructor": "olso",
+      "instructorMail": "olso@mercantec.dk"
+    },
+    "employee": {
+      "id": 681,
+      "bgColor": "#0080FF",
+      "nameShort": "Jeppe",
+      "nameLong": "Jeppe Bjelke Knudsen Vad",
+      "flexColor": "#90EE90",
+      "flex": {
+        "secondsTotal": 14880,
+        "hoursPartial": 4,
+        "minutesPartial": 8,
+        "isNegative": false,
+        "srcString": "04:08"
+      },
+      "projectName": "Intro opgaver fr",
+      "workTimeString": "07:49-",
+      "locationLong": "Skole praktik",
+      "locationShort": "Skole prak."
+    }
+  },
+  {
+    "department": "Programmør",
+    "team": {
+      "id": 21,
+      "name": "Team 21",
+      "location": "lok: 311",
+      "instructor": "olso",
+      "instructorMail": "olso@mercantec.dk"
+    },
+    "employee": {
+      "id": 1073,
+      "bgColor": "#008000",
+      "nameShort": "Daniel",
+      "nameLong": "Daniel Jensen",
+      "flexColor": "#90EE90",
+      "flex": {
+        "secondsTotal": 0,
+        "hoursPartial": 0,
+        "minutesPartial": 0,
+        "isNegative": false,
+        "srcString": "00:00"
+      },
+      "projectName": "",
+      "workTimeString": "Ikke logget ind",
+      "locationLong": "it1h2103aug",
+      "locationShort": "it1h2103au."
+    }
+  },
+  {
+    "department": "Programmør",
+    "team": {
+      "id": 21,
+      "name": "Team 21",
+      "location": "lok: 311",
+      "instructor": "olso",
+      "instructorMail": "olso@mercantec.dk"
+    },
+    "employee": {
+      "id": 749,
+      "bgColor": "#008000",
+      "nameShort": "René",
+      "nameLong": "René Brøndum Christensen",
+      "flexColor": "#90EE90",
+      "flex": {
+        "secondsTotal": 2040,
+        "hoursPartial": 0,
+        "minutesPartial": 34,
+        "isNegative": false,
+        "srcString": "00:34"
+      },
+      "projectName": "",
+      "workTimeString": "Ikke logget ind",
+      "locationLong": "dt2h2002pro",
+      "locationShort": "dt2h2002pr."
+    }
+  },
+  {
+    "department": "Programmør",
+    "team": {
+      "id": 21,
+      "name": "Team 21",
+      "location": "lok: 311",
+      "instructor": "olso",
+      "instructorMail": "olso@mercantec.dk"
+    },
+    "employee": {
+      "id": 692,
+      "bgColor": "#0080FF",
+      "nameShort": "Mathias",
+      "nameLong": "Mathias Fruergaard Holst",
+      "flexColor": "#90EE90",
+      "flex": {
+        "secondsTotal": 15240,
+        "hoursPartial": 4,
+        "minutesPartial": 14,
+        "isNegative": false,
+        "srcString": "04:14"
+      },
+      "projectName": "Platformer RPG",
+      "workTimeString": "07:39-",
+      "locationLong": "Skole praktik",
+      "locationShort": "Skole prak."
+    }
+  },
+  {
+    "department": "Programmør",
+    "team": {
+      "id": 21,
+      "name": "Team 21",
+      "location": "lok: 311",
+      "instructor": "olso",
+      "instructorMail": "olso@mercantec.dk"
+    },
+    "employee": {
+      "id": 669,
+      "bgColor": "#0080FF",
+      "nameShort": "Jens",
+      "nameLong": "Jens Eric Bouwens",
+      "flexColor": "#90EE90",
+      "flex": {
+        "secondsTotal": 54720,
+        "hoursPartial": 15,
+        "minutesPartial": 12,
+        "isNegative": false,
+        "srcString": "15:12"
+      },
+      "projectName": "",
+      "workTimeString": "07:05-",
+      "locationLong": "Skole praktik",
+      "locationShort": "Skole prak."
+    }
+  },
+  {
+    "department": "Programmør",
+    "team": {
+      "id": 21,
+      "name": "Team 21",
+      "location": "lok: 311",
+      "instructor": "olso",
+      "instructorMail": "olso@mercantec.dk"
+    },
+    "employee": {
+      "id": 1024,
+      "bgColor": "#DF7401",
+      "nameShort": "Jesper",
+      "nameLong": "Jesper Birk Nielsen",
+      "flexColor": "#90EE90",
+      "flex": {
+        "secondsTotal": 26520,
+        "hoursPartial": 7,
+        "minutesPartial": 22,
+        "isNegative": false,
+        "srcString": "07:22"
+      },
+      "projectName": "",
+      "workTimeString": "Ikke logget ind",
+      "locationLong": "Orlov",
+      "locationShort": "Orlov"
+    }
+  },
+  {
+    "department": "Programmør",
+    "team": {
+      "id": 21,
+      "name": "Team 21",
+      "location": "lok: 311",
+      "instructor": "olso",
+      "instructorMail": "olso@mercantec.dk"
+    },
+    "employee": {
+      "id": 1025,
+      "bgColor": "#008000",
+      "nameShort": "Nicolai",
+      "nameLong": "Nicolai Jørn Bruun Mortensen",
+      "flexColor": "#90EE90",
+      "flex": {
+        "secondsTotal": 33600,
+        "hoursPartial": 9,
+        "minutesPartial": 20,
+        "isNegative": false,
+        "srcString": "09:20"
+      },
+      "projectName": "",
+      "workTimeString": "Ikke logget ind",
+      "locationLong": "dt2h2002pro",
+      "locationShort": "dt2h2002pr."
+    }
+  },
+  {
+    "department": "Programmør",
+    "team": {
+      "id": 21,
+      "name": "Team 21",
+      "location": "lok: 311",
+      "instructor": "olso",
+      "instructorMail": "olso@mercantec.dk"
+    },
+    "employee": {
+      "id": 1034,
+      "bgColor": "#005c99",
+      "nameShort": "Viktor",
+      "nameLong": "Viktor Viskov",
+      "flexColor": "#90EE90",
+      "flex": {
+        "secondsTotal": 15060,
+        "hoursPartial": 4,
+        "minutesPartial": 11,
+        "isNegative": false,
+        "srcString": "04:11"
+      },
+      "projectName": "",
+      "workTimeString": "Ikke logget ind",
+      "locationLong": "Hjemmearbejde",
+      "locationShort": "Hjemmearbe."
+    }
+  },
+  {
+    "department": "Programmør",
+    "team": {
+      "id": 21,
+      "name": "Team 21",
+      "location": "lok: 311",
+      "instructor": "olso",
+      "instructorMail": "olso@mercantec.dk"
+    },
+    "employee": {
+      "id": 1035,
+      "bgColor": "#008000",
+      "nameShort": "Edvard",
+      "nameLong": "Edvard Baldvin Elsberg",
+      "flexColor": "red",
+      "flex": {
+        "secondsTotal": 3780,
+        "hoursPartial": 1,
+        "minutesPartial": 3,
+        "isNegative": false,
+        "srcString": "01:03"
+      },
+      "projectName": "",
+      "workTimeString": "Ikke logget ind",
+      "locationLong": "dt2h2002pro",
+      "locationShort": "dt2h2002pr."
+    }
+  },
+  {
+    "department": "Programmør",
+    "team": {
+      "id": 22,
+      "name": "Team 22",
+      "location": "lok: 311",
+      "instructor": "olso",
+      "instructorMail": "olso@mercantec.dk"
+    },
+    "employee": {
+      "id": 523,
+      "bgColor": "#0080FF",
+      "nameShort": "Niklas",
+      "nameLong": "Niklas Niemann Christensen",
+      "flexColor": "red",
+      "flex": {
+        "secondsTotal": 46440,
+        "hoursPartial": 12,
+        "minutesPartial": 54,
+        "isNegative": false,
+        "srcString": "12:54"
+      },
+      "projectName": "Stem (4)",
+      "workTimeString": "08:50-",
+      "locationLong": "Skole praktik",
+      "locationShort": "Skole prak."
+    }
+  },
+  {
+    "department": "Programmør",
+    "team": {
+      "id": 23,
+      "name": "Team 23",
+      "location": "lok: 311",
+      "instructor": "olso",
+      "instructorMail": "olso@mercantec.dk"
+    },
+    "employee": {
+      "id": 620,
+      "bgColor": "#DF7401",
+      "nameShort": "Logan",
+      "nameLong": "Logan Leifur Robinson",
+      "flexColor": "#90EE90",
+      "flex": {
+        "secondsTotal": 76500,
+        "hoursPartial": 21,
+        "minutesPartial": 15,
+        "isNegative": false,
+        "srcString": "21:15"
+      },
+      "projectName": "Tolkehuset L (2)",
+      "workTimeString": "Ikke logget ind",
+      "locationLong": "afspadsering",
+      "locationShort": "afspadseri."
+    }
+  },
+  {
+    "department": "Programmør",
+    "team": {
+      "id": 23,
+      "name": "Team 23",
+      "location": "lok: 311",
+      "instructor": "olso",
+      "instructorMail": "olso@mercantec.dk"
+    },
+    "employee": {
+      "id": 520,
+      "bgColor": "#008000",
+      "nameShort": "Kasper",
+      "nameLong": "Kasper Hansen",
+      "flexColor": "#90EE90",
+      "flex": {
+        "secondsTotal": 8640,
+        "hoursPartial": 2,
+        "minutesPartial": 24,
+        "isNegative": false,
+        "srcString": "02:24"
+      },
+      "projectName": "pcv's virkso (3)",
+      "workTimeString": "Ikke logget ind",
+      "locationLong": "tkvf2139mac",
+      "locationShort": "tkvf2139ma."
+    }
+  },
+  {
+    "department": "Programmør",
+    "team": {
+      "id": 23,
+      "name": "Team 23",
+      "location": "lok: 311",
+      "instructor": "olso",
+      "instructorMail": "olso@mercantec.dk"
+    },
+    "employee": {
+      "id": 422,
+      "bgColor": "#005c99",
+      "nameShort": "Jakob",
+      "nameLong": "Jakob Skindstad Frederiksen",
+      "flexColor": "#90EE90",
+      "flex": {
+        "secondsTotal": 6180,
+        "hoursPartial": 1,
+        "minutesPartial": 43,
+        "isNegative": false,
+        "srcString": "01:43"
+      },
+      "projectName": "Retorik (2)",
+      "workTimeString": "Ikke logget ind",
+      "locationLong": "Hjemmearbejde",
+      "locationShort": "Hjemmearbe."
+    }
+  },
+  {
+    "department": "Programmør",
+    "team": {
+      "id": 23,
+      "name": "Team 23",
+      "location": "lok: 311",
+      "instructor": "olso",
+      "instructorMail": "olso@mercantec.dk"
+    },
+    "employee": {
+      "id": 670,
+      "bgColor": "#008000",
+      "nameShort": "Oliver",
+      "nameLong": "Oliver Ian Olesen",
+      "flexColor": "#90EE90",
+      "flex": {
+        "secondsTotal": 960,
+        "hoursPartial": 0,
+        "minutesPartial": 16,
+        "isNegative": false,
+        "srcString": "00:16"
+      },
+      "projectName": "",
+      "workTimeString": "Ikke logget ind",
+      "locationLong": "Valgfag",
+      "locationShort": "Valgfag"
+    }
+  },
+  {
+    "department": "Programmør",
+    "team": {
+      "id": 23,
+      "name": "Team 23",
+      "location": "lok: 311",
+      "instructor": "olso",
+      "instructorMail": "olso@mercantec.dk"
+    },
+    "employee": {
+      "id": 675,
+      "bgColor": "#005c99",
+      "nameShort": "Christian",
+      "nameLong": "Christian Bentmann Pallesen",
+      "flexColor": "#90EE90",
+      "flex": {
+        "secondsTotal": 1440,
+        "hoursPartial": 0,
+        "minutesPartial": 24,
+        "isNegative": false,
+        "srcString": "00:24"
+      },
+      "projectName": "KokkenAndroidApp",
+      "workTimeString": "Ikke logget ind",
+      "locationLong": "Hjemmearbejde",
+      "locationShort": "Hjemmearbe."
+    }
+  },
+  {
+    "department": "Programmør",
+    "team": {
+      "id": 23,
+      "name": "Team 23",
+      "location": "lok: 311",
+      "instructor": "olso",
+      "instructorMail": "olso@mercantec.dk"
+    },
+    "employee": {
+      "id": 591,
+      "bgColor": "#0080FF",
+      "nameShort": "Anders",
+      "nameLong": "Anders Aagaard Schütt",
+      "flexColor": "#90EE90",
+      "flex": {
+        "secondsTotal": 9900,
+        "hoursPartial": 2,
+        "minutesPartial": 45,
+        "isNegative": false,
+        "srcString": "02:45"
+      },
+      "projectName": "C# RPG spil",
+      "workTimeString": "08:46-",
+      "locationLong": "Skole praktik",
+      "locationShort": "Skole prak."
+    }
+  },
+  {
+    "department": "Programmør",
+    "team": {
+      "id": 23,
+      "name": "Team 23",
+      "location": "lok: 311",
+      "instructor": "olso",
+      "instructorMail": "olso@mercantec.dk"
+    },
+    "employee": {
+      "id": 987,
+      "bgColor": "#008000",
+      "nameShort": "Emil",
+      "nameLong": "Emil Broch Andersen",
+      "flexColor": "#90EE90",
+      "flex": {
+        "secondsTotal": 1500,
+        "hoursPartial": 0,
+        "minutesPartial": 25,
+        "isNegative": false,
+        "srcString": "00:25"
+      },
+      "projectName": "",
+      "workTimeString": "Ikke logget ind",
+      "locationLong": "dt2h2002pro",
+      "locationShort": "dt2h2002pr."
+    }
+  },
+  {
+    "department": "Programmør",
+    "team": {
+      "id": 23,
+      "name": "Team 23",
+      "location": "lok: 311",
+      "instructor": "olso",
+      "instructorMail": "olso@mercantec.dk"
+    },
+    "employee": {
+      "id": 1033,
+      "bgColor": "#DF7401",
+      "nameShort": "Theresa",
+      "nameLong": "Theresa Hegelund Frank",
+      "flexColor": "#90EE90",
+      "flex": {
+        "secondsTotal": 960,
+        "hoursPartial": 0,
+        "minutesPartial": 16,
+        "isNegative": false,
+        "srcString": "00:16"
+      },
+      "projectName": "",
+      "workTimeString": "Ikke logget ind",
+      "locationLong": "Orlov",
+      "locationShort": "Orlov"
+    }
+  },
+  {
+    "department": "Programmør",
+    "team": {
+      "id": 23,
+      "name": "Team 23",
+      "location": "lok: 311",
+      "instructor": "olso",
+      "instructorMail": "olso@mercantec.dk"
+    },
+    "employee": {
+      "id": 1074,
+      "bgColor": "#0080FF",
+      "nameShort": "Kasper",
+      "nameLong": "Kasper Kjellerup Lassen",
+      "flexColor": "red",
+      "flex": {
+        "secondsTotal": 840,
+        "hoursPartial": 0,
+        "minutesPartial": 14,
+        "isNegative": false,
+        "srcString": "00:14"
+      },
+      "projectName": "",
+      "workTimeString": "08:00-",
+      "locationLong": "Skole praktik",
+      "locationShort": "Skole prak."
+    }
+  },
+  {
+    "department": "Programmør",
+    "team": {
+      "id": 24,
+      "name": "Team 24",
+      "location": "lok: 311",
+      "instructor": "olso",
+      "instructorMail": "olso@mercantec.dk"
+    },
+    "employee": {
+      "id": 436,
+      "bgColor": "#005c99",
+      "nameShort": "Seppi",
+      "nameLong": "Seppi Haaland Damgaard",
+      "flexColor": "#90EE90",
+      "flex": {
+        "secondsTotal": 9060,
+        "hoursPartial": 2,
+        "minutesPartial": 31,
+        "isNegative": false,
+        "srcString": "02:31"
+      },
+      "projectName": "Skiltecenteret A",
+      "workTimeString": "Ikke logget ind",
+      "locationLong": "Hjemmearbejde",
+      "locationShort": "Hjemmearbe."
+    }
+  },
+  {
+    "department": "Programmør",
+    "team": {
+      "id": 24,
+      "name": "Team 24",
+      "location": "lok: 311",
+      "instructor": "olso",
+      "instructorMail": "olso@mercantec.dk"
+    },
+    "employee": {
+      "id": 696,
+      "bgColor": "#005c99",
+      "nameShort": "Rene",
+      "nameLong": "Rene Juul Hansen",
+      "flexColor": "#90EE90",
+      "flex": {
+        "secondsTotal": 7740,
+        "hoursPartial": 2,
+        "minutesPartial": 9,
+        "isNegative": false,
+        "srcString": "02:09"
+      },
+      "projectName": "Booking/infoskær",
+      "workTimeString": "Ikke logget ind",
+      "locationLong": "Hjemmearbejde",
+      "locationShort": "Hjemmearbe."
+    }
+  },
+  {
+    "department": "Programmør",
+    "team": {
+      "id": 24,
+      "name": "Team 24",
+      "location": "lok: 311",
+      "instructor": "olso",
+      "instructorMail": "olso@mercantec.dk"
+    },
+    "employee": {
+      "id": 641,
+      "bgColor": "#008000",
+      "nameShort": "Sebastian",
+      "nameLong": "Sebastian Svensson Thaning",
+      "flexColor": "#90EE90",
+      "flex": {
+        "secondsTotal": 18780,
+        "hoursPartial": 5,
+        "minutesPartial": 13,
+        "isNegative": false,
+        "srcString": "05:13"
+      },
+      "projectName": "",
+      "workTimeString": "Ikke logget ind",
+      "locationLong": "ML",
+      "locationShort": "ML"
+    }
+  },
+  {
+    "department": "Programmør",
+    "team": {
+      "id": 24,
+      "name": "Team 24",
+      "location": "lok: 311",
+      "instructor": "olso",
+      "instructorMail": "olso@mercantec.dk"
+    },
+    "employee": {
+      "id": 1096,
+      "bgColor": "#0080FF",
+      "nameShort": "Mads",
+      "nameLong": "Mads Vium Tøfting Pedersen",
+      "flexColor": "#90EE90",
+      "flex": {
+        "secondsTotal": 2220,
+        "hoursPartial": 0,
+        "minutesPartial": 37,
+        "isNegative": false,
+        "srcString": "00:37"
+      },
+      "projectName": "",
+      "workTimeString": "07:09-",
+      "locationLong": "Skole praktik",
+      "locationShort": "Skole prak."
+    }
+  },
+  {
+    "department": "Programmør",
+    "team": {
+      "id": 24,
+      "name": "Team 24",
+      "location": "lok: 311",
+      "instructor": "olso",
+      "instructorMail": "olso@mercantec.dk"
+    },
+    "employee": {
+      "id": 1008,
+      "bgColor": "#008000",
+      "nameShort": "Mathias",
+      "nameLong": "Mathias Hornbæk Petersen",
+      "flexColor": "red",
+      "flex": {
+        "secondsTotal": 2940,
+        "hoursPartial": 0,
+        "minutesPartial": 49,
+        "isNegative": false,
+        "srcString": "00:49"
+      },
+      "projectName": "",
+      "workTimeString": "Ikke logget ind",
+      "locationLong": "dt2h2002pro",
+      "locationShort": "dt2h2002pr."
+    }
+  },
+  {
+    "department": "Programmør",
+    "team": {
+      "id": 24,
+      "name": "Team 24",
+      "location": "lok: 311",
+      "instructor": "olso",
+      "instructorMail": "olso@mercantec.dk"
+    },
+    "employee": {
+      "id": 1032,
+      "bgColor": "#008000",
+      "nameShort": "Mathilde",
+      "nameLong": "Mathilde Fomsgaard Hansen",
+      "flexColor": "#90EE90",
+      "flex": {
+        "secondsTotal": 5640,
+        "hoursPartial": 1,
+        "minutesPartial": 34,
+        "isNegative": false,
+        "srcString": "01:34"
+      },
+      "projectName": "",
+      "workTimeString": "Ikke logget ind",
+      "locationLong": "dt2h2002pro",
+      "locationShort": "dt2h2002pr."
+    }
+  },
+  {
+    "department": "Programmør",
+    "team": {
+      "id": 24,
+      "name": "Team 24",
+      "location": "lok: 311",
+      "instructor": "olso",
+      "instructorMail": "olso@mercantec.dk"
+    },
+    "employee": {
+      "id": 1034,
+      "bgColor": "#005c99",
+      "nameShort": "Viktor",
+      "nameLong": "Viktor Viskov",
+      "flexColor": "#90EE90",
+      "flex": {
+        "secondsTotal": 15060,
+        "hoursPartial": 4,
+        "minutesPartial": 11,
+        "isNegative": false,
+        "srcString": "04:11"
+      },
+      "projectName": "",
+      "workTimeString": "Ikke logget ind",
+      "locationLong": "Hjemmearbejde",
+      "locationShort": "Hjemmearbe."
+    }
+  },
+  {
+    "department": "Programmør",
+    "team": {
+      "id": 25,
+      "name": "Team 25",
+      "location": "lok: 308",
+      "instructor": "olhe",
+      "instructorMail": "olhe@mercantec.dk"
+    },
+    "employee": {
+      "id": 436,
+      "bgColor": "#005c99",
+      "nameShort": "Seppi",
+      "nameLong": "Seppi Haaland Damgaard",
+      "flexColor": "#90EE90",
+      "flex": {
+        "secondsTotal": 9060,
+        "hoursPartial": 2,
+        "minutesPartial": 31,
+        "isNegative": false,
+        "srcString": "02:31"
+      },
+      "projectName": "Skiltecenteret A",
+      "workTimeString": "Ikke logget ind",
+      "locationLong": "Hjemmearbejde",
+      "locationShort": "Hjemmearbe."
+    }
+  },
+  {
+    "department": "Programmør",
+    "team": {
+      "id": 25,
+      "name": "Team 25",
+      "location": "lok: 308",
+      "instructor": "olhe",
+      "instructorMail": "olhe@mercantec.dk"
+    },
+    "employee": {
+      "id": 685,
+      "bgColor": "#0080FF",
+      "nameShort": "Kasper",
+      "nameLong": "Kasper Linde Barrith",
+      "flexColor": "#90EE90",
+      "flex": {
+        "secondsTotal": 38100,
+        "hoursPartial": 10,
+        "minutesPartial": 35,
+        "isNegative": false,
+        "srcString": "10:35"
+      },
+      "projectName": "",
+      "workTimeString": "07:43-",
+      "locationLong": "Skole praktik",
+      "locationShort": "Skole prak."
+    }
+  },
+  {
+    "department": "Programmør",
+    "team": {
+      "id": 25,
+      "name": "Team 25",
+      "location": "lok: 308",
+      "instructor": "olhe",
+      "instructorMail": "olhe@mercantec.dk"
+    },
+    "employee": {
+      "id": 683,
+      "bgColor": "#0080FF",
+      "nameShort": "Jonas",
+      "nameLong": "Jonas Arvad Kristiansen",
+      "flexColor": "#90EE90",
+      "flex": {
+        "secondsTotal": 89460,
+        "hoursPartial": 24,
+        "minutesPartial": 51,
+        "isNegative": false,
+        "srcString": "24:51"
+      },
+      "projectName": "iværksætter app",
+      "workTimeString": "08:34-",
+      "locationLong": "Skole praktik",
+      "locationShort": "Skole prak."
+    }
+  },
+  {
+    "department": "Programmør",
+    "team": {
+      "id": 25,
+      "name": "Team 25",
+      "location": "lok: 308",
+      "instructor": "olhe",
+      "instructorMail": "olhe@mercantec.dk"
+    },
+    "employee": {
+      "id": 1072,
+      "bgColor": "#DF7401",
+      "nameShort": "Phamishan",
+      "nameLong": "Phamishan Packiaseelan",
+      "flexColor": "#90EE90",
+      "flex": {
+        "secondsTotal": 151860,
+        "hoursPartial": 42,
+        "minutesPartial": 11,
+        "isNegative": false,
+        "srcString": "42:11"
+      },
+      "projectName": "",
+      "workTimeString": "Ikke logget ind",
+      "locationLong": "afspadsering",
+      "locationShort": "afspadseri."
+    }
+  },
+  {
+    "department": "Programmør",
+    "team": {
+      "id": 25,
+      "name": "Team 25",
+      "location": "lok: 308",
+      "instructor": "olhe",
+      "instructorMail": "olhe@mercantec.dk"
+    },
+    "employee": {
+      "id": 1077,
+      "bgColor": "#0080FF",
+      "nameShort": "Magnus",
+      "nameLong": "Magnus Høg Hvass",
+      "flexColor": "#90EE90",
+      "flex": {
+        "secondsTotal": 16440,
+        "hoursPartial": 4,
+        "minutesPartial": 34,
+        "isNegative": false,
+        "srcString": "04:34"
+      },
+      "projectName": "",
+      "workTimeString": "07:53-",
+      "locationLong": "Skole praktik",
+      "locationShort": "Skole prak."
+    }
+  },
+  {
+    "department": "Programmør",
+    "team": {
+      "id": 25,
+      "name": "Team 25",
+      "location": "lok: 308",
+      "instructor": "olhe",
+      "instructorMail": "olhe@mercantec.dk"
+    },
+    "employee": {
+      "id": 985,
+      "bgColor": "#008000",
+      "nameShort": "Alexander",
+      "nameLong": "Alexander Bang",
+      "flexColor": "red",
+      "flex": {
+        "secondsTotal": 11280,
+        "hoursPartial": 3,
+        "minutesPartial": 8,
+        "isNegative": false,
+        "srcString": "03:08"
+      },
+      "projectName": "Database (4)",
+      "workTimeString": "Ikke logget ind",
+      "locationLong": "dtEUX2h19XNpro",
+      "locationShort": "dtEUX2h19X."
+    }
+  },
+  {
+    "department": "Programmør",
+    "team": {
+      "id": 25,
+      "name": "Team 25",
+      "location": "lok: 308",
+      "instructor": "olhe",
+      "instructorMail": "olhe@mercantec.dk"
+    },
+    "employee": {
+      "id": 1076,
+      "bgColor": "#0080FF",
+      "nameShort": "Jacob",
+      "nameLong": "Jacob Nørgaard Fischer",
+      "flexColor": "#90EE90",
+      "flex": {
+        "secondsTotal": 56280,
+        "hoursPartial": 15,
+        "minutesPartial": 38,
+        "isNegative": false,
+        "srcString": "15:38"
+      },
+      "projectName": "",
+      "workTimeString": "07:59-",
+      "locationLong": "Skole praktik",
+      "locationShort": "Skole prak."
+    }
+  },
+  {
+    "department": "Programmør",
+    "team": {
+      "id": 25,
+      "name": "Team 25",
+      "location": "lok: 308",
+      "instructor": "olhe",
+      "instructorMail": "olhe@mercantec.dk"
+    },
+    "employee": {
+      "id": 1071,
+      "bgColor": "#0080FF",
+      "nameShort": "Patrick",
+      "nameLong": "Patrick Tobias Hastrup te Lintum",
+      "flexColor": "#90EE90",
+      "flex": {
+        "secondsTotal": 78480,
+        "hoursPartial": 21,
+        "minutesPartial": 48,
+        "isNegative": false,
+        "srcString": "21:48"
+      },
+      "projectName": "",
+      "workTimeString": "07:36-",
+      "locationLong": "Skole praktik",
+      "locationShort": "Skole prak."
+    }
+  },
+  {
+    "department": "Programmør",
+    "team": {
+      "id": 25,
+      "name": "Team 25",
+      "location": "lok: 308",
+      "instructor": "olhe",
+      "instructorMail": "olhe@mercantec.dk"
+    },
+    "employee": {
+      "id": 1075,
+      "bgColor": "#FF0000",
+      "nameShort": "Teis",
+      "nameLong": "Teis Sofus Kristian Bindner",
+      "flexColor": "#90EE90",
+      "flex": {
+        "secondsTotal": 44880,
+        "hoursPartial": 12,
+        "minutesPartial": 28,
+        "isNegative": false,
+        "srcString": "12:28"
+      },
+      "projectName": "",
+      "workTimeString": "Ikke logget ind",
+      "locationLong": "syg",
+      "locationShort": "syg"
+    }
+  },
+  {
+    "department": "Programmør",
+    "team": {
+      "id": 25,
+      "name": "Team 25",
+      "location": "lok: 308",
+      "instructor": "olhe",
+      "instructorMail": "olhe@mercantec.dk"
+    },
+    "employee": {
+      "id": 1078,
+      "bgColor": "#0080FF",
+      "nameShort": "Mikkel",
+      "nameLong": "Mikkel Troels Kongsted",
+      "flexColor": "red",
+      "flex": {
+        "secondsTotal": 15780,
+        "hoursPartial": 4,
+        "minutesPartial": 23,
+        "isNegative": false,
+        "srcString": "04:23"
+      },
+      "projectName": "",
+      "workTimeString": "08:59-",
+      "locationLong": "Skole praktik",
+      "locationShort": "Skole prak."
+    }
+  },
+  {
+    "department": "Programmør",
+    "team": {
+      "id": 25,
+      "name": "Team 25",
+      "location": "lok: 308",
+      "instructor": "olhe",
+      "instructorMail": "olhe@mercantec.dk"
+    },
+    "employee": {
+      "id": 1079,
+      "bgColor": "#0080FF",
+      "nameShort": "Simon",
+      "nameLong": "Simon From Jakobsen",
+      "flexColor": "#90EE90",
+      "flex": {
+        "secondsTotal": 84240,
+        "hoursPartial": 23,
+        "minutesPartial": 24,
+        "isNegative": false,
+        "srcString": "23:24"
+      },
+      "projectName": "",
+      "workTimeString": "08:22-",
+      "locationLong": "Skole praktik",
+      "locationShort": "Skole prak."
+    }
+  },
+  {
+    "department": "Programmør",
+    "team": {
+      "id": 25,
+      "name": "Team 25",
+      "location": "lok: 308",
+      "instructor": "olhe",
+      "instructorMail": "olhe@mercantec.dk"
+    },
+    "employee": {
+      "id": 1080,
+      "bgColor": "#0080FF",
+      "nameShort": "Theis",
+      "nameLong": "Theis Pieter Brun Hollebeek",
+      "flexColor": "#90EE90",
+      "flex": {
+        "secondsTotal": 142800,
+        "hoursPartial": 39,
+        "minutesPartial": 40,
+        "isNegative": false,
+        "srcString": "39:40"
+      },
+      "projectName": "",
+      "workTimeString": "07:34-",
+      "locationLong": "Skole praktik",
+      "locationShort": "Skole prak."
+    }
+  },
+  {
+    "department": "Programmør",
+    "team": {
+      "id": 25,
+      "name": "Team 25",
+      "location": "lok: 308",
+      "instructor": "olhe",
+      "instructorMail": "olhe@mercantec.dk"
+    },
+    "employee": {
+      "id": 463,
+      "bgColor": "#0080FF",
+      "nameShort": "Nilas",
+      "nameLong": "Nilas Kjærup",
+      "flexColor": "red",
+      "flex": {
+        "secondsTotal": 72360,
+        "hoursPartial": 20,
+        "minutesPartial": 6,
+        "isNegative": false,
+        "srcString": "20:06"
+      },
+      "projectName": "Arduino (3)",
+      "workTimeString": "09:08-",
+      "locationLong": "Skole praktik",
+      "locationShort": "Skole prak."
+    }
+  },
+  {
+    "department": "Programmør",
+    "team": {
+      "id": 25,
+      "name": "Team 25",
+      "location": "lok: 308",
+      "instructor": "olhe",
+      "instructorMail": "olhe@mercantec.dk"
+    },
+    "employee": {
+      "id": 993,
+      "bgColor": "#008000",
+      "nameShort": "Rasmus",
+      "nameLong": "Rasmus Koldbæk Frøstrup",
+      "flexColor": "red",
+      "flex": {
+        "secondsTotal": 14580,
+        "hoursPartial": 4,
+        "minutesPartial": 3,
+        "isNegative": false,
+        "srcString": "04:03"
+      },
+      "projectName": "Database (3)",
+      "workTimeString": "Ikke logget ind",
+      "locationLong": "dtEUX2h19XNpro",
+      "locationShort": "dtEUX2h19X."
+    }
+  },
+  {
+    "department": "Programmør",
+    "team": {
+      "id": 25,
+      "name": "Team 25",
+      "location": "lok: 308",
+      "instructor": "olhe",
+      "instructorMail": "olhe@mercantec.dk"
+    },
+    "employee": {
+      "id": 679,
+      "bgColor": "#0080FF",
+      "nameShort": "Ervin",
+      "nameLong": "Ervin Avdic",
+      "flexColor": "red",
+      "flex": {
+        "secondsTotal": 11340,
+        "hoursPartial": 3,
+        "minutesPartial": 9,
+        "isNegative": false,
+        "srcString": "03:09"
+      },
+      "projectName": "Robo Rally",
+      "workTimeString": "07:57-",
+      "locationLong": "Skole praktik",
+      "locationShort": "Skole prak."
+    }
+  },
+  {
+    "department": "Programmør",
+    "team": {
+      "id": 25,
+      "name": "Team 25",
+      "location": "lok: 308",
+      "instructor": "olhe",
+      "instructorMail": "olhe@mercantec.dk"
+    },
+    "employee": {
+      "id": 694,
+      "bgColor": "#0080FF",
+      "nameShort": "Niclas",
+      "nameLong": "Niclas Hjulmand",
+      "flexColor": "#90EE90",
+      "flex": {
+        "secondsTotal": 19320,
+        "hoursPartial": 5,
+        "minutesPartial": 22,
+        "isNegative": false,
+        "srcString": "05:22"
+      },
+      "projectName": "KokkenAndroidApp",
+      "workTimeString": "07:43-",
+      "locationLong": "Skole praktik",
+      "locationShort": "Skole prak."
+    }
+  },
+  {
+    "department": "Programmør",
+    "team": {
+      "id": 25,
+      "name": "Team 25",
+      "location": "lok: 308",
+      "instructor": "olhe",
+      "instructorMail": "olhe@mercantec.dk"
+    },
+    "employee": {
+      "id": 675,
+      "bgColor": "#005c99",
+      "nameShort": "Christian",
+      "nameLong": "Christian Bentmann Pallesen",
+      "flexColor": "#90EE90",
+      "flex": {
+        "secondsTotal": 1440,
+        "hoursPartial": 0,
+        "minutesPartial": 24,
+        "isNegative": false,
+        "srcString": "00:24"
+      },
+      "projectName": "KokkenAndroidApp",
+      "workTimeString": "Ikke logget ind",
+      "locationLong": "Hjemmearbejde",
+      "locationShort": "Hjemmearbe."
+    }
+  },
+  {
+    "department": "Programmør",
+    "team": {
+      "id": 25,
+      "name": "Team 25",
+      "location": "lok: 308",
+      "instructor": "olhe",
+      "instructorMail": "olhe@mercantec.dk"
+    },
+    "employee": {
+      "id": 682,
+      "bgColor": "#0080FF",
+      "nameShort": "Jesper",
+      "nameLong": "Jesper Kjærgaard",
+      "flexColor": "red",
+      "flex": {
+        "secondsTotal": 10560,
+        "hoursPartial": 2,
+        "minutesPartial": 56,
+        "isNegative": false,
+        "srcString": "02:56"
+      },
+      "projectName": "Robo Rally (2)",
+      "workTimeString": "07:50-",
+      "locationLong": "Skole praktik",
+      "locationShort": "Skole prak."
+    }
+  },
+  {
+    "department": "Programmør",
+    "team": {
+      "id": 25,
+      "name": "Team 25",
+      "location": "lok: 308",
+      "instructor": "olhe",
+      "instructorMail": "olhe@mercantec.dk"
+    },
+    "employee": {
+      "id": 422,
+      "bgColor": "#005c99",
+      "nameShort": "Jakob",
+      "nameLong": "Jakob Skindstad Frederiksen",
+      "flexColor": "#90EE90",
+      "flex": {
+        "secondsTotal": 6180,
+        "hoursPartial": 1,
+        "minutesPartial": 43,
+        "isNegative": false,
+        "srcString": "01:43"
+      },
+      "projectName": "Retorik (2)",
+      "workTimeString": "Ikke logget ind",
+      "locationLong": "Hjemmearbejde",
+      "locationShort": "Hjemmearbe."
+    }
+  },
+  {
+    "department": "Programmør",
+    "team": {
+      "id": 26,
+      "name": "Team 26",
+      "location": "Skive",
+      "instructor": "olhe",
+      "instructorMail": "olhe@mercantec.dk"
+    },
+    "employee": {
+      "id": 96,
+      "bgColor": "#0080FF",
+      "nameShort": "Jeppe",
+      "nameLong": "Jeppe Huy Hansen Lillelund",
+      "flexColor": "#90EE90",
+      "flex": {
+        "secondsTotal": 258000,
+        "hoursPartial": 71,
+        "minutesPartial": 40,
+        "isNegative": false,
+        "srcString": "71:40"
+      },
+      "projectName": "Evaluerings  (3)",
+      "workTimeString": "07:29-",
+      "locationLong": "Skole praktik",
+      "locationShort": "Skole prak."
+    }
+  },
+  {
+    "department": "Programmør",
+    "team": {
+      "id": 26,
+      "name": "Team 26",
+      "location": "Skive",
+      "instructor": "olhe",
+      "instructorMail": "olhe@mercantec.dk"
+    },
+    "employee": {
+      "id": 541,
+      "bgColor": "#008000",
+      "nameShort": "Nicklas",
+      "nameLong": "Nicklas Mathiesen",
+      "flexColor": "#90EE90",
+      "flex": {
+        "secondsTotal": 51060,
+        "hoursPartial": 14,
+        "minutesPartial": 11,
+        "isNegative": false,
+        "srcString": "14:11"
+      },
+      "projectName": "",
+      "workTimeString": "Ikke logget ind",
+      "locationLong": "tkvf2139mac",
+      "locationShort": "tkvf2139ma."
+    }
+  },
+  {
+    "department": "Programmør",
+    "team": {
+      "id": 26,
+      "name": "Team 26",
+      "location": "Skive",
+      "instructor": "olhe",
+      "instructorMail": "olhe@mercantec.dk"
+    },
+    "employee": {
+      "id": 664,
+      "bgColor": "#0080FF",
+      "nameShort": "Tobias",
+      "nameLong": "Tobias Brøndum Breinhild",
+      "flexColor": "#90EE90",
+      "flex": {
+        "secondsTotal": 283860,
+        "hoursPartial": 78,
+        "minutesPartial": 51,
+        "isNegative": false,
+        "srcString": "78:51"
+      },
+      "projectName": "",
+      "workTimeString": "06:41-",
+      "locationLong": "Skole praktik",
+      "locationShort": "Skole prak."
+    }
+  },
+  {
+    "department": "Programmør",
+    "team": {
+      "id": 26,
+      "name": "Team 26",
+      "location": "Skive",
+      "instructor": "olhe",
+      "instructorMail": "olhe@mercantec.dk"
+    },
+    "employee": {
+      "id": 672,
+      "bgColor": "#0080FF",
+      "nameShort": "William",
+      "nameLong": "William Jagd Kammer",
+      "flexColor": "red",
+      "flex": {
+        "secondsTotal": 23940,
+        "hoursPartial": 6,
+        "minutesPartial": 39,
+        "isNegative": false,
+        "srcString": "06:39"
+      },
+      "projectName": "",
+      "workTimeString": "08:45-",
+      "locationLong": "Skole praktik",
+      "locationShort": "Skole prak."
+    }
+  },
+  {
+    "department": "Programmør",
+    "team": {
+      "id": 26,
+      "name": "Team 26",
+      "location": "Skive",
+      "instructor": "olhe",
+      "instructorMail": "olhe@mercantec.dk"
+    },
+    "employee": {
+      "id": 718,
+      "bgColor": "#005c99",
+      "nameShort": "Tommy",
+      "nameLong": "Tommy Munk Thomsen",
+      "flexColor": "#90EE90",
+      "flex": {
+        "secondsTotal": 7620,
+        "hoursPartial": 2,
+        "minutesPartial": 7,
+        "isNegative": false,
+        "srcString": "02:07"
+      },
+      "projectName": "",
+      "workTimeString": "Ikke logget ind",
+      "locationLong": "Hjemmearbejde",
+      "locationShort": "Hjemmearbe."
+    }
+  },
+  {
+    "department": "Programmør",
+    "team": {
+      "id": 26,
+      "name": "Team 26",
+      "location": "Skive",
+      "instructor": "olhe",
+      "instructorMail": "olhe@mercantec.dk"
+    },
+    "employee": {
+      "id": 740,
+      "bgColor": "#008000",
+      "nameShort": "Dan",
+      "nameLong": "Dan Thormann Damgaard",
+      "flexColor": "#90EE90",
+      "flex": {
+        "secondsTotal": 82980,
+        "hoursPartial": 23,
+        "minutesPartial": 3,
+        "isNegative": false,
+        "srcString": "23:03"
+      },
+      "projectName": "",
+      "workTimeString": "Ikke logget ind",
+      "locationLong": "dt2h2002pro",
+      "locationShort": "dt2h2002pr."
+    }
+  },
+  {
+    "department": "Programmør",
+    "team": {
+      "id": 26,
+      "name": "Team 26",
+      "location": "Skive",
+      "instructor": "olhe",
+      "instructorMail": "olhe@mercantec.dk"
+    },
+    "employee": {
+      "id": 994,
+      "bgColor": "#008000",
+      "nameShort": "Timme",
+      "nameLong": "Timme Snogdal Sørensen",
+      "flexColor": "red",
+      "flex": {
+        "secondsTotal": 31740,
+        "hoursPartial": 8,
+        "minutesPartial": 49,
+        "isNegative": false,
+        "srcString": "08:49"
+      },
+      "projectName": "Læreing",
+      "workTimeString": "Ikke logget ind",
+      "locationLong": "dtEUX2h19XNpro",
+      "locationShort": "dtEUX2h19X."
+    }
+  },
+  {
+    "department": "Programmør",
+    "team": {
+      "id": 26,
+      "name": "Team 26",
+      "location": "Skive",
+      "instructor": "olhe",
+      "instructorMail": "olhe@mercantec.dk"
+    },
+    "employee": {
+      "id": 995,
+      "bgColor": "#008000",
+      "nameShort": "Jesper",
+      "nameLong": "Jesper Bak Handskemager",
+      "flexColor": "red",
+      "flex": {
+        "secondsTotal": 46200,
+        "hoursPartial": 12,
+        "minutesPartial": 50,
+        "isNegative": false,
+        "srcString": "12:50"
+      },
+      "projectName": "MediaWiki, S (2)",
+      "workTimeString": "Ikke logget ind",
+      "locationLong": "dt2h2002pro",
+      "locationShort": "dt2h2002pr."
+    }
+  },
+  {
+    "department": "Infrastruktur",
+    "team": {
+      "id": 30,
+      "name": "2nd lvl",
+      "location": "lok: 301",
+      "instructor": "janj",
+      "instructorMail": "janj@mercantec.dk"
+    },
+    "employee": {
+      "id": 563,
+      "bgColor": "#0080FF",
+      "nameShort": "Filip",
+      "nameLong": "Filip Christensen",
+      "flexColor": "#90EE90",
+      "flex": {
+        "secondsTotal": 3540,
+        "hoursPartial": 0,
+        "minutesPartial": 59,
+        "isNegative": false,
+        "srcString": "00:59"
+      },
+      "projectName": "",
+      "workTimeString": "09:00-",
+      "locationLong": "Skole praktik",
+      "locationShort": "Skole prak."
+    }
+  },
+  {
+    "department": "Infrastruktur",
+    "team": {
+      "id": 30,
+      "name": "2nd lvl",
+      "location": "lok: 301",
+      "instructor": "janj",
+      "instructorMail": "janj@mercantec.dk"
+    },
+    "employee": {
+      "id": 598,
+      "bgColor": "#008000",
+      "nameShort": "Jakob",
+      "nameLong": "Jakob Bødker Hansen",
+      "flexColor": "red",
+      "flex": {
+        "secondsTotal": 150060,
+        "hoursPartial": 41,
+        "minutesPartial": 41,
+        "isNegative": false,
+        "srcString": "41:41"
+      },
+      "projectName": "Linux Images (2)",
+      "workTimeString": "Ikke logget ind",
+      "locationLong": "it3h2001sep",
+      "locationShort": "it3h2001se."
+    }
+  },
+  {
+    "department": "Infrastruktur",
+    "team": {
+      "id": 30,
+      "name": "2nd lvl",
+      "location": "lok: 301",
+      "instructor": "janj",
+      "instructorMail": "janj@mercantec.dk"
+    },
+    "employee": {
+      "id": 423,
+      "bgColor": "#0080FF",
+      "nameShort": "Jesper",
+      "nameLong": "Jesper Wittorff Andersen",
+      "flexColor": "red",
+      "flex": {
+        "secondsTotal": 56760,
+        "hoursPartial": 15,
+        "minutesPartial": 46,
+        "isNegative": false,
+        "srcString": "15:46"
+      },
+      "projectName": "Container ud (2)",
+      "workTimeString": "08:43-",
+      "locationLong": "Skole praktik",
+      "locationShort": "Skole prak."
+    }
+  },
+  {
+    "department": "Infrastruktur",
+    "team": {
+      "id": 30,
+      "name": "2nd lvl",
+      "location": "lok: 301",
+      "instructor": "janj",
+      "instructorMail": "janj@mercantec.dk"
+    },
+    "employee": {
+      "id": 680,
+      "bgColor": "#0080FF",
+      "nameShort": "Jan",
+      "nameLong": "Jan Tongjip Poulsen Jensen",
+      "flexColor": "#90EE90",
+      "flex": {
+        "secondsTotal": 180,
+        "hoursPartial": 0,
+        "minutesPartial": 3,
+        "isNegative": false,
+        "srcString": "00:03"
+      },
+      "projectName": "",
+      "workTimeString": "08:14-",
+      "locationLong": "Skole praktik",
+      "locationShort": "Skole prak."
+    }
+  },
+  {
+    "department": "Infrastruktur",
+    "team": {
+      "id": 30,
+      "name": "2nd lvl",
+      "location": "lok: 301",
+      "instructor": "janj",
+      "instructorMail": "janj@mercantec.dk"
+    },
+    "employee": {
+      "id": 1093,
+      "bgColor": "#0080FF",
+      "nameShort": "Ricky",
+      "nameLong": "Ricky Reenberg Nielsen",
+      "flexColor": "#90EE90",
+      "flex": {
+        "secondsTotal": 7260,
+        "hoursPartial": 2,
+        "minutesPartial": 1,
+        "isNegative": false,
+        "srcString": "02:01"
+      },
+      "projectName": "",
+      "workTimeString": "09:08-",
+      "locationLong": "Skole praktik",
+      "locationShort": "Skole prak."
+    }
+  },
+  {
+    "department": "Infrastruktur",
+    "team": {
+      "id": 31,
+      "name": "2nd lvl",
+      "location": "lok: 304",
+      "instructor": "janj",
+      "instructorMail": "janj@mercantec.dk"
+    },
+    "employee": {
+      "id": 106,
+      "bgColor": "#DF7401",
+      "nameShort": "Henrik",
+      "nameLong": "Henrik Kirkegaard Olesen",
+      "flexColor": "#90EE90",
+      "flex": {
+        "secondsTotal": 780,
+        "hoursPartial": 0,
+        "minutesPartial": 13,
+        "isNegative": false,
+        "srcString": "00:13"
+      },
+      "projectName": "",
+      "workTimeString": "Ikke logget ind",
+      "locationLong": "ferie",
+      "locationShort": "ferie"
+    }
+  },
+  {
+    "department": "Infrastruktur",
+    "team": {
+      "id": 31,
+      "name": "2nd lvl",
+      "location": "lok: 304",
+      "instructor": "janj",
+      "instructorMail": "janj@mercantec.dk"
+    },
+    "employee": {
+      "id": 477,
+      "bgColor": "#0080FF",
+      "nameShort": "Andreas",
+      "nameLong": "Andreas Selbach Rasmussen",
+      "flexColor": "#90EE90",
+      "flex": {
+        "secondsTotal": 112920,
+        "hoursPartial": 31,
+        "minutesPartial": 22,
+        "isNegative": false,
+        "srcString": "31:22"
+      },
+      "projectName": "Xibo",
+      "workTimeString": "08:15-",
+      "locationLong": "Skole praktik",
+      "locationShort": "Skole prak."
+    }
+  },
+  {
+    "department": "Infrastruktur",
+    "team": {
+      "id": 31,
+      "name": "2nd lvl",
+      "location": "lok: 304",
+      "instructor": "janj",
+      "instructorMail": "janj@mercantec.dk"
+    },
+    "employee": {
+      "id": 425,
+      "bgColor": "#DF7401",
+      "nameShort": "Kenneth",
+      "nameLong": "Kenneth Krogh Risom",
+      "flexColor": "#90EE90",
+      "flex": {
+        "secondsTotal": 34680,
+        "hoursPartial": 9,
+        "minutesPartial": 38,
+        "isNegative": false,
+        "srcString": "09:38"
+      },
+      "projectName": "Network",
+      "workTimeString": "Ikke logget ind",
+      "locationLong": "afspadsering",
+      "locationShort": "afspadseri."
+    }
+  },
+  {
+    "department": "Infrastruktur",
+    "team": {
+      "id": 31,
+      "name": "2nd lvl",
+      "location": "lok: 304",
+      "instructor": "janj",
+      "instructorMail": "janj@mercantec.dk"
+    },
+    "employee": {
+      "id": 660,
+      "bgColor": "#0080FF",
+      "nameShort": "Simon",
+      "nameLong": "Simon Hyldahl Kjeldsen",
+      "flexColor": "red",
+      "flex": {
+        "secondsTotal": 6780,
+        "hoursPartial": 1,
+        "minutesPartial": 53,
+        "isNegative": false,
+        "srcString": "01:53"
+      },
+      "projectName": "",
+      "workTimeString": "Ikke logget ind",
+      "locationLong": "Skole praktik",
+      "locationShort": "Skole prak."
+    }
+  },
+  {
+    "department": "Infrastruktur",
+    "team": {
+      "id": 31,
+      "name": "2nd lvl",
+      "location": "lok: 304",
+      "instructor": "janj",
+      "instructorMail": "janj@mercantec.dk"
+    },
+    "employee": {
+      "id": 595,
+      "bgColor": "#0080FF",
+      "nameShort": "Silas",
+      "nameLong": "Silas Brocelius Jacobsen",
+      "flexColor": "#90EE90",
+      "flex": {
+        "secondsTotal": 5700,
+        "hoursPartial": 1,
+        "minutesPartial": 35,
+        "isNegative": false,
+        "srcString": "01:35"
+      },
+      "projectName": "",
+      "workTimeString": "07:57-",
+      "locationLong": "Skole praktik",
+      "locationShort": "Skole prak."
+    }
+  },
+  {
+    "department": "Infrastruktur",
+    "team": {
+      "id": 31,
+      "name": "2nd lvl",
+      "location": "lok: 304",
+      "instructor": "janj",
+      "instructorMail": "janj@mercantec.dk"
+    },
+    "employee": {
+      "id": 552,
+      "bgColor": "#008000",
+      "nameShort": "Jeppe",
+      "nameLong": "Jeppe Bleser",
+      "flexColor": "#90EE90",
+      "flex": {
+        "secondsTotal": 14640,
+        "hoursPartial": 4,
+        "minutesPartial": 4,
+        "isNegative": false,
+        "srcString": "04:04"
+      },
+      "projectName": "",
+      "workTimeString": "Ikke logget ind",
+      "locationLong": "tkvf2140des",
+      "locationShort": "tkvf2140de."
+    }
+  },
+  {
+    "department": "Infrastruktur",
+    "team": {
+      "id": 32,
+      "name": "2nd lvl",
+      "location": "lok: 307",
+      "instructor": "janj",
+      "instructorMail": "janj@mercantec.dk"
+    },
+    "employee": {
+      "id": 482,
+      "bgColor": "#0080FF",
+      "nameShort": "Niklas",
+      "nameLong": "Niklas Knattrup Sørensen",
+      "flexColor": "#90EE90",
+      "flex": {
+        "secondsTotal": 53460,
+        "hoursPartial": 14,
+        "minutesPartial": 51,
+        "isNegative": false,
+        "srcString": "14:51"
+      },
+      "projectName": "Dokumentatio (5)",
+      "workTimeString": "08:45-",
+      "locationLong": "Skole praktik",
+      "locationShort": "Skole prak."
+    }
+  },
+  {
+    "department": "Infrastruktur",
+    "team": {
+      "id": 32,
+      "name": "2nd lvl",
+      "location": "lok: 307",
+      "instructor": "janj",
+      "instructorMail": "janj@mercantec.dk"
+    },
+    "employee": {
+      "id": 444,
+      "bgColor": "#0080FF",
+      "nameShort": "Alexander",
+      "nameLong": "Alexander Dohrmann Rasmussen",
+      "flexColor": "red",
+      "flex": {
+        "secondsTotal": 11820,
+        "hoursPartial": 3,
+        "minutesPartial": 17,
+        "isNegative": false,
+        "srcString": "03:17"
+      },
+      "projectName": "Nyt backup syste",
+      "workTimeString": "08:29-",
+      "locationLong": "Skole praktik",
+      "locationShort": "Skole prak."
+    }
+  },
+  {
+    "department": "Infrastruktur",
+    "team": {
+      "id": 32,
+      "name": "2nd lvl",
+      "location": "lok: 307",
+      "instructor": "janj",
+      "instructorMail": "janj@mercantec.dk"
+    },
+    "employee": {
+      "id": 429,
+      "bgColor": "#0080FF",
+      "nameShort": "Mathias",
+      "nameLong": "Mathias Thuesen Imdrup",
+      "flexColor": "#90EE90",
+      "flex": {
+        "secondsTotal": 12540,
+        "hoursPartial": 3,
+        "minutesPartial": 29,
+        "isNegative": false,
+        "srcString": "03:29"
+      },
+      "projectName": "Datahouse Ov (2)",
+      "workTimeString": "08:34-",
+      "locationLong": "Skole praktik",
+      "locationShort": "Skole prak."
+    }
+  },
+  {
+    "department": "Infrastruktur",
+    "team": {
+      "id": 32,
+      "name": "2nd lvl",
+      "location": "lok: 307",
+      "instructor": "janj",
+      "instructorMail": "janj@mercantec.dk"
+    },
+    "employee": {
+      "id": 597,
+      "bgColor": "#0080FF",
+      "nameShort": "Andreas",
+      "nameLong": "Andreas Kjær Schaldemann Steffensen",
+      "flexColor": "#90EE90",
+      "flex": {
+        "secondsTotal": 54120,
+        "hoursPartial": 15,
+        "minutesPartial": 2,
+        "isNegative": false,
+        "srcString": "15:02"
+      },
+      "projectName": "",
+      "workTimeString": "Ikke logget ind",
+      "locationLong": "Skole praktik",
+      "locationShort": "Skole prak."
+    }
+  },
+  {
+    "department": "Infrastruktur",
+    "team": {
+      "id": 32,
+      "name": "2nd lvl",
+      "location": "lok: 307",
+      "instructor": "janj",
+      "instructorMail": "janj@mercantec.dk"
+    },
+    "employee": {
+      "id": 499,
+      "bgColor": "#008000",
+      "nameShort": "Rasmus",
+      "nameLong": "Rasmus Rosenbech Ræbild",
+      "flexColor": "#90EE90",
+      "flex": {
+        "secondsTotal": 4320,
+        "hoursPartial": 1,
+        "minutesPartial": 12,
+        "isNegative": false,
+        "srcString": "01:12"
+      },
+      "projectName": "",
+      "workTimeString": "Ikke logget ind",
+      "locationLong": "tkvf2140des",
+      "locationShort": "tkvf2140de."
+    }
+  },
+  {
+    "department": "Infrastruktur",
+    "team": {
+      "id": 32,
+      "name": "2nd lvl",
+      "location": "lok: 307",
+      "instructor": "janj",
+      "instructorMail": "janj@mercantec.dk"
+    },
+    "employee": {
+      "id": 497,
+      "bgColor": "#008000",
+      "nameShort": "Jonas",
+      "nameLong": "Jonas Hvidbjerg Pedersen",
+      "flexColor": "#90EE90",
+      "flex": {
+        "secondsTotal": 6660,
+        "hoursPartial": 1,
+        "minutesPartial": 51,
+        "isNegative": false,
+        "srcString": "01:51"
+      },
+      "projectName": "Serverflytni (2)",
+      "workTimeString": "Ikke logget ind",
+      "locationLong": "tkvf2140des",
+      "locationShort": "tkvf2140de."
+    }
+  },
+  {
+    "department": "Infrastruktur",
+    "team": {
+      "id": 32,
+      "name": "2nd lvl",
+      "location": "lok: 307",
+      "instructor": "janj",
+      "instructorMail": "janj@mercantec.dk"
+    },
+    "employee": {
+      "id": 556,
+      "bgColor": "#FF0000",
+      "nameShort": "Mohamad",
+      "nameLong": "Mohamad Esam Ahmad Alshaar",
+      "flexColor": "red",
+      "flex": {
+        "secondsTotal": 4020,
+        "hoursPartial": 1,
+        "minutesPartial": 7,
+        "isNegative": false,
+        "srcString": "01:07"
+      },
+      "projectName": "",
+      "workTimeString": "Ikke logget ind",
+      "locationLong": "syg",
+      "locationShort": "syg"
+    }
+  },
+  {
+    "department": "Infrastruktur",
+    "team": {
+      "id": 32,
+      "name": "2nd lvl",
+      "location": "lok: 307",
+      "instructor": "janj",
+      "instructorMail": "janj@mercantec.dk"
+    },
+    "employee": {
+      "id": 479,
+      "bgColor": "#008000",
+      "nameShort": "Martin",
+      "nameLong": "Martin Jørgensen",
+      "flexColor": "red",
+      "flex": {
+        "secondsTotal": 22500,
+        "hoursPartial": 6,
+        "minutesPartial": 15,
+        "isNegative": false,
+        "srcString": "06:15"
+      },
+      "projectName": "Hjemmeside t (3)",
+      "workTimeString": "Ikke logget ind",
+      "locationLong": "Skole",
+      "locationShort": "Skole"
+    }
+  },
+  {
+    "department": "Infrastruktur",
+    "team": {
+      "id": 33,
+      "name": "2nd lvl",
+      "location": "lok: Skive",
+      "instructor": "olhe",
+      "instructorMail": "olhe@mercantec.dk"
+    },
+    "employee": {
+      "id": 676,
+      "bgColor": "#DF7401",
+      "nameShort": "Danni",
+      "nameLong": "Danni Søndergaard",
+      "flexColor": "#90EE90",
+      "flex": {
+        "secondsTotal": 18240,
+        "hoursPartial": 5,
+        "minutesPartial": 4,
+        "isNegative": false,
+        "srcString": "05:04"
+      },
+      "projectName": "",
+      "workTimeString": "Ikke logget ind",
+      "locationLong": "ferie",
+      "locationShort": "ferie"
+    }
+  },
+  {
+    "department": "Infrastruktur",
+    "team": {
+      "id": 33,
+      "name": "2nd lvl",
+      "location": "lok: Skive",
+      "instructor": "olhe",
+      "instructorMail": "olhe@mercantec.dk"
+    },
+    "employee": {
+      "id": 716,
+      "bgColor": "#0080FF",
+      "nameShort": "Rasmus",
+      "nameLong": "Rasmus Holst Andersen",
+      "flexColor": "#90EE90",
+      "flex": {
+        "secondsTotal": 18900,
+        "hoursPartial": 5,
+        "minutesPartial": 15,
+        "isNegative": false,
+        "srcString": "05:15"
+      },
+      "projectName": "",
+      "workTimeString": "07:48-",
+      "locationLong": "Skole praktik",
+      "locationShort": "Skole prak."
+    }
+  },
+  {
+    "department": "Infrastruktur",
+    "team": {
+      "id": 33,
+      "name": "2nd lvl",
+      "location": "lok: Skive",
+      "instructor": "olhe",
+      "instructorMail": "olhe@mercantec.dk"
+    },
+    "employee": {
+      "id": 722,
+      "bgColor": "#0080FF",
+      "nameShort": "Ole",
+      "nameLong": "Ole Søndergaard Iversen",
+      "flexColor": "#90EE90",
+      "flex": {
+        "secondsTotal": 5520,
+        "hoursPartial": 1,
+        "minutesPartial": 32,
+        "isNegative": false,
+        "srcString": "01:32"
+      },
+      "projectName": "login til SK (2)",
+      "workTimeString": "07:06-",
+      "locationLong": "Skole praktik",
+      "locationShort": "Skole prak."
+    }
+  },
+  {
+    "department": "Infrastruktur",
+    "team": {
+      "id": 33,
+      "name": "2nd lvl",
+      "location": "lok: Skive",
+      "instructor": "olhe",
+      "instructorMail": "olhe@mercantec.dk"
+    },
+    "employee": {
+      "id": 567,
+      "bgColor": "#DF7401",
+      "nameShort": "Alexander",
+      "nameLong": "Alexander Sejer Jensen",
+      "flexColor": "#90EE90",
+      "flex": {
+        "secondsTotal": 44880,
+        "hoursPartial": 12,
+        "minutesPartial": 28,
+        "isNegative": false,
+        "srcString": "12:28"
+      },
+      "projectName": "",
+      "workTimeString": "Ikke logget ind",
+      "locationLong": "afspadsering",
+      "locationShort": "afspadseri."
+    }
+  },
+  {
+    "department": "Stab",
+    "team": {
+      "id": 99,
+      "name": "Team 99",
+      "location": "Instruktører",
+      "instructor": "",
+      "instructorMail": ""
+    },
+    "employee": {
+      "id": 406,
+      "bgColor": "#0080FF",
+      "nameShort": "*Jan",
+      "nameLong": "*Jan Jensen",
+      "flexColor": "#90EE90",
+      "flex": {
+        "secondsTotal": 32400,
+        "hoursPartial": 9,
+        "minutesPartial": 0,
+        "isNegative": false,
+        "srcString": "09:00"
+      },
+      "projectName": "Robotterne k (18)",
+      "workTimeString": "Mangler kort: 2",
+      "locationLong": "Skole praktik",
+      "locationShort": "Skole prak."
+    }
+  },
+  {
+    "department": "Stab",
+    "team": {
+      "id": 99,
+      "name": "Team 99",
+      "location": "Instruktører",
+      "instructor": "",
+      "instructorMail": ""
+    },
+    "employee": {
+      "id": 407,
+      "bgColor": "#0080FF",
+      "nameShort": "*Ole",
+      "nameLong": "*Ole Soelberg",
+      "flexColor": "red",
+      "flex": {
+        "secondsTotal": 24180,
+        "hoursPartial": 6,
+        "minutesPartial": 43,
+        "isNegative": false,
+        "srcString": "06:43"
+      },
+      "projectName": "Robotterne k (10)",
+      "workTimeString": "Ikke logget ind",
+      "locationLong": "Skole praktik",
+      "locationShort": "Skole prak."
+    }
+  },
+  {
+    "department": "Stab",
+    "team": {
+      "id": 99,
+      "name": "Team 99",
+      "location": "Instruktører",
+      "instructor": "",
+      "instructorMail": ""
+    },
+    "employee": {
+      "id": 529,
+      "bgColor": "#0080FF",
+      "nameShort": "*Bjarne",
+      "nameLong": "*Bjarne Rasmussen",
+      "flexColor": "#90EE90",
+      "flex": {
+        "secondsTotal": 21600,
+        "hoursPartial": 6,
+        "minutesPartial": 0,
+        "isNegative": false,
+        "srcString": "06:00"
+      },
+      "projectName": "",
+      "workTimeString": "Mangler kort: 0",
+      "locationLong": "Skole praktik",
+      "locationShort": "Skole prak."
+    }
+  },
+  {
+    "department": "Stab",
+    "team": {
+      "id": 99,
+      "name": "Team 99",
+      "location": "Instruktører",
+      "instructor": "",
+      "instructorMail": ""
+    },
+    "employee": {
+      "id": 544,
+      "bgColor": "#0080FF",
+      "nameShort": "*Peder-Bent",
+      "nameLong": "*Peder-Bent Guldbrand",
+      "flexColor": "#90EE90",
+      "flex": {
+        "secondsTotal": 25200,
+        "hoursPartial": 7,
+        "minutesPartial": 0,
+        "isNegative": false,
+        "srcString": "07:00"
+      },
+      "projectName": "",
+      "workTimeString": "Ikke logget ind",
+      "locationLong": "Skole praktik",
+      "locationShort": "Skole prak."
+    }
+  },
+  {
+    "department": "Stab",
+    "team": {
+      "id": 99,
+      "name": "Team 99",
+      "location": "Instruktører",
+      "instructor": "",
+      "instructorMail": ""
+    },
+    "employee": {
+      "id": 726,
+      "bgColor": "#005c99",
+      "nameShort": "*Helledie",
+      "nameLong": "*Helledie Ole",
+      "flexColor": "#90EE90",
+      "flex": {
+        "secondsTotal": 18000,
+        "hoursPartial": 5,
+        "minutesPartial": 0,
+        "isNegative": false,
+        "srcString": "05:00"
+      },
+      "projectName": "",
+      "workTimeString": "Ikke logget ind",
+      "locationLong": "Hjemmearbejde",
+      "locationShort": "Hjemmearbe."
+    }
+  },
+  {
+    "department": "Stab",
+    "team": {
+      "id": 99,
+      "name": "Team 99",
+      "location": "Instruktører",
+      "instructor": "",
+      "instructorMail": ""
+    },
+    "employee": {
+      "id": 735,
+      "bgColor": "#005c99",
+      "nameShort": "*Mette",
+      "nameLong": "*Mette Have",
+      "flexColor": "#90EE90",
+      "flex": {
+        "secondsTotal": 46800,
+        "hoursPartial": 13,
+        "minutesPartial": 0,
+        "isNegative": false,
+        "srcString": "13:00"
+      },
+      "projectName": "",
+      "workTimeString": "Mangler kort: 0",
+      "locationLong": "Hjemmearbejde",
+      "locationShort": "Hjemmearbe."
+    }
+  },
+  {
+    "department": "Stab",
+    "team": {
+      "id": 90,
+      "name": "Team 90",
+      "location": "Lærlinge",
+      "instructor": "",
+      "instructorMail": ""
+    },
+    "employee": {
+      "id": 480,
+      "bgColor": "#008000",
+      "nameShort": "+Michael",
+      "nameLong": "+Michael Lechscheidt Christensen",
+      "flexColor": "red",
+      "flex": {
+        "secondsTotal": 78720,
+        "hoursPartial": 21,
+        "minutesPartial": 52,
+        "isNegative": false,
+        "srcString": "21:52"
+      },
+      "projectName": "Møbler på billed",
+      "workTimeString": "Ikke logget ind",
+      "locationLong": "tkvf2139mac",
+      "locationShort": "tkvf2139ma."
+    }
+  },
+  {
+    "department": "Stab",
+    "team": {
+      "id": 90,
+      "name": "Team 90",
+      "location": "Lærlinge",
+      "instructor": "",
+      "instructorMail": ""
+    },
+    "employee": {
+      "id": 512,
+      "bgColor": "#DF7401",
+      "nameShort": "+Christoffer",
+      "nameLong": "+Christoffer Møller Petersen",
+      "flexColor": "#90EE90",
+      "flex": {
+        "secondsTotal": 18000,
+        "hoursPartial": 5,
+        "minutesPartial": 0,
+        "isNegative": false,
+        "srcString": "05:00"
+      },
+      "projectName": "Valgfri speciale",
+      "workTimeString": "Ikke logget ind",
+      "locationLong": "Barsel",
+      "locationShort": "Barsel"
+    }
+  },
+  {
+    "department": "Stab",
+    "team": {
+      "id": 90,
+      "name": "Team 90",
+      "location": "Lærlinge",
+      "instructor": "",
+      "instructorMail": ""
+    },
+    "employee": {
+      "id": 999,
+      "bgColor": "#008000",
+      "nameShort": "+Viktor",
+      "nameLong": "+Viktor Primdal  Toft",
+      "flexColor": "#90EE90",
+      "flex": {
+        "secondsTotal": 14520,
+        "hoursPartial": 4,
+        "minutesPartial": 2,
+        "isNegative": false,
+        "srcString": "04:02"
+      },
+      "projectName": "Projekt 3D print",
+      "workTimeString": "Ikke logget ind",
+      "locationLong": "dtEUX2h19XNinf",
+      "locationShort": "dtEUX2h19X."
+    }
+  },
+  {
+    "department": "Stab",
+    "team": {
+      "id": 90,
+      "name": "Team 90",
+      "location": "Lærlinge",
+      "instructor": "",
+      "instructorMail": ""
+    },
+    "employee": {
+      "id": 1054,
+      "bgColor": "#0080FF",
+      "nameShort": "+Jeppe",
+      "nameLong": "+Jeppe Bach Motzkus",
+      "flexColor": "#90EE90",
+      "flex": {
+        "secondsTotal": 38700,
+        "hoursPartial": 10,
+        "minutesPartial": 45,
+        "isNegative": false,
+        "srcString": "10:45"
+      },
+      "projectName": "",
+      "workTimeString": "Ikke logget ind",
+      "locationLong": "Skole praktik",
+      "locationShort": "Skole prak."
+    }
+  }
+]
