@@ -44,9 +44,9 @@ export const getCells = (row: string) => {
 }
 
 export const getElevId = (nonModHtml: string, name: string) => {
-  const result = nonModHtml.match(new RegExp(`<a.*?href="elev_visning\\.php\\?elevid=(?<id>\\d+)">${'\\' + name}.*?</a>`, 's'));
+  const result = nonModHtml.match(new RegExp(`<a.*?href="elev_visning\\.php\\?elevid=(?<id>\\d+)">${name.replace(/([\*\+])/g, '\\$1')}.*?</a>`, 's'));
   if (result === null || typeof result.groups === undefined) {
-    console.log(result)
+    console.log(nonModHtml)
     throw new Error(`Could not scrape id of Elev: '${name}', #0`);
   }
   const idString = result.groups!['id'];
@@ -102,5 +102,5 @@ export const scrapeElevOversigt = (html: string) => {
 
 export const makeElevOversigtSampleData = async () => {
   const html = await readFile('./samples/elev_oversigt_test.html');
-  await writeFile('./samples/elev_oversigt_test.json', JSON.stringify(scrapeElevOversigt(html.toString())));
+  await writeFile('./samples/elev_oversigt_test.json', JSON.stringify(scrapeElevOversigt(html.toString()), null, 2));
 }
