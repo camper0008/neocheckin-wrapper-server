@@ -3,21 +3,23 @@ import { writeFile } from "fs/promises";
 import { Agent as HttpsAgent } from "https";
 import { FlexTime, Time } from "../models/Employee";
 import { iteratorToArray } from "../utils/iteratorUtils";
+import { flexTimeFromString } from "../utils/timeUtils";
 
 export interface TeamsTeamScrape {
+  id: number,
   name: string;
   location: string;
-  instructer: string;
-  instructerMail: string;
+  instructor: string;
+  instructorMail: string;
 }
 
 export interface TeamsTeamEmployeeScrape {
-  id: string;
+  id: number;
   bgColor: string;
   nameShort: string;
   nameLong: string;
   flexColor: string;
-  flexString: string;
+  flex: FlexTime;
   projectName: string;
   workTimeString: string;
   locationLong: string;
@@ -81,16 +83,19 @@ export const getTeamTableHtml = (html: string): string[] => {
 
 export const getTeamInfoFromTable = (html: string): TeamsTeamScrape => {
   const match = html.match(
-    /<td colspan="1"><strong>(.*)<\/strong><\/td><td><strong>(.*)<img (?:.*)><\/strong>.*<a href="mailto:(\w+@\w+\.\w+)">\((\w+)\)<\/a><\/td>/
+    /<td colspan="1"><strong>(.*?)<\/strong><\/td><td><strong>(.*?)<img.*?team_mail_list\.php\?team=(\d+)\'\).*?\><\/strong>.*?(?:<a href="mailto:(\w+@.*?)">\((\w+)\)<\/a>)?<\/td>/
   );
-  if (!match || !match[1])
+  if (!match || !match[1]) {
+    console.log(html)
     throw new Error('Team name could not be scraped');
+  }
   
   return {
-    name: match[1],
-    location: match[2],
-    instructer: match[3],
-    instructerMail: match[4],
+    id: parseInt((match[3] || '').trim()),
+    name: (match[1] || '').trim(),
+    location: (match[2] || '').trim(),
+    instructor: (match[5] || '').trim(),
+    instructorMail: (match[4] || '').trim(),
   };
 }
 
@@ -114,16 +119,16 @@ export const getEmployeesFromTable = (html: string): TeamsTeamEmployeeScrape[] =
   const employees: TeamsTeamEmployeeScrape[] = [];
   for (let i in matches) {
     employees.push({
-      id: matches[i].groups!['imageId'],
-      bgColor: matches[i].groups!['bgColor'],
-      nameShort: matches[i].groups!['nameShort'],
-      nameLong: matches[i].groups!['nameLong'],
-      flexColor: matches[i].groups!['flexColor'],
-      flexString: matches[i].groups!['flexTime'],
-      projectName: matches[i].groups!['projectName'],
-      workTimeString: matches[i].groups!['workTime'],
-      locationLong: matches[i].groups!['locationLong'],
-      locationShort: matches[i].groups!['locationShort'],
+      id: parseInt((matches[i].groups!['imageId'] || '').trim()),
+      bgColor: (matches[i].groups!['bgColor'] || '').trim(),
+      nameShort: (matches[i].groups!['nameShort'] || '').trim(),
+      nameLong: (matches[i].groups!['nameLong'] || '').trim(),
+      flexColor: (matches[i].groups!['flexColor'] || '').trim(),
+      flex: flexTimeFromString((matches[i].groups!['flexTime'] || '').trim()),
+      projectName: (matches[i].groups!['projectName'] || '').trim(),
+      workTimeString: (matches[i].groups!['workTime'] || '').trim(),
+      locationLong: (matches[i].groups!['locationLong'] || '').trim(),
+      locationShort: (matches[i].groups!['locationShort'] || '').trim(),
     });
   }
     
