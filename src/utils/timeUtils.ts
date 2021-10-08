@@ -17,5 +17,6 @@ export const flexTimeFromString = (flex: string): FlexTime => {
     hoursPartial,
     minutesPartial,
     isNegative,
+    srcString: flex,
   };
 }

@@ -5,8 +5,8 @@ import { readFile } from 'fs/promises';
 import { createServer as createHttpServer } from 'http';
 import { createServer as createHttpsServer } from 'https';
 import { join } from 'path';
-import { makeElevOversigtSampleData } from './instrukdb/elevOversigt';
-import { getTeamsHtml, TeamsPages } from './instrukdb/teams';
+import { CacheUpdater } from './cache/cache';
+import { MemoryDb } from './database/MemoryDb';
 
 
 const getSSL = async () => {
@@ -35,19 +35,20 @@ const getHttpsPort = (fallback: number = 443) => {
   }
 }
 
-const makeTestSamples = () => {
-  makeElevOversigtSampleData();
+// const makeTestSamples = () => {
+//   makeElevOversigtSampleData();
 
-  getTeamsHtml(TeamsPages.ItSupport);
-  getTeamsHtml(TeamsPages.Programmør);
-  getTeamsHtml(TeamsPages.Infrastruktur);
-  getTeamsHtml(TeamsPages.Stab);
-}
+//   fetchTeamsHtml();
+// }
 
 const main = async () => {
   const app = express();
   const httpServer = createHttpServer(app);
   const httpsServer = createHttpsServer(await getSSL(), app);
+
+  const database = new MemoryDb();
+  const cacheUpdater = new CacheUpdater(database);
+  cacheUpdater.start(60 * 1000)
 
   app.use(cors());
   app.use(express.json());
@@ -58,8 +59,6 @@ const main = async () => {
   const [httpPort, httpsPort] = [getHttpPort(8080), getHttpsPort(8443)];
   httpServer.listen(httpPort, () => console.log(`Express HTTP at http://localhost:${httpPort}/`));
   httpsServer.listen(httpsPort, () => console.log(`Express HTTPS at https://localhost:${httpsPort}/`));
-
-  // makeTestSamples();
 }
 
 config();

@@ -7,7 +7,8 @@
       "secondsTotal": 8160,
       "hoursPartial": 2,
       "minutesPartial": 16,
-      "isNegative": true
+      "isNegative": true,
+      "srcString": "-02:16"
     },
     "vacation": {
       "planned": 0,
@@ -23,7 +24,8 @@
       "secondsTotal": 0,
       "hoursPartial": 0,
       "minutesPartial": 0,
-      "isNegative": false
+      "isNegative": false,
+      "srcString": "00:00"
     },
     "vacation": {
       "planned": 4,
@@ -39,7 +41,8 @@
       "secondsTotal": 9840,
       "hoursPartial": 2,
       "minutesPartial": 44,
-      "isNegative": true
+      "isNegative": true,
+      "srcString": "-02:44"
     },
     "vacation": {
       "planned": 4,
@@ -55,7 +58,8 @@
       "secondsTotal": 18000,
       "hoursPartial": 5,
       "minutesPartial": 0,
-      "isNegative": false
+      "isNegative": false,
+      "srcString": "05:00"
     },
     "vacation": {
       "planned": 4,
@@ -71,7 +75,8 @@
       "secondsTotal": 78720,
       "hoursPartial": 21,
       "minutesPartial": 52,
-      "isNegative": true
+      "isNegative": true,
+      "srcString": "-21:52"
     },
     "vacation": {
       "planned": 4,
@@ -87,7 +92,8 @@
       "secondsTotal": 11280,
       "hoursPartial": 3,
       "minutesPartial": 8,
-      "isNegative": true
+      "isNegative": true,
+      "srcString": "-03:08"
     },
     "vacation": {
       "planned": 4,
@@ -103,7 +109,8 @@
       "secondsTotal": 45660,
       "hoursPartial": 12,
       "minutesPartial": 41,
-      "isNegative": false
+      "isNegative": false,
+      "srcString": "12:41"
     },
     "vacation": {
       "planned": 0,
@@ -119,7 +126,8 @@
       "secondsTotal": 14520,
       "hoursPartial": 4,
       "minutesPartial": 2,
-      "isNegative": false
+      "isNegative": false,
+      "srcString": "04:02"
     },
     "vacation": {
       "planned": 4,
@@ -135,7 +143,8 @@
       "secondsTotal": 4920,
       "hoursPartial": 1,
       "minutesPartial": 22,
-      "isNegative": true
+      "isNegative": true,
+      "srcString": "-01:22"
     },
     "vacation": {
       "planned": 4,

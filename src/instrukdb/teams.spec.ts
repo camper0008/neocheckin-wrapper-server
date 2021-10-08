@@ -1,5 +1,5 @@
 import { readFile } from 'fs/promises';
-import { getTeamInfoFromTable, getTeamsHtml, getTeamTableHtml, scrapeTeams, getEmployeesFromTable } from './teams'
+import { getEmployeesFromTable, getTeamInfoFromTable, getTeamTableHtml } from './teams';
 
 const readSampleTeamsProHtml = async () => {
   const html = (await readFile('./samples/teams_pro_test.html')).toString();
