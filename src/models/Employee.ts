@@ -9,6 +9,7 @@ export interface Time {
 
 export interface FlexTime extends Time {
   isNegative: boolean,
+  srcString: string,
 }
 
 
@@ -22,6 +23,12 @@ export interface Employee {
   id: number,
   name: string,
   department: string,
+  teamId: number,
   flex: FlexTime,
   vacation: Vacation,
+  workTimeString: string,
+  location: string,
+  projectName: string,
+  nameShort: string,
+  locationShort: string,
 }
