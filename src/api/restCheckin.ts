@@ -26,17 +26,17 @@ namespace API {
     error?: string,
   }
 
-  // GET /api/employee/:id
-  export interface GetEmployeeIdRequest {
-    id?: string,
+  // GET /api/employee/:rfid
+  export interface GetEmployeeRfidRequest {
+    rfid?: string,
   }
-  export interface GetEmployeeIdResponse extends Response {
+  export interface GetEmployeeRfidResponse extends Response {
     employee?: API.Employee,
   }
 
   // POST /api/employee/cardscanned
   export interface PostEmployeeCardscannedRequest {
-    employeeId?: string,
+    employeeRfid?: string,
     checkingIn?: boolean,
     optionId?: number,
   }
@@ -89,8 +89,8 @@ const getBase64ImageFromElevId = async (id: number) => {
   return image64;
 }
 
-const getEmployeeId: API.Handler<API.GetEmployeeIdRequest, API.GetEmployeeIdResponse> =
-async ({id: rfid}, database) => {
+const getEmployeeRfid: API.Handler<API.GetEmployeeRfidRequest, API.GetEmployeeRfidResponse> =
+async ({rfid}, database) => {
   try {
     // very TODO, please remove
     await database.updateEmployeeById(1079, {rfid: '0'});
@@ -112,9 +112,9 @@ async ({id: rfid}, database) => {
 }
 
 const postEmployeeCardscanned: API.Handler<API.PostEmployeeCardscannedRequest, API.PostEmployeeCardscannedResponse> = 
-async ({checkingIn, employeeId, optionId}, database) => {
+async ({checkingIn, employeeRfid, optionId}, database) => {
   try {
-    isDef(checkingIn, employeeId, optionId);
+    isDef(checkingIn, employeeRfid, optionId);
     const options = await database.getAllActiveOptions();
     if (optionId === -1 && checkingIn)
       optionId = 0;
@@ -124,9 +124,9 @@ async ({checkingIn, employeeId, optionId}, database) => {
         option = options[i];
     if (!option)
       throw new Error(`Option '${optionId}' is unknown/inactive`);
-    const employee = await database.getEmployeeByRfid(employeeId!);
+    const employee = await database.getEmployeeByRfid(employeeRfid!);
     if (!employee)
-      throw new Error(`Employee with rfid '${employeeId}' unknown`);
+      throw new Error(`Employee with rfid '${employeeRfid}' unknown`);
     database.updateEmployeeById(employee.id, {status: checkingIn ? 'working' : 'not working', lastAction: option.name});
     console.log(employee)
     return {
@@ -178,11 +178,11 @@ const setGetEmployeeIdRoute: API.RouteSetter = (router, database) => {
   return router.get(
     '/employee/:id',
     async (
-      req: Request<API.GetEmployeeIdRequest>,
-      res: Response<API.GetEmployeeIdResponse>
+      req: Request<API.GetEmployeeRfidRequest>,
+      res: Response<API.GetEmployeeRfidResponse>
     ) => {
-      const id = req.params['id'];
-      const result = await getEmployeeId({id}, database);
+      const id = req.params['rfid'];
+      const result = await getEmployeeRfid({rfid: id}, database);
       return res.json(result);
     },
   );
