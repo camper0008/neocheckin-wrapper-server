@@ -5,6 +5,7 @@ import { readFile } from 'fs/promises';
 import { createServer as createHttpServer } from 'http';
 import { createServer as createHttpsServer } from 'https';
 import { join } from 'path';
+import { restCheckinApi } from './api/restCheckin';
 import { CacheUpdater } from './cache/cache';
 import { MemoryDb } from './database/MemoryDb';
 
@@ -47,6 +48,13 @@ const main = async () => {
   const httpsServer = createHttpsServer(await getSSL(), app);
 
   const database = new MemoryDb();
+
+  await database.addOptions({id: 0, name: 'Tjek ind', instrukdbHandle: '', active: true});
+  // await database.addOptions({id: -1, name: 'Tjek ud', instrukdbHandle: '', active: true});
+  await database.addOptions({id: 2, name: 'Tjek ud efter aftale', instrukdbHandle: '', active: true});
+  await database.addOptions({id: 3, name: 'Bruh moment', instrukdbHandle: '', active: true});
+
+
   const cacheUpdater = new CacheUpdater(database);
   cacheUpdater.start(60 * 1000)
 
@@ -54,6 +62,7 @@ const main = async () => {
   app.use(express.json());
   app.use(express.urlencoded({extended: true}));
 
+  app.use('/api', restCheckinApi(database));
   app.use('/', express.static(join(__dirname, '../public')));
 
   const [httpPort, httpsPort] = [getHttpPort(8080), getHttpsPort(8443)];

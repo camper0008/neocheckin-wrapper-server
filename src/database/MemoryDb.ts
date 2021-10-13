@@ -1,4 +1,5 @@
 import { Employee } from "../models/Employee";
+import { Option } from "../models/Option";
 import { Team } from "../models/Team";
 import { Database } from "./Database";
 
@@ -6,6 +7,11 @@ export class MemoryDb extends Database {
   
   private employees: Employee[] = [];
   private teams: Team[] = [];
+  private options: Option[] = [];
+
+  public getAllEmployees = async () => {
+    return this.employees;
+  };
 
   public getEmployeeById = async (id: number) => {
     for (let i in this.employees)
@@ -13,6 +19,21 @@ export class MemoryDb extends Database {
         return this.employees[i];
     return null;
   };
+
+  public getEmployeeByRfid = async (rfid: string) => {
+    for (let i in this.employees)
+      if (this.employees[i].rfid === rfid)
+        return this.employees[i];
+    return null;
+  };
+
+  public updateEmployeeById = async (id: number, update: Partial<Employee>) => {
+    const employee = await this.getEmployeeById(id);
+    if (!employee) return employee;
+    for (let i in update)
+      employee[i] = update[i];
+    return employee;
+  }
 
   public replaceEmployeeById = async (update: Employee, upsert: boolean) => {
     const employee = await this.getEmployeeById(update.id);
@@ -39,6 +60,19 @@ export class MemoryDb extends Database {
     else if (upsert)
       this.teams.push(update);
     return team || update;
-  };  
+  };
+
+  public addOptions = async (option: Option) => {
+    this.options.push(option);
+    return option;
+  }
+
+  public getAllActiveOptions = async () => {
+    const options: Option[] = [];
+    for (let i in this.options)
+      if (this.options[i].active)
+        options.push(this.options[i]);
+    return options;
+  }
 
 }

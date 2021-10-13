@@ -21,6 +21,7 @@ export interface Vacation {
 
 export interface Employee {
   id: number,
+  rfid: string,
   name: string,
   department: string,
   teamId: number,
@@ -31,4 +32,6 @@ export interface Employee {
   projectName: string,
   nameShort: string,
   locationShort: string,
+  status: string,
+  lastAction: string,
 }

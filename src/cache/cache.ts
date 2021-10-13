@@ -12,12 +12,15 @@ export const updateEmployeesByElevOversigt = async (elevOversigtData: ElevOversi
   for (let i in elevOversigtData)
     await database.replaceEmployeeById({
       ...elevOversigtData[i],
+      rfid: '',
       workTimeString: '',
       location: '',
       projectName: '',
       nameShort: '',
       locationShort: '',
       teamId: -1,
+      status: '',
+      lastAction: '',
     }, true);
 }
 
@@ -26,6 +29,7 @@ export const updateEmployeesByTeams = async (teamsData: TeamsEmployeeScrape[], d
     const employee = await database.getEmployeeById(teamsData[i].employee.id);
     await database.replaceEmployeeById({
       id: employee?.id || teamsData[i].employee.id,
+      rfid: employee?.rfid || '',
       name: employee?.name || teamsData[i].employee.nameLong,
       department: teamsData[i].department,
       flex: teamsData[i].employee.flex,
@@ -36,6 +40,8 @@ export const updateEmployeesByTeams = async (teamsData: TeamsEmployeeScrape[], d
       nameShort: teamsData[i].employee.nameShort,
       locationShort: teamsData[i].employee.locationShort,
       teamId: teamsData[i].team.id,
+      status: employee?.status || '',
+      lastAction: employee?.lastAction || '',
     }, true);
   }
   
