@@ -5,3 +5,5 @@ coverage/
 
 .env
 db.json
+
+certificates/*.pem
