@@ -49,7 +49,7 @@ const serveHttp = async (app: Express) => {
 }
 
 const serveHttps = async (app: Express) => {
-  const port = getHttpPort(8443);
+  const port = getHttpsPort(8443);
   const ssl = await getSSL();
   if (!ssl)
     return console.log('Aborting HTTPS server');
