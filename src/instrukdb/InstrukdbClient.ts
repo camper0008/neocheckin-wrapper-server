@@ -25,7 +25,7 @@ export class InstrukdbClient implements Instrukdb.API {
     throw 'not implemented';
   }
 
-  public changeCheckInState = async (id: number, timestamp: string, option: string) => {
+  public changeStatus = async (id: number, timestamp: string, option: string) => {
     throw 'not implemented';
   }
 

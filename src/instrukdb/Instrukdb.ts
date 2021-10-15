@@ -20,7 +20,7 @@ export namespace Instrukdb {
     getAllEmployees: () => Promise<Employee[]>
     isEmployeeCheckedIn: (id: Number) => Promise<boolean>
 
-    changeCheckInState: (id: number, timestamp: string, option: string) => Promise<void>;
+    changeStatus: (id: number, timestamp: string, option: string) => Promise<void>;
   
   }
   

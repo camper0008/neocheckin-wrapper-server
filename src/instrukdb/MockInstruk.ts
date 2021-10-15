@@ -52,10 +52,14 @@ export class MockInstrukdb implements Instrukdb.API {
     return (this.employees.find((e) => (e.id === id)) || (() => {throw new Error('not found')})()).checkedIn;
   }
 
-  public changeCheckInState = async (id: number, timestamp: string, option: string) => {
+  public changeStatus = async (id: number, timestamp: string, option: string) => {
     const employee = this.employees.find(e => e.id == id);
     if (option === 'checkin') {
-      
+      employee!.status = 'Logget ind';
+      employee!.checkedIn = true;
+    } else if (option === 'checkout') {
+      employee!.status = 'Ikke Logget ind';
+      employee!.checkedIn = false;
     }
   }
 
