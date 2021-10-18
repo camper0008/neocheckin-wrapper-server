@@ -2,5 +2,12 @@
 module.exports = {
   preset: 'ts-jest',
   testEnvironment: 'node',
-  testPathIgnorePatterns: ['archive/']
+  testPathIgnorePatterns: [
+    'archive/',
+    'src/',
+    // 'dist/',
+  ],
+  transform: {
+
+  }
 };
