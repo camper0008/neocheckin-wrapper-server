@@ -1,19 +1,20 @@
 import { Database } from "../database/Database";
-import { CheckTask } from "../models/CheckTask";
+import { Task } from "../models/Task";
 
-export interface AddCheckInTaskRequest {
+export interface AddTaskRequest {
   name: string,
-  actionId: number,
+  taskId: number,
   date?: Date,
-  authorName: string,
-  authorEmail: string,
+  systemIdentifier: string,
+  employeeRfid: string,
+  highLevelApiKey: string,
 }
 
-export const addCheckTask = async (task: AddCheckInTaskRequest, db: Database): Promise<CheckTask> => {
+export const addTask = async (task: AddTaskRequest, db: Database): Promise<Task> => {
   const {name, date} = task;
   if (name === '')
     throw new Error('name empty');
   const id = await db.getUniqueTaskId();
-  const insert = await db.insertCheckTask({...task, date: date || new Date(), id});
+  const insert = await db.insertTask({...task, date: date || new Date(), id});
   return insert;
 }
