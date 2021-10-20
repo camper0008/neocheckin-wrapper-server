@@ -1,6 +1,8 @@
 
 export namespace Instrukdb {
 
+  // TODO implement new json files
+
   export interface Employee {
     id: number          // instrukdb id
     name: string,       // fulde navn
@@ -15,12 +17,12 @@ export namespace Instrukdb {
 
   export interface API {
 
-    getEmployee: (id: number) => Promise<Employee>;
-    getEmployeeList: () => Promise<ListEmployee[]>;
-    getAllEmployees: () => Promise<Employee[]>
-    isEmployeeCheckedIn: (id: Number) => Promise<boolean>
+    getEmployee(id: number): Promise<Employee>;
+    getEmployeeList(): Promise<ListEmployee[]>;
+    getAllEmployees(): Promise<Employee[]>
+    isEmployeeCheckedIn(id: Number): Promise<boolean>
 
-    changeStatus: (id: number, timestamp: string, option: string) => Promise<void>;
+    changeStatus(id: number, timestamp: string, option: string): Promise<void>;
   
   }
   

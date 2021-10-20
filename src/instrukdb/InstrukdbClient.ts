@@ -9,23 +9,23 @@ export class InstrukdbClient implements Instrukdb.API {
     this.url = insureUrlPathEnd(url);
   }
 
-  public getEmployee = async (id: number) => {
+  public async getEmployee(id: number): Promise<Instrukdb.Employee> {
     throw 'not implemented';
   }
 
-  public getEmployeeList = async () => {
+  public async getEmployeeList(): Promise<Instrukdb.ListEmployee[]> {
     throw 'not implemented';
   }
 
-  public getAllEmployees = async () => {
+  public async getAllEmployees(): Promise<Instrukdb.Employee[]> {
     throw 'not implemented';
   }
 
-  public isEmployeeCheckedIn = async (id: Number) => {
+  public async isEmployeeCheckedIn(id: Number): Promise<boolean> {
     throw 'not implemented';
   }
 
-  public changeStatus = async (id: number, timestamp: string, option: string) => {
+  public async changeStatus(id: number, timestamp: string, option: string): Promise<void> {
     throw 'not implemented';
   }
 
