@@ -1,4 +1,4 @@
-import { CheckTask } from "../models/CheckTask";
+import { Task } from "../models/Task";
 import { MemoryDB } from "./MemoryDB";
 
 export class MockMemoryDB extends MemoryDB {
@@ -8,21 +8,27 @@ export class MockMemoryDB extends MemoryDB {
   }
 
   public getUniqueTaskIdCalls: number = 0;
-  public getUniqueTaskId = async (): Promise<number> => {
+  public async getUniqueTaskId(): Promise<number> {
     this.getUniqueTaskIdCalls++;
-    return await this.getUniqueTaskId_();
+    return super.getUniqueTaskId();
   }
 
-  public getCheckInTaskCountCalls: number = 0;
-  public getCheckTaskCount = async (): Promise<number> => {
-    this.getCheckInTaskCountCalls++;
-    return this.getCheckInTaskCount_();
+  public getTaskCountCalls: number = 0;
+  public async getTaskCount(): Promise<number> {
+    this.getTaskCountCalls++;
+    return super.getTaskCount();
   }
 
-  public insertCheckInTaskCalls: number = 0;
-  public insertCheckTask = async (task: CheckTask): Promise<CheckTask> => {
-    this.insertCheckInTaskCalls++;
-    return this.insertCheckInTask_(task);
+  public getTasksCalls: number = 0;
+  public async getTasks(): Promise<Task[]> {
+    this.getTasksCalls++;
+    return super.getTasks();
+  }
+
+  public insertTaskCalls: number = 0;
+  public async insertTask(task: Task): Promise<Task> {
+    this.insertTaskCalls++;
+    return super.insertTask(task);
   }
 
 }
