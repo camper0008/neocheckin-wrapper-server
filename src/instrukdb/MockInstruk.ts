@@ -36,23 +36,23 @@ export class MockInstrukdb implements Instrukdb.API {
   
   }
 
-  public getEmployee = async (id: number): Promise<Instrukdb.Employee> => {
+  public async getEmployee(id: number): Promise<Instrukdb.Employee> {
     return this.employees.find((e) => (e.id === id)) || (() => {throw new Error('not found')})();
   }
 
-  public getEmployeeList = async (): Promise<Instrukdb.ListEmployee[]> => {
+  public async getEmployeeList(): Promise<Instrukdb.ListEmployee[]> {
     return this.employees;
   }
 
-  public getAllEmployees = async (): Promise<Instrukdb.Employee[]> => {
+  public async getAllEmployees(): Promise<Instrukdb.Employee[]> {
     return this.employees;
   }
 
-  public isEmployeeCheckedIn = async (id: Number) => {
+  public async isEmployeeCheckedIn(id: Number) {
     return (this.employees.find((e) => (e.id === id)) || (() => {throw new Error('not found')})()).checkedIn;
   }
 
-  public changeStatus = async (id: number, timestamp: string, option: string) => {
+  public async changeStatus(id: number, timestamp: string, option: string) {
     const employee = this.employees.find(e => e.id == id);
     if (option === 'checkin') {
       employee!.status = 'Logget ind';
