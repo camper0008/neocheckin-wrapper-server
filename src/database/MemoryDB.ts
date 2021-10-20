@@ -1,35 +1,62 @@
-import { CheckTask } from "../models/CheckTask";
+import { LoggedError } from "../models/LoggedError";
+import { Task } from "../models/Task";
 import { Database } from "./Database";
 
 export class MemoryDB extends Database {
 
   private idCounter: {[key: string]: number} = {};
-  private checkInTasks: CheckTask[] = [];
+  private tasks: Task[] = [];
+  private errors: LoggedError[] = [];
 
   public constructor () {
     super ();
     this.idCounter['tasks'] = 0;
+    this.idCounter['errors'] = 0;
   }
 
-  public getUniqueTaskId = async (): Promise<number> => {
+  public async getUniqueTaskId(): Promise<number> {
     return this.idCounter['tasks']++;
   }
 
-  public getCheckTaskCount = async (): Promise<number> => {
-    return this.checkInTasks.length;
+  public async getUniqueErrorId(): Promise<number> {
+    return this.idCounter['errors']++;
   }
 
-  public insertCheckTask = async (task: CheckTask): Promise<CheckTask> => {
-    for (let i in this.checkInTasks)
-      if (this.checkInTasks[i].id === task.id)
+
+
+  public async getTaskCount(): Promise<number> {
+    return this.tasks.length;
+  }
+
+  public async getTasks(): Promise<Task[]> {
+    return this.tasks;
+  }
+
+  public async insertTask(task: Task): Promise<Task> {
+    for (let i in this.tasks)
+      if (this.tasks[i].id === task.id)
         throw new Error('id must be unique');
-    this.checkInTasks.push(task);
+    this.tasks.push(task);
     return task;
   };
 
-  // because `super.<func>` no worky worky in jest
-  protected getUniqueTaskId_ = this.getUniqueTaskId;
-  protected getCheckInTaskCount_ = this.getCheckTaskCount;
-  protected insertCheckInTask_ = this.insertCheckTask;
+
+
+  public async getErrorCount(): Promise<number> {
+    return this.errors.length;
+  }
+
+  public async getErrors(): Promise<LoggedError[]> {
+    return this.errors;
+  }
+
+  public async insertError(error: LoggedError): Promise<LoggedError> {
+    for (let i in this.errors)
+      if (this.errors[i].id === error.id)
+        throw new Error('id must be unique');
+    this.errors.push(error);
+    return error;
+  }
+
 
 }
