@@ -2,16 +2,6 @@ import { MockMemoryDB } from "../database/MockMemoryDB";
 import { MockInstrukdb } from "../instrukdb/MockInstrukdb";
 import { getTaskTypes, synchronizeTaskTypes } from "./taskTypes";
 
-describe('getTaskTypes', () => {
-
-  it('should call db.getTasks once', async () => {
-    const db = new MockMemoryDB();
-    await getTaskTypes(db);
-    expect(db.getTasksCalls).toBe(1);
-  });
-
-});
-
 describe('synchronizeTaskTypes', () => {
 
   it('should call Instrukdb.getSchedule once', async () => {
@@ -46,6 +36,17 @@ describe('synchronizeTaskTypes', () => {
       const error = catched as Error;
       expect(error.message).toBe('could not connect to Instrukdb');
     }
+  });
+
+});
+
+describe('getTaskTypes', () => {
+
+  it('should call db.getTasks once', async () => {
+    const db = new MockMemoryDB();
+    const idb = new MockInstrukdb();
+    await getTaskTypes(db, idb);
+    expect(db.getTasksCalls).toBe(1);
   });
 
 });

@@ -7,9 +7,7 @@ export const synchronizeTaskTypes = async (db: Database, idb: Instrukdb.API) => 
   await db.replaceTaskTypes(schedule);
 }
 
-export const getTaskTypes = async (db: Database): Promise<Task[]> => {
-
-  // TODO synchronize with instrukdb
-
+export const getTaskTypes = async (db: Database, idb: Instrukdb.API): Promise<Task[]> => {
+  await synchronizeTaskTypes(db, idb);
   return await db.getTasks();
 }
