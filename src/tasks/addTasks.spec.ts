@@ -73,5 +73,12 @@ describe('addTask', () => {
     expect(res.date.getTime()).toBeLessThanOrEqual(after.getTime());
   });
 
+  it('should use specified date', async () => {
+    const db = new MockMemoryDB();
+    const date = "2021-10-21T08:49:16.642Z";
+    const res = await addTask({...mockTask, date}, db);
+    expect(res.date).toEqual(new Date(date));
+  });
+
 });
 
