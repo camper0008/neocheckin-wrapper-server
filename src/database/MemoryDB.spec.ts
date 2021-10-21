@@ -1,4 +1,5 @@
 import { LoggedError } from "../models/LoggedError";
+import { Schedule, TaskType } from "../models/TaskType";
 import { MemoryDB } from "./MemoryDB";
 
 const mockTask = {
@@ -73,15 +74,79 @@ describe('Task', () => {
 
 });
 
+const mockTaskType: TaskType = {
+  id: 0,
+  name: '1',
+  description: '',
+  priority: false,
+  instrukdbCheckinId: 0,
+  instrukdbCheckinName: '1',
+  schedule: {
+    from: {hour: 0, minute: 0, second: 0},
+    to: {hour: 0, minute: 0, second: 0},
+    days: {
+      monday: true, 
+      tuesday: true, 
+      wednesday: true, 
+      thursday: true, 
+      friday: true, 
+      saturday: true, 
+      sunday: true
+    },
+  }
+};
+
+describe('TaskType', () => {
+
+  it('should return empty array', async () => {
+    const db = new MemoryDB();
+    expect(await db.getTaskTypes()).toEqual([]);
+  });
+
+  it('should return 2 as the new length', async () => {
+    const db = new MemoryDB();
+    const result = await db.replaceTaskTypes([
+      {...mockTaskType},
+      {...mockTaskType, id: 1, name: '2'}
+    ]);
+    expect(result).toBe(2);
+  });
+
+  it('should return tasktypes', async () => {
+    const db = new MemoryDB();
+    const types = [{...mockTaskType}, {...mockTaskType, id: 1, name: '2'}];
+    await db.replaceTaskTypes(types);
+    expect(await db.getTaskTypes()).toBe(types);
+  });
+
+  it('should return tasktype', async () => {
+    const db = new MemoryDB();
+    await db.replaceTaskTypes([mockTaskType]);
+    expect(await db.getTaskType(0)).toEqual(mockTaskType);
+  });
+
+  it('should throw error "not found"', async () => {
+    const db = new MemoryDB();
+    try {
+      await db.getTaskType(1);
+      throw new Error('didnt throw');
+    } catch (catched) {
+      const error = catched as Error;
+      expect(error).toEqual(new Error('not found'));
+    }
+  });
+
+});
+
 describe('LoggedError', () => {
 
-  it('it should count 0', async () => {
+  it('should count 0', async () => {
     const db = new MemoryDB();
     const res = await db.getErrorCount();
     expect(res).toBe(0);
   });
 
-  it('it should count 1', async () => {
+  it('should count 1', async () => {
     const db = new MemoryDB();
     await db.insertError(mockError);
     const res = await db.getErrorCount();

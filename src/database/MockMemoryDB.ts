@@ -1,4 +1,5 @@
 import { Task } from "../models/Task";
+import { TaskType } from "../models/TaskType";
 import { MemoryDB } from "./MemoryDB";
 
 export class MockMemoryDB extends MemoryDB {
@@ -29,6 +30,12 @@ export class MockMemoryDB extends MemoryDB {
   public async insertTask(task: Task): Promise<Task> {
     this.insertTaskCalls++;
     return super.insertTask(task);
+  }
+
+  public replaceTaskTypesCalls = 0;
+  public async replaceTaskTypes(taskTypes: TaskType[]): Promise<number> {
+    this.replaceTaskTypesCalls++;
+    return super.replaceTaskTypes(taskTypes);
   }
 
 }
