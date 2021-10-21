@@ -1,7 +1,8 @@
 import { Router, Request, Response } from "express";
 import { Database } from "../database/Database";
 import { Task } from "../models/Task";
-import { getTaskTypes } from "../tasks/getTasks";
+import { addTask } from "../tasks/addTasks";
+import { getTaskTypes } from "../tasks/taskTypes";
 import { Respondable, Handle } from "./utils";
 
 // TODO implement error state
@@ -29,9 +30,26 @@ export interface PostAddReq {
   timestamp: string,
 }
 
-// TODO implement tasks/addTasks
-export const postAddHandle: Handle<PostAddReq> = (db) => async (req, res) => {
+export const postAddHandle: Handle<PostAddReq> = (db) => 
+async (req, res) => {
   try {
+    const {
+      name,
+      taskId,
+      employeeRfid,
+      highLevelApiKey,
+      systemIdentifier,
+      timestamp,
+    } = req.body;
+    const result = await addTask({
+      name,
+      taskId,
+      employeeRfid,
+      highLevelApiKey,
+      systemIdentifier,
+      date: timestamp ? new Date(timestamp) : undefined,
+    }, db);
+    return res.json({data: result}).status(200);
   } catch (catched) {
     res.json({error: 'server error'}).status(500);
     console.error(catched);
