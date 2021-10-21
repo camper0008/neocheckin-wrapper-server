@@ -10,23 +10,31 @@ export class InstrukdbClient implements Instrukdb.API {
   }
 
   public async getEmployee(id: number): Promise<Instrukdb.Employee> {
-    throw 'not implemented';
+    throw new Error('not implemented');
   }
 
   public async getEmployeeList(): Promise<Instrukdb.ListEmployee[]> {
-    throw 'not implemented';
+    throw new Error('not implemented');
   }
 
   public async getAllEmployees(): Promise<Instrukdb.Employee[]> {
-    throw 'not implemented';
+    throw new Error('not implemented');
   }
 
   public async isEmployeeCheckedIn(id: Number): Promise<boolean> {
-    throw 'not implemented';
+    throw new Error('not implemented');
   }
 
   public async changeStatus(id: number, timestamp: string, option: string): Promise<void> {
-    throw 'not implemented';
+    throw new Error('not implemented');
+  }
+  
+  public async getSchedule(): Promise<Instrukdb.ScheduleElement[]> {
+    throw new Error("Method not implemented.");
+  }
+
+  public async getCheckinPhpData(): Promise<Instrukdb.CheckedinPhpDataElement[]> {
+    throw new Error("Method not implemented.");
   }
 
 }
