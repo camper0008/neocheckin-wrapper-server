@@ -1,0 +1,272 @@
+[
+    {
+        "id": 0,
+        "name": "Normal Man-Tor",
+        "instrukdbCheckinId": null,
+        "instrukdbCheckinName": "day",
+        "schedule": {
+            "from": {
+                "hour": 9,
+                "minute": 0,
+                "second": 0
+            },
+            "to": {
+                "hour": 15,
+                "minute": 0,
+                "second": 0
+            },
+            "days": {
+                "monday": true,
+                "tuesday": true,
+                "wednesday": true,
+                "thursday": true,
+                "friday": false,
+                "saturday": false,
+                "sunday": false
+            }
+        }
+    },
+    {
+        "id": 1,
+        "name": "Normal Fredag",
+        "instrukdbCheckinId": null,
+        "instrukdbCheckinName": "dayFriday",
+        "schedule": {
+            "from": {
+                "hour": 9,
+                "minute": 0,
+                "second": 0
+            },
+            "to": {
+                "hour": 11,
+                "minute": 30,
+                "second": 0
+            },
+            "days": {
+                "monday": false,
+                "tuesday": false,
+                "wednesday": false,
+                "thursday": false,
+                "friday": true,
+                "saturday": false,
+                "sunday": false
+            }
+        }
+    },
+    {
+        "id": 2,
+        "name": "Biblioteksvagt Viborg",
+        "instrukdbCheckinId": 1,
+        "instrukdbCheckinName": "BiHeVi",
+        "schedule": {
+            "from": {
+                "hour": 14,
+                "minute": 20,
+                "second": 1
+            },
+            "to": {
+                "hour": 14,
+                "minute": 45,
+                "second": 1
+            },
+            "days": {
+                "monday": true,
+                "tuesday": true,
+                "wednesday": true,
+                "thursday": false,
+                "friday": false,
+                "saturday": false,
+                "sunday": false
+            }
+        }
+    },
+    {
+        "id": 3,
+        "name": "Biblioteksvagt Karup",
+        "instrukdbCheckinId": 2,
+        "instrukdbCheckinName": "BiHeKa",
+        "schedule": {
+            "from": {
+                "hour": 14,
+                "minute": 6,
+                "second": 1
+            },
+            "to": {
+                "hour": 14,
+                "minute": 19,
+                "second": 0
+            },
+            "days": {
+                "monday": false,
+                "tuesday": true,
+                "wednesday": false,
+                "thursday": false,
+                "friday": false,
+                "saturday": false,
+                "sunday": false
+            }
+        }
+    },
+    {
+        "id": 4,
+        "name": "Biblioteksvagt Bjeringbro",
+        "instrukdbCheckinId": 3,
+        "instrukdbCheckinName": "BiHeBj",
+        "schedule": {
+            "from": {
+                "hour": 14,
+                "minute": 6,
+                "second": 1
+            },
+            "to": {
+                "hour": 14,
+                "minute": 19,
+                "second": 0
+            },
+            "days": {
+                "monday": false,
+                "tuesday": false,
+                "wednesday": false,
+                "thursday": true,
+                "friday": false,
+                "saturday": false,
+                "sunday": false
+            }
+        }
+    },
+    {
+        "id": 5,
+        "name": "Testlab",
+        "instrukdbCheckinId": 4,
+        "instrukdbCheckinName": "BiTL",
+        "schedule": {
+            "from": {
+                "hour": 14,
+                "minute": 20,
+                "second": 1
+            },
+            "to": {
+                "hour": 14,
+                "minute": 45,
+                "second": 0
+            },
+            "days": {
+                "monday": false,
+                "tuesday": false,
+                "wednesday": false,
+                "thursday": false,
+                "friday": false,
+                "saturday": false,
+                "sunday": false
+            }
+        }
+    },
+    {
+        "id": 6,
+        "name": "Gåtur",
+        "instrukdbCheckinId": 5,
+        "instrukdbCheckinName": "GT",
+        "schedule": {
+            "from": {
+                "hour": 13,
+                "minute": 50,
+                "second": 1
+            },
+            "to": {
+                "hour": 14,
+                "minute": 5,
+                "second": 0
+            },
+            "days": {
+                "monday": false,
+                "tuesday": false,
+                "wednesday": false,
+                "thursday": true,
+                "friday": false,
+                "saturday": false,
+                "sunday": false
+            }
+        }
+    },
+    {
+        "id": 7,
+        "name": "Efter Aftale",
+        "instrukdbCheckinId": 6,
+        "instrukdbCheckinName": "EA",
+        "schedule": {
+            "from": {
+                "hour": 9,
+                "minute": 0,
+                "second": 0
+            },
+            "to": {
+                "hour": 15,
+                "minute": 0,
+                "second": 0
+            },
+            "days": {
+                "monday": true,
+                "tuesday": true,
+                "wednesday": true,
+                "thursday": true,
+                "friday": true,
+                "saturday": true,
+                "sunday": true
+            }
+        }
+    },
+    {
+        "id": 8,
+        "name": "Handi Vagt",
+        "instrukdbCheckinId": 7,
+        "instrukdbCheckinName": "HV",
+        "schedule": {
+            "from": {
+                "hour": 14,
+                "minute": 0,
+                "second": 0
+            },
+            "to": {
+                "hour": 15,
+                "minute": 0,
+                "second": 0
+            },
+            "days": {
+                "monday": false,
+                "tuesday": true,
+                "wednesday": false,
+                "thursday": false,
+                "friday": false,
+                "saturday": false,
+                "sunday": false
+            }
+        }
+    },
+    {
+        "id": 9,
+        "name": "hACKING KLUP",
+        "instrukdbCheckinId": 8,
+        "instrukdbCheckinName": "HC",
+        "schedule": {
+            "from": {
+                "hour": 13,
+                "minute": 45,
+                "second": 1
+            },
+            "to": {
+                "hour": 14,
+                "minute": 20,
+                "second": 0
+            },
+            "days": {
+                "monday": false,
+                "tuesday": true,
+                "wednesday": false,
+                "thursday": false,
+                "friday": false,
+                "saturday": false,
+                "sunday": false
+            }
+        }
+    }
+]

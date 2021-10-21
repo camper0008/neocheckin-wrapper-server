@@ -1,3 +1,4 @@
+import { readFile } from "fs/promises";
 import { Instrukdb } from "./Instrukdb"
 
 export class MockInstrukdb implements Instrukdb.API {
@@ -64,11 +65,11 @@ export class MockInstrukdb implements Instrukdb.API {
   }
 
   public async getSchedule(): Promise<Instrukdb.ScheduleElement[]> {
-    throw new Error("Method not implemented.");
+    return JSON.parse((await readFile('./samples/schedule.json')).toString());
   }
 
   public async getCheckinPhpData(): Promise<Instrukdb.CheckedinPhpDataElement[]> {
-    throw new Error("Method not implemented.");
+    return JSON.parse((await readFile('./samples/checkin_php_data.json')).toString());
   }
 
 }
