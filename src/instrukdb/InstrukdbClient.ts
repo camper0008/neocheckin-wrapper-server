@@ -4,9 +4,11 @@ import { Instrukdb } from "./Instrukdb"
 export class InstrukdbClient implements Instrukdb.API {
   
   private url: string;
+  private lowLevelApiKey: string;
 
-  public constructor (url: string) {
+  public constructor (url: string, lowLevelApiKey: string) {
     this.url = insureUrlPathEnd(url);
+    this.lowLevelApiKey = lowLevelApiKey;
   }
 
   public async getEmployee(id: number): Promise<Instrukdb.Employee> {
