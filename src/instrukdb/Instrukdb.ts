@@ -15,6 +15,43 @@ export namespace Instrukdb {
 
   export type ListEmployee = Pick<Employee, 'id' | 'name' | 'status'>;
 
+  export interface TimeStamp {
+    hour: number,
+    minute: number,
+    second: number
+  }
+
+  export interface ScheduleDays {
+    monday: boolean,
+    tuesday: boolean,
+    wednesday: boolean,
+    thursday: boolean,
+    friday: boolean,
+    saturday: boolean,
+    sunday: boolean,
+  }
+
+  export interface ScheduleSchedule {
+    from: TimeStamp,
+    to: TimeStamp,
+    days: ScheduleDays,
+  }
+
+  export interface ScheduleDataElement {
+    id: number,
+    name: string,
+    instrukdbCheckinId: number | null,
+    instrukdbCheckinName: string,
+    schedule: ScheduleSchedule,
+  }
+
+  export interface ScheduleElement extends ScheduleDataElement {
+    description: string,
+    priority: boolean,
+  }
+
+  export interface CheckedinPhpDataElement extends ScheduleDataElement {}
+
   export interface API {
 
     getEmployee(id: number): Promise<Employee>;
@@ -23,6 +60,9 @@ export namespace Instrukdb {
     isEmployeeCheckedIn(id: Number): Promise<boolean>
 
     changeStatus(id: number, timestamp: string, option: string): Promise<void>;
+
+    getSchedule(): Promise<ScheduleElement[]>;
+    getCheckinPhpData(): Promise<CheckedinPhpDataElement[]>;
   
   }
   
