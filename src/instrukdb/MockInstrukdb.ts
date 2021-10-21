@@ -63,4 +63,12 @@ export class MockInstrukdb implements Instrukdb.API {
     }
   }
 
+  public async getSchedule(): Promise<Instrukdb.ScheduleElement[]> {
+    throw new Error("Method not implemented.");
+  }
+
+  public async getCheckinPhpData(): Promise<Instrukdb.CheckedinPhpDataElement[]> {
+    throw new Error("Method not implemented.");
+  }
+
 }
