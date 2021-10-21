@@ -14,9 +14,9 @@ export interface GetTypesRes extends Respondable {
 
 export const getTypesHandle: Handle<undefined, GetTypesRes> = (db) => async (req, res) => {
   try {
-    res.json({data: await getTaskTypes(db)}).status(200);
+    res.status(200).json({data: await getTaskTypes(db)});
   } catch (catched) {
-    res.json({error: 'server error'}).status(500);
+    res.status(500).json({error: 'server error'});
     console.error(catched);
   }
 }
@@ -49,9 +49,9 @@ async (req, res) => {
       systemIdentifier,
       date: timestamp ? new Date(timestamp) : undefined,
     }, db);
-    return res.json({data: result}).status(200);
+    return res.status(200).json({data: result});
   } catch (catched) {
-    res.json({error: 'server error'}).status(500);
+    res.status(500).json({error: 'server error'});
     console.error(catched);
   }
 }
