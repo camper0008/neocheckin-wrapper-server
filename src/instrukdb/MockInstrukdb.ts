@@ -1,4 +1,5 @@
 import { readFile } from "fs/promises";
+import { TaskType } from "../models/TaskType";
 import { Instrukdb } from "./Instrukdb"
 
 export class MockInstrukdb implements Instrukdb.API {
@@ -33,27 +34,39 @@ export class MockInstrukdb implements Instrukdb.API {
     },
   ];
 
+  public connected = true;
+
   public constructor () {
   
   }
 
+  private checkConnection() {
+    if (!this.connected)
+      throw new Error('could not connect to Instrukdb')
+  }
+
   public async getEmployee(id: number): Promise<Instrukdb.Employee> {
+    this.checkConnection();
     return this.employees.find((e) => (e.id === id)) || (() => {throw new Error('not found')})();
   }
 
   public async getEmployeeList(): Promise<Instrukdb.ListEmployee[]> {
+    this.checkConnection();
     return this.employees;
   }
 
   public async getAllEmployees(): Promise<Instrukdb.Employee[]> {
+    this.checkConnection();
     return this.employees;
   }
 
   public async isEmployeeCheckedIn(id: Number) {
+    this.checkConnection();
     return (this.employees.find((e) => (e.id === id)) || (() => {throw new Error('not found')})()).checkedIn;
   }
 
   public async changeStatus(id: number, timestamp: string, option: string) {
+    this.checkConnection();
     const employee = this.employees.find(e => e.id == id);
     if (option === 'checkin') {
       employee!.status = 'Logget ind';
@@ -64,11 +77,15 @@ export class MockInstrukdb implements Instrukdb.API {
     }
   }
 
-  public async getSchedule(): Promise<Instrukdb.ScheduleElement[]> {
+  public getScheduleCalls = 0;
+  public async getSchedule(): Promise<TaskType[]> {
+    this.getScheduleCalls++;
+    this.checkConnection();
     return JSON.parse((await readFile('./samples/schedule.json')).toString());
   }
 
   public async getCheckinPhpData(): Promise<Instrukdb.CheckedinPhpDataElement[]> {
+    this.checkConnection();
     return JSON.parse((await readFile('./samples/checkin_php_data.json')).toString());
   }
 

@@ -1,3 +1,4 @@
+import { TaskType } from "../models/TaskType";
 
 export namespace Instrukdb {
 
@@ -15,42 +16,7 @@ export namespace Instrukdb {
 
   export type ListEmployee = Pick<Employee, 'id' | 'name' | 'status'>;
 
-  export interface TimeStamp {
-    hour: number,
-    minute: number,
-    second: number
-  }
-
-  export interface ScheduleDays {
-    monday: boolean,
-    tuesday: boolean,
-    wednesday: boolean,
-    thursday: boolean,
-    friday: boolean,
-    saturday: boolean,
-    sunday: boolean,
-  }
-
-  export interface ScheduleSchedule {
-    from: TimeStamp,
-    to: TimeStamp,
-    days: ScheduleDays,
-  }
-
-  export interface ScheduleDataElement {
-    id: number,
-    name: string,
-    instrukdbCheckinId: number | null,
-    instrukdbCheckinName: string,
-    schedule: ScheduleSchedule,
-  }
-
-  export interface ScheduleElement extends ScheduleDataElement {
-    description: string,
-    priority: boolean,
-  }
-
-  export interface CheckedinPhpDataElement extends ScheduleDataElement {}
+  export type CheckedinPhpDataElement = Omit<TaskType, 'description' | 'priority'>;
 
   export interface API {
 
@@ -61,7 +27,7 @@ export namespace Instrukdb {
 
     changeStatus(id: number, timestamp: string, option: string): Promise<void>;
 
-    getSchedule(): Promise<ScheduleElement[]>;
+    getSchedule(): Promise<TaskType[]>;
     getCheckinPhpData(): Promise<CheckedinPhpDataElement[]>;
   
   }

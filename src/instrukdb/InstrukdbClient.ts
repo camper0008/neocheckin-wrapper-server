@@ -1,3 +1,4 @@
+import { TaskType } from "../models/TaskType";
 import { insureUrlPathEnd } from "../utils/url";
 import { Instrukdb } from "./Instrukdb"
 
@@ -31,7 +32,7 @@ export class InstrukdbClient implements Instrukdb.API {
     throw new Error('not implemented');
   }
   
-  public async getSchedule(): Promise<Instrukdb.ScheduleElement[]> {
+  public async getSchedule(): Promise<TaskType[]> {
     throw new Error("Method not implemented.");
   }
 
