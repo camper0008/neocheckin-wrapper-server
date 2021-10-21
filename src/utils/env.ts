@@ -1,4 +1,12 @@
 
+/* Example .env file
+
+HTTP=80
+HTTPS=443
+
+LOW_LEVEL_API_KEY=XXXXXXXX
+
+*/
 
 export const getHttpPort = (fallback: number) => {
   try {
