@@ -2,8 +2,6 @@ import { TaskType } from "../models/TaskType";
 
 export namespace Instrukdb {
 
-  // TODO implement new json files
-
   export interface Employee {
     id: number          // instrukdb id
     name: string,       // fulde navn
