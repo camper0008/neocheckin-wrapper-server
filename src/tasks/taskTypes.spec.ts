@@ -42,11 +42,11 @@ describe('synchronizeTaskTypes', () => {
 
 describe('getTaskTypes', () => {
 
-  it('should call db.getTasks once', async () => {
+  it('should call db.getTaskTypes once', async () => {
     const db = new MockMemoryDB();
     const idb = new MockInstrukdb();
     await getTaskTypes(db, idb);
-    expect(db.getTasksCalls).toBe(1);
+    expect(db.getTaskTypesCalls).toBe(1);
   });
 
 });

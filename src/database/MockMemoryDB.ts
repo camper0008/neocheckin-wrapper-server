@@ -32,6 +32,12 @@ export class MockMemoryDB extends MemoryDB {
     return super.insertTask(task);
   }
 
+  public getTaskTypesCalls = 0;
+  public async getTaskTypes(): Promise<TaskType[]> {
+    this.getTaskTypesCalls++;
+    return super.getTaskTypes();
+  }
+
   public replaceTaskTypesCalls = 0;
   public async replaceTaskTypes(taskTypes: TaskType[]): Promise<number> {
     this.replaceTaskTypesCalls++;

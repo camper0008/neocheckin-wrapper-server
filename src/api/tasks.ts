@@ -1,6 +1,9 @@
 import { Router, Request, Response } from "express";
 import { Database } from "../database/Database";
+import { InstrukdbClient } from "../instrukdb/InstrukdbClient";
+import { MockInstrukdb } from "../instrukdb/MockInstrukdb";
 import { Task } from "../models/Task";
+import { TaskType } from "../models/TaskType";
 import { addTask } from "../tasks/addTasks";
 import { getTaskTypes } from "../tasks/taskTypes";
 import { Respondable, Handle } from "./utils";
@@ -8,13 +11,14 @@ import { Respondable, Handle } from "./utils";
 // TODO implement error state
 
 export interface GetTypesRes extends Respondable {
-  data?: Task[],
+  data?: TaskType[],
   error?: string,
 }
 
 export const getTypesHandle: Handle<undefined, GetTypesRes> = (db) => async (req, res) => {
   try {
-    res.status(200).json({data: await getTaskTypes(db)});
+    const instrukdb = new MockInstrukdb();
+    res.status(200).json({data: await getTaskTypes(db, instrukdb)});
   } catch (catched) {
     res.status(500).json({error: 'server error'});
     console.error(catched);
