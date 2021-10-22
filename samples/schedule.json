@@ -1,0 +1,319 @@
+[
+    {
+        "id": 0,
+        "name": "Check Ind",
+        "description": "",
+        "instrukdbCheckinId": null,
+        "instrukdbCheckinName": "day",
+        "priority": true,
+        "schedule": {
+            "from": {
+                "hour": 7,
+                "minute": 0,
+                "second": 0
+            },
+            "to": {
+                "hour": 9,
+                "minute": 0,
+                "second": 0
+            },
+            "days": {
+                "monday": true,
+                "tuesday": true,
+                "wednesday": true,
+                "thursday": true,
+                "friday": true,
+                "saturday": false,
+                "sunday": false
+            }
+        }
+    },
+    {
+        "id": 1,
+        "name": "Check ud",
+        "description": "Mandag-Torsdag check ud",
+        "instrukdbCheckinId": null,
+        "instrukdbCheckinName": "day",
+        "priority": true,
+        "schedule": {
+            "from": {
+                "hour": 15,
+                "minute": 0,
+                "second": 0
+            },
+            "to": {
+                "hour": 17,
+                "minute": 0,
+                "second": 0
+            },
+            "days": {
+                "monday": false,
+                "tuesday": false,
+                "wednesday": false,
+                "thursday": false,
+                "friday": true,
+                "saturday": false,
+                "sunday": false
+            }
+        }
+    },
+    {
+        "id": 2,
+        "name": "Check ud",
+        "description": "Fredag check ud",
+        "instrukdbCheckinId": null,
+        "instrukdbCheckinName": "dayFriday",
+        "priority": true,
+        "schedule": {
+            "from": {
+                "hour": 12,
+                "minute": 0,
+                "second": 0
+            },
+            "to": {
+                "hour": 14,
+                "minute": 0,
+                "second": 0
+            },
+            "days": {
+                "monday": false,
+                "tuesday": false,
+                "wednesday": false,
+                "thursday": false,
+                "friday": true,
+                "saturday": false,
+                "sunday": false
+            }
+        }
+    },
+    {
+        "id": 3,
+        "name": "Biblioteksvagt Viborg",
+        "description": "",
+        "instrukdbCheckinId": 1,
+        "instrukdbCheckinName": "BiHeVi",
+        "priority": false,
+        "schedule": {
+            "from": {
+                "hour": 14,
+                "minute": 20,
+                "second": 0
+            },
+            "to": {
+                "hour": 14,
+                "minute": 45,
+                "second": 0
+            },
+            "days": {
+                "monday": true,
+                "tuesday": true,
+                "wednesday": true,
+                "thursday": false,
+                "friday": false,
+                "saturday": false,
+                "sunday": false
+            }
+        }
+    },
+    {
+        "id": 4,
+        "name": "Biblioteksvagt Karup",
+        "description": "",
+        "instrukdbCheckinId": 2,
+        "instrukdbCheckinName": "BiHeKa",
+        "priority": false,
+        "schedule": {
+            "from": {
+                "hour": 14,
+                "minute": 6,
+                "second": 0
+            },
+            "to": {
+                "hour": 14,
+                "minute": 19,
+                "second": 0
+            },
+            "days": {
+                "monday": false,
+                "tuesday": true,
+                "wednesday": false,
+                "thursday": false,
+                "friday": false,
+                "saturday": false,
+                "sunday": false
+            }
+        }
+    },
+    {
+        "id": 5,
+        "name": "Biblioteksvagt Bjerringbro",
+        "description": "",
+        "instrukdbCheckinId": 3,
+        "instrukdbCheckinName": "BiHeBj",
+        "priority": false,
+        "schedule": {
+            "from": {
+                "hour": 14,
+                "minute": 6,
+                "second": 0
+            },
+            "to": {
+                "hour": 14,
+                "minute": 19,
+                "second": 0
+            },
+            "days": {
+                "monday": false,
+                "tuesday": false,
+                "wednesday": false,
+                "thursday": true,
+                "friday": false,
+                "saturday": false,
+                "sunday": false
+            }
+        }
+    },
+    {
+        "id": 6,
+        "name": "Testlab",
+        "description": "",
+        "instrukdbCheckinId": 4,
+        "instrukdbCheckinName": "BiTL",
+        "priority": false,
+        "schedule": {
+            "from": {
+                "hour": 14,
+                "minute": 20,
+                "second": 0
+            },
+            "to": {
+                "hour": 14,
+                "minute": 45,
+                "second": 0
+            },
+            "days": {
+                "monday": false,
+                "tuesday": false,
+                "wednesday": false,
+                "thursday": false,
+                "friday": false,
+                "saturday": false,
+                "sunday": false
+            }
+        }
+    },
+    {
+        "id": 7,
+        "name": "Gåtur",
+        "description": "",
+        "instrukdbCheckinId": 5,
+        "instrukdbCheckinName": "GT",
+        "priority": false,
+        "schedule": {
+            "from": {
+                "hour": 13,
+                "minute": 50,
+                "second": 0
+            },
+            "to": {
+                "hour": 14,
+                "minute": 5,
+                "second": 0
+            },
+            "days": {
+                "monday": false,
+                "tuesday": false,
+                "wednesday": false,
+                "thursday": true,
+                "friday": false,
+                "saturday": false,
+                "sunday": false
+            }
+        }
+    },
+    {
+        "id": 8,
+        "name": "Efter Aftale",
+        "description": "",
+        "instrukdbCheckinId": 6,
+        "instrukdbCheckinName": "EA",
+        "priority": false,
+        "schedule": {
+            "from": {
+                "hour": 9,
+                "minute": 0,
+                "second": 0
+            },
+            "to": {
+                "hour": 15,
+                "minute": 0,
+                "second": 0
+            },
+            "days": {
+                "monday": true,
+                "tuesday": true,
+                "wednesday": true,
+                "thursday": true,
+                "friday": true,
+                "saturday": true,
+                "sunday": true
+            }
+        }
+    },
+    {
+        "id": 9,
+        "name": "Handi Vagt",
+        "description": "",
+        "instrukdbCheckinId": 7,
+        "instrukdbCheckinName": "HV",
+        "schedule": {
+            "from": {
+                "hour": 14,
+                "minute": 0,
+                "second": 0
+            },
+            "to": {
+                "hour": 15,
+                "minute": 0,
+                "second": 0
+            },
+            "days": {
+                "monday": false,
+                "tuesday": true,
+                "wednesday": false,
+                "thursday": false,
+                "friday": false,
+                "saturday": false,
+                "sunday": false
+            }
+        }
+    },
+    {
+        "id": 10,
+        "name": "hACKING KLUP",
+        "description": "",
+        "instrukdbCheckinId": 8,
+        "instrukdbCheckinName": "HC",
+        "schedule": {
+            "from": {
+                "hour": 13,
+                "minute": 45,
+                "second": 1
+            },
+            "to": {
+                "hour": 14,
+                "minute": 20,
+                "second": 0
+            },
+            "days": {
+                "monday": false,
+                "tuesday": true,
+                "wednesday": false,
+                "thursday": false,
+                "friday": false,
+                "saturday": false,
+                "sunday": false
+            }
+        }
+    }
+]

@@ -1,3 +1,4 @@
+import { TaskType } from "../models/TaskType";
 
 export namespace Instrukdb {
 
@@ -13,14 +14,19 @@ export namespace Instrukdb {
 
   export type ListEmployee = Pick<Employee, 'id' | 'name' | 'status'>;
 
+  export type CheckedinPhpDataElement = Omit<TaskType, 'description' | 'priority'>;
+
   export interface API {
 
-    getEmployee: (id: number) => Promise<Employee>;
-    getEmployeeList: () => Promise<ListEmployee[]>;
-    getAllEmployees: () => Promise<Employee[]>
-    isEmployeeCheckedIn: (id: Number) => Promise<boolean>
+    getEmployee(id: number): Promise<Employee>;
+    getEmployeeList(): Promise<ListEmployee[]>;
+    getAllEmployees(): Promise<Employee[]>
+    isEmployeeCheckedIn(id: Number): Promise<boolean>
 
-    changeStatus: (id: number, timestamp: string, option: string) => Promise<void>;
+    changeStatus(id: number, timestamp: string, option: string): Promise<void>;
+
+    getSchedule(): Promise<TaskType[]>;
+    getCheckinPhpData(): Promise<CheckedinPhpDataElement[]>;
   
   }
   
