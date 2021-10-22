@@ -2,11 +2,13 @@ import cors from 'cors';
 import express, { json, Router, urlencoded } from 'express';
 import { join } from 'path';
 import { Database } from '../database/Database';
+import { Instrukdb } from '../instrukdb/Instrukdb';
+import { employeesRoutes } from './employees';
 import { jsonError } from './jsonError';
 import { serveHttp, serveHttps } from './servers';
 import { tasksRoutes } from './tasks';
 
-export const api = async (db: Database) => {
+export const api = async (db: Database, idb: Instrukdb.API) => {
   const app = express();
 
   app.use(cors());
@@ -16,9 +18,10 @@ export const api = async (db: Database) => {
 
   // TODO implement error state
 
-  app.use('/api/tasks', tasksRoutes(Router(), db));
+  app.use('/api/tasks', tasksRoutes(Router(), db, idb));
+  app.use('/api/employees', employeesRoutes(Router(), db, idb));
 
-  app.use('/', express.static(join(__dirname, '../public')));
+  app.use('/', express.static('./public'));
 
   serveHttp(app);
   serveHttps(app);
