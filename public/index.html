@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wrapper Dashboard</title>
+</head>
+<body>
+  
+  <h1>Dashboard</h1>
+
+  <div onclick="(async () => (this.innerHTML = await (async () => (((body) => (body.data.map((task) => `<h3>Name: ${task.name}</h3><p>Id: ${task.id}</p><p>TaskTypeId: ${task.taskId}</p><p>Date: ${task.date}</p><p>System: ${task.systemIdentifier}</p><p>EmployeeRfid: ${task.employeeRfid}</p>`).join('<hr>')))(await (await fetch('/api/tasks/all')).json())))()))()">
+    Click me
+  </div>
+
+</body>
+</html>
