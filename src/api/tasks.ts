@@ -1,10 +1,12 @@
 import { Router, Request, Response } from "express";
 import { Database } from "../database/Database";
+import { Instrukdb } from "../instrukdb/Instrukdb";
 import { InstrukdbClient } from "../instrukdb/InstrukdbClient";
 import { MockInstrukdb } from "../instrukdb/MockInstrukdb";
 import { Task } from "../models/Task";
 import { TaskType } from "../models/TaskType";
 import { addTask } from "../tasks/addTasks";
+import { getTasks } from "../tasks/getTasks";
 import { getTaskTypes } from "../tasks/taskTypes";
 import { Respondable, Handle } from "./utils";
 
@@ -15,10 +17,9 @@ export interface GetTypesRes extends Respondable {
   error?: string,
 }
 
-export const getTypesHandle: Handle<undefined, GetTypesRes> = (db) => async (req, res) => {
+export const getTypesHandle: Handle<undefined, GetTypesRes> = (db, idb) => async (req, res) => {
   try {
-    const instrukdb = new MockInstrukdb();
-    res.status(200).json({data: await getTaskTypes(db, instrukdb)});
+    res.status(200).json({data: await getTaskTypes(db, idb)});
   } catch (catched) {
     res.status(500).json({error: 'server error'});
     console.error(catched);
@@ -60,11 +61,23 @@ async (req, res) => {
   }
 }
 
-export const tasksRoutes = (router: Router, db: Database): Router => {
+export const getAll: Handle = (db, idb) =>
+async (req, res) => {
+  try {
+    res.status(200).json({data: await getTasks(db)});
+  } catch (catched) {
+    res.status(500).json({error: 'server error'});
+    console.error(catched);
+  }
+};
 
-  router.get('/types', getTypesHandle(db));
+export const tasksRoutes = (router: Router, db: Database, idb: Instrukdb.API): Router => {
 
-  router.post('/add', postAddHandle(db));
+  router.get('/types', getTypesHandle(db, idb));
+
+  router.post('/add', postAddHandle(db, idb));
+
+  router.get('/all', getAll(db, idb));
 
   return router;
 }
