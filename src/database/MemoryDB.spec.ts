@@ -138,6 +138,68 @@ describe('TaskType', () => {
 
 });
 
+describe('Rfid', () => {
+
+  it('should return 3', async () => {
+    const db = new MemoryDB();
+    for (let i in ' '.repeat(3).split(''))
+      await db.getUniqueRfidId();
+    expect(await db.getUniqueRfidId()).toBe(3);
+  });
+
+  it('should throw error "not found"', async () => {
+    const db = new MemoryDB();
+    try {
+      await db.getRfidByRfid('ABCDEFG');
+      throw new Error('didnt throw');
+    } catch (catched) {
+      const error = catched as Error;
+      expect(error).toEqual(new Error('not found')); 
+    }
+  });
+
+  it('should return rfid', async () => {
+    const db = new MemoryDB();
+    const rfid = {id: await db.getUniqueRfidId(), rfid: 'ABCDEFG', employeeId: 0};
+    await db.insertRfid(rfid)
+    const res = await db.getRfidByRfid('ABCDEFG');
+    expect(res).toEqual(rfid);
+  });
+
+  it('should throw error "not found"', async () => {
+    const db = new MemoryDB();
+    try {
+      await db.getRfidByEmployeeId(0);
+      throw new Error('didnt throw');
+    } catch (catched) {
+      const error = catched as Error;
+      expect(error).toEqual(new Error('not found')); 
+    }
+  });
+
+  it('should return rfid', async () => {
+    const db = new MemoryDB();
+    const rfid = {id: await db.getUniqueRfidId(), rfid: 'ABCDEFG', employeeId: 0};
+    await db.insertRfid(rfid)
+    const res = await db.getRfidByEmployeeId(0);
+    expect(res).toEqual(rfid);
+  });
+
+  it('should throw error "id must be unique"', async () => {
+    const db = new MemoryDB();
+    const rfid = {id: await db.getUniqueRfidId(), rfid: 'ABCDEFG', employeeId: 0};
+    await db.insertRfid(rfid);
+    try {
+      await db.insertRfid(rfid);
+      throw new Error('didnt throw');
+    } catch (catched) {
+      const error = catched as Error;
+      expect(error).toEqual(new Error('id must be unique')); 
+    }
+  });
+
+});
+
 describe('LoggedError', () => {
 
   it('should count 0', async () => {
