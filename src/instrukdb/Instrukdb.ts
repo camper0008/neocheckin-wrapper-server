@@ -1,4 +1,5 @@
 import { TaskType } from "../models/TaskType";
+import type { BinaryString } from "../utils/base64img";
 
 export namespace Instrukdb {
 
@@ -27,6 +28,8 @@ export namespace Instrukdb {
 
     getSchedule(): Promise<TaskType[]>;
     getCheckinPhpData(): Promise<CheckedinPhpDataElement[]>;
+
+    getEmployeeImage(id: number): Promise<BinaryString>;
   
   }
   

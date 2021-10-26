@@ -1,5 +1,6 @@
 import { readFile } from "fs/promises";
 import { TaskType } from "../models/TaskType";
+import { BinaryString } from "../utils/base64img";
 import { Instrukdb } from "./Instrukdb"
 
 export class MockInstrukdb implements Instrukdb.API {
@@ -87,6 +88,12 @@ export class MockInstrukdb implements Instrukdb.API {
   public async getCheckinPhpData(): Promise<Instrukdb.CheckedinPhpDataElement[]> {
     this.checkConnection();
     return JSON.parse((await readFile('./samples/checkin_php_data.json')).toString());
+  }
+
+  public async getEmployeeImage(id: number): Promise<BinaryString> {
+    const read = await readFile('./samples/employee_1_img.png');
+    const binaryString = read.toString();
+    return binaryString;
   }
 
 }

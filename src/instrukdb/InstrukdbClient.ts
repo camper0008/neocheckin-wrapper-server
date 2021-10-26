@@ -1,6 +1,9 @@
 import { TaskType } from "../models/TaskType";
+import type { BinaryString } from "../utils/base64img";
 import { insureUrlPathEnd } from "../utils/url";
-import { Instrukdb } from "./Instrukdb"
+import { Instrukdb } from "./Instrukdb";
+import { Agent as HttpsAgent } from "https";
+import axios, { AxiosRequestConfig } from "axios";
 
 export class InstrukdbClient implements Instrukdb.API {
   
@@ -38,6 +41,16 @@ export class InstrukdbClient implements Instrukdb.API {
 
   public async getCheckinPhpData(): Promise<Instrukdb.CheckedinPhpDataElement[]> {
     throw new Error("Method not implemented.");
+  }
+
+  public async getEmployeeImage(id: number): Promise<BinaryString> {
+    const url = `https://instrukdb/elevbilled.php?id=${id}`;
+    const config: AxiosRequestConfig<any> = {
+      responseType: 'arraybuffer',
+      httpsAgent: new HttpsAgent({rejectUnauthorized: false})
+    }
+    const response = await axios.get(url, config);
+    return response.data as BinaryString;
   }
 
 }
