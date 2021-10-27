@@ -1,6 +1,9 @@
 import { TaskType } from "../models/TaskType";
-import { insureUrlPathEnd } from "../utils/url";
-import { Instrukdb } from "./Instrukdb"
+import type { BinaryString } from "../utils/base64img";
+import { insureUrlPathEnd, paramString } from "../utils/url";
+import { Instrukdb } from "./Instrukdb";
+import { Agent as HttpsAgent, AgentOptions } from "https";
+import axios, { AxiosRequestConfig, AxiosResponse } from "axios";
 
 export class InstrukdbClient implements Instrukdb.API {
   
@@ -12,32 +15,86 @@ export class InstrukdbClient implements Instrukdb.API {
     this.lowLevelApiKey = lowLevelApiKey;
   }
 
-  public async getEmployee(id: number): Promise<Instrukdb.Employee> {
-    throw new Error('not implemented');
+  public async getOneEmployee(id: number): Promise<Instrukdb.Employee> {
+    const res = await this.httpGet<Instrukdb.Employee>(
+      'employee/one.php',
+      {id: id.toString(), token: this.lowLevelApiKey}
+    );
+    return res.data;
   }
 
   public async getEmployeeList(): Promise<Instrukdb.ListEmployee[]> {
-    throw new Error('not implemented');
+    const res = await this.httpGet<Instrukdb.ListEmployee[]>(
+      'employee/list.php',
+      {token: this.lowLevelApiKey}
+    );
+    return res.data;
   }
 
   public async getAllEmployees(): Promise<Instrukdb.Employee[]> {
-    throw new Error('not implemented');
+    const res = await this.httpGet<Instrukdb.Employee[]>(
+      'employee/all.php',
+      {token: this.lowLevelApiKey}
+    );
+    return res.data;
   }
 
-  public async isEmployeeCheckedIn(id: Number): Promise<boolean> {
-    throw new Error('not implemented');
-  }
-
-  public async changeStatus(id: number, timestamp: string, option: string): Promise<void> {
-    throw new Error('not implemented');
+  public async postCheckin(request: Instrukdb.PostCheckinRequest): Promise<Instrukdb.StatusRes> {
+    try {
+      const config: AxiosRequestConfig<Instrukdb.PostCheckinRequest> = this.httpsConfig();
+      type Req = Instrukdb.PostCheckinRequest;
+      type Res = Instrukdb.StatusRes;
+      type Opt = AxiosRequestConfig<Res>
+      const res = await axios.post<Res, Opt, Req>(
+        'employee/checkin.php',
+        request,
+        config
+      );
+      if (res.data === undefined)
+        throw new Error('could not retrieve data from Instrukdb');
+      if (res.data.statusCode === 400)
+        throw new Error('bad request to Instrukdb');
+      return res.data;
+    } catch (err) {
+      console.error(err);
+      throw err;
+    }
   }
   
   public async getSchedule(): Promise<TaskType[]> {
-    throw new Error("Method not implemented.");
+    const res = await this.httpGet<TaskType[]>('lib/schedule.php', {});
+    return res.data;
   }
 
   public async getCheckinPhpData(): Promise<Instrukdb.CheckedinPhpDataElement[]> {
-    throw new Error("Method not implemented.");
+    const res = await this.httpGet<Instrukdb.CheckedinPhpDataElement[]>('lib/schedule.php', {});
+    return res.data;
+  }
+
+  public async getEmployeeImage(id: number): Promise<BinaryString> {
+    const url = `https://instrukdb/elevbilled.php?id=${id}`;
+    const response = await axios.get(url, this.httpsConfig());
+    return response.data as BinaryString;
+  }
+
+  private httpsConfig(): AxiosRequestConfig {
+    const config: AgentOptions = {rejectUnauthorized: false};
+    const httpsAgent = new HttpsAgent(config);
+    return {
+      httpsAgent,
+    };
+  }
+  
+  private async httpGet<T = any>(path: string, data: Record<string, string>): Promise<AxiosResponse<T, any>> {
+    try {
+      const params = paramString(data);
+      const url = this.url + path + params;
+      const res = await axios.get<T>(url, this.httpsConfig());
+      return res;
+    } catch (err) {
+      console.error(err);
+      throw new Error('could not send GET to Instrukdb');
+    }
   }
 
 }

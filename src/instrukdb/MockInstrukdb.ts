@@ -1,36 +1,37 @@
 import { readFile } from "fs/promises";
 import { TaskType } from "../models/TaskType";
+import { BinaryString } from "../utils/base64img";
 import { Instrukdb } from "./Instrukdb"
 
 export class MockInstrukdb implements Instrukdb.API {
 
-  public employees: Instrukdb.Employee[] = [
+  public employees: (Instrukdb.Employee & {rfid: number})[] = [
     {
       id: 1,
-      name: 'Person One',
-      status: 'Ikke logget ind',
-      checkedIn: false,
-      flexString: '-12:34',
-      flexSeconds: -45240,
-      location: 'HCA',
+      rfid: 1,
+      name: 'Person one',
+      flex: 195621,
+      location: "viborg",
+      activity: "SKP",
+      checkedIn: true,
     },
     {
       id: 2,
+      rfid: 2,
       name: 'Person Two',
-      status: 'Logget ind',
-      checkedIn: true,
-      flexString: '12:34',
-      flexSeconds: 45240,
-      location: 'EUX',
+      flex: 195621,
+      location: "viborg",
+      activity: "SKP",
+      checkedIn: true
     },
     {
       id: 3,
+      rfid: 3,
       name: 'Person Three',
-      status: 'Fucking forsvundet',
+      flex: 195621,
+      location: "viborg",
+      activity: "SKP",
       checkedIn: false,
-      flexString: '00:00',
-      flexSeconds: 0,
-      location: 'idk',
     },
   ];
 
@@ -45,7 +46,7 @@ export class MockInstrukdb implements Instrukdb.API {
       throw new Error('could not connect to Instrukdb')
   }
 
-  public async getEmployee(id: number): Promise<Instrukdb.Employee> {
+  public async getOneEmployee(id: number): Promise<Instrukdb.Employee> {
     this.checkConnection();
     return this.employees.find((e) => (e.id === id)) || (() => {throw new Error('not found')})();
   }
@@ -60,21 +61,24 @@ export class MockInstrukdb implements Instrukdb.API {
     return this.employees;
   }
 
-  public async isEmployeeCheckedIn(id: Number) {
+  public async getEmployeeStatus(id: Number) {
     this.checkConnection();
     return (this.employees.find((e) => (e.id === id)) || (() => {throw new Error('not found')})()).checkedIn;
   }
 
-  public async changeStatus(id: number, timestamp: string, option: string) {
-    this.checkConnection();
-    const employee = this.employees.find(e => e.id == id);
+  public async postCheckin({option, rfid}: Instrukdb.PostCheckinRequest): Promise<Instrukdb.StatusRes> {
+    try {
+      this.checkConnection();
+    } catch (err) {
+      return {statusCode: 400};
+    }
+    const employee = this.employees.find(e => e.rfid == rfid);
     if (option === 'checkin') {
-      employee!.status = 'Logget ind';
       employee!.checkedIn = true;
     } else if (option === 'checkout') {
-      employee!.status = 'Ikke Logget ind';
       employee!.checkedIn = false;
     }
+    return {statusCode: 200};
   }
 
   public getScheduleCalls = 0;
@@ -87,6 +91,12 @@ export class MockInstrukdb implements Instrukdb.API {
   public async getCheckinPhpData(): Promise<Instrukdb.CheckedinPhpDataElement[]> {
     this.checkConnection();
     return JSON.parse((await readFile('./samples/checkin_php_data.json')).toString());
+  }
+
+  public async getEmployeeImage(id: number): Promise<BinaryString> {
+    const read = await readFile('./samples/employee_1_img.png');
+    const binaryString = read.toString();
+    return binaryString;
   }
 
 }

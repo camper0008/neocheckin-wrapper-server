@@ -1,32 +1,45 @@
 import { TaskType } from "../models/TaskType";
+import type { BinaryString } from "../utils/base64img";
 
 export namespace Instrukdb {
 
-  export interface Employee {
-    id: number          // instrukdb id
-    name: string,       // fulde navn
-    status: string,     // logget ind/ud, sygemeldt, afspadsering?
-    checkedIn: boolean, // logget ind eller ej
-    flexString: string, // flex tid som string?
-    flexSeconds: number,// flex tid som seconder?
-    location: string,   // lokation
+  export interface StatusRes {
+    statusCode: number,
   }
 
-  export type ListEmployee = Pick<Employee, 'id' | 'name' | 'status'>;
+  export interface Employee {
+    id: number,
+    name: string,
+    flex: number,
+    location: string,
+    activity: string,
+    checkedIn: boolean,
+  }
+
+  export type ListEmployee = Pick<Employee, 'id' | 'name' | 'activity' | 'checkedIn'>;
 
   export type CheckedinPhpDataElement = Omit<TaskType, 'description' | 'priority'>;
 
+  export interface PostCheckinRequest {
+    token: string,
+    rfid: number,
+    timestamp: number,
+    option: string,
+    ip: string
+  }
+
   export interface API {
 
-    getEmployee(id: number): Promise<Employee>;
+    getOneEmployee(id: number): Promise<Employee>;
     getEmployeeList(): Promise<ListEmployee[]>;
     getAllEmployees(): Promise<Employee[]>
-    isEmployeeCheckedIn(id: Number): Promise<boolean>
 
-    changeStatus(id: number, timestamp: string, option: string): Promise<void>;
+    postCheckin(request: PostCheckinRequest): Promise<StatusRes>;
 
     getSchedule(): Promise<TaskType[]>;
     getCheckinPhpData(): Promise<CheckedinPhpDataElement[]>;
+
+    getEmployeeImage(id: number): Promise<BinaryString>;
   
   }
   

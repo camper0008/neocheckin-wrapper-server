@@ -3,17 +3,14 @@ import { Agent as HttpsAgent } from "https";
 import { Database } from "../database/Database";
 import { Instrukdb } from "../instrukdb/Instrukdb";
 import { Employee } from "../models/Employee";
+import { base64FromBinaryString, BinaryString } from "../utils/base64img";
 
-export const getEmployeeImageBase64 = async (id: number) => {
-  const response = await axios.get(
-    `https://instrukdb/elevbilled.php?id=${id}`,
-    {
-      responseType: 'arraybuffer',
-      httpsAgent: new HttpsAgent({rejectUnauthorized: false})
-    }
-  );
-  const buffer = Buffer.from(response.data as string, 'binary');
-  return buffer.toString('base64');
+// TODO refactor away to instrukdb and utils/base64img
+
+export const getEmployeeImageBase64 = async (id: number, idb: Instrukdb.API) => {
+  const binaryString = await idb.getEmployeeImage(id);
+  const base64 = base64FromBinaryString(binaryString);
+  return base64;
 }
 
 export const getEmployees = async (db: Database, idb: Instrukdb.API): Promise<Employee[]> => {
@@ -25,15 +22,15 @@ export const getEmployees = async (db: Database, idb: Instrukdb.API): Promise<Em
       id,
       name,
       location,
-      flexSeconds,
+      flex,
       checkedIn
     } = iEmployees[i];
     employees.push({
       id,
       name,
       department: location,
-      flex: flexSeconds,
-      photo: await getEmployeeImageBase64(id),
+      flex,
+      photo: await getEmployeeImageBase64(id, idb), // TODO get images a smarter way
       working: checkedIn,
     });
   }
@@ -43,6 +40,7 @@ export const getEmployees = async (db: Database, idb: Instrukdb.API): Promise<Em
 
 export type EmployeeWithRfid = Employee & {rfid: string | null};
 
+// TODO refactor
 export const getEmployeesWithRfid = async (db: Database, idb: Instrukdb.API): Promise<EmployeeWithRfid[]> => {
   const employees = await getEmployees(db, idb);
   const employeesWithRfid: EmployeeWithRfid[] = [];
@@ -57,6 +55,7 @@ export const getEmployeesWithRfid = async (db: Database, idb: Instrukdb.API): Pr
   return employeesWithRfid;
 }
 
+// TODO query instead
 export const removeEmployeesWithoutRfid = (employees: EmployeeWithRfid[]): EmployeeWithRfid[] => {
   const employeesWRfid: EmployeeWithRfid[] = []
   for (let i in employees)
@@ -65,6 +64,7 @@ export const removeEmployeesWithoutRfid = (employees: EmployeeWithRfid[]): Emplo
   return employeesWRfid;
 }
 
+// TODO query instead
 export const removeEmployeesWithRfid = (employees: EmployeeWithRfid[]): EmployeeWithRfid[] => {
   const eo: EmployeeWithRfid[] = [];
   for (let i in employees)
@@ -73,6 +73,7 @@ export const removeEmployeesWithRfid = (employees: EmployeeWithRfid[]): Employee
   return eo;
 }
 
+// TODO should use database
 export const hasEmployeesWithoutRfid = (employees: EmployeeWithRfid[]): boolean => {
   for (let i in employees)
     if (employees[i].rfid === null)
