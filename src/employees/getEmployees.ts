@@ -22,14 +22,14 @@ export const getEmployees = async (db: Database, idb: Instrukdb.API): Promise<Em
       id,
       name,
       location,
-      flexSeconds,
+      flex,
       checkedIn
     } = iEmployees[i];
     employees.push({
       id,
       name,
       department: location,
-      flex: flexSeconds,
+      flex,
       photo: await getEmployeeImageBase64(id, idb), // TODO get images a smarter way
       working: checkedIn,
     });
