@@ -14,6 +14,7 @@ export namespace Instrukdb {
     location: string,
     activity: string,
     checkedIn: boolean,
+    rfid: number,
   }
 
   export type ListEmployee = Pick<Employee, 'id' | 'name' | 'activity' | 'checkedIn'>;

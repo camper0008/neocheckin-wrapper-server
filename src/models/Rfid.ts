@@ -1,6 +1,6 @@
 import { Identifiable } from "../database/Identifyable";
 
-export interface Rfid extends Identifiable {
+export interface AltRfid extends Identifiable {
   rfid: string,
   employeeId: number,
 }

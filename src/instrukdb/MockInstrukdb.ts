@@ -56,7 +56,9 @@ export class MockInstrukdb implements Instrukdb.API {
     return this.employees;
   }
 
+  public getAllEmployeesCalls = 0;
   public async getAllEmployees(): Promise<Instrukdb.Employee[]> {
+    this.getAllEmployeesCalls++;
     this.checkConnection();
     return this.employees;
   }
@@ -94,7 +96,7 @@ export class MockInstrukdb implements Instrukdb.API {
   }
 
   public async getEmployeeImage(id: number): Promise<BinaryString> {
-    const read = await readFile('./samples/employee_1_img.png');
+    const read = await readFile(`./samples/employee_${id}_img.png`);
     const binaryString = read.toString();
     return binaryString;
   }

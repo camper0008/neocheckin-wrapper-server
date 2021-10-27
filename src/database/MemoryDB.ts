@@ -1,5 +1,5 @@
 import { LoggedError } from "../models/LoggedError";
-import { Rfid } from "../models/Rfid";
+import { AltRfid } from "../models/Rfid";
 import { Task } from "../models/Task";
 import { TaskType } from "../models/TaskType";
 import { Database } from "./Database";
@@ -9,7 +9,7 @@ export class MemoryDB extends Database {
   private idCounter: {[key: string]: number} = {};
   private tasks: Task[] = [];
   private taskTypes: TaskType[] = [];
-  private rfids: Rfid[] = [];
+  private rfids: AltRfid[] = [];
   private errors: LoggedError[] = [];
 
   public constructor () {
@@ -69,21 +69,21 @@ export class MemoryDB extends Database {
 
 
 
-  public async getRfidByEmployeeId(employeeId: number): Promise<Rfid> {
+  public async getAltRfidByEmployeeId(employeeId: number): Promise<AltRfid> {
     for (let i in this.rfids)
       if (this.rfids[i].employeeId === employeeId)
         return this.rfids[i];
     throw new Error("not found");
   }
 
-  public async getRfidByRfid(rfid: string): Promise<Rfid> {
+  public async getAltRfidByRfid(rfid: string): Promise<AltRfid> {
     for (let i in this.rfids)
       if (this.rfids[i].rfid === rfid)
         return this.rfids[i];
     throw new Error("not found");
   }
 
-  public async insertRfid(rfid: Rfid): Promise<Rfid> {
+  public async insertAltRfid(rfid: AltRfid): Promise<AltRfid> {
     for (let i in this.rfids)
       if (this.rfids[i].id === rfid.id)
         throw new Error('id must be unique');

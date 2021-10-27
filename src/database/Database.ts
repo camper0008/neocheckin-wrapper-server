@@ -1,5 +1,5 @@
 import { LoggedError } from "../models/LoggedError";
-import { Rfid } from "../models/Rfid";
+import { AltRfid } from "../models/Rfid";
 import { Task } from "../models/Task";
 import { TaskType } from "../models/TaskType";
 
@@ -17,9 +17,9 @@ export abstract class Database {
   public abstract getTaskType(id: number): Promise<TaskType>;
   public abstract replaceTaskTypes(taskTypes: TaskType[]): Promise<number>;
 
-  public abstract getRfidByEmployeeId(employeeId: number): Promise<Rfid>;
-  public abstract getRfidByRfid(rfid: string): Promise<Rfid>;
-  public abstract insertRfid(rfid: Rfid): Promise<Rfid>;
+  public abstract getAltRfidByEmployeeId(employeeId: number): Promise<AltRfid>;
+  public abstract getAltRfidByRfid(rfid: string): Promise<AltRfid>;
+  public abstract insertAltRfid(rfid: AltRfid): Promise<AltRfid>;
 
   public abstract getErrorCount(): Promise<number>;
   public abstract getErrors(): Promise<LoggedError[]>;
