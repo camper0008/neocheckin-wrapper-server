@@ -1,20 +1,21 @@
 import { Router } from "express";
 import { Database } from "../database/Database";
+import { getAllEmployees } from "../employees/getEmployees";
 import { Instrukdb } from "../instrukdb/Instrukdb";
+import { InstrukdbClient } from "../instrukdb/InstrukdbClient";
 import { Employee } from "../models/Employee";
 import { Handle, Respondable } from "./utils";
 
 
 
 export interface GetEmployeesAllRes extends Respondable {
-  data?: (Employee & {rfid: string})[],
+  data?: (Employee & {photo: string})[],
 }
 
 export const getEmployeesAllHandle: Handle<any, GetEmployeesAllRes> = (db: Database, idb: Instrukdb.API) =>
 async (req, res) => {
   try {
-    throw new Error('not implemented');
-    res.status(200).json({});
+    res.status(200).json({data: await getAllEmployees(db, idb)});
   } catch (catched) {
     res.status(500).json({error: 'server error'});
     console.error(catched);
@@ -23,7 +24,8 @@ async (req, res) => {
 
 export const employeesRoutes = (router: Router, db: Database, idb: Instrukdb.API) => {
 
-
+  const realIdb = new InstrukdbClient('https://instrukdb/api/', 'AivlHRlOSZgbOIoD8ja37TQTGKB6ijhYTpsyhSO1UUDaKOGApGMVPCqtnSxb4hWO');
+  router.get('/all', getEmployeesAllHandle(db, realIdb));
 
   return router;
 }

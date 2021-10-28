@@ -96,8 +96,8 @@ export class MockInstrukdb implements Instrukdb.API {
   }
 
   public async getEmployeeImage(id: number): Promise<BinaryString> {
-    const read = await readFile(`./samples/employee_${id}_img.png`);
-    const binaryString = read.toString();
+    const read = await readFile(`./samples/employee_1_img.png`); // `./samples/employee_${id}_img.png`
+    const binaryString = read.toString('binary');
     return binaryString;
   }
 
