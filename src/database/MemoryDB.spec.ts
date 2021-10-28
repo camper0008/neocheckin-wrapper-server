@@ -78,9 +78,12 @@ const mockTaskType: TaskType = {
   id: 0,
   name: '1',
   description: '',
+  displayName: 'Very gud',
   priority: false,
   instrukdbCheckinId: 0,
   instrukdbCheckinName: '1',
+  category: 'check out',
+  exclusiveLocations: null,
   schedule: {
     from: {hour: 0, minute: 0, second: 0},
     to: {hour: 0, minute: 0, second: 0},
@@ -150,7 +153,7 @@ describe('Rfid', () => {
   it('should throw error "not found"', async () => {
     const db = new MemoryDB();
     try {
-      await db.getRfidByRfid('ABCDEFG');
+      await db.getAltRfidByRfid('ABCDEFG');
       throw new Error('didnt throw');
     } catch (catched) {
       const error = catched as Error;
@@ -161,15 +164,15 @@ describe('Rfid', () => {
   it('should return rfid', async () => {
     const db = new MemoryDB();
     const rfid = {id: await db.getUniqueRfidId(), rfid: 'ABCDEFG', employeeId: 0};
-    await db.insertRfid(rfid)
-    const res = await db.getRfidByRfid('ABCDEFG');
+    await db.insertAltRfid(rfid)
+    const res = await db.getAltRfidByRfid('ABCDEFG');
     expect(res).toEqual(rfid);
   });
 
   it('should throw error "not found"', async () => {
     const db = new MemoryDB();
     try {
-      await db.getRfidByEmployeeId(0);
+      await db.getAltRfidByEmployeeId(0);
       throw new Error('didnt throw');
     } catch (catched) {
       const error = catched as Error;
@@ -180,17 +183,17 @@ describe('Rfid', () => {
   it('should return rfid', async () => {
     const db = new MemoryDB();
     const rfid = {id: await db.getUniqueRfidId(), rfid: 'ABCDEFG', employeeId: 0};
-    await db.insertRfid(rfid)
-    const res = await db.getRfidByEmployeeId(0);
+    await db.insertAltRfid(rfid)
+    const res = await db.getAltRfidByEmployeeId(0);
     expect(res).toEqual(rfid);
   });
 
   it('should throw error "id must be unique"', async () => {
     const db = new MemoryDB();
     const rfid = {id: await db.getUniqueRfidId(), rfid: 'ABCDEFG', employeeId: 0};
-    await db.insertRfid(rfid);
+    await db.insertAltRfid(rfid);
     try {
-      await db.insertRfid(rfid);
+      await db.insertAltRfid(rfid);
       throw new Error('didnt throw');
     } catch (catched) {
       const error = catched as Error;

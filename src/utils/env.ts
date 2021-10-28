@@ -34,12 +34,19 @@ export const getHttpsPort = (fallback: number) => {
 
 export const getLowLevelApiKey = (fallback: string) => {
   try {
-    const apiKey = process.env.LOW_LEVER_API_KEY!;
+    const apiKey = process.env.LOW_LEVEL_API_KEY!;
     if (typeof apiKey !== 'string')
-      throw new Error(`Could not find 'LOW_LEVER_API_KEY' variable in '.env'`)
+      throw new Error(`Could not find 'LOW_LEVEL_API_KEY' variable in '.env'`)
     return apiKey;
   } catch (catched) {
-    console.log('Could not load LOW_LEVER_API_KEY port from \'.env\', falling back to', fallback);
+    console.log('Could not load LOW_LEVEL_API_KEY port from \'.env\', falling back to', fallback);
     return fallback;
   }
+}
+
+export const getApiToken = () => {
+  const apiKey = process.env.API_TOKEN!;
+  if (typeof apiKey !== 'string')
+    throw new Error(`Could not find 'API_TOKEN' variable in '.env'`)
+  return apiKey;
 }

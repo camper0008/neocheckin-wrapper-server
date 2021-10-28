@@ -73,7 +73,10 @@ export class InstrukdbClient implements Instrukdb.API {
 
   public async getEmployeeImage(id: number): Promise<BinaryString> {
     const url = `https://instrukdb/elevbilled.php?id=${id}`;
-    const response = await axios.get(url, this.httpsConfig());
+    const response = await axios.get(url, {
+      responseType: 'arraybuffer',
+      httpsAgent: new HttpsAgent({rejectUnauthorized: false}),
+    });
     return response.data as BinaryString;
   }
 

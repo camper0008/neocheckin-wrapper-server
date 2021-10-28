@@ -25,8 +25,11 @@ export interface TaskType {
   id: number,
   name: string,
   description: string,
+  displayName: string,
   priority: boolean,
   instrukdbCheckinId: number | null,
   instrukdbCheckinName: string,
+  exclusiveLocations: string[] | null,
+  category: 'check in' | 'check out',
   schedule: Schedule,
 }

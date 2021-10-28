@@ -5,5 +5,5 @@ export interface Employee extends Identifiable {
   flex: number,
   working: boolean,
   department: string,
-  photo: string,
+  rfid: number,
 }

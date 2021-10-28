@@ -13,13 +13,17 @@ import { Respondable, Handle } from "./utils";
 // TODO implement error state
 
 export interface GetTypesRes extends Respondable {
-  data?: TaskType[],
+  data?: Omit<TaskType, 'instrukdbCheckinId' | 'instrukdbCheckinName'>[],
   error?: string,
 }
 
 export const getTypesHandle: Handle<undefined, GetTypesRes> = (db, idb) => async (req, res) => {
   try {
-    res.status(200).json({data: await getTaskTypes(db, idb)});
+    res.status(200).json({data: (await getTaskTypes(db, idb)).map(task => ({
+      ...task,
+      instrukdbCheckinId: undefined,
+      instrukdbCheckinName: undefined,
+    }))});
   } catch (catched) {
     res.status(500).json({error: 'server error'});
     console.error(catched);
