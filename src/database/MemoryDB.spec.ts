@@ -78,9 +78,12 @@ const mockTaskType: TaskType = {
   id: 0,
   name: '1',
   description: '',
+  displayName: 'Very gud',
   priority: false,
   instrukdbCheckinId: 0,
   instrukdbCheckinName: '1',
+  category: 'check out',
+  exclusiveLocations: null,
   schedule: {
     from: {hour: 0, minute: 0, second: 0},
     to: {hour: 0, minute: 0, second: 0},
