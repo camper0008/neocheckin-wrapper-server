@@ -10,7 +10,7 @@ import { serveHttp, serveHttps } from './servers';
 import { tasksRoutes } from './tasks';
 
 export const apiTokenAuth = (apiToken: string) => async (req: Request, res: Response, next: NextFunction) => {
-  const token = req.headers['token'] as string;
+  const token = (req.headers['token'] || req.query['token']) as string;
   if (token === apiToken)
     next();
   else
