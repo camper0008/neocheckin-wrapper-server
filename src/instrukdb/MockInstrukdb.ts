@@ -68,7 +68,12 @@ export class MockInstrukdb implements Instrukdb.API {
     return (this.employees.find((e) => (e.id === id)) || (() => {throw new Error('not found')})()).checkedIn;
   }
 
-  public async postCheckin({option, rfid}: Instrukdb.PostCheckinRequest): Promise<Instrukdb.StatusRes> {
+  public postCheckinCalls = 0;
+  public postCheckinLastCall?: Instrukdb.PostCheckinRequest;
+  public async postCheckin(req: Instrukdb.PostCheckinRequest): Promise<Instrukdb.StatusRes> {
+    const {option, rfid} = req;
+    this.postCheckinLastCall = req;
+    this.postCheckinCalls++;
     try {
       this.checkConnection();
     } catch (err) {
