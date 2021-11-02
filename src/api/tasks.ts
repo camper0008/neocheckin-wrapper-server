@@ -52,7 +52,7 @@ async (req, res) => {
     } = req.body;
     const result = await addTask({
       name,
-      taskId,
+      taskTypeId: taskId,
       employeeRfid,
       highLevelApiKey,
       systemIdentifier,
@@ -68,7 +68,7 @@ async (req, res) => {
 export const getAll: Handle = (db, idb) =>
 async (req, res) => {
   try {
-    res.status(200).json({data: await getTasks(db)});
+    res.status(200).json({data: await (await getTasks(db)).map(task => ({...task, taskId: task.taskTypeId}))});
   } catch (catched) {
     res.status(500).json({error: 'server error'});
     console.error(catched);

@@ -1,15 +1,17 @@
 import { LoggedError } from "../models/LoggedError";
+import { Task, TaskStatus } from "../models/Task";
 import { Schedule, TaskType } from "../models/TaskType";
 import { MemoryDB } from "./MemoryDB";
 
-const mockTask = {
+const mockTask: Task = {
   id: 0,
   name: 'my task',
-  taskId: 0,
+  taskTypeId: 0,
   date: new Date(),
   systemIdentifier: 'test-suit',
   employeeRfid: '',
   highLevelApiKey: '',
+  status: TaskStatus.WAITING
 };
 
 const mockError: LoggedError = {id: 0, name: 'Error', msg:'This is an error'};

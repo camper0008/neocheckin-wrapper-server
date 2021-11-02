@@ -1,9 +1,9 @@
 import { Database } from "../database/Database";
-import { Task } from "../models/Task";
+import { Task, TaskStatus } from "../models/Task";
 
 export interface AddTaskRequest {
   name: string,
-  taskId: number,
+  taskTypeId: number,
   date?: Date | string,
   systemIdentifier: string,
   employeeRfid: string,
@@ -21,6 +21,12 @@ export const addTask = async (task: AddTaskRequest, db: Database): Promise<Task>
   if (name === '')
     throw new Error('name empty');
   const id = await db.getUniqueTaskId();
-  const insert = await db.insertTask({...task, date: getDateFromDateOrString(date), id});
+  const insert = await db.insertTask({
+    ...task,
+    date: getDateFromDateOrString(date),
+    id,
+    status: TaskStatus.WAITING,
+    taskTypeId: task.taskTypeId
+  });
   return insert;
 }
