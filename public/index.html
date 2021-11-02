@@ -10,7 +10,7 @@
   
   <h1>Dashboard</h1>
 
-  <div onclick="(async () => (this.innerHTML = await (async () => (((body) => (body.data.map((task) => `<h3>Name: ${task.name}</h3><p>Id: ${task.id}</p><p>TaskTypeId: ${task.taskId}</p><p>Date: ${task.date}</p><p>System: ${task.systemIdentifier}</p><p>EmployeeRfid: ${task.employeeRfid}</p>`).join('<hr>')))(await (await fetch('/api/tasks/all')).json())))()))()">
+  <div onclick="(async () => (this.innerHTML = await (async () => (((body) => (body.data.map((task) => `<h3>Name: ${task.name}</h3><p>Id: ${task.id}</p><p>TaskTypeId: ${task.taskId}</p><p>Date: ${task.date}</p><p>System: ${task.systemIdentifier}</p><p>EmployeeRfid: ${task.employeeRfid}</p>`).join('<hr>')))(await (await fetch('/api/tasks/all?token=test-token')).json())))()))()">
     Click me
   </div>
 
