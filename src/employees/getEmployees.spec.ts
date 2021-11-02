@@ -24,4 +24,11 @@ describe('getAllEmployees', () => {
     expect(idb.getAllEmployeesCalls).toBe(1);
   });
 
+  it('should give employees photos', async () => {
+    const db = new MemoryDB();
+    const idb = new MockInstrukdb();
+    const employees = await getAllEmployees(db, idb);
+    expect(employees[0].photo).not.toBe(null);
+  });
+
 });
