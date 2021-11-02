@@ -17,6 +17,21 @@ export const apiTokenAuth = (apiToken: string) => async (req: Request, res: Resp
     res.status(400).json({error: 'access denied'})
 }
 
+export const developmentRequestPrinter = () => async (req: Request, res: Response, next: NextFunction) => {
+  const d = new Date();
+  console.log(
+    `\nRecieved request\n`
+    + `    time:\t${d.toLocaleTimeString().replace(/\./g, ':')}  ${d.toLocaleDateString().replace(/\//g, '-')}\n` 
+    + `    url:\t${req.url}\n`
+    + `    ip: \t${req.ip}\n`
+    + `    hostname:\t${req.hostname}\n`
+    + `    token:\t${req.headers['token'] || req.query['token']}\n`
+    + `    method:\t${req.method}\n`
+    + `    body:\t${JSON.stringify(req.body, null, 4).replace(/\n/g, '\n    ')}\n`
+  );
+  next();
+}
+
 export const api = async (db: Database, idb: Instrukdb.API) => {
   const app = express();
 
@@ -24,6 +39,7 @@ export const api = async (db: Database, idb: Instrukdb.API) => {
   app.use(json());
   app.use(urlencoded({extended: true}));
   app.use(apiTokenAuth(getApiToken()));
+  app.use(developmentRequestPrinter());
   app.use(jsonError());
 
   // TODO implement error state
