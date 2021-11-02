@@ -2,6 +2,7 @@ import { Database } from "../database/Database";
 import { Instrukdb } from "../instrukdb/Instrukdb";
 import { Employee } from "../models/Employee";
 import { base64FromBinaryString, BinaryString } from "../utils/base64img";
+import { padRfid, padString } from "../utils/strings";
 
 export const getEmployeeImageBase64 = async (id: number, idb: Instrukdb.API) => {
   const binaryString = await idb.getEmployeeImage(id);
@@ -17,7 +18,7 @@ export const getAllEmployees = async (db: Database, idb: Instrukdb.API): Promise
     working:    e.checkedIn,
     flex:       e.flex,
     department: e.location,
-    rfid:       e.rfid,
+    rfid:       padRfid(e.rfid),
     photo:      null
   }));
   const employeeImageUpdates = employees.map(async ({id}, i) => (employees[i].photo = await getEmployeeImageBase64(id, idb)));
