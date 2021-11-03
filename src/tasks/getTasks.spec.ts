@@ -17,6 +17,7 @@ describe('getTasks', () => {
       date: new Date(),
       name: 'Name',
       employeeRfid: '',
+      systemIp: '',
       highLevelApiKey: '',
       systemIdentifier: '',
       taskTypeId: 0,

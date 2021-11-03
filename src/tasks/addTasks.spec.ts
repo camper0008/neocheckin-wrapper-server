@@ -8,6 +8,7 @@ describe('addTask', () => {
     taskTypeId: 0,
     date: new Date(),
     systemIdentifier: 'test-suit',
+    systemIp: '10.0.80.70',
     employeeRfid: '',
     highLevelApiKey: '',
   };
@@ -17,6 +18,7 @@ describe('addTask', () => {
     taskTypeId: 1,
     date: new Date(),
     systemIdentifier: 'test-suit',
+    systemIp: '10.0.80.71',
     employeeRfid: '',
     highLevelApiKey: '',
   };

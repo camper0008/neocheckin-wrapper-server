@@ -6,6 +6,7 @@ export interface AddTaskRequest {
   taskTypeId: number,
   date?: Date | string,
   systemIdentifier: string,
+  systemIp: string,
   employeeRfid: string,
   highLevelApiKey: string,
 }

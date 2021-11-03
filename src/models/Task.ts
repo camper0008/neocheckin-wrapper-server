@@ -12,7 +12,9 @@ export interface Task extends Identifiable {
   taskTypeId: number,
   date: Date,
   systemIdentifier: string,
+  systemIp: string,
   employeeRfid: string,
   highLevelApiKey: string,
   status: TaskStatus,
+  statusMsg?: string,
 }

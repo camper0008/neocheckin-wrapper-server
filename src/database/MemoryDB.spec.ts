@@ -9,6 +9,7 @@ const mockTask: Task = {
   taskTypeId: 0,
   date: new Date(),
   systemIdentifier: 'test-suit',
+  systemIp: '10.0.80.70',
   employeeRfid: '',
   highLevelApiKey: '',
   status: TaskStatus.WAITING
