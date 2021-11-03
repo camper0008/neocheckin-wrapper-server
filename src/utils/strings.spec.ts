@@ -1,4 +1,4 @@
-import { padRfid, padString, padStringBehind } from "./strings";
+import { getRfidAsNumber, padRfid, padString, padStringBehind } from "./strings";
 
 
 describe('padString', () => {
@@ -38,6 +38,14 @@ describe('padRfid', () => {
   it('should pad with 0', () => {
     expect(padRfid(328257412).slice(0, 1)).toBe('0');
   })
+
+});
+
+describe('getRfidAsNumber', () => {
+
+  it('should return input as number', () => {
+    expect(getRfidAsNumber('0328257412')).toBe(328257412);
+  });
 
 });
 
