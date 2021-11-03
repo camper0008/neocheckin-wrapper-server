@@ -5,6 +5,7 @@ export namespace Instrukdb {
 
   export interface StatusRes {
     statusCode: number,
+    message?: string,
   }
 
   export interface Employee {
@@ -26,6 +27,7 @@ export namespace Instrukdb {
     rfid: number,
     timestamp: number,
     option: string,
+    details: string,
     ip: string
   }
 
