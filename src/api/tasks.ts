@@ -7,6 +7,7 @@ import { Task } from "../models/Task";
 import { TaskType } from "../models/TaskType";
 import { addTask } from "../tasks/addTasks";
 import { getTasks } from "../tasks/getTasks";
+import { TaskRunner } from "../tasks/TaskRunner";
 import { getTaskTypes } from "../tasks/taskTypes";
 import { Respondable, Handle } from "./utils";
 
@@ -39,7 +40,7 @@ export interface PostAddReq {
   timestamp: string,
 }
 
-export const postAddHandle: Handle<PostAddReq> = (db) => 
+export const postAddHandle: Handle<PostAddReq> = (db, idb) => 
 async (req, res) => {
   try {
     const {
@@ -52,12 +53,18 @@ async (req, res) => {
     } = req.body;
     const result = await addTask({
       name,
-      taskId,
+      taskTypeId: taskId,
       employeeRfid,
       highLevelApiKey,
       systemIdentifier,
+      systemIp: req.ip,
       date: timestamp ? new Date(timestamp) : undefined,
     }, db);
+
+    // HACK
+    const tr = new TaskRunner(db, idb, 'test-');
+    tr.run(result);
+
     return res.status(200).json({data: result});
   } catch (catched) {
     res.status(500).json({error: 'server error'});
@@ -68,7 +75,7 @@ async (req, res) => {
 export const getAll: Handle = (db, idb) =>
 async (req, res) => {
   try {
-    res.status(200).json({data: await getTasks(db)});
+    res.status(200).json({data: (await getTasks(db)).map(task => ({...task, taskId: task.taskTypeId}))});
   } catch (catched) {
     res.status(500).json({error: 'server error'});
     console.error(catched);

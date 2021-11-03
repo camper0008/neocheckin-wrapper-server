@@ -17,7 +17,7 @@ export class InstrukdbClient implements Instrukdb.API {
 
   public async getOneEmployee(id: number): Promise<Instrukdb.Employee> {
     const res = await this.httpGet<Instrukdb.Employee>(
-      'employee/one.php',
+      'api/employee/one.php',
       {id: id.toString(), token: this.lowLevelApiKey}
     );
     return res.data;
@@ -25,7 +25,7 @@ export class InstrukdbClient implements Instrukdb.API {
 
   public async getEmployeeList(): Promise<Instrukdb.ListEmployee[]> {
     const res = await this.httpGet<Instrukdb.ListEmployee[]>(
-      'employee/list.php',
+      'api/employee/list.php',
       {token: this.lowLevelApiKey}
     );
     return res.data;
@@ -33,7 +33,7 @@ export class InstrukdbClient implements Instrukdb.API {
 
   public async getAllEmployees(): Promise<Instrukdb.Employee[]> {
     const res = await this.httpGet<Instrukdb.Employee[]>(
-      'employee/all.php',
+      'api/employee/all.php',
       {token: this.lowLevelApiKey}
     );
     return res.data;
@@ -44,30 +44,29 @@ export class InstrukdbClient implements Instrukdb.API {
       const config: AxiosRequestConfig<Instrukdb.PostCheckinRequest> = this.httpsConfig();
       type Req = Instrukdb.PostCheckinRequest;
       type Res = Instrukdb.StatusRes;
-      type Opt = AxiosRequestConfig<Res>
+      type Opt = AxiosRequestConfig<Res>;
       const res = await axios.post<Res, Opt, Req>(
-        'employee/checkin.php',
+        'https://instrukdb/api/employee/checkin.php',
         request,
         config
       );
       if (res.data === undefined)
         throw new Error('could not retrieve data from Instrukdb');
-      if (res.data.statusCode === 400)
-        throw new Error('bad request to Instrukdb');
       return res.data;
     } catch (err) {
-      console.error(err);
-      throw err;
+      return {statusCode: 400, message: (err as Error).message}
+      // console.error(err);
+      // throw err;
     }
   }
   
   public async getSchedule(): Promise<TaskType[]> {
-    const res = await this.httpGet<TaskType[]>('lib/schedule.php', {});
+    const res = await this.httpGet<TaskType[]>('lib/schedule.json', {});
     return res.data;
   }
 
   public async getCheckinPhpData(): Promise<Instrukdb.CheckedinPhpDataElement[]> {
-    const res = await this.httpGet<Instrukdb.CheckedinPhpDataElement[]>('lib/schedule.php', {});
+    const res = await this.httpGet<Instrukdb.CheckedinPhpDataElement[]>('lib/check_data.json', {});
     return res.data;
   }
 

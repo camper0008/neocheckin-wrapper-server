@@ -1,5 +1,5 @@
 import { MockMemoryDB } from "../database/MockMemoryDB";
-import { Task } from "../models/Task";
+import { Task, TaskStatus } from "../models/Task";
 import { getTasks } from "./getTasks";
 
 describe('getTasks', () => {
@@ -17,9 +17,11 @@ describe('getTasks', () => {
       date: new Date(),
       name: 'Name',
       employeeRfid: '',
+      systemIp: '',
       highLevelApiKey: '',
       systemIdentifier: '',
-      taskId: 0
+      taskTypeId: 0,
+      status: TaskStatus.WAITING
     };
     await db.insertTask(task);
     expect(await getTasks(db)).toEqual([task]);

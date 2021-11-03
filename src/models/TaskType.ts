@@ -1,4 +1,9 @@
 
+export enum TaskTypeCategories {
+  CHECK_IN,
+  CHECK_OUT,
+}
+
 export interface TimeStamp {
   hour: number,
   minute: number,

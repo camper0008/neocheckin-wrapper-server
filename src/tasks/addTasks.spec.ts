@@ -1,22 +1,24 @@
-import { addTask } from './addTasks'
+import { addTask, AddTaskRequest } from './addTasks'
 import { MockMemoryDB } from '../database/MockMemoryDB'
 
 describe('addTask', () => {
 
-  const mockTask = {
+  const mockTask: AddTaskRequest = {
     name: 'my task',
-    taskId: 0,
+    taskTypeId: 0,
     date: new Date(),
     systemIdentifier: 'test-suit',
+    systemIp: '10.0.80.70',
     employeeRfid: '',
     highLevelApiKey: '',
   };
 
-  const mockTask2 = {
+  const mockTask2: AddTaskRequest = {
     name: 'my other task',
-    taskId: 1,
+    taskTypeId: 1,
     date: new Date(),
     systemIdentifier: 'test-suit',
+    systemIp: '10.0.80.71',
     employeeRfid: '',
     highLevelApiKey: '',
   };
