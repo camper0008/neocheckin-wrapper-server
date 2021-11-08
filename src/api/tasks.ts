@@ -61,9 +61,7 @@ async (req, res) => {
       date: timestamp ? new Date(timestamp) : undefined,
     }, db);
 
-    // HACK
-    const tr = new TaskRunner(db, idb, 'test-');
-    tr.run(result);
+    // TODO add to taskrunner queue?
 
     return res.status(200).json({data: result});
   } catch (catched) {

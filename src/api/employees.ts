@@ -24,8 +24,7 @@ async (req, res) => {
 
 export const employeesRoutes = (router: Router, db: Database, idb: Instrukdb.API) => {
 
-  const realIdb = new InstrukdbClient('https://instrukdb/api/', 'AivlHRlOSZgbOIoD8ja37TQTGKB6ijhYTpsyhSO1UUDaKOGApGMVPCqtnSxb4hWO');
-  router.get('/all', getEmployeesAllHandle(db, realIdb));
+  router.get('/all', getEmployeesAllHandle(db, idb));
 
   return router;
 }

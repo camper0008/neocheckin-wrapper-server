@@ -17,7 +17,7 @@ class TestInstrukdbClient extends InstrukdbClient {
 const main = async () => {
   config();
   const db = new MemoryDB();
-  const idb = new TestInstrukdbClient('https://instrukdb/', 'AivlHRlOSZgbOIoD8ja37TQTGKB6ijhYTpsyhSO1UUDaKOGApGMVPCqtnSxb4hWO');
+  const idb = new TestInstrukdbClient('AivlHRlOSZgbOIoD8ja37TQTGKB6ijhYTpsyhSO1UUDaKOGApGMVPCqtnSxb4hWO');
   await synchronizeTaskTypes(db, idb);
   await api(db, idb);
 }
