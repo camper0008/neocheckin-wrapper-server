@@ -92,7 +92,7 @@ const getBase64ImageFromElevId = async (id: number) => {
 const getEmployeeRfid: API.Handler<API.GetEmployeeRfidRequest, API.GetEmployeeRfidResponse> =
 async ({rfid}, database) => {
   try {
-    // very TODO, please remove
+    // very T O D O, please remove
     await database.updateEmployeeById(1079, {rfid: '0'});
     await database.updateEmployeeById(1080, {rfid: '0328247262'});
     isDef(rfid);
