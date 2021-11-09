@@ -4,8 +4,8 @@ import { Task, TaskStatus } from "../models/Task";
 import { TaskRunner } from "./TaskRunner";
 import { synchronizeTaskTypes } from "./taskTypes";
 
-const getMockTask = (): Task => ({
-  id: 0,
+const getMockTask = (id: number = 0): Task => ({
+  id: id,
   name: 'test task',
   employeeRfid: '0123456789',
   date: new Date(),
@@ -106,5 +106,10 @@ describe('TaskRunner', () => {
     expect(task.status).toBe(TaskStatus.FAILED);
     expect(task.statusMsg).toBe('failed to send request to Instrukdb')
   });
+
+  it('should set status to fail', async () => {
+    const {task, db, idb} = await setupMocks();
+    const t = new TaskRunner(db, idb, 'test-');
+  })
 
 });
