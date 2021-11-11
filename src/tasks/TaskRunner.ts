@@ -11,6 +11,9 @@ export class TaskRunner {
   private idb: Instrukdb.API;
 
   private optionPrefix: string;
+
+  private timer?: NodeJS.Timer;
+  private intervalMs: number = 500;
   
   public constructor (db: Database, idb: Instrukdb.API, optionPrefix: string = '') {
     this.db = db;
@@ -19,10 +22,22 @@ export class TaskRunner {
     this.optionPrefix = optionPrefix;
   }
 
+  public startInterval() {
+    this.timer = setInterval(() => {
+
+    }, this.intervalMs);
+  }
+
+  public stopInterval() {
+    if (this.timer)
+      clearInterval(this.timer);
+    this.timer = undefined;
+  }
+
   public async runAllTasks() {
     const tasks = await this.db.getTasksWithStatus(TaskStatus.WAITING);
     for (let i in tasks) {
-      
+      await this.db.updateTaskStatus(tasks[i].id, TaskStatus.PROCESSING);
     }
   }
 
@@ -84,6 +99,14 @@ export class TaskRunner {
 
   private succeed(task: Task) {
     task.status = TaskStatus.SUCCEEDED;
+  }
+
+  public getIntervalTimer() {
+    return this.timer;
+  }
+
+  public setIntervalMs(ms: number) {
+    this.intervalMs = ms;
   }
 
 }
