@@ -60,11 +60,6 @@ async (req, res) => {
       systemIp: req.ip,
       date: timestamp ? new Date(timestamp) : undefined,
     }, db);
-
-    // HACK
-    const tr = new TaskRunner(db, idb, 'test-');
-    tr.run(result);
-
     return res.status(200).json({data: result});
   } catch (catched) {
     res.status(500).json({error: 'server error'});

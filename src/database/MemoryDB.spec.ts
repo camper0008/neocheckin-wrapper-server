@@ -3,8 +3,8 @@ import { Task, TaskStatus } from "../models/Task";
 import { Schedule, TaskType } from "../models/TaskType";
 import { MemoryDB } from "./MemoryDB";
 
-const mockTask: Task = {
-  id: 0,
+const getMockTask = (id = 0, status: TaskStatus = TaskStatus.WAITING) => ({
+  id,
   name: 'my task',
   taskTypeId: 0,
   date: new Date(),
@@ -12,8 +12,10 @@ const mockTask: Task = {
   systemIp: '10.0.80.70',
   employeeRfid: '',
   highLevelApiKey: '',
-  status: TaskStatus.WAITING
-};
+  status
+});
+
+const mockTask: Task = getMockTask();
 
 const mockError: LoggedError = {id: 0, name: 'Error', msg:'This is an error'};
 
@@ -73,6 +75,42 @@ describe('Task', () => {
     await db.insertTask(mockTask);
     const result = await db.getTasks();
     expect(result).toEqual([mockTask]);
+  });
+
+  it('should return matching tasks', async () => {
+    const db = new MemoryDB();
+    const tasks = [
+      getMockTask(0, TaskStatus.WAITING),
+      getMockTask(1, TaskStatus.PROCESSING),
+      getMockTask(2, TaskStatus.PROCESSING),
+    ]; 
+    await Promise.all(tasks.map(async (task) => await db.insertTask(task)));
+    expect(await db.getTasksWithStatus(TaskStatus.PROCESSING)).toEqual(tasks.slice(1))
+  });
+
+  it('should return empty array', async () => {
+    const db = new MemoryDB();
+    const task = getMockTask(0, TaskStatus.WAITING);
+    db.insertTask(task)
+    expect(await db.getTasksWithStatus(TaskStatus.PROCESSING)).toEqual([]);
+  });
+
+  it('should update task status', async () => {
+    const db = new MemoryDB();
+    const task = getMockTask();
+    await db.insertTask(task);
+    await db.updateTaskStatus(task.id, TaskStatus.SUCCEEDED);
+    expect(task.status).toBe(TaskStatus.SUCCEEDED);
+  });
+
+  it('should throw "not found"', async () => {
+    const db = new MemoryDB();
+    try {
+      await db.updateTaskStatus(1000, TaskStatus.SUCCEEDED);
+      throw new Error('did not throw')
+    } catch (e) {
+      expect((e as Error).message).toBe('not found');
+    }
   });
 
 });

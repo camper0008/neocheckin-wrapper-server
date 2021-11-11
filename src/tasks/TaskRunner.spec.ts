@@ -3,9 +3,10 @@ import { MockInstrukdb } from "../instrukdb/MockInstrukdb";
 import { Task, TaskStatus } from "../models/Task";
 import { TaskRunner } from "./TaskRunner";
 import { synchronizeTaskTypes } from "./taskTypes";
+import { setInterval } from "timers";
 
-const getMockTask = (): Task => ({
-  id: 0,
+const getMockTask = (id: number = 0, status: TaskStatus = TaskStatus.WAITING): Task => ({
+  id,
   name: 'test task',
   employeeRfid: '0123456789',
   date: new Date(),
@@ -13,15 +14,16 @@ const getMockTask = (): Task => ({
   systemIdentifier: 'test-system',
   systemIp: '10.0.80.70',
   highLevelApiKey: '0123456789',
-  status: TaskStatus.WAITING,
+  status,
 });
 
-const setupMocks = async () => {
+const getMockDbs = async () => {
   const {db, idb} = {db: new MockMemoryDB(), idb: new MockInstrukdb()};
-  const task = getMockTask();
   await synchronizeTaskTypes(db, idb);
-  return {task, db, idb};
-}
+  return {db, idb};
+};
+
+const setupMocks = async () => ({task: getMockTask(), ... await getMockDbs()});
 
 describe('TaskRunner', () => {
 
@@ -105,6 +107,41 @@ describe('TaskRunner', () => {
     await t.run(task);
     expect(task.status).toBe(TaskStatus.FAILED);
     expect(task.statusMsg).toBe('failed to send request to Instrukdb')
+  });
+
+  it('should set all waiting tasks to processing', async () => {
+    const {db, idb} = await getMockDbs();
+    const t = new TaskRunner(db, idb, 'test-');
+    await db.insertTask(getMockTask(0, TaskStatus.WAITING));
+    await db.insertTask(getMockTask(1, TaskStatus.SUCCEEDED));
+    await t.runAllTasks();
+    expect(await db.getTasksWithStatus(TaskStatus.WAITING)).toEqual([]);
+  });
+
+  it('should only set waiting tasks to processing', async () => {
+    const {db, idb} = await getMockDbs();
+    const t = new TaskRunner(db, idb, 'test-');
+    const [task1, task2] = [getMockTask(0, TaskStatus.WAITING), getMockTask(1, TaskStatus.SUCCEEDED)];
+    await db.insertTask(task1);
+    await db.insertTask(task2);
+    await t.runAllTasks();
+    expect(await db.getTasksWithStatus(TaskStatus.SUCCEEDED)).toEqual([task2]);
+  });
+
+  it('should not be undefined', async () => {
+    const {db, idb} = await getMockDbs();
+    const t = new TaskRunner(db, idb, 'test-');
+    t.startInterval();
+    expect(t.getIntervalTimer()).not.toBe(undefined);
+    t.stopInterval();
+  });
+
+  it('should be undefined', async () => {
+    const {db, idb} = await getMockDbs();
+    const t = new TaskRunner(db, idb, 'test-');
+    t.startInterval();
+    t.stopInterval();
+    expect(t.getIntervalTimer()).toBe(undefined);
   });
 
 });

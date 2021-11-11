@@ -1,6 +1,6 @@
 import { LoggedError } from "../models/LoggedError";
 import { AltRfid } from "../models/Rfid";
-import { Task } from "../models/Task";
+import { Task, TaskStatus } from "../models/Task";
 import { TaskType } from "../models/TaskType";
 
 export abstract class Database {
@@ -11,7 +11,9 @@ export abstract class Database {
   
   public abstract getTaskCount(): Promise<number>;
   public abstract getTasks(): Promise<Task[]>;
+  public abstract getTasksWithStatus(status: TaskStatus): Promise<Task[]>;
   public abstract insertTask(task: Task): Promise<Task>;
+  public abstract updateTaskStatus(id: number, status: TaskStatus): Promise<Task>;
 
   public abstract getTaskTypes(): Promise<TaskType[]>;
   public abstract getTaskType(id: number): Promise<TaskType>;

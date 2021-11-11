@@ -4,6 +4,7 @@ import { MemoryDB } from './database/MemoryDB';
 import { Instrukdb } from './instrukdb/Instrukdb';
 import { InstrukdbClient } from './instrukdb/InstrukdbClient';
 import { MockInstrukdb } from './instrukdb/MockInstrukdb';
+import { TaskRunner } from './tasks/TaskRunner';
 import { synchronizeTaskTypes } from './tasks/taskTypes';
 
 class TestInstrukdbClient extends InstrukdbClient {
@@ -17,7 +18,9 @@ class TestInstrukdbClient extends InstrukdbClient {
 const main = async () => {
   config();
   const db = new MemoryDB();
-  const idb = new TestInstrukdbClient('https://instrukdb/', 'AivlHRlOSZgbOIoD8ja37TQTGKB6ijhYTpsyhSO1UUDaKOGApGMVPCqtnSxb4hWO');
+  const idb = new TestInstrukdbClient('AivlHRlOSZgbOIoD8ja37TQTGKB6ijhYTpsyhSO1UUDaKOGApGMVPCqtnSxb4hWO');
+  const taskrunner = new TaskRunner(db, idb, 'test-');
+  taskrunner.startInterval();
   await synchronizeTaskTypes(db, idb);
   await api(db, idb);
 }

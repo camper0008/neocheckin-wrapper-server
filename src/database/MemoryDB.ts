@@ -1,6 +1,6 @@
 import { LoggedError } from "../models/LoggedError";
 import { AltRfid } from "../models/Rfid";
-import { Task } from "../models/Task";
+import { Task, TaskStatus } from "../models/Task";
 import { TaskType } from "../models/TaskType";
 import { Database } from "./Database";
 
@@ -41,6 +41,10 @@ export class MemoryDB extends Database {
     return this.tasks;
   }
 
+  public async getTasksWithStatus(status: TaskStatus): Promise<Task[]> {
+    return this.tasks.filter(task => task.status === status);
+  }
+
   public async insertTask(task: Task): Promise<Task> {
     for (let i in this.tasks)
       if (this.tasks[i].id === task.id)
@@ -48,6 +52,15 @@ export class MemoryDB extends Database {
     this.tasks.push(task);
     return task;
   };
+
+  public async updateTaskStatus(id: number, status: TaskStatus): Promise<Task> {
+    for (let i in this.tasks)
+      if (this.tasks[i].id === id) {
+        this.tasks[i].status = status;
+        return this.tasks[i];
+      }
+    throw new Error('not found');
+  }
 
 
 

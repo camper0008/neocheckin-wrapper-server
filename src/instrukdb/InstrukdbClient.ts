@@ -7,17 +7,15 @@ import axios, { AxiosRequestConfig, AxiosResponse } from "axios";
 
 export class InstrukdbClient implements Instrukdb.API {
   
-  private url: string;
   private lowLevelApiKey: string;
 
-  public constructor (url: string, lowLevelApiKey: string) {
-    this.url = insureUrlPathEnd(url);
+  public constructor (lowLevelApiKey: string) {
     this.lowLevelApiKey = lowLevelApiKey;
   }
 
   public async getOneEmployee(id: number): Promise<Instrukdb.Employee> {
     const res = await this.httpGet<Instrukdb.Employee>(
-      'api/employee/one.php',
+      'https://instrukdb/api/employee/one.php',
       {id: id.toString(), token: this.lowLevelApiKey}
     );
     return res.data;
@@ -25,7 +23,7 @@ export class InstrukdbClient implements Instrukdb.API {
 
   public async getEmployeeList(): Promise<Instrukdb.ListEmployee[]> {
     const res = await this.httpGet<Instrukdb.ListEmployee[]>(
-      'api/employee/list.php',
+      'https://instrukdb/api/employee/list.php',
       {token: this.lowLevelApiKey}
     );
     return res.data;
@@ -33,7 +31,7 @@ export class InstrukdbClient implements Instrukdb.API {
 
   public async getAllEmployees(): Promise<Instrukdb.Employee[]> {
     const res = await this.httpGet<Instrukdb.Employee[]>(
-      'api/employee/all.php',
+      'https://instrukdb/api/employee/all.php',
       {token: this.lowLevelApiKey}
     );
     return res.data;
@@ -61,12 +59,12 @@ export class InstrukdbClient implements Instrukdb.API {
   }
   
   public async getSchedule(): Promise<TaskType[]> {
-    const res = await this.httpGet<TaskType[]>('lib/schedule.json', {});
+    const res = await this.httpGet<TaskType[]>('https://instrukdb/lib/schedule.json', {});
     return res.data;
   }
 
   public async getCheckinPhpData(): Promise<Instrukdb.CheckedinPhpDataElement[]> {
-    const res = await this.httpGet<Instrukdb.CheckedinPhpDataElement[]>('lib/check_data.json', {});
+    const res = await this.httpGet<Instrukdb.CheckedinPhpDataElement[]>('https://instrukdb/lib/check_data.json', {});
     return res.data;
   }
 
@@ -90,7 +88,7 @@ export class InstrukdbClient implements Instrukdb.API {
   private async httpGet<T = any>(path: string, data: Record<string, string>): Promise<AxiosResponse<T, any>> {
     try {
       const params = paramString(data);
-      const url = this.url + path + params;
+      const url = path + params;
       const res = await axios.get<T>(url, this.httpsConfig());
       return res;
     } catch (err) {
