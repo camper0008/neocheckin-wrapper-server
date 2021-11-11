@@ -81,27 +81,27 @@ export class MockMemoryDB extends MemoryDB {
 
 
 
-  public getUniqueTaskId(): Promise<number>;
-  public getUniqueRfidId(): Promise<number>;
-  public getUniqueErrorId(): Promise<number>
-  
-  public getTaskCount(): Promise<number>;
-  public getTasks(): Promise<Task[]>;
-  public getTasksWithStatus(status: TaskStatus): Promise<Task[]>;
-  public insertTask(task: Task): Promise<Task>;
-  public updateTaskStatus(id: number, status: TaskStatus): Promise<Task>;
-
-  public getTaskTypes(): Promise<TaskType[]>;
-  public getTaskType(id: number): Promise<TaskType>;
-  public replaceTaskTypes(taskTypes: TaskType[]): Promise<number>;
-
-  public getAltRfidByEmployeeId(employeeId: number): Promise<AltRfid>;
-  public getAltRfidByRfid(rfid: string): Promise<AltRfid>;
-  public insertAltRfid(rfid: AltRfid): Promise<AltRfid>;
-
-  public getErrorCount(): Promise<number>;
-  public getErrors(): Promise<LoggedError[]>;
-  public insertError(error: LoggedError): Promise<LoggedError>;
+  // public getUniqueTaskId(): Promise<number>;
+  // public getUniqueRfidId(): Promise<number>;
+  // public getUniqueErrorId(): Promise<number>
+  // 
+  // public getTaskCount(): Promise<number>;
+  // public getTasks(): Promise<Task[]>;
+  // public getTasksWithStatus(status: TaskStatus): Promise<Task[]>;
+  // public insertTask(task: Task): Promise<Task>;
+  // public updateTaskStatus(id: number, status: TaskStatus): Promise<Task>;
+// 
+  // public getTaskTypes(): Promise<TaskType[]>;
+  // public getTaskType(id: number): Promise<TaskType>;
+  // public replaceTaskTypes(taskTypes: TaskType[]): Promise<number>;
+// 
+  // public getAltRfidByEmployeeId(employeeId: number): Promise<AltRfid>;
+  // public getAltRfidByRfid(rfid: string): Promise<AltRfid>;
+  // public insertAltRfid(rfid: AltRfid): Promise<AltRfid>;
+// 
+  // public getErrorCount(): Promise<number>;
+  // public getErrors(): Promise<LoggedError[]>;
+  // public insertError(error: LoggedError): Promise<LoggedError>;
 
 
 }

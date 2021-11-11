@@ -30,7 +30,6 @@ export class InstrukdbClient implements Instrukdb.API {
   }
 
   public async getAllEmployees(): Promise<Instrukdb.Employee[]> {
-    console.log(this.lowLevelApiKey)
     const res = await this.httpGet<Instrukdb.Employee[]>(
       'https://instrukdb/api/employee/all.php',
       {token: this.lowLevelApiKey}
