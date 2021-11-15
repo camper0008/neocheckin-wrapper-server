@@ -36,11 +36,8 @@ export class TaskRunner {
 
   public async runAllTasks() {
     const tasks = await this.db.getTasksWithStatus(TaskStatus.WAITING);
-    for (let i in tasks) {
-      // await this.db.updateTaskStatus(tasks[i].id, TaskStatus.PROCESSING);
-      // FIXME untested
+    for (let i in tasks)
       await this.run(tasks[i]);
-    }
   }
 
   public async run(task: Task): Promise<void> {
