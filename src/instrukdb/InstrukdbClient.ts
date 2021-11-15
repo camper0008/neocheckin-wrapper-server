@@ -37,6 +37,16 @@ export class InstrukdbClient implements Instrukdb.API {
     return res.data;
   }
 
+  private logPostCheckinRequest(request: Instrukdb.PostCheckinRequest, res: Instrukdb.StatusRes) {
+    const d = new Date();
+    console.log(
+      `\nRequest sendt to Instrukdb\n`
+      + `    time:\t${d.toLocaleTimeString().replace(/\./g, ':')}  ${d.toLocaleDateString().replace(/\//g, '-')}\n` 
+      + `    request:\t${JSON.stringify(request).replace(/\n/g, '\n    ')}\n`
+      + `    response:\t${JSON.stringify(res).replace(/\n/g, '\n    ')}\n`
+    );
+  }
+
   public async postCheckin(request: Instrukdb.PostCheckinRequest): Promise<Instrukdb.StatusRes> {
     try {
       const config: AxiosRequestConfig<Instrukdb.PostCheckinRequest> = this.httpsConfig();
@@ -48,6 +58,7 @@ export class InstrukdbClient implements Instrukdb.API {
         request,
         config
       );
+      this.logPostCheckinRequest(request, res.data!);
       if (res.data === undefined)
         throw new Error('could not retrieve data from Instrukdb');
       return res.data;

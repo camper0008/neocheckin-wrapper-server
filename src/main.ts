@@ -18,8 +18,10 @@ class TestInstrukdbClient extends InstrukdbClient {
 const main = async () => {
   config();
   const db = new MemoryDB();
-  const idb = new TestInstrukdbClient('AivlHRlOSZgbOIoD8ja37TQTGKB6ijhYTpsyhSO1UUDaKOGApGMVPCqtnSxb4hWO');
-  const taskrunner = new TaskRunner(db, idb, 'test-');
+  // const idb = new TestInstrukdbClient('AivlHRlOSZgbOIoD8ja37TQTGKB6ijhYTpsyhSO1UUDaKOGApGMVPCqtnSxb4hWO');
+  const idb = new InstrukdbClient('AivlHRlOSZgbOIoD8ja37TQTGKB6ijhYTpsyhSO1UUDaKOGApGMVPCqtnSxb4hWO');
+  // const taskrunner = new TaskRunner(db, idb, 'test-');
+  const taskrunner = new TaskRunner(db, idb);
   taskrunner.startInterval();
   await synchronizeTaskTypes(db, idb);
   await api(db, idb);

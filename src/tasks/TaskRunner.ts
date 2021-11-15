@@ -24,7 +24,7 @@ export class TaskRunner {
 
   public startInterval() {
     this.timer = setInterval(() => {
-
+      this.runAllTasks();
     }, this.intervalMs);
   }
 
@@ -37,7 +37,9 @@ export class TaskRunner {
   public async runAllTasks() {
     const tasks = await this.db.getTasksWithStatus(TaskStatus.WAITING);
     for (let i in tasks) {
-      await this.db.updateTaskStatus(tasks[i].id, TaskStatus.PROCESSING);
+      // await this.db.updateTaskStatus(tasks[i].id, TaskStatus.PROCESSING);
+      // FIXME untested
+      await this.run(tasks[i]);
     }
   }
 
@@ -75,7 +77,9 @@ export class TaskRunner {
       timestamp:  task.date.getTime(),
       rfid:       getRfidAsNumber(task.employeeRfid),
       ip:         task.systemIp,
-      details:    'test',
+      // details:    'test',
+      // HACK
+      details: 'beta-eux-1-dato-11-11-2021'
     }
   }
 
