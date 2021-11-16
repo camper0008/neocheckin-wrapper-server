@@ -60,7 +60,7 @@ describe('TaskRunner', () => {
     const {task, db, idb} = await setupMocks();
     const t = new TaskRunner(db, idb, 'test-');
     await t.run(task);
-    expect(idb.postCheckinLastCall?.timestamp).toBe(task.date.getTime());
+    expect(idb.postCheckinLastCall?.timestamp).toBe(Math.round(task.date.getTime() / 1000));
   });
 
   it('should call with the rfid as a number', async () => {

@@ -71,7 +71,7 @@ export class TaskRunner {
     return {
       token:      task.highLevelApiKey,
       option:     this.optionPrefix + type.name,
-      timestamp:  task.date.getTime(),
+      timestamp:  Math.round(task.date.getTime() / 1000),
       rfid:       getRfidAsNumber(task.employeeRfid),
       ip:         task.systemIp,
       // details:    'test',
