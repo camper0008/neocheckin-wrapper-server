@@ -2,7 +2,7 @@ import { MockMemoryDB } from "../database/MockMemoryDB";
 import { MockInstrukdb } from "../instrukdb/MockInstrukdb";
 import { Task, TaskStatus } from "../models/Task";
 import { TaskRunner } from "./TaskRunner";
-import { synchronizeTaskTypes } from "./taskTypes";
+import { synchronizeTaskTypesWithSample } from "./taskTypes";
 import { setInterval } from "timers";
 
 const getMockTask = (id: number = 0, status: TaskStatus = TaskStatus.WAITING): Task => ({
@@ -19,7 +19,7 @@ const getMockTask = (id: number = 0, status: TaskStatus = TaskStatus.WAITING): T
 
 const getMockDbs = async () => {
   const {db, idb} = {db: new MockMemoryDB(), idb: new MockInstrukdb()};
-  await synchronizeTaskTypes(db, idb);
+  await synchronizeTaskTypesWithSample(db, idb);
   return {db, idb};
 };
 

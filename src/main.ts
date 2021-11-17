@@ -5,7 +5,7 @@ import { Instrukdb } from './instrukdb/Instrukdb';
 import { InstrukdbClient } from './instrukdb/InstrukdbClient';
 import { MockInstrukdb } from './instrukdb/MockInstrukdb';
 import { TaskRunner } from './tasks/TaskRunner';
-import { synchronizeTaskTypes } from './tasks/taskTypes';
+import { synchronizeTaskTypesWithSample } from './tasks/taskTypes';
 
 class TestInstrukdbClient extends InstrukdbClient {
   public async postCheckin(req: Instrukdb.PostCheckinRequest) {
@@ -23,7 +23,7 @@ const main = async () => {
   // const taskrunner = new TaskRunner(db, idb, 'test-');
   const taskrunner = new TaskRunner(db, idb);
   taskrunner.startInterval();
-  await synchronizeTaskTypes(db, idb);
+  await synchronizeTaskTypesWithSample(db, idb);
   await api(db, idb);
 }
 

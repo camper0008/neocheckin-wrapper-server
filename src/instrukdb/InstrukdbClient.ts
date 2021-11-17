@@ -69,11 +69,6 @@ export class InstrukdbClient implements Instrukdb.API {
     }
   }
   
-  public async getSchedule(): Promise<TaskType[]> {
-    const res = await this.httpGet<TaskType[]>('https://instrukdb/lib/schedule.json', {});
-    return res.data;
-  }
-
   public async getCheckinPhpData(): Promise<Instrukdb.CheckedinPhpDataElement[]> {
     const res = await this.httpGet<Instrukdb.CheckedinPhpDataElement[]>('https://instrukdb/lib/check_data.json', {});
     return res.data;
