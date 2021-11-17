@@ -88,13 +88,6 @@ export class MockInstrukdb implements Instrukdb.API {
     return {statusCode: 200};
   }
 
-  public getScheduleCalls = 0;
-  public async getSchedule(): Promise<TaskType[]> {
-    this.getScheduleCalls++;
-    this.checkConnection();
-    return JSON.parse((await readFile('./samples/schedule.json')).toString());
-  }
-
   public async getCheckinPhpData(): Promise<Instrukdb.CheckedinPhpDataElement[]> {
     this.checkConnection();
     return JSON.parse((await readFile('./samples/checkin_php_data.json')).toString());

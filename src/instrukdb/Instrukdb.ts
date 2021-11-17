@@ -39,7 +39,6 @@ export namespace Instrukdb {
 
     postCheckin(request: PostCheckinRequest): Promise<StatusRes>;
 
-    getSchedule(): Promise<TaskType[]>;
     getCheckinPhpData(): Promise<CheckedinPhpDataElement[]>;
 
     getEmployeeImage(id: number): Promise<BinaryString>;
