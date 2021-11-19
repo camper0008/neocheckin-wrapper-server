@@ -1,0 +1,282 @@
+yarn run v1.22.15
+$ node dist/main.js
+Could not load HTTP port from '.env', falling back to 8080
+Could not load HTTPS port from '.env', falling back to 8443
+Express HTTP at http://localhost:8080/
+Express HTTPS at https://localhost:8443/
+
+Recieved request
+    time:	14:38:54  17-11-2021
+    url:	/api/tasks/add
+    ip: 	::ffff:127.0.0.1
+    hostname:	nci-wrapper-letsgo.loca.lt
+    token:	test-token
+    method:	POST
+    body:	{
+        "taskId": 3,
+        "name": "Scan Card: Tjek ud til Biblioteksvagt Viborg",
+        "employeeRfid": "0315873527",
+        "highLevelApiKey": "FK6Xv58f4agam9vdRWWFKeXWiuETlACvL3bOyeAD7FFe2gzIaMYQD4lZoxRYopQs",
+        "systemIdentifier": "eux-login-01",
+        "timestamp": "2021-11-17T14:38:54.0124787"
+    }
+
+
+Request sendt to Instrukdb
+    time:	14:38:54  17-11-2021
+    request:	{"token":"FK6Xv58f4agam9vdRWWFKeXWiuETlACvL3bOyeAD7FFe2gzIaMYQD4lZoxRYopQs","option":"Tjek ud til Biblioteksvagt Viborg","timestamp":1637156334,"rfid":315873527,"ip":"::ffff:127.0.0.1","details":"beta-eux-1-dato-11-11-2021"}
+    response:	{"statusCode":200,"message":"Login successful"}
+
+
+Recieved request
+    time:	15:00:48  17-11-2021
+    url:	/api/tasks/add
+    ip: 	::ffff:127.0.0.1
+    hostname:	nci-wrapper-letsgo.loca.lt
+    token:	test-token
+    method:	POST
+    body:	{
+        "taskId": 1,
+        "name": "Scan Card: Tjek ud Mandag-Torsdag",
+        "employeeRfid": "0312080617",
+        "highLevelApiKey": "FK6Xv58f4agam9vdRWWFKeXWiuETlACvL3bOyeAD7FFe2gzIaMYQD4lZoxRYopQs",
+        "systemIdentifier": "eux-login-01",
+        "timestamp": "2021-11-17T15:00:48.1250641"
+    }
+
+
+Request sendt to Instrukdb
+    time:	15:00:48  17-11-2021
+    request:	{"token":"FK6Xv58f4agam9vdRWWFKeXWiuETlACvL3bOyeAD7FFe2gzIaMYQD4lZoxRYopQs","option":"Tjek ud Mandag-Torsdag","timestamp":1637157648,"rfid":312080617,"ip":"::ffff:127.0.0.1","details":"beta-eux-1-dato-11-11-2021"}
+    response:	{"statusCode":200,"message":"Login successful"}
+
+
+Recieved request
+    time:	15:01:02  17-11-2021
+    url:	/api/tasks/add
+    ip: 	::ffff:127.0.0.1
+    hostname:	nci-wrapper-letsgo.loca.lt
+    token:	test-token
+    method:	POST
+    body:	{
+        "taskId": 1,
+        "name": "Scan Card: Tjek ud Mandag-Torsdag",
+        "employeeRfid": "0315880373",
+        "highLevelApiKey": "FK6Xv58f4agam9vdRWWFKeXWiuETlACvL3bOyeAD7FFe2gzIaMYQD4lZoxRYopQs",
+        "systemIdentifier": "eux-login-01",
+        "timestamp": "2021-11-17T15:00:52.4782202"
+    }
+
+
+Request sendt to Instrukdb
+    time:	15:01:03  17-11-2021
+    request:	{"token":"FK6Xv58f4agam9vdRWWFKeXWiuETlACvL3bOyeAD7FFe2gzIaMYQD4lZoxRYopQs","option":"Tjek ud Mandag-Torsdag","timestamp":1637157652,"rfid":315880373,"ip":"::ffff:127.0.0.1","details":"beta-eux-1-dato-11-11-2021"}
+    response:	{"statusCode":200,"message":"Login successful"}
+
+
+Recieved request
+    time:	15:18:34  17-11-2021
+    url:	/api/tasks/add
+    ip: 	::ffff:127.0.0.1
+    hostname:	nci-wrapper-letsgo.loca.lt
+    token:	test-token
+    method:	POST
+    body:	{
+        "taskId": 1,
+        "name": "Scan Card: Tjek ud Mandag-Torsdag",
+        "employeeRfid": "0315876268",
+        "highLevelApiKey": "FK6Xv58f4agam9vdRWWFKeXWiuETlACvL3bOyeAD7FFe2gzIaMYQD4lZoxRYopQs",
+        "systemIdentifier": "eux-login-01",
+        "timestamp": "2021-11-17T15:18:24.3086587"
+    }
+
+
+Request sendt to Instrukdb
+    time:	15:18:34  17-11-2021
+    request:	{"token":"FK6Xv58f4agam9vdRWWFKeXWiuETlACvL3bOyeAD7FFe2gzIaMYQD4lZoxRYopQs","option":"Tjek ud Mandag-Torsdag","timestamp":1637158704,"rfid":315876268,"ip":"::ffff:127.0.0.1","details":"beta-eux-1-dato-11-11-2021"}
+    response:	{"statusCode":200,"message":"Login successful"}
+
+
+Recieved request
+    time:	15:30:35  17-11-2021
+    url:	/api/tasks/add
+    ip: 	::ffff:127.0.0.1
+    hostname:	nci-wrapper-letsgo.loca.lt
+    token:	test-token
+    method:	POST
+    body:	{
+        "taskId": 1,
+        "name": "Scan Card: Tjek ud Mandag-Torsdag",
+        "employeeRfid": "0328259840",
+        "highLevelApiKey": "FK6Xv58f4agam9vdRWWFKeXWiuETlACvL3bOyeAD7FFe2gzIaMYQD4lZoxRYopQs",
+        "systemIdentifier": "eux-login-01",
+        "timestamp": "2021-11-17T15:30:35.3234391"
+    }
+
+
+Request sendt to Instrukdb
+    time:	15:30:35  17-11-2021
+    request:	{"token":"FK6Xv58f4agam9vdRWWFKeXWiuETlACvL3bOyeAD7FFe2gzIaMYQD4lZoxRYopQs","option":"Tjek ud Mandag-Torsdag","timestamp":1637159435,"rfid":328259840,"ip":"::ffff:127.0.0.1","details":"beta-eux-1-dato-11-11-2021"}
+    response:	{"statusCode":200,"message":"Login successful"}
+
+
+Recieved request
+    time:	15:30:39  17-11-2021
+    url:	/api/tasks/add
+    ip: 	::ffff:127.0.0.1
+    hostname:	nci-wrapper-letsgo.loca.lt
+    token:	test-token
+    method:	POST
+    body:	{
+        "taskId": 1,
+        "name": "Scan Card: Tjek ud Mandag-Torsdag",
+        "employeeRfid": "0328260182",
+        "highLevelApiKey": "FK6Xv58f4agam9vdRWWFKeXWiuETlACvL3bOyeAD7FFe2gzIaMYQD4lZoxRYopQs",
+        "systemIdentifier": "eux-login-01",
+        "timestamp": "2021-11-17T15:30:39.1662239"
+    }
+
+
+Request sendt to Instrukdb
+    time:	15:30:39  17-11-2021
+    request:	{"token":"FK6Xv58f4agam9vdRWWFKeXWiuETlACvL3bOyeAD7FFe2gzIaMYQD4lZoxRYopQs","option":"Tjek ud Mandag-Torsdag","timestamp":1637159439,"rfid":328260182,"ip":"::ffff:127.0.0.1","details":"beta-eux-1-dato-11-11-2021"}
+    response:	{"statusCode":200,"message":"Login successful"}
+
+
+Recieved request
+    time:	15:31:04  17-11-2021
+    url:	/api/tasks/add
+    ip: 	::ffff:127.0.0.1
+    hostname:	nci-wrapper-letsgo.loca.lt
+    token:	test-token
+    method:	POST
+    body:	{
+        "taskId": 1,
+        "name": "Scan Card: Tjek ud Mandag-Torsdag",
+        "employeeRfid": "0328260181",
+        "highLevelApiKey": "FK6Xv58f4agam9vdRWWFKeXWiuETlACvL3bOyeAD7FFe2gzIaMYQD4lZoxRYopQs",
+        "systemIdentifier": "eux-login-01",
+        "timestamp": "2021-11-17T15:31:04.7633661"
+    }
+
+
+Request sendt to Instrukdb
+    time:	15:31:05  17-11-2021
+    request:	{"token":"FK6Xv58f4agam9vdRWWFKeXWiuETlACvL3bOyeAD7FFe2gzIaMYQD4lZoxRYopQs","option":"Tjek ud Mandag-Torsdag","timestamp":1637159465,"rfid":328260181,"ip":"::ffff:127.0.0.1","details":"beta-eux-1-dato-11-11-2021"}
+    response:	{"statusCode":200,"message":"Login successful"}
+
+
+Recieved request
+    time:	15:31:18  17-11-2021
+    url:	/api/tasks/add
+    ip: 	::ffff:127.0.0.1
+    hostname:	nci-wrapper-letsgo.loca.lt
+    token:	test-token
+    method:	POST
+    body:	{
+        "taskId": 1,
+        "name": "Scan Card: Tjek ud Mandag-Torsdag",
+        "employeeRfid": "0328259841",
+        "highLevelApiKey": "FK6Xv58f4agam9vdRWWFKeXWiuETlACvL3bOyeAD7FFe2gzIaMYQD4lZoxRYopQs",
+        "systemIdentifier": "eux-login-01",
+        "timestamp": "2021-11-17T15:31:18.1932538"
+    }
+
+
+Request sendt to Instrukdb
+    time:	15:31:18  17-11-2021
+    request:	{"token":"FK6Xv58f4agam9vdRWWFKeXWiuETlACvL3bOyeAD7FFe2gzIaMYQD4lZoxRYopQs","option":"Tjek ud Mandag-Torsdag","timestamp":1637159478,"rfid":328259841,"ip":"::ffff:127.0.0.1","details":"beta-eux-1-dato-11-11-2021"}
+    response:	{"statusCode":200,"message":"Login successful"}
+
+
+Recieved request
+    time:	15:44:37  17-11-2021
+    url:	/api/tasks/add
+    ip: 	::ffff:127.0.0.1
+    hostname:	nci-wrapper-letsgo.loca.lt
+    token:	test-token
+    method:	POST
+    body:	{
+        "taskId": 1,
+        "name": "Scan Card: Tjek ud Mandag-Torsdag",
+        "employeeRfid": "0328258660",
+        "highLevelApiKey": "FK6Xv58f4agam9vdRWWFKeXWiuETlACvL3bOyeAD7FFe2gzIaMYQD4lZoxRYopQs",
+        "systemIdentifier": "eux-login-01",
+        "timestamp": "2021-11-17T15:44:27.4559104"
+    }
+
+
+Request sendt to Instrukdb
+    time:	15:44:37  17-11-2021
+    request:	{"token":"FK6Xv58f4agam9vdRWWFKeXWiuETlACvL3bOyeAD7FFe2gzIaMYQD4lZoxRYopQs","option":"Tjek ud Mandag-Torsdag","timestamp":1637160267,"rfid":328258660,"ip":"::ffff:127.0.0.1","details":"beta-eux-1-dato-11-11-2021"}
+    response:	{"statusCode":200,"message":"Login successful"}
+
+
+Recieved request
+    time:	16:28:49  17-11-2021
+    url:	/api/tasks/add
+    ip: 	::ffff:127.0.0.1
+    hostname:	nci-wrapper-letsgo.loca.lt
+    token:	test-token
+    method:	POST
+    body:	{
+        "taskId": 1,
+        "name": "Scan Card: Tjek ud Mandag-Torsdag",
+        "employeeRfid": "0328259846",
+        "highLevelApiKey": "FK6Xv58f4agam9vdRWWFKeXWiuETlACvL3bOyeAD7FFe2gzIaMYQD4lZoxRYopQs",
+        "systemIdentifier": "eux-login-01",
+        "timestamp": "2021-11-17T16:28:49.0503778"
+    }
+
+
+Request sendt to Instrukdb
+    time:	16:28:49  17-11-2021
+    request:	{"token":"FK6Xv58f4agam9vdRWWFKeXWiuETlACvL3bOyeAD7FFe2gzIaMYQD4lZoxRYopQs","option":"Tjek ud Mandag-Torsdag","timestamp":1637162929,"rfid":328259846,"ip":"::ffff:127.0.0.1","details":"beta-eux-1-dato-11-11-2021"}
+    response:	{"statusCode":200,"message":"Login successful"}
+
+
+Recieved request
+    time:	16:58:07  17-11-2021
+    url:	/api/tasks/add
+    ip: 	::ffff:127.0.0.1
+    hostname:	nci-wrapper-letsgo.loca.lt
+    token:	test-token
+    method:	POST
+    body:	{
+        "taskId": 1,
+        "name": "Scan Card: Tjek ud Mandag-Torsdag",
+        "employeeRfid": "0328259845",
+        "highLevelApiKey": "FK6Xv58f4agam9vdRWWFKeXWiuETlACvL3bOyeAD7FFe2gzIaMYQD4lZoxRYopQs",
+        "systemIdentifier": "eux-login-01",
+        "timestamp": "2021-11-17T16:58:07.3329981"
+    }
+
+
+Request sendt to Instrukdb
+    time:	16:58:07  17-11-2021
+    request:	{"token":"FK6Xv58f4agam9vdRWWFKeXWiuETlACvL3bOyeAD7FFe2gzIaMYQD4lZoxRYopQs","option":"Tjek ud Mandag-Torsdag","timestamp":1637164687,"rfid":328259845,"ip":"::ffff:127.0.0.1","details":"beta-eux-1-dato-11-11-2021"}
+    response:	{"statusCode":200,"message":"Login successful"}
+
+
+Recieved request
+    time:	16:58:19  17-11-2021
+    url:	/api/tasks/add
+    ip: 	::ffff:127.0.0.1
+    hostname:	nci-wrapper-letsgo.loca.lt
+    token:	test-token
+    method:	POST
+    body:	{
+        "taskId": 1,
+        "name": "Scan Card: Tjek ud Mandag-Torsdag",
+        "employeeRfid": "0328257412",
+        "highLevelApiKey": "FK6Xv58f4agam9vdRWWFKeXWiuETlACvL3bOyeAD7FFe2gzIaMYQD4lZoxRYopQs",
+        "systemIdentifier": "eux-login-01",
+        "timestamp": "2021-11-17T16:58:08.9675309"
+    }
+
+
+Request sendt to Instrukdb
+    time:	16:58:19  17-11-2021
+    request:	{"token":"FK6Xv58f4agam9vdRWWFKeXWiuETlACvL3bOyeAD7FFe2gzIaMYQD4lZoxRYopQs","option":"Tjek ud Mandag-Torsdag","timestamp":1637164689,"rfid":328257412,"ip":"::ffff:127.0.0.1","details":"beta-eux-1-dato-11-11-2021"}
+    response:	{"statusCode":200,"message":"Login successful"}
+
