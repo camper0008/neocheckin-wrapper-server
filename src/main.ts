@@ -1,3 +1,5 @@
+// TODO: use logger on everything
+
 import { config } from 'dotenv';
 import { api } from './api/api';
 import { MemoryDB } from './database/MemoryDB';
