@@ -4,3 +4,9 @@ export const formatFileFriendly = (date: Date): string => {
   + `_${date.getHours() - 1}-${date.getMinutes()}-${date.getSeconds()}`;
 }
 
+export const getDateFromDateOrString = (date?: Date | string) => {
+  if (typeof date === 'string')
+    return new Date(date);
+  else 
+    return date ?? new Date();
+}

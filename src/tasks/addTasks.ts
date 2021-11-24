@@ -1,9 +1,8 @@
-import { tasksRoutes } from "../api/tasks";
 import { Database } from "../database/Database";
-import { formatTask } from "../logs/formatLogs";
 import { Logger } from "../logs/Logger";
-import { LogItem, LogStatus } from "../logs/LogItem";
+import { LogStatus } from "../logs/LogItem";
 import { Task, TaskStatus } from "../models/Task";
+import { getDateFromDateOrString } from "../utils/timedate";
 
 export interface AddTaskRequest {
   name: string,
@@ -15,38 +14,36 @@ export interface AddTaskRequest {
   highLevelApiKey: string,
 }
 
-export const getDateFromDateOrString = (date?: Date | string) => {
-  if (date instanceof Date) 
-    return date;
-  else 
-    if (typeof date === 'string') return new Date(date);
-  else 
-    return new Date();
+export const addTask = async (request: AddTaskRequest, db: Database, logger?: Logger): Promise<Task> => {
+  checkTaskName(request, logger);
+  const id = await db.getUniqueTaskId();
+  const date = getDateFromDateOrString(request.date);
+  const task = makeTask(request, id, date);
+  const insert = await db.insertTask(task);
+  logger?.logAddTask(request, LogStatus.success);
+  return insert;
 }
 
-export const addTask = async (task: AddTaskRequest, db: Database, logger?: Logger): Promise<Task> => {
-  const {date} = task;
-  checkTaskName(task, logger);
-  const id = await db.getUniqueTaskId();
-  const insert = await db.insertTask({
-    ...task,
-    date: getDateFromDateOrString(date),
-    id,
-    status: TaskStatus.WAITING,
-    taskTypeId: task.taskTypeId
-  });
-  logger?.logAddTask(task, LogStatus.success);
-  return insert;
+const checkTaskName = (request: AddTaskRequest, logger?: Logger) => {
+  if (invalidTaskName(request.name))
+    failTaskNameEmpty(request, logger);
 }
 
 const invalidTaskName = (name: string) => {
   return name === ''
 }
 
-function checkTaskName(task: AddTaskRequest, logger: Logger | undefined) {
-  if (invalidTaskName(task.name)) {
-    logger?.logAddTask(task, LogStatus.error);
-    throw new Error('name empty');
-  }
+const failTaskNameEmpty = (request: AddTaskRequest, logger: Logger | undefined) => {
+  logger?.logAddTask(request, LogStatus.error);
+  throw new Error('name empty');
 }
 
+const makeTask = (request: AddTaskRequest, id: number, date: Date) => {
+  return {
+    ...request,
+    date,
+    id,
+    status: TaskStatus.WAITING,
+    taskTypeId: request.taskTypeId
+  }
+}
