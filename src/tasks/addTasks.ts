@@ -1,5 +1,7 @@
 import { Database } from "../database/Database";
+import { Logger } from "../logs/Logger";
 import { Task, TaskStatus } from "../models/Task";
+import { getDateFromDateOrString } from "../utils/timedate";
 
 export interface AddTaskRequest {
   name: string,
@@ -11,23 +13,38 @@ export interface AddTaskRequest {
   highLevelApiKey: string,
 }
 
-export const getDateFromDateOrString = (date?: Date | string) => {
-  if (date instanceof Date) return date;
-  if (typeof date === 'string') return new Date(date);
-  return new Date();
+export const addTask = async (request: AddTaskRequest, db: Database, logger?: Logger): Promise<Task> => {
+  checkTaskName(request, logger);
+  const {id, date} = await getTaskDetails(request, db);
+  const task = makeTask(request, id, date);
+  const insert = await db.insertTask(task);
+  await logger?.logAddTaskSuccess(request);
+  return insert;
 }
 
-export const addTask = async (task: AddTaskRequest, db: Database): Promise<Task> => {
-  const {name, date} = task;
-  if (name === '')
-    throw new Error('name empty');
+
+const checkTaskName = (request: AddTaskRequest, logger?: Logger) => {
+  if (invalidTaskName(request.name))
+    failTaskNameEmpty(request, logger);
+}
+
+const invalidTaskName = (name: string) => {
+  return name === '';
+}
+
+const failTaskNameEmpty = (request: AddTaskRequest, logger?: Logger) => {
+  logger?.logAddTaskError(request);
+  throw new Error('name empty');
+}
+
+const getTaskDetails = async (request: AddTaskRequest, db: Database) => {
   const id = await db.getUniqueTaskId();
-  const insert = await db.insertTask({
-    ...task,
-    date: getDateFromDateOrString(date),
-    id,
-    status: TaskStatus.WAITING,
-    taskTypeId: task.taskTypeId
-  });
-  return insert;
+  const date = getDateFromDateOrString(request.date);
+  return {id, date};
+}
+
+const makeTask = (request: AddTaskRequest, id: number, date: Date) => {
+  const status = TaskStatus.WAITING;
+  const taskTypeId = request.taskTypeId;
+  return {...request, date, id, status, taskTypeId};
 }

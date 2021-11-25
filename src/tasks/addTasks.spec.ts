@@ -1,5 +1,7 @@
 import { addTask, AddTaskRequest } from './addTasks'
 import { MockMemoryDB } from '../database/MockMemoryDB'
+import { TestLogger } from '../logs/TestLogger';
+import { LogStatus } from '../logs/LogItem';
 
 describe('addTask', () => {
 
@@ -9,8 +11,8 @@ describe('addTask', () => {
     date: new Date(),
     systemIdentifier: 'test-suit',
     systemIp: '10.0.80.70',
-    employeeRfid: '',
-    highLevelApiKey: '',
+    employeeRfid: '1234',
+    highLevelApiKey: 'test-system',
   };
 
   const mockTask2: AddTaskRequest = {
@@ -19,8 +21,8 @@ describe('addTask', () => {
     date: new Date(),
     systemIdentifier: 'test-suit',
     systemIp: '10.0.80.71',
-    employeeRfid: '',
-    highLevelApiKey: '',
+    employeeRfid: '1234',
+    highLevelApiKey: 'test-system',
   };
 
   it('should throw "name empty" error', async () => {
@@ -32,7 +34,7 @@ describe('addTask', () => {
       const error = catched as Error;
       expect(error.message).toMatch('name empty')
     }
-  })
+  });
 
   it('should call `db.getUniqueTaskId()` once', async () => {
     const db = new MockMemoryDB();
@@ -80,6 +82,59 @@ describe('addTask', () => {
     const date = "2021-10-21T08:49:16.642Z";
     const res = await addTask({...mockTask, date}, db);
     expect(res.date).toEqual(new Date(date));
+  });
+
+  it('should write to logs', async () => {
+    const logger = new TestLogger()
+    const db = new MockMemoryDB();
+    const date = "2021-10-21T08:49:16.642Z";
+    const res = await addTask({...mockTask, date}, db, logger);
+    const logs = await logger.read()
+    expect(logs.length).toBe(1)
+  });
+
+  it('should have correct sender', async () => {
+    const logger = new TestLogger()
+    const db = new MockMemoryDB();
+    const date = "2021-10-21T08:49:16.642Z";
+    const res = await addTask({...mockTask, date}, db, logger);
+    const logs = await logger.read();
+    expect(logs[0].getSender()).toBe('add task');
+  });
+
+  it('should have a success status', async () => {
+    const logger = new TestLogger()
+    const db = new MockMemoryDB();
+    const date = "2021-10-21T08:49:16.642Z";
+    const res = await addTask({...mockTask, date}, db, logger);
+    const logs = await logger.read();
+    expect(logs[0].getStatus()).toBe(LogStatus.success);
+  });
+
+  it('should have a error status on error', async () => {
+    expect.assertions(2);
+    const logger = new TestLogger()
+    const db = new MockMemoryDB();
+    const date = "2021-10-21T08:49:16.642Z";
+    try {
+      await addTask({...mockTask, name: "", date}, db, logger);
+    } catch(error: unknown) {
+      expect(error).toBeInstanceOf(Error);
+      const logs = await logger.read();
+      expect(logs[0].getStatus()).toBe(LogStatus.error);
+    }
+  });
+
+  it('it should include id, name, rfid and system identifier on success', async () => {
+    const logger = new TestLogger()
+    const db = new MockMemoryDB();
+    const date = "2021-10-21T08:49:16.642Z";
+    await addTask({...mockTask, date}, db, logger);
+    const logs = await logger.read();
+    expect(logs[0].getMessage().indexOf(mockTask.taskTypeId.toString())).not.toEqual(-1);
+    expect(logs[0].getMessage().indexOf(mockTask.name.toString())).not.toEqual(-1);
+    expect(logs[0].getMessage().indexOf(mockTask.employeeRfid.toString())).not.toEqual(-1);
+    expect(logs[0].getMessage().indexOf(mockTask.systemIdentifier.toString())).not.toEqual(-1);
   });
 
 });
