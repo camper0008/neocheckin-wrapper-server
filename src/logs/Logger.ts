@@ -4,5 +4,6 @@ import { LogItem, LogStatus } from "./LogItem";
 export interface Logger {
   read():                                              Promise<LogItem[]>
   write(msg: LogItem):                                 Promise<void>
-  logAddTask(task: AddTaskRequest, status: LogStatus): Promise<void>
+  logAddTaskSuccess(task: AddTaskRequest): Promise<void>
+  logAddTaskError(task: AddTaskRequest): Promise<void>
 }

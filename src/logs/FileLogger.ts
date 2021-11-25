@@ -16,9 +16,17 @@ export class FileLogger implements Logger {
     await this.save();
     return;
   }
-  public async logAddTask(task: AddTaskRequest, status: LogStatus): Promise<void> {
+  private async logAddTask(task: AddTaskRequest, status: LogStatus): Promise<void> {
     const item = new LogItem('add task', status, formatTask(task, status));
     await this.write(item);
+  }
+
+  public async logAddTaskSuccess(task: AddTaskRequest): Promise<void> {
+    this.logAddTask(task, LogStatus.success);
+  }
+
+  public async logAddTaskError(task: AddTaskRequest): Promise<void> {
+    this.logAddTask(task, LogStatus.error);
   }
 
   private async save(): Promise<void> {

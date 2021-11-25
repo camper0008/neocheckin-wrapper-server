@@ -1,6 +1,5 @@
 import { Database } from "../database/Database";
 import { Logger } from "../logs/Logger";
-import { LogStatus } from "../logs/LogItem";
 import { Task, TaskStatus } from "../models/Task";
 import { getDateFromDateOrString } from "../utils/timedate";
 
@@ -16,13 +15,13 @@ export interface AddTaskRequest {
 
 export const addTask = async (request: AddTaskRequest, db: Database, logger?: Logger): Promise<Task> => {
   checkTaskName(request, logger);
-  const id = await db.getUniqueTaskId();
-  const date = getDateFromDateOrString(request.date);
+  const {id, date} = await getTaskDetails(request, db);
   const task = makeTask(request, id, date);
   const insert = await db.insertTask(task);
-  logger?.logAddTask(request, LogStatus.success);
+  await logger?.logAddTaskSuccess(request);
   return insert;
 }
+
 
 const checkTaskName = (request: AddTaskRequest, logger?: Logger) => {
   if (invalidTaskName(request.name))
@@ -30,20 +29,22 @@ const checkTaskName = (request: AddTaskRequest, logger?: Logger) => {
 }
 
 const invalidTaskName = (name: string) => {
-  return name === ''
+  return name === '';
 }
 
-const failTaskNameEmpty = (request: AddTaskRequest, logger: Logger | undefined) => {
-  logger?.logAddTask(request, LogStatus.error);
+const failTaskNameEmpty = (request: AddTaskRequest, logger?: Logger) => {
+  logger?.logAddTaskError(request);
   throw new Error('name empty');
 }
 
+const getTaskDetails = async (request: AddTaskRequest, db: Database) => {
+  const id = await db.getUniqueTaskId();
+  const date = getDateFromDateOrString(request.date);
+  return {id, date};
+}
+
 const makeTask = (request: AddTaskRequest, id: number, date: Date) => {
-  return {
-    ...request,
-    date,
-    id,
-    status: TaskStatus.WAITING,
-    taskTypeId: request.taskTypeId
-  }
+  const status = TaskStatus.WAITING;
+  const taskTypeId = request.taskTypeId;
+  return {...request, date, id, status, taskTypeId};
 }
