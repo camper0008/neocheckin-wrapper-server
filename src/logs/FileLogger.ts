@@ -30,6 +30,7 @@ export class FileLogger implements Logger {
   }
 
   private async save(): Promise<void> {
-    await writeFile('./logs/log_' + formatFileFriendly(new Date()), JSON.stringify(this.logs));
+    await writeFile('./logs/log_' + formatFileFriendly(new Date()) + '.txt', JSON.stringify(this.logs));
+    await writeFile('./logs/log_latest.txt', JSON.stringify(this.logs));
   }
 }
