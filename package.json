@@ -4,7 +4,7 @@
   "description": "A non-extension for PCVs instrukdb",
   "main": "dist/main.js",
   "scripts": {
-    "test": "jest",
+    "test": "jest --maxWorkers=1",
     "test-junit": "jest --ci --reporters=default --reporters=jest-junit",
     "coverage": "jest --coverage",
     "start": "node dist/main.js",
