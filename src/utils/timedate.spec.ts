@@ -1,4 +1,4 @@
-import { formatFileFriendly, getDateFromDateOrString } from "./timedate";
+import { formatFileFriendly, getDateFromDateOrString, getUnixTimestamp } from "./timedate";
 
 describe('formatFileFriendly', () => {
   it('should format time and date', () => {
@@ -27,3 +27,9 @@ describe('getDateFromDateOrString', () => {
   });
 });
 
+describe('getUnixTimestamp', () => {
+  it('should return unix timestamp in seconds', () => {
+    const date = new Date(1637848761000);
+    expect(getUnixTimestamp(date)).toBe(1637848761);
+  });
+})
