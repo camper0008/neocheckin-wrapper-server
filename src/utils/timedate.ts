@@ -1,7 +1,7 @@
 
 export const formatFileFriendly = (date: Date): string => {
   return `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`
-  + `_${date.getHours() - 1}-${date.getMinutes()}-${date.getSeconds()}`;
+  + `_${date.getUTCHours()}-${date.getMinutes()}-${date.getSeconds()}`;
 }
 
 export const getDateFromDateOrString = (date?: Date | string) => {
