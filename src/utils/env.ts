@@ -2,9 +2,10 @@
 /* Example .env file
 
 HTTP=80
-HTTPS=443
 
 LOW_LEVEL_API_KEY=XXXXXXXX
+
+TOKEN=XXXXX
 
 */
 
@@ -16,18 +17,6 @@ export const getHttpPort = (fallback: number) => {
     return parseInt(httpEnv);
   } catch (catched) {
     console.log('Could not load HTTP port from \'.env\', falling back to', fallback);
-    return fallback;
-  }
-}
-
-export const getHttpsPort = (fallback: number) => {
-  try {
-    const httpsEnv = process.env.HTTPS!;
-    if (typeof httpsEnv !== 'string')
-      throw new Error(`Could not find 'HTTP' variable in '.env'`)
-    return parseInt(httpsEnv);
-  } catch (catched) {
-    console.log('Could not load HTTPS port from \'.env\', falling back to', fallback);
     return fallback;
   }
 }
