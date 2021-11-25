@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuites name="jest tests" tests="90" failures="0" errors="0" time="1.584">
-  <testsuite name="addTask" errors="0" failures="0" skipped="0" timestamp="2021-11-25T10:21:54" time="0.213" tests="13">
+<testsuites name="jest tests" tests="90" failures="0" errors="0" time="1.66">
+  <testsuite name="addTask" errors="0" failures="0" skipped="0" timestamp="2021-11-25T10:23:43" time="0.205" tests="13">
     <testcase classname="addTask should throw &quot;name empty&quot; error" name="addTask should throw &quot;name empty&quot; error" time="0.002">
     </testcase>
     <testcase classname="addTask should call `db.getUniqueTaskId()` once" name="addTask should call `db.getUniqueTaskId()` once" time="0.001">
@@ -9,49 +9,109 @@
     </testcase>
     <testcase classname="addTask should not have matching ids" name="addTask should not have matching ids" time="0.001">
     </testcase>
-    <testcase classname="addTask should call `insertTask` once" name="addTask should call `insertTask` once" time="0.001">
+    <testcase classname="addTask should call `insertTask` once" name="addTask should call `insertTask` once" time="0">
     </testcase>
     <testcase classname="addTask should return input unchanged" name="addTask should return input unchanged" time="0.001">
     </testcase>
-    <testcase classname="addTask should use `Date.now`" name="addTask should use `Date.now`" time="0">
+    <testcase classname="addTask should use `Date.now`" name="addTask should use `Date.now`" time="0.001">
     </testcase>
-    <testcase classname="addTask should use specified date" name="addTask should use specified date" time="0">
+    <testcase classname="addTask should use specified date" name="addTask should use specified date" time="0.001">
     </testcase>
     <testcase classname="addTask should write to logs" name="addTask should write to logs" time="0.001">
     </testcase>
-    <testcase classname="addTask should have correct sender" name="addTask should have correct sender" time="0.001">
+    <testcase classname="addTask should have correct sender" name="addTask should have correct sender" time="0">
     </testcase>
-    <testcase classname="addTask should have a success status" name="addTask should have a success status" time="0.001">
+    <testcase classname="addTask should have a success status" name="addTask should have a success status" time="0">
     </testcase>
     <testcase classname="addTask should have a error status on error" name="addTask should have a error status on error" time="0.001">
     </testcase>
     <testcase classname="addTask it should include id, name, rfid and system identifier on success" name="addTask it should include id, name, rfid and system identifier on success" time="0.001">
     </testcase>
   </testsuite>
-  <testsuite name="base64FromBinaryString" errors="0" failures="0" skipped="0" timestamp="2021-11-25T10:21:54" time="0.094" tests="2">
-    <testcase classname="base64FromBinaryString should return a base64 string" name="base64FromBinaryString should return a base64 string" time="0.008">
+  <testsuite name="getUnique_Id" errors="0" failures="0" skipped="0" timestamp="2021-11-25T10:23:43" time="0.115" tests="27">
+    <testcase classname="getUnique_Id it should return two unique ids" name="getUnique_Id it should return two unique ids" time="0.002">
     </testcase>
-    <testcase classname="base64FromBinaryString should match a base64 encoding" name="base64FromBinaryString should match a base64 encoding" time="0.001">
+    <testcase classname="getUnique_Id it should return two unique ids" name="getUnique_Id it should return two unique ids" time="0">
+    </testcase>
+    <testcase classname="Task it should count 0" name="Task it should count 0" time="0.001">
+    </testcase>
+    <testcase classname="Task it should count 1" name="Task it should count 1" time="0">
+    </testcase>
+    <testcase classname="Task it should throw &quot;id must be unique&quot; error" name="Task it should throw &quot;id must be unique&quot; error" time="0.001">
+    </testcase>
+    <testcase classname="Task should return empty array" name="Task should return empty array" time="0.002">
+    </testcase>
+    <testcase classname="Task should return array with the inserted" name="Task should return array with the inserted" time="0">
+    </testcase>
+    <testcase classname="Task should return matching tasks" name="Task should return matching tasks" time="0.001">
+    </testcase>
+    <testcase classname="Task should return empty array" name="Task should return empty array" time="0.001">
+    </testcase>
+    <testcase classname="Task should update task status" name="Task should update task status" time="0">
+    </testcase>
+    <testcase classname="Task should throw &quot;not found&quot;" name="Task should throw &quot;not found&quot;" time="0">
+    </testcase>
+    <testcase classname="TaskType should return empty array" name="TaskType should return empty array" time="0.001">
+    </testcase>
+    <testcase classname="TaskType should return 2 as the new length" name="TaskType should return 2 as the new length" time="0.001">
+    </testcase>
+    <testcase classname="TaskType should return tasktypes" name="TaskType should return tasktypes" time="0.001">
+    </testcase>
+    <testcase classname="TaskType should return tasktype" name="TaskType should return tasktype" time="0.001">
+    </testcase>
+    <testcase classname="TaskType should throw error &quot;not found&quot;" name="TaskType should throw error &quot;not found&quot;" time="0">
+    </testcase>
+    <testcase classname="Rfid should return 3" name="Rfid should return 3" time="0">
+    </testcase>
+    <testcase classname="Rfid should throw error &quot;not found&quot;" name="Rfid should throw error &quot;not found&quot;" time="0.001">
+    </testcase>
+    <testcase classname="Rfid should return rfid" name="Rfid should return rfid" time="0">
+    </testcase>
+    <testcase classname="Rfid should throw error &quot;not found&quot;" name="Rfid should throw error &quot;not found&quot;" time="0">
+    </testcase>
+    <testcase classname="Rfid should return rfid" name="Rfid should return rfid" time="0.001">
+    </testcase>
+    <testcase classname="Rfid should throw error &quot;id must be unique&quot;" name="Rfid should throw error &quot;id must be unique&quot;" time="0.001">
+    </testcase>
+    <testcase classname="LoggedError should count 0" name="LoggedError should count 0" time="0.001">
+    </testcase>
+    <testcase classname="LoggedError should count 1" name="LoggedError should count 1" time="0.001">
+    </testcase>
+    <testcase classname="LoggedError should return empty array" name="LoggedError should return empty array" time="0">
+    </testcase>
+    <testcase classname="LoggedError should return inserted" name="LoggedError should return inserted" time="0.001">
+    </testcase>
+    <testcase classname="LoggedError it should throw &quot;id must be unique&quot; error" name="LoggedError it should throw &quot;id must be unique&quot; error" time="0.001">
     </testcase>
   </testsuite>
-  <testsuite name="TaskRunner" errors="0" failures="0" skipped="0" timestamp="2021-11-25T10:21:54" time="0.112" tests="15">
-    <testcase classname="TaskRunner should change status to not waiting" name="TaskRunner should change status to not waiting" time="0.008">
+  <testsuite name="formatTask" errors="0" failures="0" skipped="0" timestamp="2021-11-25T10:23:43" time="0.099" tests="4">
+    <testcase classname="formatTask should format correctly on success" name="formatTask should format correctly on success" time="0.002">
     </testcase>
-    <testcase classname="TaskRunner should call idb.postCheckin once" name="TaskRunner should call idb.postCheckin once" time="0.001">
+    <testcase classname="formatTask should format correctly on error" name="formatTask should format correctly on error" time="0">
+    </testcase>
+    <testcase classname="formatTask should include &quot;(no date given)&quot; if date is null" name="formatTask should include &quot;(no date given)&quot; if date is null" time="0">
+    </testcase>
+    <testcase classname="formatTask should error if unexpected behaviour" name="formatTask should error if unexpected behaviour" time="0">
+    </testcase>
+  </testsuite>
+  <testsuite name="TaskRunner" errors="0" failures="0" skipped="0" timestamp="2021-11-25T10:23:43" time="0.124" tests="15">
+    <testcase classname="TaskRunner should change status to not waiting" name="TaskRunner should change status to not waiting" time="0.004">
+    </testcase>
+    <testcase classname="TaskRunner should call idb.postCheckin once" name="TaskRunner should call idb.postCheckin once" time="0.004">
     </testcase>
     <testcase classname="TaskRunner should call with the option prefix" name="TaskRunner should call with the option prefix" time="0.001">
     </testcase>
-    <testcase classname="TaskRunner should call with the token" name="TaskRunner should call with the token" time="0.002">
+    <testcase classname="TaskRunner should call with the token" name="TaskRunner should call with the token" time="0.001">
     </testcase>
     <testcase classname="TaskRunner should call with the timestamp" name="TaskRunner should call with the timestamp" time="0.001">
     </testcase>
-    <testcase classname="TaskRunner should call with the rfid as a number" name="TaskRunner should call with the rfid as a number" time="0.001">
+    <testcase classname="TaskRunner should call with the rfid as a number" name="TaskRunner should call with the rfid as a number" time="0">
     </testcase>
     <testcase classname="TaskRunner should call with the downstream ip" name="TaskRunner should call with the downstream ip" time="0.001">
     </testcase>
-    <testcase classname="TaskRunner should call db.getTaskType once" name="TaskRunner should call db.getTaskType once" time="0.003">
+    <testcase classname="TaskRunner should call db.getTaskType once" name="TaskRunner should call db.getTaskType once" time="0.001">
     </testcase>
-    <testcase classname="TaskRunner should set status to succeeded" name="TaskRunner should set status to succeeded" time="0.001">
+    <testcase classname="TaskRunner should set status to succeeded" name="TaskRunner should set status to succeeded" time="0.002">
     </testcase>
     <testcase classname="TaskRunner should set status to failed" name="TaskRunner should set status to failed" time="0.001">
     </testcase>
@@ -63,151 +123,91 @@
     </testcase>
     <testcase classname="TaskRunner should not be undefined" name="TaskRunner should not be undefined" time="0.001">
     </testcase>
-    <testcase classname="TaskRunner should be undefined" name="TaskRunner should be undefined" time="0">
+    <testcase classname="TaskRunner should be undefined" name="TaskRunner should be undefined" time="0.001">
     </testcase>
   </testsuite>
-  <testsuite name="getUnique_Id" errors="0" failures="0" skipped="0" timestamp="2021-11-25T10:21:54" time="0.134" tests="27">
-    <testcase classname="getUnique_Id it should return two unique ids" name="getUnique_Id it should return two unique ids" time="0.004">
+  <testsuite name="base64FromBinaryString" errors="0" failures="0" skipped="0" timestamp="2021-11-25T10:23:43" time="0.112" tests="2">
+    <testcase classname="base64FromBinaryString should return a base64 string" name="base64FromBinaryString should return a base64 string" time="0.002">
     </testcase>
-    <testcase classname="getUnique_Id it should return two unique ids" name="getUnique_Id it should return two unique ids" time="0.001">
-    </testcase>
-    <testcase classname="Task it should count 0" name="Task it should count 0" time="0.001">
-    </testcase>
-    <testcase classname="Task it should count 1" name="Task it should count 1" time="0">
-    </testcase>
-    <testcase classname="Task it should throw &quot;id must be unique&quot; error" name="Task it should throw &quot;id must be unique&quot; error" time="0.001">
-    </testcase>
-    <testcase classname="Task should return empty array" name="Task should return empty array" time="0.001">
-    </testcase>
-    <testcase classname="Task should return array with the inserted" name="Task should return array with the inserted" time="0.001">
-    </testcase>
-    <testcase classname="Task should return matching tasks" name="Task should return matching tasks" time="0.001">
-    </testcase>
-    <testcase classname="Task should return empty array" name="Task should return empty array" time="0.002">
-    </testcase>
-    <testcase classname="Task should update task status" name="Task should update task status" time="0.001">
-    </testcase>
-    <testcase classname="Task should throw &quot;not found&quot;" name="Task should throw &quot;not found&quot;" time="0">
-    </testcase>
-    <testcase classname="TaskType should return empty array" name="TaskType should return empty array" time="0">
-    </testcase>
-    <testcase classname="TaskType should return 2 as the new length" name="TaskType should return 2 as the new length" time="0.001">
-    </testcase>
-    <testcase classname="TaskType should return tasktypes" name="TaskType should return tasktypes" time="0">
-    </testcase>
-    <testcase classname="TaskType should return tasktype" name="TaskType should return tasktype" time="0">
-    </testcase>
-    <testcase classname="TaskType should throw error &quot;not found&quot;" name="TaskType should throw error &quot;not found&quot;" time="0">
-    </testcase>
-    <testcase classname="Rfid should return 3" name="Rfid should return 3" time="0.001">
-    </testcase>
-    <testcase classname="Rfid should throw error &quot;not found&quot;" name="Rfid should throw error &quot;not found&quot;" time="0">
-    </testcase>
-    <testcase classname="Rfid should return rfid" name="Rfid should return rfid" time="0.001">
-    </testcase>
-    <testcase classname="Rfid should throw error &quot;not found&quot;" name="Rfid should throw error &quot;not found&quot;" time="0">
-    </testcase>
-    <testcase classname="Rfid should return rfid" name="Rfid should return rfid" time="0">
-    </testcase>
-    <testcase classname="Rfid should throw error &quot;id must be unique&quot;" name="Rfid should throw error &quot;id must be unique&quot;" time="0">
-    </testcase>
-    <testcase classname="LoggedError should count 0" name="LoggedError should count 0" time="0">
-    </testcase>
-    <testcase classname="LoggedError should count 1" name="LoggedError should count 1" time="0">
-    </testcase>
-    <testcase classname="LoggedError should return empty array" name="LoggedError should return empty array" time="0.001">
-    </testcase>
-    <testcase classname="LoggedError should return inserted" name="LoggedError should return inserted" time="0">
-    </testcase>
-    <testcase classname="LoggedError it should throw &quot;id must be unique&quot; error" name="LoggedError it should throw &quot;id must be unique&quot; error" time="0.001">
+    <testcase classname="base64FromBinaryString should match a base64 encoding" name="base64FromBinaryString should match a base64 encoding" time="0.001">
     </testcase>
   </testsuite>
-  <testsuite name="LogItem.toString" errors="0" failures="0" skipped="0" timestamp="2021-11-25T10:21:54" time="0.084" tests="2">
+  <testsuite name="synchronizeTaskTypesWithSample" errors="0" failures="0" skipped="0" timestamp="2021-11-25T10:23:44" time="0.104" tests="3">
+    <testcase classname="synchronizeTaskTypesWithSample should call db.replaceTaskTypes once" name="synchronizeTaskTypesWithSample should call db.replaceTaskTypes once" time="0.004">
+    </testcase>
+    <testcase classname="synchronizeTaskTypesWithSample should change tasktypes in db" name="synchronizeTaskTypesWithSample should change tasktypes in db" time="0.005">
+    </testcase>
+    <testcase classname="getTaskTypes should call db.getTaskTypes once" name="getTaskTypes should call db.getTaskTypes once" time="0.001">
+    </testcase>
+  </testsuite>
+  <testsuite name="getEmployeeImageBase64" errors="0" failures="0" skipped="0" timestamp="2021-11-25T10:23:44" time="0.1" tests="3">
+    <testcase classname="getEmployeeImageBase64 should return base64 of image" name="getEmployeeImageBase64 should return base64 of image" time="0.008">
+    </testcase>
+    <testcase classname="getAllEmployees should call idb.getAllEmployees once" name="getAllEmployees should call idb.getAllEmployees once" time="0.001">
+    </testcase>
+    <testcase classname="getAllEmployees should give employees photos" name="getAllEmployees should give employees photos" time="0.001">
+    </testcase>
+  </testsuite>
+  <testsuite name="formatFileFriendly" errors="0" failures="0" skipped="0" timestamp="2021-11-25T10:23:44" time="0.092" tests="4">
+    <testcase classname="formatFileFriendly should format time and date" name="formatFileFriendly should format time and date" time="0.002">
+    </testcase>
+    <testcase classname="getDateFromDateOrString should parse and return a date" name="getDateFromDateOrString should parse and return a date" time="0.001">
+    </testcase>
+    <testcase classname="getDateFromDateOrString should use givin date" name="getDateFromDateOrString should use givin date" time="0">
+    </testcase>
+    <testcase classname="getDateFromDateOrString should make a new date" name="getDateFromDateOrString should make a new date" time="0">
+    </testcase>
+  </testsuite>
+  <testsuite name="LogItem.toString" errors="0" failures="0" skipped="0" timestamp="2021-11-25T10:23:44" time="0.08" tests="2">
     <testcase classname="LogItem.toString should return in proper format" name="LogItem.toString should return in proper format" time="0.002">
     </testcase>
     <testcase classname="LogItem.toString should include log status" name="LogItem.toString should include log status" time="0">
     </testcase>
   </testsuite>
-  <testsuite name="synchronizeTaskTypesWithSample" errors="0" failures="0" skipped="0" timestamp="2021-11-25T10:21:54" time="0.094" tests="3">
-    <testcase classname="synchronizeTaskTypesWithSample should call db.replaceTaskTypes once" name="synchronizeTaskTypesWithSample should call db.replaceTaskTypes once" time="0.004">
+  <testsuite name="insureUrlPathEnd" errors="0" failures="0" skipped="0" timestamp="2021-11-25T10:23:44" time="0.093" tests="4">
+    <testcase classname="insureUrlPathEnd should add / to the end" name="insureUrlPathEnd should add / to the end" time="0.003">
     </testcase>
-    <testcase classname="synchronizeTaskTypesWithSample should change tasktypes in db" name="synchronizeTaskTypesWithSample should change tasktypes in db" time="0.003">
+    <testcase classname="insureUrlPathEnd should add not / to the end" name="insureUrlPathEnd should add not / to the end" time="0.001">
     </testcase>
-    <testcase classname="getTaskTypes should call db.getTaskTypes once" name="getTaskTypes should call db.getTaskTypes once" time="0">
+    <testcase classname="paramString should return empty" name="paramString should return empty" time="0">
+    </testcase>
+    <testcase classname="paramString should return data as param string" name="paramString should return data as param string" time="0.001">
     </testcase>
   </testsuite>
-  <testsuite name="padString" errors="0" failures="0" skipped="0" timestamp="2021-11-25T10:21:55" time="0.082" tests="8">
-    <testcase classname="padString should a string with the min length" name="padString should a string with the min length" time="0.002">
+  <testsuite name="padString" errors="0" failures="0" skipped="0" timestamp="2021-11-25T10:23:44" time="0.09" tests="8">
+    <testcase classname="padString should a string with the min length" name="padString should a string with the min length" time="0.001">
     </testcase>
-    <testcase classname="padString should contain the string given" name="padString should contain the string given" time="0.001">
+    <testcase classname="padString should contain the string given" name="padString should contain the string given" time="0">
     </testcase>
-    <testcase classname="padStringBehind should a string with the min length" name="padStringBehind should a string with the min length" time="0">
+    <testcase classname="padStringBehind should a string with the min length" name="padStringBehind should a string with the min length" time="0.001">
     </testcase>
-    <testcase classname="padStringBehind should contain the string given" name="padStringBehind should contain the string given" time="0.001">
+    <testcase classname="padStringBehind should contain the string given" name="padStringBehind should contain the string given" time="0">
     </testcase>
-    <testcase classname="padRfid should have length 10" name="padRfid should have length 10" time="0">
+    <testcase classname="padRfid should have length 10" name="padRfid should have length 10" time="0.001">
     </testcase>
-    <testcase classname="padRfid should contain the rfid" name="padRfid should contain the rfid" time="0.001">
+    <testcase classname="padRfid should contain the rfid" name="padRfid should contain the rfid" time="0">
     </testcase>
     <testcase classname="padRfid should pad with 0" name="padRfid should pad with 0" time="0">
     </testcase>
-    <testcase classname="getRfidAsNumber should return input as number" name="getRfidAsNumber should return input as number" time="0.001">
+    <testcase classname="getRfidAsNumber should return input as number" name="getRfidAsNumber should return input as number" time="0">
     </testcase>
   </testsuite>
-  <testsuite name="getTasks" errors="0" failures="0" skipped="0" timestamp="2021-11-25T10:21:55" time="0.082" tests="2">
-    <testcase classname="getTasks should call call db.getTasks once" name="getTasks should call call db.getTasks once" time="0.002">
+  <testsuite name="getTasks" errors="0" failures="0" skipped="0" timestamp="2021-11-25T10:23:44" time="0.131" tests="2">
+    <testcase classname="getTasks should call call db.getTasks once" name="getTasks should call call db.getTasks once" time="0.003">
     </testcase>
     <testcase classname="getTasks should return inserted task" name="getTasks should return inserted task" time="0.001">
     </testcase>
   </testsuite>
-  <testsuite name="getUniqueTaskId" errors="0" failures="0" skipped="0" timestamp="2021-11-25T10:21:55" time="0.076" tests="3">
+  <testsuite name="FileLogger" errors="0" failures="0" skipped="0" timestamp="2021-11-25T10:23:44" time="0.077" tests="0">
+    <testcase classname="FileLogger fuck dig" name="FileLogger fuck dig" time="0">
+    </testcase>
+  </testsuite>
+  <testsuite name="getUniqueTaskId" errors="0" failures="0" skipped="0" timestamp="2021-11-25T10:23:44" time="0.087" tests="3">
     <testcase classname="getUniqueTaskId should count number of calls" name="getUniqueTaskId should count number of calls" time="0.002">
     </testcase>
     <testcase classname="getUniqueTaskId should return task" name="getUniqueTaskId should return task" time="0.001">
     </testcase>
-    <testcase classname="getUniqueTaskId should throw &quot;not connected&quot;" name="getUniqueTaskId should throw &quot;not connected&quot;" time="0">
-    </testcase>
-  </testsuite>
-  <testsuite name="getEmployeeImageBase64" errors="0" failures="0" skipped="0" timestamp="2021-11-25T10:21:55" time="0.089" tests="3">
-    <testcase classname="getEmployeeImageBase64 should return base64 of image" name="getEmployeeImageBase64 should return base64 of image" time="0.003">
-    </testcase>
-    <testcase classname="getAllEmployees should call idb.getAllEmployees once" name="getAllEmployees should call idb.getAllEmployees once" time="0.001">
-    </testcase>
-    <testcase classname="getAllEmployees should give employees photos" name="getAllEmployees should give employees photos" time="0.002">
-    </testcase>
-  </testsuite>
-  <testsuite name="formatFileFriendly" errors="0" failures="0" skipped="0" timestamp="2021-11-25T10:21:55" time="0.089" tests="4">
-    <testcase classname="formatFileFriendly should format time and date" name="formatFileFriendly should format time and date" time="0.003">
-    </testcase>
-    <testcase classname="getDateFromDateOrString should parse and return a date" name="getDateFromDateOrString should parse and return a date" time="0.001">
-    </testcase>
-    <testcase classname="getDateFromDateOrString should use givin date" name="getDateFromDateOrString should use givin date" time="0.001">
-    </testcase>
-    <testcase classname="getDateFromDateOrString should make a new date" name="getDateFromDateOrString should make a new date" time="0.001">
-    </testcase>
-  </testsuite>
-  <testsuite name="formatTask" errors="0" failures="0" skipped="0" timestamp="2021-11-25T10:21:55" time="0.123" tests="4">
-    <testcase classname="formatTask should format correctly on success" name="formatTask should format correctly on success" time="0.003">
-    </testcase>
-    <testcase classname="formatTask should format correctly on error" name="formatTask should format correctly on error" time="0.001">
-    </testcase>
-    <testcase classname="formatTask should include &quot;(no date given)&quot; if date is null" name="formatTask should include &quot;(no date given)&quot; if date is null" time="0.001">
-    </testcase>
-    <testcase classname="formatTask should error if unexpected behaviour" name="formatTask should error if unexpected behaviour" time="0.001">
-    </testcase>
-  </testsuite>
-  <testsuite name="insureUrlPathEnd" errors="0" failures="0" skipped="0" timestamp="2021-11-25T10:21:55" time="0.083" tests="4">
-    <testcase classname="insureUrlPathEnd should add / to the end" name="insureUrlPathEnd should add / to the end" time="0.001">
-    </testcase>
-    <testcase classname="insureUrlPathEnd should add not / to the end" name="insureUrlPathEnd should add not / to the end" time="0">
-    </testcase>
-    <testcase classname="paramString should return empty" name="paramString should return empty" time="0">
-    </testcase>
-    <testcase classname="paramString should return data as param string" name="paramString should return data as param string" time="0">
-    </testcase>
-  </testsuite>
-  <testsuite name="FileLogger" errors="0" failures="0" skipped="0" timestamp="2021-11-25T10:21:55" time="0.077" tests="0">
-    <testcase classname="FileLogger fuck dig" name="FileLogger fuck dig" time="0">
+    <testcase classname="getUniqueTaskId should throw &quot;not connected&quot;" name="getUniqueTaskId should throw &quot;not connected&quot;" time="0.001">
     </testcase>
   </testsuite>
 </testsuites>

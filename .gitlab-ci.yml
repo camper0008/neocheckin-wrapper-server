@@ -20,7 +20,7 @@ testing:
   script: 
     - yarn
     - yarn build
-    - 'jest --ci --reporters=default --reporters=jest-junit'
+    - yarn test-junit
   artifacts:
     when: always
     reports:
