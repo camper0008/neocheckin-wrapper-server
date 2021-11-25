@@ -1,11 +1,13 @@
 import { writeFile } from "fs/promises";
+import { Task } from "../models/Task";
 import { AddTaskRequest } from "../tasks/addTasks";
 import { formatFileFriendly } from "../utils/timedate";
-import { formatTask } from "./formatLogs";
+import { formatTaskRequest } from "./formatLogs";
 import { Logger } from "./Logger";
 import { LogItem, LogStatus } from "./LogItem";
 
 export class FileLogger implements Logger {
+
   private logs: LogItem[] = [];
   
   public async read(): Promise<LogItem[]> {
@@ -16,8 +18,9 @@ export class FileLogger implements Logger {
     await this.save();
     return;
   }
+
   private async logAddTask(task: AddTaskRequest, status: LogStatus): Promise<void> {
-    const item = new LogItem('add task', status, formatTask(task, status));
+    const item = new LogItem('add task', status, formatTaskRequest(task, status));
     await this.write(item);
   }
 
@@ -27,6 +30,21 @@ export class FileLogger implements Logger {
 
   public async logAddTaskError(task: AddTaskRequest): Promise<void> {
     this.logAddTask(task, LogStatus.error);
+  }
+
+
+  
+  private async logRunTask(task: Task, status: LogStatus): Promise<void> {
+    const item = new LogItem('run task', status, formatTaskRequest(task, status));
+    return await this.write(item);
+  }
+
+  public async logRunTaskSuccess(task: Task): Promise<void> {
+    return this.logRunTask(task, LogStatus.success);
+  }
+
+  public async logRunTaskError(task: Task): Promise<void> {
+    return this.logRunTask(task, LogStatus.error);
   }
 
   private async save(): Promise<void> {

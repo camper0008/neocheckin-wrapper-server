@@ -10,3 +10,7 @@ export const getDateFromDateOrString = (date?: Date | string) => {
   else 
     return date ?? new Date();
 }
+
+export const getUnixTimestamp = (date: Date): number => {
+  return Math.floor(date.getTime() / 1000);
+}

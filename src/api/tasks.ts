@@ -1,17 +1,13 @@
-import { Router, Request, Response } from "express";
+import { Router } from "express";
 import { Database } from "../database/Database";
 import { Instrukdb } from "../instrukdb/Instrukdb";
-import { InstrukdbClient } from "../instrukdb/InstrukdbClient";
-import { MockInstrukdb } from "../instrukdb/MockInstrukdb";
-import { Task } from "../models/Task";
+import { Logger } from "../logs/Logger";
 import { TaskType } from "../models/TaskType";
 import { addTask } from "../tasks/addTasks";
 import { getTasks } from "../tasks/getTasks";
-import { TaskRunner } from "../tasks/TaskRunner";
+import { runTask } from "../tasks/runTask";
 import { getTaskTypes } from "../tasks/taskTypes";
-import { Respondable, Handle } from "./utils";
-
-// TODO implement error state
+import { Handle, Respondable } from "./utils";
 
 export interface GetTypesRes extends Respondable {
   data?: Omit<TaskType, 'instrukdbCheckinId' | 'instrukdbCheckinName'>[],
@@ -40,7 +36,7 @@ export interface PostAddReq {
   timestamp: string,
 }
 
-export const postAddHandle: Handle<PostAddReq> = (db, idb) => 
+export const postAddHandle: Handle<PostAddReq> = (db, idb, logger) => 
 async (req, res) => {
   try {
     const {
@@ -59,7 +55,8 @@ async (req, res) => {
       systemIdentifier,
       systemIp: req.ip,
       date: timestamp ? new Date(timestamp) : undefined,
-    }, db);
+    }, db, logger);
+    await runTask(result, db, idb, logger);
     return res.status(200).json({data: result});
   } catch (catched) {
     res.status(500).json({error: 'server error'});
@@ -77,11 +74,11 @@ async (req, res) => {
   }
 };
 
-export const tasksRoutes = (router: Router, db: Database, idb: Instrukdb.API): Router => {
+export const tasksRoutes = (router: Router, db: Database, idb: Instrukdb.API, logger: Logger): Router => {
 
   router.get('/types', getTypesHandle(db, idb));
 
-  router.post('/add', postAddHandle(db, idb));
+  router.post('/add', postAddHandle(db, idb, logger));
 
   router.get('/all', getAll(db, idb));
 
