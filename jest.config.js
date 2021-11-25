@@ -7,7 +7,13 @@ module.exports = {
     'src/',
     // 'dist/',
   ],
-  transform: {
-
-  }
+  reporters: [
+      "default",
+    	[
+        "jest-junit", 
+        {
+          suiteName: "jest tests"
+        }
+      ]
+  ]
 };
