@@ -7,3 +7,5 @@ coverage/
 db.json
 
 certificates/*.pem
+
+junit.xml
