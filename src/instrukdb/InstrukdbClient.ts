@@ -8,6 +8,8 @@ import axios, { AxiosRequestConfig, AxiosResponse } from "axios";
 export class InstrukdbClient implements Instrukdb.API {
   
   private lowLevelApiKey: string;
+  // private readonly hostname = 'https://instrukdb';
+  private readonly hostname = 'http://192.168.112.117';
 
   public constructor (lowLevelApiKey: string) {
     this.lowLevelApiKey = lowLevelApiKey;
@@ -15,7 +17,7 @@ export class InstrukdbClient implements Instrukdb.API {
 
   public async getOneEmployee(id: number): Promise<Instrukdb.Employee> {
     const res = await this.httpGet<Instrukdb.Employee>(
-      'https://instrukdb/api/employee/one.php',
+      this.hostname + '/api/employee/one.php',
       {id: id.toString(), token: this.lowLevelApiKey}
     );
     return res.data;
@@ -23,7 +25,7 @@ export class InstrukdbClient implements Instrukdb.API {
 
   public async getEmployeeList(): Promise<Instrukdb.ListEmployee[]> {
     const res = await this.httpGet<Instrukdb.ListEmployee[]>(
-      'https://instrukdb/api/employee/list.php',
+      this.hostname + '/api/employee/list.php',
       {token: this.lowLevelApiKey}
     );
     return res.data;
@@ -31,7 +33,7 @@ export class InstrukdbClient implements Instrukdb.API {
 
   public async getAllEmployees(): Promise<Instrukdb.Employee[]> {
     const res = await this.httpGet<Instrukdb.Employee[]>(
-      'https://instrukdb/api/employee/all.php',
+      this.hostname + '/api/employee/all.php',
       {token: this.lowLevelApiKey}
     );
     return res.data;
@@ -54,7 +56,7 @@ export class InstrukdbClient implements Instrukdb.API {
       type Res = Instrukdb.StatusRes;
       type Opt = AxiosRequestConfig<Res>;
       const res = await axios.post<Res, Opt, Req>(
-        'https://instrukdb/api/employee/checkin.php',
+        this.hostname + '/api/employee/checkin.php',
         request,
         config
       );
@@ -70,12 +72,12 @@ export class InstrukdbClient implements Instrukdb.API {
   }
   
   public async getCheckinPhpData(): Promise<Instrukdb.CheckedinPhpDataElement[]> {
-    const res = await this.httpGet<Instrukdb.CheckedinPhpDataElement[]>('https://instrukdb/lib/check_data.json', {});
+    const res = await this.httpGet<Instrukdb.CheckedinPhpDataElement[]>(this.hostname + '/lib/check_data.json', {});
     return res.data;
   }
 
   public async getEmployeeImage(id: number): Promise<BinaryString> {
-    const url = `https://instrukdb/elevbilled.php?id=${id}`;
+    const url = `${this.hostname}/elevbilled.php?id=${id}`;
     const response = await axios.get(url, {
       responseType: 'arraybuffer',
       httpsAgent: new HttpsAgent({rejectUnauthorized: false}),
