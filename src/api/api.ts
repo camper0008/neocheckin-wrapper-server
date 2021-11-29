@@ -1,12 +1,13 @@
 import cors from 'cors';
 import express, { json, NextFunction, Request, Response, Router, urlencoded } from 'express';
+import { join } from 'path';
 import { Database } from '../database/Database';
 import { Instrukdb } from '../instrukdb/Instrukdb';
 import { Logger } from '../logs/Logger';
 import { getApiToken } from '../utils/env';
 import { employeesRoutes } from './employees';
 import { jsonError } from './jsonError';
-import { serveHttp } from './servers';
+import { serveHttp, serveHttps } from './servers';
 import { tasksRoutes } from './tasks';
 
 export const apiTokenAuth = (apiToken: string) => async (req: Request, res: Response, next: NextFunction) => {
@@ -32,4 +33,5 @@ export const api = async (db: Database, idb: Instrukdb.API, logger: Logger) => {
   app.use('/', express.static('./public'));
 
   serveHttp(app);
+  serveHttps(app);
 }
