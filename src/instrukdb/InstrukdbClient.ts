@@ -9,7 +9,7 @@ export class InstrukdbClient implements Instrukdb.API {
   
   private lowLevelApiKey: string;
   // private readonly hostname = 'https://instrukdb';
-  private readonly hostname = 'http://192.168.112.117';
+  private readonly hostname = 'http://192.168.112.117:80';
 
   public constructor (lowLevelApiKey: string) {
     this.lowLevelApiKey = lowLevelApiKey;
