@@ -10,7 +10,7 @@ export const getSSL = async () => {
     const cert = (await readFile('./certificates/cert.pem')).toString();
     return {key, cert};
   } catch (error) {
-    console.error(`Could not read SSL certificates, try running 'generate_ssl_keys.sh' inside '/certificates'.`);
+    console.error(`Could not read SSL certificates, try running 'generate_ssl.sh' inside '/certificates'.`);
     console.log(`Just run 'cd certificates/; sh generate_ssl_keys.sh; cd ..'`);
     return null;
   }
