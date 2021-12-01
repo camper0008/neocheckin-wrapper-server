@@ -18,12 +18,17 @@ export const runTask = async (task: Task, db: Database, idb: Instrukdb.API, logg
 const makeRequest = (task: Task, taskType: TaskType): Instrukdb.PostCheckinRequest => {
   return {
     ip: task.systemIp,
-    option: taskType.name,
+    option: checkIfGaaturElseReturnName(taskType),
     rfid: getRfidAsNumber(task.employeeRfid),
     timestamp: getUnixTimestamp(task.date),
     token: task.highLevelApiKey,
     details: `neocheckin ${new Date().toISOString()}`,
   }
+}
+
+const checkIfGaaturElseReturnName = (taskType: TaskType) => {
+  const scheduleGaaturId = 7;
+  taskType.id === scheduleGaaturId ? 'gåtur' : taskType.name;
 }
 
 const checkResponse = async (response: Instrukdb.StatusRes, task: Task, logger?: Logger) => {
