@@ -26,9 +26,9 @@ const makeRequest = (task: Task, taskType: TaskType): Instrukdb.PostCheckinReque
   }
 }
 
-const checkIfGaaturElseReturnName = (taskType: TaskType) => {
+const checkIfGaaturElseReturnName = (taskType: TaskType): string => {
   const scheduleGaaturId = 7;
-  taskType.id === scheduleGaaturId ? 'gåtur' : taskType.name;
+  return taskType.id === scheduleGaaturId ? 'gåtur' : taskType.name;
 }
 
 const checkResponse = async (response: Instrukdb.StatusRes, task: Task, logger?: Logger) => {
