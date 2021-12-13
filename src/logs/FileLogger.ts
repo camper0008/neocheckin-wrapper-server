@@ -1,8 +1,9 @@
 import { writeFile } from "fs/promises";
+import { Instrukdb } from "../instrukdb/Instrukdb";
 import { Task } from "../models/Task";
 import { AddTaskRequest } from "../tasks/addTasks";
 import { formatFileFriendly } from "../utils/timedate";
-import { formatTaskRequest } from "./formatLogs";
+import { formatTask, formatTaskRequest } from "./formatLogs";
 import { Logger } from "./Logger";
 import { LogItem, LogStatus } from "./LogItem";
 
@@ -34,17 +35,17 @@ export class FileLogger implements Logger {
 
 
   
-  private async logRunTask(task: Task, status: LogStatus): Promise<void> {
-    const item = new LogItem('run task', status, formatTaskRequest(task, status));
+  private async logRunTask(task: Task, status: LogStatus, response: Instrukdb.StatusRes): Promise<void> {
+    const item = new LogItem('run task', status, formatTask(task, response, status));
     return await this.write(item);
   }
 
-  public async logRunTaskSuccess(task: Task): Promise<void> {
-    return this.logRunTask(task, LogStatus.success);
+  public async logRunTaskSuccess(task: Task, response: Instrukdb.StatusRes): Promise<void> {
+    return this.logRunTask(task, LogStatus.success, response);
   }
 
-  public async logRunTaskError(task: Task): Promise<void> {
-    return this.logRunTask(task, LogStatus.error);
+  public async logRunTaskError(task: Task, response: Instrukdb.StatusRes): Promise<void> {
+    return this.logRunTask(task, LogStatus.error, response);
   }
 
   private async save(): Promise<void> {
