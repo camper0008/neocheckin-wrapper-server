@@ -137,5 +137,17 @@ describe('addTask', () => {
     expect(logs[0].getMessage().indexOf(mockTask.systemIdentifier.toString())).not.toEqual(-1);
   });
 
+  it('should error when no highLevelApiKey is given', async () => {
+    expect.assertions(2)
+    const db = new MockMemoryDB();
+    try {
+      await addTask({...mockTask, highLevelApiKey: ''}, db);
+    } catch(catched: unknown) {
+      const error = catched as Error;
+      expect(error).toBeInstanceOf(Error);
+      expect(error.message).toMatch('no highLevelApiKey')
+    }
+  })
+
 });
 

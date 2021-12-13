@@ -15,6 +15,7 @@ export interface AddTaskRequest {
 
 export const addTask = async (request: AddTaskRequest, db: Database, logger?: Logger): Promise<Task> => {
   checkTaskName(request, logger);
+  checkHighLevelApiKey(request, logger);
   const {id, date} = await getTaskDetails(request, db);
   const task = makeTask(request, id, date);
   const insert = await db.insertTask(task);
@@ -35,6 +36,13 @@ const invalidTaskName = (name: string) => {
 const failTaskNameEmpty = (request: AddTaskRequest, logger?: Logger) => {
   logger?.logAddTaskError(request);
   throw new Error('name empty');
+}
+
+const checkHighLevelApiKey = (request: AddTaskRequest, logger?: Logger) => {
+  if (!request.highLevelApiKey) {
+    logger?.logAddTaskError(request);
+    throw new Error('no highLevelApiKey');
+  }
 }
 
 const getTaskDetails = async (request: AddTaskRequest, db: Database) => {
