@@ -23,5 +23,20 @@ export const getAllEmployees = async (db: Database, idb: Instrukdb.API): Promise
   }));
   const employeeImageUpdates = employees.map(async ({id}, i) => (employees[i].photo = await getEmployeeImageBase64(id, idb)));
   await Promise.all(employeeImageUpdates);
+  addDevelopmentUser(employees);
   return employees as (Employee & {photo: string})[];
+}
+
+const addDevelopmentUser = (employees: (Employee & {photo: string | null;})[]) => {
+  const soelberg = 407;
+  const photo = employees.find(employee => employee.id === soelberg)?.photo ?? '';
+  employees.push({
+    name: 'Test Bruger',
+    department: 'EUX',
+    flex: 3600,
+    id: 10000,
+    photo,
+    rfid: '1234567890',
+    working: false
+  });
 }

@@ -10,6 +10,9 @@ export const runTask = async (task: Task, db: Database, idb: Instrukdb.API, logg
   const taskType = await validTaskType(task, db);
 
   const request = makeRequest(task, taskType);
+
+  if (isDevelopmentUser(task)) return undefined;
+
   const response = await idb.postCheckin(request);
 
   await checkResponse(response, task, logger);
@@ -62,3 +65,6 @@ const validTaskType = async (task: Task, db: Database) => {
   }
 }
 
+const isDevelopmentUser = (task: Task) => {
+  return task.employeeRfid === '1234567890';
+}
