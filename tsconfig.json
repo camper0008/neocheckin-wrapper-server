@@ -15,6 +15,6 @@
     "incremental": true,
     "skipDefaultLibCheck": true
   },
-  "include": ["./src/**/*", "archive/src/tasks/TaskRunner.ts"],
+  "include": ["./src/**/*"],
   "exclude": ["./archive/"]
 }

@@ -1,0 +1,11 @@
+{
+  "verbose": true,
+  "ignore": [
+      "*.test.*",
+      "*.spec.*",
+      "node_modules/*",
+      "dist/*",
+      "public/*",
+      "coverage/*"
+  ]
+}
