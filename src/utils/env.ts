@@ -53,3 +53,10 @@ export const getApiToken = () => {
     throw new Error(`Could not find 'API_TOKEN' variable in '.env'`)
   return apiKey;
 }
+
+export const getInstrukdbUrl = () => {
+  const apiKey = process.env.INSTRUKDB_URL!;
+  if (typeof apiKey !== 'string')
+    throw new Error(`Could not find 'INSTRUKDB_URL' variable in '.env'`)
+  return apiKey;
+}
