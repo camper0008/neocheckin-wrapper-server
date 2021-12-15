@@ -8,10 +8,10 @@ import axios, { AxiosRequestConfig, AxiosResponse } from "axios";
 export class InstrukdbClient implements Instrukdb.API {
   
   private lowLevelApiKey: string;
-  // private readonly hostname = 'https://instrukdb';
-  private readonly hostname = 'http://192.168.112.117:80';
+  private hostname: string
 
-  public constructor (lowLevelApiKey: string) {
+  public constructor (hostname: string, lowLevelApiKey: string) {
+    this.hostname = hostname;
     this.lowLevelApiKey = lowLevelApiKey;
   }
 
@@ -36,6 +36,7 @@ export class InstrukdbClient implements Instrukdb.API {
       this.hostname + '/api/employee/all.php',
       {token: this.lowLevelApiKey}
     );
+    console.log(res.data)
     return res.data;
   }
 
