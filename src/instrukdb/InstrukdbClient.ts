@@ -56,9 +56,9 @@ export class InstrukdbClient implements Instrukdb.API {
       type Res = Instrukdb.StatusRes;
       type Opt = AxiosRequestConfig<Res>;
       const res = await axios.post<Res, Opt, Req>(
-        this.hostname + '/api/employee/checkin.php',
+        this.hostname + '/api/employee/checkin.php?token=' + request.token,
         request,
-        config
+	{...config, headers: {"token": request.token}}
       );
       this.logPostCheckinRequest(request, res.data!);
       if (res.data === undefined)

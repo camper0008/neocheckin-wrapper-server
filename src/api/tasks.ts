@@ -36,7 +36,7 @@ export interface PostAddReq {
   timestamp: string,
 }
 
-export const postAddHandle: Handle<PostAddReq> = (db, idb, logger) => 
+export const postAddHandle: Handle<PostAddReq, any> = (db, idb, logger) => 
 async (req, res) => {
   try {
     const {
@@ -59,7 +59,7 @@ async (req, res) => {
     await runTask(result, db, idb, logger);
     return res.status(200).json({data: result});
   } catch (catched) {
-    res.status(500).json({error: 'server error'});
+    res.status(500).json({error: 'server error', errormsg: catched});
     console.error(catched);
   }
 }
