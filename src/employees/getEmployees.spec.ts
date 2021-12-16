@@ -1,7 +1,8 @@
 import { readFile } from "fs/promises";
 import { MemoryDB } from "../database/MemoryDB";
+import {MockMemoryDB} from "../database/MockMemoryDB";
 import { MockInstrukdb } from "../instrukdb/MockInstrukdb";
-import { getAllEmployees, getEmployeeImageBase64 } from "./getEmployees";
+import { getAllEmployees, getAllEmployeesWithImages, getEmployeeImageBase64 } from "./getEmployees";
 
 
 describe('getEmployeeImageBase64', () => {
@@ -16,18 +17,24 @@ describe('getEmployeeImageBase64', () => {
 });
 
 describe('getAllEmployees', () => {
-
+  it('should not error', async () => {
+    const db = new MockMemoryDB();
+    const idb = new MockInstrukdb();
+    await getAllEmployees(db, idb);
+  });
   it('should call idb.getAllEmployees once', async () => {
     const db = new MemoryDB();
     const idb = new MockInstrukdb();
-    await getAllEmployees(db, idb);
+    await getAllEmployeesWithImages(db, idb);
     expect(idb.getAllEmployeesCalls).toBe(1);
   });
+});
 
+describe('getAllEmployeesWithImages', () => {
   it('should give employees photos', async () => {
     const db = new MemoryDB();
     const idb = new MockInstrukdb();
-    const employees = await getAllEmployees(db, idb);
+    const employees = await getAllEmployeesWithImages(db, idb);
     expect(employees[0].photo).not.toBe(null);
   });
 

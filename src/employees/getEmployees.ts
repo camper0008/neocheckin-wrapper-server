@@ -10,17 +10,22 @@ export const getEmployeeImageBase64 = async (id: number, idb: Instrukdb.API) => 
   return base64;
 }
 
-export const getAllEmployees = async (db: Database, idb: Instrukdb.API): Promise<(Employee & {photo: string})[]> => {
+export const getAllEmployees = async (db: Database, idb: Instrukdb.API): Promise<Employee[]> => {
   const idbEmployees = await idb.getAllEmployees();
-  const employees = idbEmployees.map<(Employee & {photo: string | null})>((e) => ({
+  const employees = idbEmployees.map<Employee>((e) => ({
     id:         e.id,
     name:       e.name,
     working:    e.checkedIn,
     flex:       e.flex,
     department: e.location,
-    rfid:       padRfid(e.rfid),
-    photo:      null
+    rfid:       padRfid(e.rfid)
   }));
+  return employees;
+}
+
+export const getAllEmployeesWithImages = async (db: Database, idb: Instrukdb.API): Promise<(Employee & {photo: string})[]> => {
+  const employeesWithoutImage = await getAllEmployees(db, idb);
+  const employees = employeesWithoutImage.map<(Employee & {photo: string | null})>((e) => ({...e, photo: null}));
   const employeeImageUpdates = employees.map(async ({id}, i) => (employees[i].photo = await getEmployeeImageBase64(id, idb)));
   await Promise.all(employeeImageUpdates);
   addDevelopmentUser(employees);
