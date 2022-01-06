@@ -1,9 +1,9 @@
-
 /* Example .env file
 
 HTTP=8080
 HTTPS=8443
 
+INSTRUKDB_URL=https://wrapper/
 LOW_LEVEL_API_KEY=XXXXXXXX
 
 TOKEN=XXXXX
