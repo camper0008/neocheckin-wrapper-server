@@ -14,7 +14,8 @@ export interface GetTypesRes extends Respondable {
   error?: string,
 }
 
-export const getTypesHandle: Handle<undefined, GetTypesRes> = (db, idb) => async (req, res) => {
+export const getTypesHandle: Handle<undefined, GetTypesRes> = (db, idb) => 
+async (req, res) => {
   try {
     res.status(200).json({data: (await getTaskTypes(db, idb)).map(task => ({
       ...task,
