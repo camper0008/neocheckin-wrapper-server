@@ -224,38 +224,6 @@
         }
     },
     {
-        "id": 7,
-        "name": "Tjek ud til Gåtur",
-        "displayName": "Gåtur",
-        "description": "",
-        "exclusiveLocations": null,
-        "category": "check out",
-        "instrukdbCheckinId": 5,
-        "instrukdbCheckinName": "GT",
-        "priority": false,
-        "schedule": {
-            "from": {
-                "hour": 13,
-                "minute": 50,
-                "second": 0
-            },
-            "to": {
-                "hour": 14,
-                "minute": 5,
-                "second": 0
-            },
-            "days": {
-                "monday": false,
-                "tuesday": false,
-                "wednesday": false,
-                "thursday": true,
-                "friday": false,
-                "saturday": false,
-                "sunday": false
-            }
-        }
-    },
-    {
         "id": 8,
         "name": "Tjek Ud Efter Aftale",
         "displayName": "Efter Aftale",
