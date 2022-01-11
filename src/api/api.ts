@@ -1,6 +1,5 @@
 import cors from 'cors';
-import express, { json, NextFunction, Request, Response, Router, urlencoded } from 'express';
-import { join } from 'path';
+import express, { json, Router, urlencoded } from 'express';
 import { Database } from '../database/Database';
 import { Instrukdb } from '../instrukdb/Instrukdb';
 import { Logger } from '../logs/Logger';
@@ -9,14 +8,7 @@ import { employeesRoutes } from './employees';
 import { jsonError } from './jsonError';
 import { serveHttp, serveHttps } from './servers';
 import { tasksRoutes } from './tasks';
-
-export const apiTokenAuth = (apiToken: string) => async (req: Request, res: Response, next: NextFunction) => {
-  const token = (req.headers['token'] || req.query['token'] || req.body['token']) as string;
-  if (token === apiToken)
-    next();
-  else
-    res.status(400).json({error: 'access denied'})
-}
+import { tokenAuth } from './tokenAuth';
 
 export const api = async (db: Database, idb: Instrukdb.API, logger: Logger) => {
   const app = express();
@@ -24,7 +16,7 @@ export const api = async (db: Database, idb: Instrukdb.API, logger: Logger) => {
   app.use(cors());
   app.use(json());
   app.use(urlencoded({extended: true}));
-  app.use(apiTokenAuth(getApiToken()));
+  app.use(tokenAuth(getApiToken()));
   app.use(jsonError());
 
   app.use('/api/tasks', tasksRoutes(Router(), db, idb, logger));
