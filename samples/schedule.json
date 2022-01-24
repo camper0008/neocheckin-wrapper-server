@@ -8,6 +8,7 @@
         "category": "check in",
         "instrukdbCheckinId": null,
         "instrukdbCheckinName": "day",
+        "instrukdbIdentifier": null,
         "priority": true,
         "schedule": {
             "from": {
@@ -40,6 +41,7 @@
         "category": "check out",
         "instrukdbCheckinId": null,
         "instrukdbCheckinName": "day",
+        "instrukdbIdentifier": null,
         "priority": true,
         "schedule": {
             "from": {
@@ -72,6 +74,7 @@
         "category": "check out",
         "instrukdbCheckinId": null,
         "instrukdbCheckinName": "dayFriday",
+        "instrukdbIdentifier": null,
         "priority": true,
         "schedule": {
             "from": {
@@ -104,6 +107,7 @@
         "category": "check out",
         "instrukdbCheckinId": 1,
         "instrukdbCheckinName": "BiHeVi",
+        "instrukdbIdentifier": "bibliotek-helpdesk viborg",
         "priority": false,
         "schedule": {
             "from": {
@@ -136,6 +140,7 @@
         "category": "check out",
         "instrukdbCheckinId": 2,
         "instrukdbCheckinName": "BiHeKa",
+        "instrukdbIdentifier": "bibliotek-helpdesk karup",
         "priority": false,
         "schedule": {
             "from": {
@@ -168,6 +173,7 @@
         "category": "check out",
         "instrukdbCheckinId": 3,
         "instrukdbCheckinName": "BiHeBj",
+        "instrukdbIdentifier": "bibliotek-helpdesk bjerringbro",
         "priority": false,
         "schedule": {
             "from": {
@@ -200,6 +206,7 @@
         "category": "check out",
         "instrukdbCheckinId": 4,
         "instrukdbCheckinName": "BiTL",
+        "instrukdbIdentifier": "testlab",
         "priority": false,
         "schedule": {
             "from": {
@@ -232,6 +239,7 @@
         "category": "check out",
         "instrukdbCheckinId": 6,
         "instrukdbCheckinName": "EA",
+        "instrukdbIdentifier": "efter aftale",
         "priority": false,
         "schedule": {
             "from": {
@@ -264,6 +272,7 @@
         "category": "check out",
         "instrukdbCheckinId": 7,
         "instrukdbCheckinName": "HV",
+        "instrukdbIdentifier": "handi vagt",
         "schedule": {
             "from": {
                 "hour": 14,
@@ -295,6 +304,7 @@
         "category": "check out",
         "instrukdbCheckinId": 8,
         "instrukdbCheckinName": "HC",
+        "instrukdbIdentifier": "Hacker klub",
         "schedule": {
             "from": {
                 "hour": 13,
@@ -326,6 +336,7 @@
         "category": "check in",
         "instrukdbCheckinId": null,
         "instrukdbCheckinName": null,
+        "instrukdbIdentifier": null,
         "schedule": {
             "from": {
                 "hour": 9,

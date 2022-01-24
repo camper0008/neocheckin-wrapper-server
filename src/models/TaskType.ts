@@ -34,6 +34,7 @@ export interface TaskType {
   priority: boolean,
   instrukdbCheckinId: number | null,
   instrukdbCheckinName: string,
+  instrukdbIdentifier: string | null,
   exclusiveLocations: string[] | null,
   category: 'check in' | 'check out',
   schedule: Schedule,

@@ -136,4 +136,12 @@ describe('runTask', () => {
     }
   });
 
+  it('should check with "bibliotek-helpdesk viborg" as instrukdbIdentifier', async () => {
+    const [db, idb, logger] = [new MockMemoryDB(), new MockInstrukdb(), new TestLogger()];
+    await synchronizeTaskTypesWithSample(db);
+    const task = {...getMockTask(), taskTypeId: 3} as Task;
+    await runTask(task, db, idb, logger);
+    expect(idb.postCheckinLastCall?.option).toBe('bibliotek-helpdesk viborg');
+  });
+
 });
