@@ -264,38 +264,6 @@
         }
     },
     {
-        "id": 9,
-        "name": "Handi Vagt",
-        "displayName": "Handi Vagt",
-        "description": "",
-        "exclusiveLocations": null,
-        "category": "check out",
-        "instrukdbCheckinId": 7,
-        "instrukdbCheckinName": "HV",
-        "instrukdbIdentifier": "handi vagt",
-        "schedule": {
-            "from": {
-                "hour": 14,
-                "minute": 0,
-                "second": 0
-            },
-            "to": {
-                "hour": 15,
-                "minute": 0,
-                "second": 0
-            },
-            "days": {
-                "monday": false,
-                "tuesday": true,
-                "wednesday": false,
-                "thursday": false,
-                "friday": false,
-                "saturday": false,
-                "sunday": false
-            }
-        }
-    },
-    {
         "id": 10,
         "name": "Hacking Klub",
         "displayName": "Hacking Klub",
