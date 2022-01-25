@@ -123,7 +123,6 @@ const mockTaskType: TaskType = {
   priority: false,
   instrukdbCheckinId: 0,
   instrukdbCheckinName: '1',
-  instrukdbIdentifier: null,
   category: 'check out',
   exclusiveLocations: null,
   schedule: {
