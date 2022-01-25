@@ -1,3 +1,4 @@
+import { Employee } from "../models/Employee";
 import { LoggedError } from "../models/LoggedError";
 import { AltRfid } from "../models/Rfid";
 import { Task, TaskStatus } from "../models/Task";
@@ -10,6 +11,7 @@ export class MemoryDB extends Database {
   private tasks: Task[] = [];
   private taskTypes: TaskType[] = [];
   private rfids: AltRfid[] = [];
+  private employees: Employee[] = [];
   private errors: LoggedError[] = [];
 
   public constructor () {
@@ -104,7 +106,32 @@ export class MemoryDB extends Database {
     return rfid;
   }
 
+  public async checkEmployee(id: number): Promise<boolean> {
+    return this.employees.find(e => e.id === id) !== undefined;
+  }
 
+  public async getEmployee(id: number): Promise<Employee> {
+    for (const v of this.employees)
+      if (v.id === id)
+        return v;
+    throw new Error("not found");
+  }
+
+  public async insertEmployee(employee: Employee): Promise<Employee> {
+      for (const v of this.employees)
+        if (v.id === employee.id)
+          throw new Error('id must be unique');
+      this.employees.push(employee);
+      return employee;
+  }
+
+  public async updateEmployee(id: number, update: Partial<Omit<Employee, 'id'>>): Promise<Employee> {
+    const employee = await this.getEmployee(id);
+    for (const i in update)
+      if (update[i] !== undefined)
+        employee[i] = update[i];
+    return employee;
+  }
 
   public async getErrorCount(): Promise<number> {
     return this.errors.length;

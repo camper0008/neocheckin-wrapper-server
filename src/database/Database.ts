@@ -2,6 +2,7 @@ import { LoggedError } from "../models/LoggedError";
 import { AltRfid } from "../models/Rfid";
 import { Task, TaskStatus } from "../models/Task";
 import { TaskType } from "../models/TaskType";
+import { Employee } from "../models/Employee";
 
 export abstract class Database {
 
@@ -22,6 +23,11 @@ export abstract class Database {
   public abstract getAltRfidByEmployeeId(employeeId: number): Promise<AltRfid>;
   public abstract getAltRfidByRfid(rfid: string): Promise<AltRfid>;
   public abstract insertAltRfid(rfid: AltRfid): Promise<AltRfid>;
+
+  public abstract checkEmployee(id: number): Promise<boolean>;
+  public abstract getEmployee(id: number): Promise<Employee>;
+  public abstract insertEmployee(employee: Employee): Promise<Employee>;
+  public abstract updateEmployee(id: number, update: Partial<Omit<Employee, 'id'>>): Promise<Employee>;
 
   public abstract getErrorCount(): Promise<number>;
   public abstract getErrors(): Promise<LoggedError[]>;

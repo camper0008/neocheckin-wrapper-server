@@ -1,3 +1,4 @@
+import { Employee } from "../models/Employee";
 import { LoggedError } from "../models/LoggedError";
 import { Task, TaskStatus } from "../models/Task";
 import { Schedule, TaskType } from "../models/TaskType";
@@ -240,6 +241,86 @@ describe('Rfid', () => {
       const error = catched as Error;
       expect(error).toEqual(new Error('id must be unique')); 
     }
+  });
+
+});
+
+describe('Employee', () => {
+
+  const getMockEmployee = (): Employee => ({
+    id: 1,
+    department: 'test',
+    flex: 7,
+    name: 'hello world',
+    rfid: 'foobar',
+    working: false,
+  })
+
+  it('should store the employee', async () => {
+    const db = new MemoryDB();
+    const mockEmployee = getMockEmployee()
+    await db.insertEmployee(mockEmployee);
+    expect(await db.getEmployee(mockEmployee.id)).toEqual(mockEmployee);
+  });
+  
+  it('should throw "id must be unique"', async () => {
+    expect.assertions(1);
+    const db = new MemoryDB();
+    const mockEmployee = getMockEmployee()
+    await db.insertEmployee(mockEmployee);
+    try {
+      await db.insertEmployee(mockEmployee);
+    } catch (catched) {
+      const error = catched as Error;
+      expect(error.message).toBe('id must be unique');
+    }
+  });
+
+  it('should throw "not found"', async () => {
+    expect.assertions(1);
+    const db = new MemoryDB();
+    const mockEmployee = getMockEmployee()
+    await db.insertEmployee(mockEmployee);
+    try {
+      await db.getEmployee(mockEmployee.id + 1);
+    } catch (catched) {
+      const error = catched as Error;
+      expect(error.message).toBe('not found');
+    }
+  });
+
+  it('should update fields', async () => {
+    const db = new MemoryDB();
+    const mockEmployee = getMockEmployee();
+    await db.insertEmployee(mockEmployee);
+    await db.updateEmployee(mockEmployee.id, {name: 'Lacruix'});
+    expect((await db.getEmployee(mockEmployee.id)).name).toBe('Lacruix')
+  });
+
+  it('should throw "not found"', async () => {
+    expect.assertions(1);
+    const db = new MemoryDB();
+    const mockEmployee = getMockEmployee()
+    await db.insertEmployee(mockEmployee);
+    try {
+      await db.updateEmployee(mockEmployee.id + 1, {});
+    } catch (catched) {
+      const error = catched as Error;
+      expect(error.message).toBe('not found');
+    }
+  });
+  
+  it('should return false', async () => {
+    const db = new MemoryDB();
+    const mockEmployee = getMockEmployee();
+    expect(await db.checkEmployee(mockEmployee.id)).toBe(false);
+  });
+
+  it('should return true', async () => {
+    const db = new MemoryDB();
+    const mockEmployee = getMockEmployee();
+    await db.insertEmployee(mockEmployee);
+    expect(await db.checkEmployee(mockEmployee.id)).toBe(true);
   });
 
 });
