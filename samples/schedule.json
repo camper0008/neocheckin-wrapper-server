@@ -7,8 +7,7 @@
         "exclusiveLocations": null,
         "category": "check in",
         "instrukdbCheckinId": null,
-        "instrukdbCheckinName": "day",
-        "instrukdbIdentifier": null,
+        "instrukdbCheckinName": null,
         "priority": true,
         "schedule": {
             "from": {
@@ -40,8 +39,7 @@
         "exclusiveLocations": null,
         "category": "check out",
         "instrukdbCheckinId": null,
-        "instrukdbCheckinName": "day",
-        "instrukdbIdentifier": null,
+        "instrukdbCheckinName": null,
         "priority": true,
         "schedule": {
             "from": {
@@ -73,8 +71,7 @@
         "exclusiveLocations": null,
         "category": "check out",
         "instrukdbCheckinId": null,
-        "instrukdbCheckinName": "dayFriday",
-        "instrukdbIdentifier": null,
+        "instrukdbCheckinName": null,
         "priority": true,
         "schedule": {
             "from": {
@@ -106,8 +103,7 @@
         "exclusiveLocations": null,
         "category": "check out",
         "instrukdbCheckinId": 1,
-        "instrukdbCheckinName": "BiHeVi",
-        "instrukdbIdentifier": "bibliotek-helpdesk viborg",
+        "instrukdbCheckinName": "bibliotek-helpdesk viborg",
         "priority": false,
         "schedule": {
             "from": {
@@ -139,8 +135,7 @@
         "exclusiveLocations": null,
         "category": "check out",
         "instrukdbCheckinId": 2,
-        "instrukdbCheckinName": "BiHeKa",
-        "instrukdbIdentifier": "bibliotek-helpdesk karup",
+        "instrukdbCheckinName": "bibliotek-helpdesk karup",
         "priority": false,
         "schedule": {
             "from": {
@@ -172,8 +167,7 @@
         "exclusiveLocations": null,
         "category": "check out",
         "instrukdbCheckinId": 3,
-        "instrukdbCheckinName": "BiHeBj",
-        "instrukdbIdentifier": "bibliotek-helpdesk bjerringbro",
+        "instrukdbCheckinName": "bibliotek-helpdesk bjerringbro",
         "priority": false,
         "schedule": {
             "from": {
@@ -205,8 +199,7 @@
         "exclusiveLocations": null,
         "category": "check out",
         "instrukdbCheckinId": 4,
-        "instrukdbCheckinName": "BiTL",
-        "instrukdbIdentifier": "testlab",
+        "instrukdbCheckinName": "testlab",
         "priority": false,
         "schedule": {
             "from": {
@@ -238,8 +231,7 @@
         "exclusiveLocations": null,
         "category": "check out",
         "instrukdbCheckinId": 6,
-        "instrukdbCheckinName": "EA",
-        "instrukdbIdentifier": "efter aftale",
+        "instrukdbCheckinName": "efter aftale",
         "priority": false,
         "schedule": {
             "from": {
@@ -271,8 +263,7 @@
         "exclusiveLocations": null,
         "category": "check out",
         "instrukdbCheckinId": 8,
-        "instrukdbCheckinName": "HC",
-        "instrukdbIdentifier": "Hacker klub",
+        "instrukdbCheckinName": "Hacker klub",
         "schedule": {
             "from": {
                 "hour": 13,
@@ -304,7 +295,6 @@
         "category": "check in",
         "instrukdbCheckinId": null,
         "instrukdbCheckinName": null,
-        "instrukdbIdentifier": null,
         "schedule": {
             "from": {
                 "hour": 9,

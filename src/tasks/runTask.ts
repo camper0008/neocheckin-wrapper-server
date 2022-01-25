@@ -21,7 +21,7 @@ export const runTask = async (task: Task, db: Database, idb: Instrukdb.API, logg
 const makeRequest = (task: Task, taskType: TaskType): Instrukdb.PostCheckinRequest => {
   return {
     ip: task.systemIp,
-    option: taskType.instrukdbIdentifier ?? taskType.name,
+    option: taskType.instrukdbCheckinName ?? taskType.name,
     rfid: getRfidAsNumber(task.employeeRfid),
     timestamp: getUnixTimestamp(task.date),
     token: task.highLevelApiKey,
