@@ -3,7 +3,7 @@ import { Database } from "../database/Database";
 import { Instrukdb } from "../instrukdb/Instrukdb";
 import { TaskType } from "../models/TaskType";
 
-export const synchronizeTaskTypesWithSample = async (db: Database, idb?: Instrukdb.API) => {
+export const syncTaskTypesWithSample = async (db: Database, idb?: Instrukdb.API) => {
   const text = (await readFile('./samples/schedule.json')).toString();
   const schedule: TaskType[] = JSON.parse(text);
   await db.replaceTaskTypes(schedule);

@@ -1,21 +1,21 @@
 import { readFile } from "fs/promises";
 import { MockMemoryDB } from "../database/MockMemoryDB";
 import { MockInstrukdb } from "../instrukdb/MockInstrukdb";
-import { getTaskTypes, synchronizeTaskTypesWithSample } from "./taskTypes";
+import { getTaskTypes, syncTaskTypesWithSample } from "./taskTypes";
 
 describe('synchronizeTaskTypesWithSample', () => {
 
   it('should call db.replaceTaskTypes once', async () => {
     const db = new MockMemoryDB();
     const idb = new MockInstrukdb();
-    await synchronizeTaskTypesWithSample(db, idb);
+    await syncTaskTypesWithSample(db, idb);
     expect(db.replaceTaskTypesCalls).toBe(1);
   });
 
   it('should change tasktypes in db', async () => {
     const db = new MockMemoryDB();
     const idb = new MockInstrukdb();
-    await synchronizeTaskTypesWithSample(db, idb);
+    await syncTaskTypesWithSample(db, idb);
     expect(await db.getTaskTypes()).toEqual(JSON.parse((await readFile('./samples/schedule.json')).toString()));
   });
 

@@ -3,7 +3,7 @@ import { MockInstrukdb } from "../instrukdb/MockInstrukdb";
 import { TestLogger } from "../logs/TestLogger";
 import { Task, TaskStatus } from "../models/Task";
 import { runTask } from "./runTask";
-import { synchronizeTaskTypesWithSample } from "./taskTypes";
+import { syncTaskTypesWithSample } from "./taskTypes";
 
 const getMockTask = (id: number = 0, status: TaskStatus = TaskStatus.WAITING): Task => ({
   id,
@@ -32,7 +32,7 @@ describe('runTask', () => {
 
   it('should use valid task type id', async () => {
     const [db, idb] = [new MockMemoryDB(), new MockInstrukdb()];
-    await synchronizeTaskTypesWithSample(db);
+    await syncTaskTypesWithSample(db);
     const task: Task = {...getMockTask(), taskTypeId: 5};
     try {
       await runTask(task, db, idb)
@@ -43,7 +43,7 @@ describe('runTask', () => {
 
   it('should call postCheckin', async () => {
     const [db, idb] = [new MockMemoryDB(), new MockInstrukdb()];
-    await synchronizeTaskTypesWithSample(db);
+    await syncTaskTypesWithSample(db);
     const task: Task = {...getMockTask()};
     await runTask(task, db, idb);
     expect(idb.postCheckinCalls).toBe(1);
@@ -51,7 +51,7 @@ describe('runTask', () => {
 
   it('should call with the token', async () => {
     const [db, idb] = [new MockMemoryDB(), new MockInstrukdb()];
-    await synchronizeTaskTypesWithSample(db);
+    await syncTaskTypesWithSample(db);
     const task: Task = {...getMockTask()};
     await runTask(task, db, idb);
     expect(idb.postCheckinLastCall?.token).toBe(task.highLevelApiKey);
@@ -59,7 +59,7 @@ describe('runTask', () => {
 
   it('should call with the timestamp', async () => {
     const [db, idb] = [new MockMemoryDB(), new MockInstrukdb()];
-    await synchronizeTaskTypesWithSample(db);
+    await syncTaskTypesWithSample(db);
     const task: Task = {...getMockTask()};
     await runTask(task, db, idb);
     expect(idb.postCheckinLastCall?.timestamp).toBe(Math.floor(task.date.getTime() / 1000));
@@ -67,7 +67,7 @@ describe('runTask', () => {
 
   it('should call with the rfid as a number', async () => {
     const [db, idb] = [new MockMemoryDB(), new MockInstrukdb()];
-    await synchronizeTaskTypesWithSample(db);
+    await syncTaskTypesWithSample(db);
     const task: Task = {...getMockTask()};
     await runTask(task, db, idb);
     expect(idb.postCheckinLastCall?.rfid).toBe(parseInt(task.employeeRfid));
@@ -75,7 +75,7 @@ describe('runTask', () => {
 
   it('should call with the downstream ip', async () => {
     const [db, idb] = [new MockMemoryDB(), new MockInstrukdb()];
-    await synchronizeTaskTypesWithSample(db);
+    await syncTaskTypesWithSample(db);
     const task: Task = {...getMockTask()};
     await runTask(task, db, idb);
     expect(idb.postCheckinLastCall?.ip).toBe(task.systemIp);
@@ -84,7 +84,7 @@ describe('runTask', () => {
   it('should set status to failed', async () => {
     expect.assertions(1);
     const [db, idb] = [new MockMemoryDB(), new MockInstrukdb()];
-    await synchronizeTaskTypesWithSample(db);
+    await syncTaskTypesWithSample(db);
     const task: Task = {...getMockTask()};
     idb.connected = false;
     try {
@@ -96,7 +96,7 @@ describe('runTask', () => {
 
   it('should use task type option', async () => {
     const [db, idb] = [new MockMemoryDB(), new MockInstrukdb()];
-    await synchronizeTaskTypesWithSample(db);
+    await syncTaskTypesWithSample(db);
     const task: Task = {...getMockTask(), taskTypeId: 2};
     const taskType = await db.getTaskType(task.taskTypeId);
     await runTask(task, db, idb);
@@ -105,7 +105,7 @@ describe('runTask', () => {
 
   it('should send details', async () => {
     const [db, idb] = [new MockMemoryDB(), new MockInstrukdb()];
-    await synchronizeTaskTypesWithSample(db);
+    await syncTaskTypesWithSample(db);
     const task: Task = {...getMockTask()};
     await runTask(task, db, idb);
     const isoDateRegex = '\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:\.\d*)?-\d{2}:\d{2}|Z?';
@@ -115,7 +115,7 @@ describe('runTask', () => {
 
   it('should log success', async () => {
     const [db, idb, logger] = [new MockMemoryDB(), new MockInstrukdb(), new TestLogger()];
-    await synchronizeTaskTypesWithSample(db);
+    await syncTaskTypesWithSample(db);
     const task: Task = {...getMockTask()};
     await runTask(task, db, idb, logger);
     expect(logger.logRunTaskSuccessCalls).toBe(1);
@@ -125,7 +125,7 @@ describe('runTask', () => {
   it('should log true', async () => {
     expect.assertions(2);
     const [db, idb, logger] = [new MockMemoryDB(), new MockInstrukdb(), new TestLogger()];
-    await synchronizeTaskTypesWithSample(db);
+    await syncTaskTypesWithSample(db);
     const task: Task = {...getMockTask()};
     idb.connected = false;
     try {
@@ -138,7 +138,7 @@ describe('runTask', () => {
 
   it('should check with "bibliotek-helpdesk viborg" as instrukdbIdentifier', async () => {
     const [db, idb, logger] = [new MockMemoryDB(), new MockInstrukdb(), new TestLogger()];
-    await synchronizeTaskTypesWithSample(db);
+    await syncTaskTypesWithSample(db);
     const task = {...getMockTask(), taskTypeId: 3} as Task;
     await runTask(task, db, idb, logger);
     expect(idb.postCheckinLastCall?.option).toBe('bibliotek-helpdesk viborg');
