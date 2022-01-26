@@ -2,6 +2,7 @@ import { MockMemoryDB } from "../database/MockMemoryDB";
 import { MockInstrukdb } from "../instrukdb/MockInstrukdb";
 import { TestLogger } from "../logs/TestLogger";
 import { Task, TaskStatus } from "../models/Task";
+import { TaskType } from "../models/TaskType";
 import { runTask } from "./runTask";
 import { syncTaskTypesWithSample } from "./taskTypes";
 
@@ -143,5 +144,31 @@ describe('runTask', () => {
     await runTask(task, db, idb, logger);
     expect(idb.postCheckinLastCall?.option).toBe('bibliotek-helpdesk viborg');
   });
+
+  it('should return undefined when given a development user', async () => {
+    const [db, idb, logger] = [new MockMemoryDB(), new MockInstrukdb(), new TestLogger()];
+    await syncTaskTypesWithSample(db);
+    const task = {...getMockTask(), employeeRfid: '1234567890'} as Task;
+    expect(await runTask(task, db, idb, logger)).toBe(undefined);
+  });
+
+  it('should throw c', async () => {
+    expect.assertions(1);
+    const [db, idb, logger] = [new MockMemoryDB(), new MockInstrukdb(), new TestLogger()];
+    await syncTaskTypesWithSample(db);
+    const task = {...getMockTask(), taskTypeId: -1} as Task;
+
+    class Ndb extends MockMemoryDB {
+      public getTaskType(id: number): Promise<TaskType> {
+          throw 'idk some garbage'
+      }
+    }
+
+    try {
+      await runTask(task, new Ndb, idb, logger);
+    } catch (c) {
+      expect(c).toBe('idk some garbage');
+    }
+  })
 
 });
