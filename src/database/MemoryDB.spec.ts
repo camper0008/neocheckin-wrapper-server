@@ -399,6 +399,22 @@ describe('ProfilePicture', () => {
     await db.insertProfilePicture(pp);
     expect(await db.checkProfilePictureByChecksum(pp.checksum)).toBe(true);
   });
+
+  it('should return false', async () => {
+    expect.assertions(1);
+    const db = new MemoryDB();
+    const pp: ProfilePicture = {id: 0, base64: 'abc', employeeId: 7, checksum: '123'};
+    await db.insertProfilePicture(pp);
+    expect(await db.checkProfilePictureByChecksum(pp.checksum, 8)).toBe(false);
+  });
+
+  it('should return true', async () => {
+    expect.assertions(1);
+    const db = new MemoryDB();
+    const pp: ProfilePicture = {id: 0, base64: 'abc', employeeId: 7, checksum: '123'};
+    await db.insertProfilePicture(pp);
+    expect(await db.checkProfilePictureByChecksum(pp.checksum, 7)).toBe(true);
+  });
 });
 
 describe('LoggedError', () => {

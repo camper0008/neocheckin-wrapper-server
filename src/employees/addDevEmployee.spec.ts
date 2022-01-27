@@ -14,4 +14,11 @@ it('should add "Test Bruger" to database', async () => {
     rfid: '1234567890',
     working: false
   })
+});
+
+it('should not add dev user twice', async () => {
+  const [db, idb, logger] = [new MockMemoryDB(), new MockInstrukdb(), new TestLogger()];
+  await addDevEmployee(db, idb, logger);
+  await addDevEmployee(db, idb, logger);
+  expect((await db.getEmployees()).length).toBe(1)
 })
