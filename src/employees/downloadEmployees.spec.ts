@@ -2,7 +2,7 @@ import { readFile } from "fs/promises";
 import { MemoryDB } from "../database/MemoryDB";
 import {MockMemoryDB} from "../database/MockMemoryDB";
 import { MockInstrukdb } from "../instrukdb/MockInstrukdb";
-import { downloadAllEmployees, downloadAllEmployeesWithImages, downloadEmployeeImageBase64 } from "./downloadEmployees";
+import { downloadEmployees, downloadEmployeesWithImages, downloadEmployeeImageBase64 } from "./downloadEmployees";
 
 
 describe('getEmployeeImageBase64', () => {
@@ -20,12 +20,12 @@ describe('getAllEmployees', () => {
   it('should not error', async () => {
     const db = new MockMemoryDB();
     const idb = new MockInstrukdb();
-    await downloadAllEmployees(db, idb);
+    await downloadEmployees(db, idb);
   });
   it('should call idb.getAllEmployees once', async () => {
     const db = new MemoryDB();
     const idb = new MockInstrukdb();
-    await downloadAllEmployeesWithImages(db, idb);
+    await downloadEmployeesWithImages(db, idb);
     expect(idb.getAllEmployeesCalls).toBe(1);
   });
 });
@@ -34,7 +34,7 @@ describe('getAllEmployeesWithImages', () => {
   it('should give employees photos', async () => {
     const db = new MemoryDB();
     const idb = new MockInstrukdb();
-    const employees = await downloadAllEmployeesWithImages(db, idb);
+    const employees = await downloadEmployeesWithImages(db, idb);
     expect(employees[0].photo).not.toBe(null);
   });
 

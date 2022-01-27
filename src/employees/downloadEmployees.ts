@@ -10,7 +10,7 @@ export const downloadEmployeeImageBase64 = async (id: number, idb: Instrukdb.API
   return base64;
 }
 
-export const downloadAllEmployees = async (db: Database, idb: Instrukdb.API): Promise<Employee[]> => {
+export const downloadEmployees = async (db: Database, idb: Instrukdb.API): Promise<Employee[]> => {
   const idbEmployees = await idb.getAllEmployees();
   const employees = idbEmployees.map<Employee>((e) => ({
     id:         e.id,
@@ -23,8 +23,8 @@ export const downloadAllEmployees = async (db: Database, idb: Instrukdb.API): Pr
   return employees;
 }
 
-export const downloadAllEmployeesWithImages = async (db: Database, idb: Instrukdb.API): Promise<(Employee & {photo: string})[]> => {
-  const employeesWithoutImage = await downloadAllEmployees(db, idb);
+export const downloadEmployeesWithImages = async (db: Database, idb: Instrukdb.API): Promise<(Employee & {photo: string})[]> => {
+  const employeesWithoutImage = await downloadEmployees(db, idb);
   const employees = employeesWithoutImage.map<(Employee & {photo: string | null})>((e) => ({...e, photo: null}));
   const employeeImageUpdates = employees.map(async ({id}, i) => (employees[i].photo = await downloadEmployeeImageBase64(id, idb)));
   await Promise.all(employeeImageUpdates);

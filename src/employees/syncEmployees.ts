@@ -2,10 +2,10 @@ import { Database } from "../database/Database";
 import { Instrukdb } from "../instrukdb/Instrukdb";
 import { Logger } from "../logs/Logger";
 import { Employee } from "../models/Employee";
-import { downloadAllEmployees } from "./downloadEmployees";
+import { downloadEmployees } from "./downloadEmployees";
 
 export const syncEmployees = async (db: Database, idb: Instrukdb.API, logger?: Logger): Promise<void> => {
-  const employees = await downloadAllEmployees(db, idb);
+  const employees = await downloadEmployees(db, idb);
   const existingInDbPromises = employees.map(e => existingInDbPromise(e, db));
   const existingInDb = await Promise.all(existingInDbPromises);
   for (const pair of existingInDb)
