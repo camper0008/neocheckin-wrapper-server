@@ -16,5 +16,4 @@
     "skipDefaultLibCheck": true
   },
   "include": ["./src/**/*"],
-  "exclude": ["./archive/"]
 }

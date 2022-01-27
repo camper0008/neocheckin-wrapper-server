@@ -8,7 +8,6 @@ module.exports = {
     }
   },
   testPathIgnorePatterns: [
-    'archive/',
     // 'src/',
     'dist/',
   ],
