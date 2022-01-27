@@ -36,7 +36,6 @@ export class InstrukdbClient implements Instrukdb.API {
       this.hostname + '/api/employee/all.php',
       {token: this.lowLevelApiKey}
     );
-    console.log(res.data)
     return res.data;
   }
 

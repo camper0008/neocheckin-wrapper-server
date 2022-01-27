@@ -145,9 +145,13 @@ export class MemoryDB extends Database {
     return employee;
   }
 
-  public async checkProfilePictureByChecksum(hash: Md5Hash): Promise<boolean> {
+  public async checkProfilePictureByChecksum(hash: Md5Hash, employeeId?: number): Promise<boolean> {
     for (const v of this.profilePictures)
-      if (v.checksum === hash)
+      if (employeeId !== undefined)
+        if (v.checksum === hash && v.employeeId === employeeId)
+          return true
+        else {}
+      else if (v.checksum === hash)
         return true;
     return false;
   }

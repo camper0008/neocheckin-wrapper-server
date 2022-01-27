@@ -6,3 +6,11 @@ import { Employee } from "../models/Employee";
 export const getEmployees = async (db: Database, idb: Instrukdb.API, logger?: Logger): Promise<Employee[]> => {
   return await db.getEmployees();
 }
+
+export const getEmployeesWithImages = async (db: Database, idb: Instrukdb.API, logger?: Logger): Promise<(Employee & {photo: string})[]> => {
+  const resolvers = (await db.getEmployees()).map(async (e) => ({
+    ...e,
+    photo: (await db.getProfilePictureByEmployeeId(e.id)).base64
+  }));
+  return await Promise.all(resolvers);
+}

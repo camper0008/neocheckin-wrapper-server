@@ -33,7 +33,7 @@ export abstract class Database {
   public abstract insertEmployee(employee: Employee): Promise<Employee>;
   public abstract updateEmployee(id: number, update: Partial<Omit<Employee, 'id'>>): Promise<Employee>;
 
-  public abstract checkProfilePictureByChecksum(hash: Md5Hash): Promise<boolean>;
+  public abstract checkProfilePictureByChecksum(hash: Md5Hash, employeeId?: number): Promise<boolean>;
   public abstract getProfilePictureByEmployeeId(id: number): Promise<ProfilePicture>;
   public abstract insertProfilePicture(profilePicture: ProfilePicture): Promise<ProfilePicture>;
 

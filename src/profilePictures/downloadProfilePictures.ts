@@ -14,7 +14,7 @@ export const downloadProfilePictures = async (db: Database, idb: Instrukdb.API, 
 }
 
 const getImagesWithIds = async (employees: Employee[], idb: Instrukdb.API): Promise<{id: number, image: BinaryString}[]> => {
-  const imageResolvers = employees.map(({id}) => async () => ({id, image: await idb.getEmployeeImage(id)}));
+  const imageResolvers = employees.map(({id}) => async () => ({id, image: await idb.getEmployeeImage(id === 10000 ? 407 : id)}));
   const imagesWithIdsPromises = imageResolvers.map(resolver => resolver());
   const imagesWithIds = await Promise.all(imagesWithIdsPromises);
   return imagesWithIds;
