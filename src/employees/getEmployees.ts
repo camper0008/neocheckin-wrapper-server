@@ -4,7 +4,7 @@ import { Logger } from "../logs/Logger";
 import { Employee } from "../models/Employee";
 
 export const getEmployees = async (db: Database, idb: Instrukdb.API, logger?: Logger): Promise<Employee[]> => {
-  return await db.getEmployees();
+  return (await db.getEmployees()).sort((a, b) => a.name.localeCompare(b.name));
 }
 
 export const getEmployeesWithImages = async (db: Database, idb: Instrukdb.API, logger?: Logger): Promise<(Employee & {photo: string})[]> => {
@@ -12,5 +12,5 @@ export const getEmployeesWithImages = async (db: Database, idb: Instrukdb.API, l
     ...e,
     photo: (await db.getProfilePictureByEmployeeId(e.id)).base64
   }));
-  return await Promise.all(resolvers);
+  return (await Promise.all(resolvers)).sort((a, b) => a.name.localeCompare(b.name));
 }
