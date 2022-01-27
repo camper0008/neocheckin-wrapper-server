@@ -1,5 +1,6 @@
 import { Employee } from "../models/Employee";
 import { LoggedError } from "../models/LoggedError";
+import { ProfilePicture } from "../models/ProfilePicture";
 import { Task, TaskStatus } from "../models/Task";
 import { Schedule, TaskType } from "../models/TaskType";
 import { MemoryDB } from "./MemoryDB";
@@ -26,6 +27,20 @@ describe('getUnique_Id', () => {
     const db = new MemoryDB();
     const id1 = await db.getUniqueTaskId();
     const id2 = await db.getUniqueTaskId();
+    expect(id1).not.toBe(id2);
+  });
+
+  it('it should return two unique ids', async () => {
+    const db = new MemoryDB();
+    const id1 = await db.getUniqueRfidId();
+    const id2 = await db.getUniqueRfidId();
+    expect(id1).not.toBe(id2);
+  });
+
+  it('it should return two unique ids', async () => {
+    const db = new MemoryDB();
+    const id1 = await db.getUniqueProfilePictureId();
+    const id2 = await db.getUniqueProfilePictureId();
     expect(id1).not.toBe(id2);
   });
 
@@ -323,6 +338,67 @@ describe('Employee', () => {
     expect(await db.checkEmployee(mockEmployee.id)).toBe(true);
   });
 
+  it('should return all employees', async () => {
+    const db = new MemoryDB();
+    const employees = [
+      {...getMockEmployee(), id: 1},
+      {...getMockEmployee(), id: 2},
+      {...getMockEmployee(), id: 3},
+    ];
+    employees.map(async e => await db.insertEmployee(e));
+    expect(await db.getEmployees()).toEqual(employees);
+  }); 
+
+
+});
+
+describe('ProfilePicture', () => {
+  it('should store and return by employeeId', async () => {
+    const db = new MemoryDB();
+    const pp: ProfilePicture = {id: 0, base64: 'abc', employeeId: 7, checksum: ''};
+    await db.insertProfilePicture(pp);
+    expect(await db.getProfilePictureByEmployeeId(pp.employeeId)).toEqual(pp);
+  });
+
+  it('should throw "id must be unique"', async () => {
+    expect.assertions(1);
+    const db = new MemoryDB();
+    const pp: ProfilePicture = {id: 0, base64: 'abc', employeeId: 7, checksum: ''};
+    await db.insertProfilePicture(pp);
+    try {
+      await db.insertProfilePicture(pp);
+    } catch (catched) {
+      const error = catched as Error;
+      expect(error.message).toBe('id must be unique');
+    }
+  });
+
+  it('should throw "not found"', async () => {
+    expect.assertions(1);
+    const db = new MemoryDB();
+    const pp: ProfilePicture = {id: 0, base64: 'abc', employeeId: 7, checksum: ''};
+    await db.insertProfilePicture(pp);
+    try {
+      await db.getProfilePictureByEmployeeId(pp.id + 1);
+    } catch (catched) {
+      const error = catched as Error;
+      expect(error.message).toBe('not found');
+    }
+  });
+
+  it('should return false', async () => {
+    expect.assertions(1);
+    const db = new MemoryDB();
+    expect(await db.checkProfilePictureByChecksum('123')).toBe(false);
+  });
+
+  it('should return true', async () => {
+    expect.assertions(1);
+    const db = new MemoryDB();
+    const pp: ProfilePicture = {id: 0, base64: 'abc', employeeId: 7, checksum: '123'};
+    await db.insertProfilePicture(pp);
+    expect(await db.checkProfilePictureByChecksum(pp.checksum)).toBe(true);
+  });
 });
 
 describe('LoggedError', () => {

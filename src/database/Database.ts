@@ -3,11 +3,14 @@ import { AltRfid } from "../models/Rfid";
 import { Task, TaskStatus } from "../models/Task";
 import { TaskType } from "../models/TaskType";
 import { Employee } from "../models/Employee";
+import { ProfilePicture } from "../models/ProfilePicture";
+import { Md5Hash } from "../utils/base64img";
 
 export abstract class Database {
 
   public abstract getUniqueTaskId(): Promise<number>;
   public abstract getUniqueRfidId(): Promise<number>;
+  public abstract getUniqueProfilePictureId(): Promise<number>;
   public abstract getUniqueErrorId(): Promise<number>
   
   public abstract getTaskCount(): Promise<number>;
@@ -26,8 +29,13 @@ export abstract class Database {
 
   public abstract checkEmployee(id: number): Promise<boolean>;
   public abstract getEmployee(id: number): Promise<Employee>;
+  public abstract getEmployees(): Promise<Employee[]>;
   public abstract insertEmployee(employee: Employee): Promise<Employee>;
   public abstract updateEmployee(id: number, update: Partial<Omit<Employee, 'id'>>): Promise<Employee>;
+
+  public abstract checkProfilePictureByChecksum(hash: Md5Hash): Promise<boolean>;
+  public abstract getProfilePictureByEmployeeId(id: number): Promise<ProfilePicture>;
+  public abstract insertProfilePicture(profilePicture: ProfilePicture): Promise<ProfilePicture>;
 
   public abstract getErrorCount(): Promise<number>;
   public abstract getErrors(): Promise<LoggedError[]>;
